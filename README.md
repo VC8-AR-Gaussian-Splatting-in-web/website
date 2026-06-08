@@ -6,10 +6,10 @@ sowie beispielhaft Babylon.js für die Einbindung interaktiver 3D-Visualisierung
 ## Konfigurationsschritte (Setup)
 Um eine eigene Arbeitsumgebung auf Basis dieser Vorlage zu erstellen, führen Sie bitte die folgenden Schritte strikt in der angegebenen Reihenfolge aus:
 
-- **Repository forken**
+✅ **Repository forken**
 Betätigen Sie die Schaltfläche "Fork" in der oberen rechten Ecke der GitHub-Oberfläche. Hierdurch wird eine identische Kopie des Projekts in Ihren persönlichen GitHub-Account übertragen.
 
-- **Konfiguration der Workflow-Berechtigungen**
+✅ **Konfiguration der Workflow-Berechtigungen**
 Standardmäßig sind Schreibzugriffe für automatisierte Prozesse in Forks deaktiviert. Zur Aktivierung der Website-Erstellung müssen Sie folgende Anpassungen vornehmen:
 
   - Navigieren Sie zu Settings > Actions > General.
@@ -20,7 +20,7 @@ Standardmäßig sind Schreibzugriffe für automatisierte Prozesse in Forks deakt
 
   - Wechseln Sie zum Reiter Actions und bestätigen Sie die Aktivierung der Workflows durch Klick auf "I understand my workflows, go ahead and enable them".
 
-- **Aktivierung von GitHub Pages**
+✅ **Aktivierung von GitHub Pages**
 - 
   - Navigieren Sie zu Settings > Pages.
 
