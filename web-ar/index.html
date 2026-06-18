@@ -268,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="https://cdn.babylonjs.com/babylon.js"></script>
 <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
 <script>
-(function () {
+function initSplatViewer() {
   if (window.__splatViewerInit) return;
   window.__splatViewerInit = true;
 
@@ -296,6 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     try {
       const result = await BABYLON.SceneLoader.ImportMeshAsync(null, "", url, scene);
       current = result.meshes[0];
+      if (!current.rotationQuaternion) current.rotationQuaternion = new BABYLON.Quaternion();
       setStatus("");
     } catch (e) {
       setStatus("Fehler beim Laden: " + (e && e.message ? e.message : e));
@@ -307,16 +308,131 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   select.addEventListener("change", () => loadSplat(select.value));
 
   loadSplat(select.value);
-})();
+
+  // ---- WebXR / AR (Elemente im Abschnitt "AR-Demo") ----
+  const arBtn = document.getElementById("ar-start");
+  const arStatus = document.getElementById("ar-status");
+  const setArStatus = (t) => { if (arStatus) arStatus.textContent = t; };
+
+  // Reticle (liegt flach, markiert die erkannte Fläche)
+  const reticle = BABYLON.MeshBuilder.CreateTorus("reticle", { diameter: 0.15, thickness: 0.02, tessellation: 48 }, scene);
+  reticle.rotationQuaternion = new BABYLON.Quaternion();
+  reticle.isVisible = false;
+  const reticleMat = new BABYLON.StandardMaterial("reticleMat", scene);
+  reticleMat.emissiveColor = new BABYLON.Color3(0.2, 0.8, 1);
+  reticleMat.disableLighting = true;
+  reticle.material = reticleMat;
+
+  let hitTest = null;   // aktueller Hit-Test-Treffer
+
+  async function initXR() {
+    if (!arBtn) return;
+    if (!navigator.xr) {
+      setArStatus("WebXR wird von diesem Browser nicht unterstützt. Nutze den Orbit-Viewer oben.");
+      return;
+    }
+    const supported = await BABYLON.WebXRSessionManager.IsSessionSupportedAsync("immersive-ar");
+    if (!supported) {
+      setArStatus("immersive-ar wird auf diesem Gerät nicht unterstützt (funktioniert auf Android-Chrome). Nutze den Orbit-Viewer oben.");
+      return;
+    }
+
+    const xrHelper = await scene.createDefaultXRExperienceAsync({ disableDefaultUI: true, optionalFeatures: true });
+    const fm = xrHelper.baseExperience.featuresManager;
+    const xrHitTest = fm.enableFeature(BABYLON.WebXRHitTest, "latest");
+
+    xrHitTest.onHitTestResultObservable.add((results) => {
+      if (results.length) {
+        hitTest = results[0];
+        reticle.isVisible = true;
+        hitTest.transformationMatrix.decompose(undefined, reticle.rotationQuaternion, reticle.position);
+      } else {
+        hitTest = undefined;
+        reticle.isVisible = false;
+      }
+    });
+
+    xrHelper.baseExperience.onStateChangedObservable.add((state) => {
+      if (state === BABYLON.WebXRState.IN_XR) {
+        if (current) current.setEnabled(false);        // bis zur Platzierung verstecken
+      } else if (state === BABYLON.WebXRState.NOT_IN_XR) {
+        reticle.isVisible = false;
+        if (current) { current.setEnabled(true); current.position.set(0, 0, 0); current.scaling.setAll(1); }
+      }
+    });
+
+    scene.onPointerDown = () => {
+      if (xrHelper.baseExperience.state === BABYLON.WebXRState.IN_XR && hitTest && current) {
+        current.setEnabled(true);
+        hitTest.transformationMatrix.decompose(undefined, current.rotationQuaternion, current.position);
+        current.scaling.setAll(0.5);
+      }
+    };
+
+    arBtn.disabled = false;
+    setArStatus("Bereit. Tippe auf den AR-Button.");
+    arBtn.addEventListener("click", async () => {
+      try {
+        await xrHelper.baseExperience.enterXRAsync("immersive-ar", "local-floor");
+      } catch (e) {
+        setArStatus("AR konnte nicht gestartet werden: " + (e && e.message ? e.message : e));
+      }
+    });
+  }
+
+  initXR();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSplatViewer);
+} else {
+  initSplatViewer();
+}
 </script>
 </section>
 <section id="webxr" class="level2">
 <h2 class="anchored" data-anchor-id="webxr">WebXR</h2>
-<!-- TODO: immersive-ar Session starten, Hit-Test, Objekt platzieren. -->
+<p><a href="https://immersiveweb.dev/">WebXR</a> ist die Browser-API für VR und AR. Babylon.js kapselt sie in einem Helper, sodass dieselbe Szene wie oben in eine <strong>immersive AR-Session</strong> übergehen kann. Drei Bausteine sind nötig:</p>
+<p><strong>1. Session starten</strong> — wir prüfen erst die Geräteunterstützung und starten dann eine <code>immersive-ar</code>-Session (eigene UI statt Babylon-Default-Button):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> supported <span class="op">=</span> <span class="cf">await</span> BABYLON<span class="op">.</span><span class="at">WebXRSessionManager</span><span class="op">.</span><span class="fu">IsSessionSupportedAsync</span>(<span class="st">"immersive-ar"</span>)<span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> xr <span class="op">=</span> <span class="cf">await</span> scene<span class="op">.</span><span class="fu">createDefaultXRExperienceAsync</span>({ <span class="dt">disableDefaultUI</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">optionalFeatures</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">// per Button-Klick:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">await</span> xr<span class="op">.</span><span class="at">baseExperience</span><span class="op">.</span><span class="fu">enterXRAsync</span>(<span class="st">"immersive-ar"</span><span class="op">,</span> <span class="st">"local-floor"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>2. Hit-Test</strong> — die AR-Session sucht reale Flächen (Boden, Tisch). Ein „Reticle” folgt dem Treffer und zeigt, wo platziert würde:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> hitTest <span class="op">=</span> xr<span class="op">.</span><span class="at">baseExperience</span><span class="op">.</span><span class="at">featuresManager</span><span class="op">.</span><span class="fu">enableFeature</span>(BABYLON<span class="op">.</span><span class="at">WebXRHitTest</span><span class="op">,</span> <span class="st">"latest"</span>)<span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>hitTest<span class="op">.</span><span class="at">onHitTestResultObservable</span><span class="op">.</span><span class="fu">add</span>((results) <span class="kw">=&gt;</span> {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (results<span class="op">.</span><span class="at">length</span>) {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    reticle<span class="op">.</span><span class="at">isVisible</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    results[<span class="dv">0</span>]<span class="op">.</span><span class="at">transformationMatrix</span><span class="op">.</span><span class="fu">decompose</span>(<span class="kw">undefined</span><span class="op">,</span> reticle<span class="op">.</span><span class="at">rotationQuaternion</span><span class="op">,</span> reticle<span class="op">.</span><span class="at">position</span>)<span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    reticle<span class="op">.</span><span class="at">isVisible</span> <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>3. Objekt platzieren</strong> — ein Tap setzt das Splat an die aktuelle Reticle-Pose:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>scene<span class="op">.</span><span class="at">onPointerDown</span> <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (xr<span class="op">.</span><span class="at">baseExperience</span><span class="op">.</span><span class="at">state</span> <span class="op">===</span> BABYLON<span class="op">.</span><span class="at">WebXRState</span><span class="op">.</span><span class="at">IN_XR</span> <span class="op">&amp;&amp;</span> hitTest <span class="op">&amp;&amp;</span> splat) {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    splat<span class="op">.</span><span class="fu">setEnabled</span>(<span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    lastHit<span class="op">.</span><span class="at">transformationMatrix</span><span class="op">.</span><span class="fu">decompose</span>(<span class="kw">undefined</span><span class="op">,</span> splat<span class="op">.</span><span class="at">rotationQuaternion</span><span class="op">,</span> splat<span class="op">.</span><span class="at">position</span>)<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p><strong>Wichtig:</strong> WebXR braucht einen sicheren Kontext (HTTPS). Die Live-Seite über GitHub Pages erfüllt das.</p>
+</blockquote>
 </section>
 <section id="ar-demo" class="level2">
 <h2 class="anchored" data-anchor-id="ar-demo">AR-Demo</h2>
-<!-- TODO: Start-Button für Mobile (Android Chrome) + QR-Code für die Präsentation. -->
+<p>WebXR-AR läuft derzeit zuverlässig auf <strong>Android-Chrome</strong>. Auf iOS-Safari und Desktop ist <code>immersive-ar</code> nicht verfügbar — dort den Orbit-Viewer oben nutzen.</p>
+<style>#ar-start:disabled{background:#6b7280 !important;cursor:not-allowed !important;opacity:.6;}</style>
+<div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;margin-top:1rem;">
+  <div>
+    <button id="ar-start" disabled="" style="padding:12px 22px;font-size:16px;font-weight:600;border:none;border-radius:8px;background:#1f8feb;color:#fff;cursor:pointer;">In AR ansehen</button>
+    <div id="ar-status" style="margin-top:8px;font-size:13px;color:#888;max-width:340px;">Prüfe Geräteunterstützung …</div>
+  </div>
+  <figure style="margin:0;text-align:center;" class="figure">
+    <img src="qr-ar-demo.svg" alt="QR-Code zur AR-Demo" width="150" height="150" style="background:#fff;padding:8px;border-radius:8px;" class="figure-img">
+    <figcaption style="font-size:12px;color:#888;margin-top:4px;">Scannen für die Live-Seite</figcaption>
+  </figure>
+</div>
 </section>
 <section id="x-erweiterung" class="level2">
 <h2 class="anchored" data-anchor-id="x-erweiterung">“X”-Erweiterung</h2>

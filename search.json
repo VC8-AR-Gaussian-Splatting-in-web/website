@@ -25,14 +25,14 @@
     "href": "web-ar/index.html#webxr",
     "title": "Web & AR Integration",
     "section": "WebXR",
-    "text": "WebXR"
+    "text": "WebXR\nWebXR ist die Browser-API für VR und AR. Babylon.js kapselt sie in einem Helper, sodass dieselbe Szene wie oben in eine immersive AR-Session übergehen kann. Drei Bausteine sind nötig:\n1. Session starten — wir prüfen erst die Geräteunterstützung und starten dann eine immersive-ar-Session (eigene UI statt Babylon-Default-Button):\nconst supported = await BABYLON.WebXRSessionManager.IsSessionSupportedAsync(\"immersive-ar\");\nconst xr = await scene.createDefaultXRExperienceAsync({ disableDefaultUI: true, optionalFeatures: true });\n// per Button-Klick:\nawait xr.baseExperience.enterXRAsync(\"immersive-ar\", \"local-floor\");\n2. Hit-Test — die AR-Session sucht reale Flächen (Boden, Tisch). Ein „Reticle” folgt dem Treffer und zeigt, wo platziert würde:\nconst hitTest = xr.baseExperience.featuresManager.enableFeature(BABYLON.WebXRHitTest, \"latest\");\nhitTest.onHitTestResultObservable.add((results) =&gt; {\n  if (results.length) {\n    reticle.isVisible = true;\n    results[0].transformationMatrix.decompose(undefined, reticle.rotationQuaternion, reticle.position);\n  } else {\n    reticle.isVisible = false;\n  }\n});\n3. Objekt platzieren — ein Tap setzt das Splat an die aktuelle Reticle-Pose:\nscene.onPointerDown = () =&gt; {\n  if (xr.baseExperience.state === BABYLON.WebXRState.IN_XR && hitTest && splat) {\n    splat.setEnabled(true);\n    lastHit.transformationMatrix.decompose(undefined, splat.rotationQuaternion, splat.position);\n  }\n};\n\nWichtig: WebXR braucht einen sicheren Kontext (HTTPS). Die Live-Seite über GitHub Pages erfüllt das."
   },
   {
     "objectID": "web-ar/index.html#ar-demo",
     "href": "web-ar/index.html#ar-demo",
     "title": "Web & AR Integration",
     "section": "AR-Demo",
-    "text": "AR-Demo"
+    "text": "AR-Demo\nWebXR-AR läuft derzeit zuverlässig auf Android-Chrome. Auf iOS-Safari und Desktop ist immersive-ar nicht verfügbar — dort den Orbit-Viewer oben nutzen.\n\n\n  \n    In AR ansehen\n    Prüfe Geräteunterstützung …\n  \n  \n    \n    Scannen für die Live-Seite"
   },
   {
     "objectID": "web-ar/index.html#x-erweiterung",
