@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Friedrich Commichau, Sven Fydrich, Dominik Pleimes">
 
-<title>Augmented Reality &amp; 3D Gaussian Splatting im Web – 3D Gaussian Splatting im Web</title>
+<title>Web &amp; AR Integration – 3D Gaussian Splatting im Web</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,23 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -83,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">3D Gaussian Splatting im Web</span>
     </a>
   </div>
@@ -94,27 +93,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./theorie/index.html"> 
+    <a class="nav-link" href="../theorie/index.html"> 
 <span class="menu-text">Theorie &amp; Methode</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./pipeline/index.html"> 
+    <a class="nav-link" href="../pipeline/index.html"> 
 <span class="menu-text">Capture &amp; Pipeline</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./web-ar/index.html"> 
+    <a class="nav-link active" href="../web-ar/index.html" aria-current="page"> 
 <span class="menu-text">Web &amp; AR</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./quiz/index.html"> 
+    <a class="nav-link" href="../quiz/index.html"> 
 <span class="menu-text">Quiz</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./credits/index.html"> 
+    <a class="nav-link" href="../credits/index.html"> 
 <span class="menu-text">Credits</span></a>
   </li>  
 </ul>
@@ -140,8 +139,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#inhalt-dieser-seite" id="toc-inhalt-dieser-seite" class="nav-link active" data-scroll-target="#inhalt-dieser-seite">Inhalt dieser Seite</a></li>
-  <li><a href="#team" id="toc-team" class="nav-link" data-scroll-target="#team">Team</a></li>
+  <li><a href="#babylon.js" id="toc-babylon.js" class="nav-link active" data-scroll-target="#babylon.js">Babylon.js</a></li>
+  <li><a href="#webxr" id="toc-webxr" class="nav-link" data-scroll-target="#webxr">WebXR</a></li>
+  <li><a href="#splat-viewer" id="toc-splat-viewer" class="nav-link" data-scroll-target="#splat-viewer">Splat-Viewer</a></li>
+  <li><a href="#ar-demo" id="toc-ar-demo" class="nav-link" data-scroll-target="#ar-demo">AR-Demo</a></li>
+  <li><a href="#x-erweiterung" id="toc-x-erweiterung" class="nav-link" data-scroll-target="#x-erweiterung">“X”-Erweiterung</a></li>
   </ul>
 </nav>
     </div>
@@ -150,19 +152,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Augmented Reality &amp; 3D Gaussian Splatting im Web</h1>
+<h1 class="title">Web &amp; AR Integration</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Friedrich Commichau, Sven Fydrich, Dominik Pleimes </p>
-          </div>
-  </div>
     
   
     
@@ -173,43 +169,27 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- OWNER: Person C (Scaffold) -->
-<p>3D Gaussian Splatting (3DGS) ist eine Methode zur fotorealistischen Echtzeit-Darstellung von 3D-Szenen. Dieses Projekt zeigt den Weg von der Aufnahme über das Training bis zur interaktiven Darstellung im Browser und in Augmented Reality.</p>
-<section id="inhalt-dieser-seite" class="level2">
-<h2 class="anchored" data-anchor-id="inhalt-dieser-seite">Inhalt dieser Seite</h2>
-<ul>
-<li><strong><a href="./theorie/index.html">Theorie &amp; Methode</a></strong> — Geschichte, Repräsentation, Rendering und Optimierung von 3DGS.</li>
-<li><strong><a href="./pipeline/index.html">Capture &amp; Pipeline</a></strong> — Use-Cases, Aufnahme und der Weg vom Foto zum trainierten Modell.</li>
-<li><strong><a href="./web-ar/index.html">Web &amp; AR</a></strong> — Darstellung mit Babylon.js und WebXR/AR im Browser.</li>
-<li><strong><a href="./quiz/index.html">Quiz</a></strong> — Lernzielabfrage zu 3DGS und WebXR.</li>
-<li><strong><a href="./credits/index.html">Credits</a></strong> — Wer hat was gemacht.</li>
-</ul>
+<!-- OWNER: Person C -->
+<!-- TODO Person C: Inhalte folgen in späteren Schritten (eigene Aufgabenliste). -->
+<section id="babylon.js" class="level2">
+<h2 class="anchored" data-anchor-id="babylon.js">Babylon.js</h2>
+<!-- TODO: Szene aufsetzen, Splat laden, Code-Beispiele (.spz importieren). -->
 </section>
-<section id="team" class="level2">
-<h2 class="anchored" data-anchor-id="team">Team</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Person</th>
-<th>Bereich</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Friedrich Commichau</td>
-<td>Web &amp; AR Integration</td>
-</tr>
-<tr class="even">
-<td>Sven Fydrich</td>
-<td>Capture &amp; Pipeline / Theorie &amp; Methode</td>
-</tr>
-<tr class="odd">
-<td>Dominik Pleimes</td>
-<td>Capture &amp; Pipeline / Theorie &amp; Methode</td>
-</tr>
-</tbody>
-</table>
-<!-- TODO Person A/B: Zuordnung Theorie vs. Pipeline in der Tabelle bestätigen. -->
+<section id="webxr" class="level2">
+<h2 class="anchored" data-anchor-id="webxr">WebXR</h2>
+<!-- TODO: immersive-ar Session starten, Hit-Test, Objekt platzieren. -->
+</section>
+<section id="splat-viewer" class="level2">
+<h2 class="anchored" data-anchor-id="splat-viewer">Splat-Viewer</h2>
+<!-- TODO: Babylon.js-Canvas mit .spz-Modell von Person B einbetten (nach Übergabe). -->
+</section>
+<section id="ar-demo" class="level2">
+<h2 class="anchored" data-anchor-id="ar-demo">AR-Demo</h2>
+<!-- TODO: Start-Button für Mobile (Android Chrome) + QR-Code für die Präsentation. -->
+</section>
+<section id="x-erweiterung" class="level2">
+<h2 class="anchored" data-anchor-id="x-erweiterung">“X”-Erweiterung</h2>
+<!-- TODO: Eigene Idee (z. B. Performance-Vergleich, Splat-Editor-Mini-Tool, Device-Kompatibilitätsmatrix). -->
 
 
 </section>

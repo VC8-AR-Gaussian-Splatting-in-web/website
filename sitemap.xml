@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://VC8-AR-Gaussian-Splatting-in-web.github.io/website/web-ar/index.html</loc>
+    <lastmod>2026-06-18T14:39:13.997Z</lastmod>
+  </url>
+  <url>
+    <loc>https://VC8-AR-Gaussian-Splatting-in-web.github.io/website/quiz/index.html</loc>
+    <lastmod>2026-06-18T14:39:13.997Z</lastmod>
+  </url>
+  <url>
     <loc>https://VC8-AR-Gaussian-Splatting-in-web.github.io/website/index.html</loc>
-    <lastmod>2026-06-18T13:34:43.412Z</lastmod>
+    <lastmod>2026-06-18T14:39:13.997Z</lastmod>
+  </url>
+  <url>
+    <loc>https://VC8-AR-Gaussian-Splatting-in-web.github.io/website/credits/index.html</loc>
+    <lastmod>2026-06-18T14:39:13.997Z</lastmod>
+  </url>
+  <url>
+    <loc>https://VC8-AR-Gaussian-Splatting-in-web.github.io/website/pipeline/index.html</loc>
+    <lastmod>2026-06-18T14:39:13.997Z</lastmod>
+  </url>
+  <url>
+    <loc>https://VC8-AR-Gaussian-Splatting-in-web.github.io/website/theorie/index.html</loc>
+    <lastmod>2026-06-18T14:39:13.997Z</lastmod>
   </url>
 </urlset>

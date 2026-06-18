@@ -1,16 +1,156 @@
 [
   {
+    "objectID": "web-ar/index.html#webxr",
+    "href": "web-ar/index.html#webxr",
+    "title": "Web & AR Integration",
+    "section": "WebXR",
+    "text": "WebXR"
+  },
+  {
+    "objectID": "web-ar/index.html#splat-viewer",
+    "href": "web-ar/index.html#splat-viewer",
+    "title": "Web & AR Integration",
+    "section": "Splat-Viewer",
+    "text": "Splat-Viewer"
+  },
+  {
+    "objectID": "web-ar/index.html#ar-demo",
+    "href": "web-ar/index.html#ar-demo",
+    "title": "Web & AR Integration",
+    "section": "AR-Demo",
+    "text": "AR-Demo"
+  },
+  {
+    "objectID": "web-ar/index.html#x-erweiterung",
+    "href": "web-ar/index.html#x-erweiterung",
+    "title": "Web & AR Integration",
+    "section": "“X”-Erweiterung",
+    "text": "“X”-Erweiterung"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Augmented Reality & 3D Gaussian Splatting im Web",
     "section": "",
-    "text": "#siehe Doku"
+    "text": "3D Gaussian Splatting (3DGS) ist eine Methode zur fotorealistischen Echtzeit-Darstellung von 3D-Szenen. Dieses Projekt zeigt den Weg von der Aufnahme über das Training bis zur interaktiven Darstellung im Browser und in Augmented Reality."
   },
   {
-    "objectID": "index.html#quiz",
-    "href": "index.html#quiz",
+    "objectID": "index.html#inhalt-dieser-seite",
+    "href": "index.html#inhalt-dieser-seite",
     "title": "Augmented Reality & 3D Gaussian Splatting im Web",
-    "section": "##Quiz",
-    "text": "##Quiz\nPlaceholder text block"
+    "section": "Inhalt dieser Seite",
+    "text": "Inhalt dieser Seite\n\nTheorie & Methode — Geschichte, Repräsentation, Rendering und Optimierung von 3DGS.\nCapture & Pipeline — Use-Cases, Aufnahme und der Weg vom Foto zum trainierten Modell.\nWeb & AR — Darstellung mit Babylon.js und WebXR/AR im Browser.\nQuiz — Lernzielabfrage zu 3DGS und WebXR.\nCredits — Wer hat was gemacht."
+  },
+  {
+    "objectID": "index.html#team",
+    "href": "index.html#team",
+    "title": "Augmented Reality & 3D Gaussian Splatting im Web",
+    "section": "Team",
+    "text": "Team\n\n\n\nPerson\nBereich\n\n\n\n\nFriedrich Commichau\nWeb & AR Integration\n\n\nSven Fydrich\nCapture & Pipeline / Theorie & Methode\n\n\nDominik Pleimes\nCapture & Pipeline / Theorie & Methode"
+  },
+  {
+    "objectID": "credits/index.html",
+    "href": "credits/index.html",
+    "title": "Wer hat was gemacht",
+    "section": "",
+    "text": "Person\nBereich\nBeiträge\n\n\n\n\nFriedrich Commichau\nWeb & AR Integration\nQuarto-Gerüst, Babylon.js, WebXR/AR, Quiz\n\n\nSven Fydrich\ntbd\ntbd\n\n\nDominik Pleimes\ntbd\ntbd"
+  },
+  {
+    "objectID": "pipeline/index.html#use-cases",
+    "href": "pipeline/index.html#use-cases",
+    "title": "Capture & Pipeline",
+    "section": "Use-Cases",
+    "text": "Use-Cases"
+  },
+  {
+    "objectID": "pipeline/index.html#aufnahme-guidelines",
+    "href": "pipeline/index.html#aufnahme-guidelines",
+    "title": "Capture & Pipeline",
+    "section": "Aufnahme-Guidelines",
+    "text": "Aufnahme-Guidelines"
+  },
+  {
+    "objectID": "pipeline/index.html#colmap-structure-from-motion",
+    "href": "pipeline/index.html#colmap-structure-from-motion",
+    "title": "Capture & Pipeline",
+    "section": "COLMAP / Structure from Motion",
+    "text": "COLMAP / Structure from Motion"
+  },
+  {
+    "objectID": "pipeline/index.html#lichtfeld-studio-setup",
+    "href": "pipeline/index.html#lichtfeld-studio-setup",
+    "title": "Capture & Pipeline",
+    "section": "LichtFeld Studio — Setup",
+    "text": "LichtFeld Studio — Setup"
+  },
+  {
+    "objectID": "pipeline/index.html#training",
+    "href": "pipeline/index.html#training",
+    "title": "Capture & Pipeline",
+    "section": "Training",
+    "text": "Training"
+  },
+  {
+    "objectID": "pipeline/index.html#export",
+    "href": "pipeline/index.html#export",
+    "title": "Capture & Pipeline",
+    "section": "Export",
+    "text": "Export"
+  },
+  {
+    "objectID": "pipeline/index.html#modell-galerie",
+    "href": "pipeline/index.html#modell-galerie",
+    "title": "Capture & Pipeline",
+    "section": "Modell-Galerie",
+    "text": "Modell-Galerie"
+  },
+  {
+    "objectID": "theorie/index.html#dgs-repräsentation",
+    "href": "theorie/index.html#dgs-repräsentation",
+    "title": "Theorie & Methode",
+    "section": "3DGS-Repräsentation",
+    "text": "3DGS-Repräsentation"
+  },
+  {
+    "objectID": "theorie/index.html#rendering",
+    "href": "theorie/index.html#rendering",
+    "title": "Theorie & Methode",
+    "section": "Rendering",
+    "text": "Rendering"
+  },
+  {
+    "objectID": "theorie/index.html#optimierung",
+    "href": "theorie/index.html#optimierung",
+    "title": "Theorie & Methode",
+    "section": "Optimierung",
+    "text": "Optimierung"
+  },
+  {
+    "objectID": "theorie/index.html#vergleichstabelle",
+    "href": "theorie/index.html#vergleichstabelle",
+    "title": "Theorie & Methode",
+    "section": "Vergleichstabelle",
+    "text": "Vergleichstabelle"
+  },
+  {
+    "objectID": "theorie/index.html#ausblick",
+    "href": "theorie/index.html#ausblick",
+    "title": "Theorie & Methode",
+    "section": "Ausblick",
+    "text": "Ausblick"
+  },
+  {
+    "objectID": "theorie/index.html#grenzen",
+    "href": "theorie/index.html#grenzen",
+    "title": "Theorie & Methode",
+    "section": "Grenzen",
+    "text": "Grenzen"
+  },
+  {
+    "objectID": "theorie/index.html#interaktive-demo",
+    "href": "theorie/index.html#interaktive-demo",
+    "title": "Theorie & Methode",
+    "section": "Interaktive Demo",
+    "text": "Interaktive Demo"
   }
 ]
