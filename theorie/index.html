@@ -139,14 +139,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#geschichte-von-nerf-zu-3dgs" id="toc-geschichte-von-nerf-zu-3dgs" class="nav-link active" data-scroll-target="#geschichte-von-nerf-zu-3dgs">Geschichte: von NeRF zu 3DGS</a></li>
-  <li><a href="#dgs-repräsentation" id="toc-dgs-repräsentation" class="nav-link" data-scroll-target="#dgs-repräsentation">3DGS-Repräsentation</a></li>
-  <li><a href="#rendering" id="toc-rendering" class="nav-link" data-scroll-target="#rendering">Rendering</a></li>
-  <li><a href="#optimierung" id="toc-optimierung" class="nav-link" data-scroll-target="#optimierung">Optimierung</a></li>
-  <li><a href="#vergleichstabelle" id="toc-vergleichstabelle" class="nav-link" data-scroll-target="#vergleichstabelle">Vergleichstabelle</a></li>
-  <li><a href="#ausblick" id="toc-ausblick" class="nav-link" data-scroll-target="#ausblick">Ausblick</a></li>
-  <li><a href="#grenzen" id="toc-grenzen" class="nav-link" data-scroll-target="#grenzen">Grenzen</a></li>
-  <li><a href="#interaktive-demo" id="toc-interaktive-demo" class="nav-link" data-scroll-target="#interaktive-demo">Interaktive Demo</a></li>
+  <li><a href="#einleitung" id="toc-einleitung" class="nav-link active" data-scroll-target="#einleitung">1. Einleitung</a>
+  <ul class="collapse">
+  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation">1.1 Motivation</a></li>
+  <li><a href="#zielsetzung" id="toc-zielsetzung" class="nav-link" data-scroll-target="#zielsetzung">1.2 Zielsetzung</a></li>
+  <li><a href="#forschungsfrage" id="toc-forschungsfrage" class="nav-link" data-scroll-target="#forschungsfrage">1.3 Forschungsfrage</a></li>
+  </ul></li>
+  <li><a href="#grundlagen" id="toc-grundlagen" class="nav-link" data-scroll-target="#grundlagen">2. Grundlagen</a>
+  <ul class="collapse">
+  <li><a href="#augmented-reality" id="toc-augmented-reality" class="nav-link" data-scroll-target="#augmented-reality">2.1 Augmented Reality</a></li>
+  <li><a href="#webxr" id="toc-webxr" class="nav-link" data-scroll-target="#webxr">2.2 WebXR</a></li>
+  <li><a href="#d-repräsentationen" id="toc-d-repräsentationen" class="nav-link" data-scroll-target="#d-repräsentationen">2.3 3D-Repräsentationen</a></li>
+  <li><a href="#gaussian-splatting" id="toc-gaussian-splatting" class="nav-link" data-scroll-target="#gaussian-splatting">2.4 Gaussian Splatting</a></li>
+  </ul></li>
+  <li><a href="#webxr-und-3dgs" id="toc-webxr-und-3dgs" class="nav-link" data-scroll-target="#webxr-und-3dgs">3. WebXR und 3DGS</a>
+  <ul class="collapse">
+  <li><a href="#motivation-der-kombination" id="toc-motivation-der-kombination" class="nav-link" data-scroll-target="#motivation-der-kombination">3.1 Motivation der Kombination</a></li>
+  <li><a href="#technische-architektur" id="toc-technische-architektur" class="nav-link" data-scroll-target="#technische-architektur">3.2 Technische Architektur</a></li>
+  <li><a href="#herausforderungen" id="toc-herausforderungen" class="nav-link" data-scroll-target="#herausforderungen">3.3 Herausforderungen</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -173,40 +184,313 @@ ul.task-list li input[type="checkbox"] {
 
 
 <!-- OWNER: Person A -->
-<!-- TODO Person A: Inhalte in die untenstehenden Abschnitte schreiben. Überschriften gern anpassen. -->
-<section id="geschichte-von-nerf-zu-3dgs" class="level2">
-<h2 class="anchored" data-anchor-id="geschichte-von-nerf-zu-3dgs">Geschichte: von NeRF zu 3DGS</h2>
-<!-- TODO: Von NeRF (2020) zu 3DGS (2023) — Schlüsselpapiere & Zeitlinie. -->
+<section id="einleitung" class="level2">
+<h2 class="anchored" data-anchor-id="einleitung">1. Einleitung</h2>
+<section id="motivation" class="level3">
+<h3 class="anchored" data-anchor-id="motivation">1.1 Motivation</h3>
+<p>Die Darstellung und Interaktion mit 3D-Inhalten im Web hat sich in den letzten Jahren stark weiterentwickelt. Während früher vor allem polygonbasierte Modelle eingesetzt wurden, entstehen heute zunehmend datengetriebene und lernbasierte Repräsentationen von 3D-Szenen. Gleichzeitig wächst der Bedarf, solche Inhalte direkt im Browser erlebbar zu machen – ohne spezielle Software oder High-End-Workstations.</p>
+<p>Ein besonders interessanter Trend ist die Kombination von Augmented Reality (AR) mit modernen 3D-Rekonstruktionsverfahren wie 3D Gaussian Splatting (3DGS). Dadurch können realistische Szenen effizient dargestellt und in Echtzeit in die reale Umgebung eingebettet werden.</p>
+<p>Webbasierte AR-Lösungen ermöglichen zudem einen niederschwelligen Zugang: Nutzer benötigen lediglich einen Browser und ein Endgerät mit Kamera. Dadurch entstehen neue Anwendungsmöglichkeiten in Bereichen wie Bildung, E-Commerce, Architektur und Kulturvermittlung.</p>
 </section>
-<section id="dgs-repräsentation" class="level2">
-<h2 class="anchored" data-anchor-id="dgs-repräsentation">3DGS-Repräsentation</h2>
-<!-- TODO: Gaussians als Primitive (Position, Skalierung, Rotation, Farbe via Spherical Harmonics, Opacity). -->
+<section id="zielsetzung" class="level3">
+<h3 class="anchored" data-anchor-id="zielsetzung">1.2 Zielsetzung</h3>
+<p>Ziel dieser Präsentation ist es, die theoretischen Grundlagen von Augmented Reality im Web (WebXR) sowie moderne 3D-Repräsentationen zu erläutern und anschließend 3D Gaussian Splatting als neuartige Methode der 3D-Szenendarstellung einzuordnen.</p>
+<p>Darauf aufbauend wird untersucht, wie sich 3DGS mit WebXR kombinieren lässt, um immersive AR-Erlebnisse im Browser zu ermöglichen. Dabei stehen insbesondere die technischen Grundlagen, Vorteile und Einschränkungen im Fokus.</p>
 </section>
-<section id="rendering" class="level2">
-<h2 class="anchored" data-anchor-id="rendering">Rendering</h2>
-<!-- TODO: Differenzierbares Rasterisieren & Tile-Based Sorting. -->
+<section id="forschungsfrage" class="level3">
+<h3 class="anchored" data-anchor-id="forschungsfrage">1.3 Forschungsfrage</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Zentrale Fragestellung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wie kann <strong>3D Gaussian Splatting</strong> effizient in <strong>WebXR-basierte Augmented-Reality-Anwendungen</strong> integriert werden, und welche technischen Herausforderungen ergeben sich dabei?</p>
+</div>
+</div>
+<hr>
 </section>
-<section id="optimierung" class="level2">
-<h2 class="anchored" data-anchor-id="optimierung">Optimierung</h2>
-<!-- TODO: Wie das Training funktioniert — Densification & Pruning. -->
 </section>
-<section id="vergleichstabelle" class="level2">
-<h2 class="anchored" data-anchor-id="vergleichstabelle">Vergleichstabelle</h2>
-<!-- TODO: 3DGS vs. NeRF vs. Meshes vs. Punktwolken (Qualität, Geschwindigkeit, Dateigröße, Editierbarkeit). -->
+<section id="grundlagen" class="level2">
+<h2 class="anchored" data-anchor-id="grundlagen">2. Grundlagen</h2>
+<section id="augmented-reality" class="level3">
+<h3 class="anchored" data-anchor-id="augmented-reality">2.1 Augmented Reality</h3>
+<p>Augmented Reality bezeichnet die Erweiterung der realen Welt durch digitale Inhalte in Echtzeit. Dabei werden virtuelle Objekte in das Kamerabild der realen Umgebung eingeblendet und räumlich korrekt verankert.</p>
+<p><strong>Zentrale Anforderungen an AR-Systeme:</strong></p>
+<ul>
+<li>Tracking der Geräteposition und -orientierung</li>
+<li>Echtzeit-Rendering</li>
+<li>Konsistente Integration virtueller Objekte in die reale Szene</li>
+<li>Interaktion zwischen Nutzer und virtuellen Inhalten</li>
+</ul>
+<p>Typische Einsatzbereiche sind Navigation, Industrie, Medizin und Entertainment.</p>
 </section>
-<section id="ausblick" class="level2">
-<h2 class="anchored" data-anchor-id="ausblick">Ausblick</h2>
-<!-- TODO: 4DGS, Mobile/VR, Kompression, GS-SLAM, Khronos KHR_3DGS-Standard. -->
+<section id="webxr" class="level3">
+<h3 class="anchored" data-anchor-id="webxr">2.2 WebXR</h3>
+<p>WebXR ist eine Web-API, die den Zugriff auf AR- und VR-Funktionalitäten direkt im Browser ermöglicht. Sie ist der Nachfolger von WebVR und unterstützt sowohl Virtual Reality als auch Augmented Reality.</p>
+<p><strong>Die wichtigsten Eigenschaften von WebXR:</strong></p>
+<ul>
+<li><strong>Plattformunabhängigkeit</strong> — Browser als Runtime</li>
+<li><strong>Gerätevielfalt</strong> — Smartphones, AR-Brillen, Headsets</li>
+<li><strong>Sensorzugriff</strong> — Kamera, Gyroskop, Beschleunigungssensor</li>
+<li><strong>Rendering</strong> — Integration mit WebGL/WebGPU</li>
+</ul>
+<p>WebXR ermöglicht damit die Entwicklung von immersiven Anwendungen ohne native Installation.</p>
 </section>
-<section id="grenzen" class="level2">
-<h2 class="anchored" data-anchor-id="grenzen">Grenzen</h2>
-<!-- TODO: Beleuchtung, Bewegung, transparente Oberflächen, iOS-AR-Limit, Dateigröße. -->
+<section id="d-repräsentationen" class="level3">
+<h3 class="anchored" data-anchor-id="d-repräsentationen">2.3 3D-Repräsentationen</h3>
+<p>3D-Daten können auf unterschiedliche Weise dargestellt werden. Die Wahl der Repräsentation beeinflusst Speicherbedarf, Rendering-Performance und Realismus.</p>
+<section id="polygonale-modelle" class="level4">
+<h4 class="anchored" data-anchor-id="polygonale-modelle">Polygonale Modelle</h4>
+<p>Polygonale Modelle sind die klassische Form der 3D-Darstellung. Objekte werden durch Dreiecke (Meshes) approximiert.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Vorteile</strong></p>
+<ul>
+<li>Hardwarebeschleunigt durch GPUs</li>
+<li>Standard in Game Engines und WebGL</li>
+<li>Gut editierbar</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Nachteile</strong></p>
+<ul>
+<li>Begrenzte Detailtiefe</li>
+<li>Aufwändige Modellierung für realistische Szenen</li>
+<li>Schwierigkeiten bei komplexen realen Strukturen</li>
+</ul>
+</div>
+</div>
 </section>
-<section id="interaktive-demo" class="level2">
-<h2 class="anchored" data-anchor-id="interaktive-demo">Interaktive Demo</h2>
-<!-- TODO: Gauß-Primitiv visualisieren (z. B. Observable JS — Slider für σ, Rotation, Farbe). -->
+<section id="punktwolken" class="level4">
+<h4 class="anchored" data-anchor-id="punktwolken">Punktwolken</h4>
+<p>Punktwolken bestehen aus einer Menge einzelner 3D-Punkte, meist aus LiDAR- oder Photogrammetrie-Daten.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Vorteile</strong></p>
+<ul>
+<li>Direkte Repräsentation von Messdaten</li>
+<li>Kein Mesh erforderlich</li>
+<li>Gut für reale Scans geeignet</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Nachteile</strong></p>
+<ul>
+<li>Keine explizite Oberflächenstruktur</li>
+<li>Rendering oft unruhig oder verrauscht</li>
+<li>Hoher Speicherbedarf bei großen Szenen</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="nerf-neural-radiance-fields" class="level4">
+<h4 class="anchored" data-anchor-id="nerf-neural-radiance-fields">NeRF (Neural Radiance Fields)</h4>
+<p>NeRF basiert auf neuronalen Netzen, die eine Szene als kontinuierliche Funktion modellieren. Für jeden 3D-Punkt und Blickrichtung wird Farbe und Dichte vorhergesagt.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Vorteile</strong></p>
+<ul>
+<li>Sehr hoher Realismus</li>
+<li>Physikalisch konsistente Lichtdarstellung</li>
+<li>Keine explizite Geometrie notwendig</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Nachteile</strong></p>
+<ul>
+<li>Sehr rechenintensiv</li>
+<li>Lange Trainingszeiten</li>
+<li>Echtzeitfähigkeit lange eingeschränkt</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="gaussian-splatting" class="level3">
+<h3 class="anchored" data-anchor-id="gaussian-splatting">2.4 Gaussian Splatting</h3>
+<p>3D Gaussian Splatting (3DGS) ist eine relativ neue Methode zur Darstellung von 3D-Szenen, die auf einer Menge von anisotropen Gaussians im Raum basiert. Statt Meshes oder NeRF-Funktionen wird die Szene durch viele kleine „Gauss-Kerne” beschrieben:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Position</strong></td>
+<td>Koordinaten im 3D-Raum</td>
+</tr>
+<tr class="even">
+<td><strong>Kovarianz</strong></td>
+<td>Form und Ausrichtung des Gaussians</td>
+</tr>
+<tr class="odd">
+<td><strong>Farbe</strong></td>
+<td>Spherical Harmonics (richtungsabhängig)</td>
+</tr>
+<tr class="even">
+<td><strong>Opazität</strong></td>
+<td>Transparenzwert (Alpha)</td>
+</tr>
+</tbody>
+</table>
+<p>Diese Gaussians werden direkt in den Bildraum projiziert und als sogenannte „Splats” gerendert.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Vorteile</strong></p>
+<ul>
+<li>Sehr hohe Rendergeschwindigkeit (nahe Echtzeit)</li>
+<li>Hohe visuelle Qualität, oft vergleichbar mit NeRF</li>
+<li>Gute Darstellung feiner Details (Haare, Vegetation)</li>
+<li>Effizienter als viele NeRF-Varianten</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Nachteile</strong></p>
+<ul>
+<li>Speicherintensiv bei großen Szenen</li>
+<li>Schwierige Editierbarkeit im Vergleich zu Meshes</li>
+<li>Noch wenig standardisierte Pipeline im Webbereich</li>
+<li>Abhängigkeit von guten Trainingsdaten</li>
+</ul>
+</div>
+</div>
+<p>3DGS stellt somit einen Kompromiss zwischen klassischer Geometrie und neuronalen Methoden dar und gewinnt aktuell stark an Bedeutung in Forschung und Praxis.</p>
+<hr>
+</section>
+</section>
+<section id="webxr-und-3dgs" class="level2">
+<h2 class="anchored" data-anchor-id="webxr-und-3dgs">3. WebXR und 3DGS</h2>
+<section id="motivation-der-kombination" class="level3">
+<h3 class="anchored" data-anchor-id="motivation-der-kombination">3.1 Motivation der Kombination</h3>
+<p>Die Kombination von WebXR und 3D Gaussian Splatting ist besonders interessant, weil sie zwei aktuelle Entwicklungen zusammenführt:</p>
+<ul>
+<li><strong>WebXR</strong> ermöglicht plattformunabhängige AR im Browser</li>
+<li><strong>3DGS</strong> ermöglicht hochrealistische 3D-Szenen in Echtzeit</li>
+</ul>
+<p>Gemeinsam eröffnen sie die Möglichkeit, fotorealistische AR-Erlebnisse ohne App-Installation direkt im Web bereitzustellen.</p>
+<p><strong>Mögliche Anwendungen:</strong></p>
+<ul>
+<li>Virtuelle Produktplatzierungen im E-Commerce</li>
+<li>Architekturvisualisierung in realer Umgebung</li>
+<li>Digitale Zwillinge historischer Orte</li>
+<li>Bildungsanwendungen mit realistischen 3D-Szenen</li>
+</ul>
+</section>
+<section id="technische-architektur" class="level3">
+<h3 class="anchored" data-anchor-id="technische-architektur">3.2 Technische Architektur</h3>
+<p>Eine typische Architektur für WebXR + 3DGS besteht aus vier Schichten:</p>
+<ol type="1">
+<li><strong>Datenebene</strong> — 3D Gaussian Model (trainiert offline), Gauss-Parameter (Position, Farbe, Kovarianz, Opazität)</li>
+<li><strong>Rendering-Schicht</strong> — WebGL oder WebGPU, GPU-basierte Splatting-Pipeline, Sortierung und Projektion der Gaussians</li>
+<li><strong>WebXR Layer</strong> — Session Management (AR-Modus aktivieren), Kamera-Feed, Pose Tracking (Smartphone oder Headset)</li>
+<li><strong>Application Layer</strong> — Szene-Management, Interaktion (Touch, Gesten, Raycasting), Einbettung virtueller Objekte</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die größte technische Herausforderung liegt im effizienten Rendering der vielen Gaussians direkt im Browser, da die GPU-Ressourcen im Vergleich zu nativen Anwendungen begrenzt sind.</p>
+</div>
+</div>
+</section>
+<section id="herausforderungen" class="level3">
+<h3 class="anchored" data-anchor-id="herausforderungen">3.3 Herausforderungen</h3>
+<p>Die Integration von 3DGS in WebXR bringt mehrere Herausforderungen mit sich:</p>
+<div class="columns">
+<div class="column" style="width:100%;">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Performance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Sehr viele Gaussians müssen in Echtzeit gerendert werden</li>
+<li>Browser-GPU ist begrenzter als native Engines</li>
+<li>Optimierung durch Culling, Level-of-Detail und GPU-Batching notwendig</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Speicherverbrauch
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>3DGS-Modelle können mehrere hundert MB groß sein</li>
+<li>Streaming und Kompression sind notwendig</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:100%;">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Web-Kompatibilität
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>WebGPU ist noch nicht überall vollständig verfügbar</li>
+<li>WebGL hat Einschränkungen bei komplexen Shadern</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Tracking &amp; Stabilität
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>AR-Tracking muss stabil bleiben, sonst wirkt das Splatting „schwebend”</li>
+<li>Probleme bei schnellen Bewegungen oder schlechten Lichtverhältnissen</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Tooling &amp; Standards
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Noch keine etablierten Standards für 3DGS im Web — unterschiedliche Implementierungen in Forschung und Open Source erschweren die Interoperabilität und Wiederverwendbarkeit.</p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

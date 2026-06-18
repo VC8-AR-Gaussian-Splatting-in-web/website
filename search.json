@@ -119,52 +119,31 @@
     "text": "Modell-Galerie"
   },
   {
-    "objectID": "theorie/index.html#dgs-repräsentation",
-    "href": "theorie/index.html#dgs-repräsentation",
+    "objectID": "theorie/index.html",
+    "href": "theorie/index.html",
     "title": "Theorie & Methode",
-    "section": "3DGS-Repräsentation",
-    "text": "3DGS-Repräsentation"
+    "section": "",
+    "text": "Die Darstellung und Interaktion mit 3D-Inhalten im Web hat sich in den letzten Jahren stark weiterentwickelt. Während früher vor allem polygonbasierte Modelle eingesetzt wurden, entstehen heute zunehmend datengetriebene und lernbasierte Repräsentationen von 3D-Szenen. Gleichzeitig wächst der Bedarf, solche Inhalte direkt im Browser erlebbar zu machen – ohne spezielle Software oder High-End-Workstations.\nEin besonders interessanter Trend ist die Kombination von Augmented Reality (AR) mit modernen 3D-Rekonstruktionsverfahren wie 3D Gaussian Splatting (3DGS). Dadurch können realistische Szenen effizient dargestellt und in Echtzeit in die reale Umgebung eingebettet werden.\nWebbasierte AR-Lösungen ermöglichen zudem einen niederschwelligen Zugang: Nutzer benötigen lediglich einen Browser und ein Endgerät mit Kamera. Dadurch entstehen neue Anwendungsmöglichkeiten in Bereichen wie Bildung, E-Commerce, Architektur und Kulturvermittlung.\n\n\n\nZiel dieser Präsentation ist es, die theoretischen Grundlagen von Augmented Reality im Web (WebXR) sowie moderne 3D-Repräsentationen zu erläutern und anschließend 3D Gaussian Splatting als neuartige Methode der 3D-Szenendarstellung einzuordnen.\nDarauf aufbauend wird untersucht, wie sich 3DGS mit WebXR kombinieren lässt, um immersive AR-Erlebnisse im Browser zu ermöglichen. Dabei stehen insbesondere die technischen Grundlagen, Vorteile und Einschränkungen im Fokus.\n\n\n\n\n\n\n\n\n\nNoteZentrale Fragestellung\n\n\n\nWie kann 3D Gaussian Splatting effizient in WebXR-basierte Augmented-Reality-Anwendungen integriert werden, und welche technischen Herausforderungen ergeben sich dabei?"
   },
   {
-    "objectID": "theorie/index.html#rendering",
-    "href": "theorie/index.html#rendering",
+    "objectID": "theorie/index.html#einleitung",
+    "href": "theorie/index.html#einleitung",
     "title": "Theorie & Methode",
-    "section": "Rendering",
-    "text": "Rendering"
+    "section": "",
+    "text": "Die Darstellung und Interaktion mit 3D-Inhalten im Web hat sich in den letzten Jahren stark weiterentwickelt. Während früher vor allem polygonbasierte Modelle eingesetzt wurden, entstehen heute zunehmend datengetriebene und lernbasierte Repräsentationen von 3D-Szenen. Gleichzeitig wächst der Bedarf, solche Inhalte direkt im Browser erlebbar zu machen – ohne spezielle Software oder High-End-Workstations.\nEin besonders interessanter Trend ist die Kombination von Augmented Reality (AR) mit modernen 3D-Rekonstruktionsverfahren wie 3D Gaussian Splatting (3DGS). Dadurch können realistische Szenen effizient dargestellt und in Echtzeit in die reale Umgebung eingebettet werden.\nWebbasierte AR-Lösungen ermöglichen zudem einen niederschwelligen Zugang: Nutzer benötigen lediglich einen Browser und ein Endgerät mit Kamera. Dadurch entstehen neue Anwendungsmöglichkeiten in Bereichen wie Bildung, E-Commerce, Architektur und Kulturvermittlung.\n\n\n\nZiel dieser Präsentation ist es, die theoretischen Grundlagen von Augmented Reality im Web (WebXR) sowie moderne 3D-Repräsentationen zu erläutern und anschließend 3D Gaussian Splatting als neuartige Methode der 3D-Szenendarstellung einzuordnen.\nDarauf aufbauend wird untersucht, wie sich 3DGS mit WebXR kombinieren lässt, um immersive AR-Erlebnisse im Browser zu ermöglichen. Dabei stehen insbesondere die technischen Grundlagen, Vorteile und Einschränkungen im Fokus.\n\n\n\n\n\n\n\n\n\nNoteZentrale Fragestellung\n\n\n\nWie kann 3D Gaussian Splatting effizient in WebXR-basierte Augmented-Reality-Anwendungen integriert werden, und welche technischen Herausforderungen ergeben sich dabei?"
   },
   {
-    "objectID": "theorie/index.html#optimierung",
-    "href": "theorie/index.html#optimierung",
+    "objectID": "theorie/index.html#grundlagen",
+    "href": "theorie/index.html#grundlagen",
     "title": "Theorie & Methode",
-    "section": "Optimierung",
-    "text": "Optimierung"
+    "section": "2. Grundlagen",
+    "text": "2. Grundlagen\n\n2.1 Augmented Reality\nAugmented Reality bezeichnet die Erweiterung der realen Welt durch digitale Inhalte in Echtzeit. Dabei werden virtuelle Objekte in das Kamerabild der realen Umgebung eingeblendet und räumlich korrekt verankert.\nZentrale Anforderungen an AR-Systeme:\n\nTracking der Geräteposition und -orientierung\nEchtzeit-Rendering\nKonsistente Integration virtueller Objekte in die reale Szene\nInteraktion zwischen Nutzer und virtuellen Inhalten\n\nTypische Einsatzbereiche sind Navigation, Industrie, Medizin und Entertainment.\n\n\n2.2 WebXR\nWebXR ist eine Web-API, die den Zugriff auf AR- und VR-Funktionalitäten direkt im Browser ermöglicht. Sie ist der Nachfolger von WebVR und unterstützt sowohl Virtual Reality als auch Augmented Reality.\nDie wichtigsten Eigenschaften von WebXR:\n\nPlattformunabhängigkeit — Browser als Runtime\nGerätevielfalt — Smartphones, AR-Brillen, Headsets\nSensorzugriff — Kamera, Gyroskop, Beschleunigungssensor\nRendering — Integration mit WebGL/WebGPU\n\nWebXR ermöglicht damit die Entwicklung von immersiven Anwendungen ohne native Installation.\n\n\n2.3 3D-Repräsentationen\n3D-Daten können auf unterschiedliche Weise dargestellt werden. Die Wahl der Repräsentation beeinflusst Speicherbedarf, Rendering-Performance und Realismus.\n\nPolygonale Modelle\nPolygonale Modelle sind die klassische Form der 3D-Darstellung. Objekte werden durch Dreiecke (Meshes) approximiert.\n\n\nVorteile\n\nHardwarebeschleunigt durch GPUs\nStandard in Game Engines und WebGL\nGut editierbar\n\n\nNachteile\n\nBegrenzte Detailtiefe\nAufwändige Modellierung für realistische Szenen\nSchwierigkeiten bei komplexen realen Strukturen\n\n\n\n\n\nPunktwolken\nPunktwolken bestehen aus einer Menge einzelner 3D-Punkte, meist aus LiDAR- oder Photogrammetrie-Daten.\n\n\nVorteile\n\nDirekte Repräsentation von Messdaten\nKein Mesh erforderlich\nGut für reale Scans geeignet\n\n\nNachteile\n\nKeine explizite Oberflächenstruktur\nRendering oft unruhig oder verrauscht\nHoher Speicherbedarf bei großen Szenen\n\n\n\n\n\nNeRF (Neural Radiance Fields)\nNeRF basiert auf neuronalen Netzen, die eine Szene als kontinuierliche Funktion modellieren. Für jeden 3D-Punkt und Blickrichtung wird Farbe und Dichte vorhergesagt.\n\n\nVorteile\n\nSehr hoher Realismus\nPhysikalisch konsistente Lichtdarstellung\nKeine explizite Geometrie notwendig\n\n\nNachteile\n\nSehr rechenintensiv\nLange Trainingszeiten\nEchtzeitfähigkeit lange eingeschränkt\n\n\n\n\n\n\n2.4 Gaussian Splatting\n3D Gaussian Splatting (3DGS) ist eine relativ neue Methode zur Darstellung von 3D-Szenen, die auf einer Menge von anisotropen Gaussians im Raum basiert. Statt Meshes oder NeRF-Funktionen wird die Szene durch viele kleine „Gauss-Kerne” beschrieben:\n\n\n\nParameter\nBeschreibung\n\n\n\n\nPosition\nKoordinaten im 3D-Raum\n\n\nKovarianz\nForm und Ausrichtung des Gaussians\n\n\nFarbe\nSpherical Harmonics (richtungsabhängig)\n\n\nOpazität\nTransparenzwert (Alpha)\n\n\n\nDiese Gaussians werden direkt in den Bildraum projiziert und als sogenannte „Splats” gerendert.\n\n\nVorteile\n\nSehr hohe Rendergeschwindigkeit (nahe Echtzeit)\nHohe visuelle Qualität, oft vergleichbar mit NeRF\nGute Darstellung feiner Details (Haare, Vegetation)\nEffizienter als viele NeRF-Varianten\n\n\nNachteile\n\nSpeicherintensiv bei großen Szenen\nSchwierige Editierbarkeit im Vergleich zu Meshes\nNoch wenig standardisierte Pipeline im Webbereich\nAbhängigkeit von guten Trainingsdaten\n\n\n\n3DGS stellt somit einen Kompromiss zwischen klassischer Geometrie und neuronalen Methoden dar und gewinnt aktuell stark an Bedeutung in Forschung und Praxis."
   },
   {
-    "objectID": "theorie/index.html#vergleichstabelle",
-    "href": "theorie/index.html#vergleichstabelle",
+    "objectID": "theorie/index.html#webxr-und-3dgs",
+    "href": "theorie/index.html#webxr-und-3dgs",
     "title": "Theorie & Methode",
-    "section": "Vergleichstabelle",
-    "text": "Vergleichstabelle"
-  },
-  {
-    "objectID": "theorie/index.html#ausblick",
-    "href": "theorie/index.html#ausblick",
-    "title": "Theorie & Methode",
-    "section": "Ausblick",
-    "text": "Ausblick"
-  },
-  {
-    "objectID": "theorie/index.html#grenzen",
-    "href": "theorie/index.html#grenzen",
-    "title": "Theorie & Methode",
-    "section": "Grenzen",
-    "text": "Grenzen"
-  },
-  {
-    "objectID": "theorie/index.html#interaktive-demo",
-    "href": "theorie/index.html#interaktive-demo",
-    "title": "Theorie & Methode",
-    "section": "Interaktive Demo",
-    "text": "Interaktive Demo"
+    "section": "3. WebXR und 3DGS",
+    "text": "3. WebXR und 3DGS\n\n3.1 Motivation der Kombination\nDie Kombination von WebXR und 3D Gaussian Splatting ist besonders interessant, weil sie zwei aktuelle Entwicklungen zusammenführt:\n\nWebXR ermöglicht plattformunabhängige AR im Browser\n3DGS ermöglicht hochrealistische 3D-Szenen in Echtzeit\n\nGemeinsam eröffnen sie die Möglichkeit, fotorealistische AR-Erlebnisse ohne App-Installation direkt im Web bereitzustellen.\nMögliche Anwendungen:\n\nVirtuelle Produktplatzierungen im E-Commerce\nArchitekturvisualisierung in realer Umgebung\nDigitale Zwillinge historischer Orte\nBildungsanwendungen mit realistischen 3D-Szenen\n\n\n\n3.2 Technische Architektur\nEine typische Architektur für WebXR + 3DGS besteht aus vier Schichten:\n\nDatenebene — 3D Gaussian Model (trainiert offline), Gauss-Parameter (Position, Farbe, Kovarianz, Opazität)\nRendering-Schicht — WebGL oder WebGPU, GPU-basierte Splatting-Pipeline, Sortierung und Projektion der Gaussians\nWebXR Layer — Session Management (AR-Modus aktivieren), Kamera-Feed, Pose Tracking (Smartphone oder Headset)\nApplication Layer — Szene-Management, Interaktion (Touch, Gesten, Raycasting), Einbettung virtueller Objekte\n\n\n\n\n\n\n\nTip\n\n\n\nDie größte technische Herausforderung liegt im effizienten Rendering der vielen Gaussians direkt im Browser, da die GPU-Ressourcen im Vergleich zu nativen Anwendungen begrenzt sind.\n\n\n\n\n3.3 Herausforderungen\nDie Integration von 3DGS in WebXR bringt mehrere Herausforderungen mit sich:\n\n\n\n\n\n\n\n\nWarningPerformance\n\n\n\n\nSehr viele Gaussians müssen in Echtzeit gerendert werden\nBrowser-GPU ist begrenzter als native Engines\nOptimierung durch Culling, Level-of-Detail und GPU-Batching notwendig\n\n\n\n\n\n\n\n\n\nWarningSpeicherverbrauch\n\n\n\n\n3DGS-Modelle können mehrere hundert MB groß sein\nStreaming und Kompression sind notwendig\n\n\n\n\n\n\n\n\n\n\nWarningWeb-Kompatibilität\n\n\n\n\nWebGPU ist noch nicht überall vollständig verfügbar\nWebGL hat Einschränkungen bei komplexen Shadern\n\n\n\n\n\n\n\n\n\nWarningTracking & Stabilität\n\n\n\n\nAR-Tracking muss stabil bleiben, sonst wirkt das Splatting „schwebend”\nProbleme bei schnellen Bewegungen oder schlechten Lichtverhältnissen\n\n\n\n\n\n\n\n\n\n\n\nImportantTooling & Standards\n\n\n\nNoch keine etablierten Standards für 3DGS im Web — unterschiedliche Implementierungen in Forschung und Open Source erschweren die Interoperabilität und Wiederverwendbarkeit."
   }
 ]
