@@ -1,17 +1,31 @@
 [
   {
+    "objectID": "web-ar/index.html",
+    "href": "web-ar/index.html",
+    "title": "Web & AR Integration",
+    "section": "",
+    "text": "3D Gaussian Splats lassen sich direkt im Browser darstellen — ohne Plugin, ohne App. Wir nutzen dafür Babylon.js, eine WebGL-/WebGPU-Engine, die seit Version 7 Gaussian Splatting nativ unterstützt."
+  },
+  {
+    "objectID": "web-ar/index.html#babylon.js",
+    "href": "web-ar/index.html#babylon.js",
+    "title": "Web & AR Integration",
+    "section": "Babylon.js",
+    "text": "Babylon.js\nBabylon.js ist eine quelloffene 3D-Engine, die im Browser über WebGL2 (bzw. WebGPU) rendert. Für unseren Anwendungsfall sind drei Eigenschaften entscheidend:\n\nNativer Gaussian-Splatting-Support — .splat, .ply und das komprimierte .spz werden direkt über den Scene-Loader geladen; kein eigener Shader nötig.\nWebXR integriert — derselbe Code läuft später als immersive AR-Session (siehe unten).\nLäuft überall — Desktop, Android-Chrome, iOS-Safari teilen sich eine Codebasis.\n\n\nSzene aufsetzen\nEine minimale Babylon-Szene braucht eine Engine (gebunden an ein &lt;canvas&gt;), eine Scene und eine Kamera. Für einen Splat-Viewer eignet sich die ArcRotateCamera (Orbit-Steuerung per Maus/Touch):\nconst canvas = document.getElementById(\"renderCanvas\");\nconst engine = new BABYLON.Engine(canvas, true);\n\nconst scene = new BABYLON.Scene(engine);\nconst camera = new BABYLON.ArcRotateCamera(\n  \"camera\", -Math.PI / 2, Math.PI / 2.2, 6, BABYLON.Vector3.Zero(), scene\n);\ncamera.attachControl(canvas, true);   // Maus-/Touch-Steuerung aktivieren\n\nengine.runRenderLoop(() =&gt; scene.render());\nwindow.addEventListener(\"resize\", () =&gt; engine.resize());\n\n\nSplat laden (.spz importieren)\nDas von Person B exportierte Modell wird über SceneLoader.ImportMeshAsync geladen. Der passende Loader wird automatisch an der Dateiendung erkannt (.splat, .ply, .spz):\n// Voraussetzung: babylonjs.loaders eingebunden (registriert den Splat-Loader)\nconst result = await BABYLON.SceneLoader.ImportMeshAsync(\n  null,                 // alle Meshes\n  \"models/\",            // Wurzelpfad\n  \"szene.spz\",          // Datei (von Person B)\n  scene\n);\n\nconst splat = result.meshes[0];       // GaussianSplattingMesh\nsplat.position.y = 0;\n\n.spz ist das komprimierte Splat-Format fürs Web (deutlich kleiner als .ply). Es wird ab Babylon.js 7 unterstützt und benötigt das babylonjs.loaders-Paket."
+  },
+  {
+    "objectID": "web-ar/index.html#interaktiver-splat-viewer",
+    "href": "web-ar/index.html#interaktiver-splat-viewer",
+    "title": "Web & AR Integration",
+    "section": "Interaktiver Splat-Viewer",
+    "text": "Interaktiver Splat-Viewer\nDer folgende Viewer läuft live auf dieser Seite. Mit der Maus (bzw. per Touch) rotieren, zoomen und verschieben; oben rechts lässt sich das Modell wechseln. Aktuell sind öffentliche Beispiel-Splats eingebunden — sie werden später durch unser eigenes Modell ersetzt.\n\n  \n  \n    Sqwakers\n    Plants\n    Skull\n    Halo\n  \n  Initialisiere …"
+  },
+  {
     "objectID": "web-ar/index.html#webxr",
     "href": "web-ar/index.html#webxr",
     "title": "Web & AR Integration",
     "section": "WebXR",
     "text": "WebXR"
-  },
-  {
-    "objectID": "web-ar/index.html#splat-viewer",
-    "href": "web-ar/index.html#splat-viewer",
-    "title": "Web & AR Integration",
-    "section": "Splat-Viewer",
-    "text": "Splat-Viewer"
   },
   {
     "objectID": "web-ar/index.html#ar-demo",

@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -139,9 +174,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#babylon.js" id="toc-babylon.js" class="nav-link active" data-scroll-target="#babylon.js">Babylon.js</a></li>
+  <li><a href="#babylon.js" id="toc-babylon.js" class="nav-link active" data-scroll-target="#babylon.js">Babylon.js</a>
+  <ul class="collapse">
+  <li><a href="#szene-aufsetzen" id="toc-szene-aufsetzen" class="nav-link" data-scroll-target="#szene-aufsetzen">Szene aufsetzen</a></li>
+  <li><a href="#splat-laden-.spz-importieren" id="toc-splat-laden-.spz-importieren" class="nav-link" data-scroll-target="#splat-laden-.spz-importieren">Splat laden (<code>.spz</code> importieren)</a></li>
+  </ul></li>
+  <li><a href="#interaktiver-splat-viewer" id="toc-interaktiver-splat-viewer" class="nav-link" data-scroll-target="#interaktiver-splat-viewer">Interaktiver Splat-Viewer</a></li>
   <li><a href="#webxr" id="toc-webxr" class="nav-link" data-scroll-target="#webxr">WebXR</a></li>
-  <li><a href="#splat-viewer" id="toc-splat-viewer" class="nav-link" data-scroll-target="#splat-viewer">Splat-Viewer</a></li>
   <li><a href="#ar-demo" id="toc-ar-demo" class="nav-link" data-scroll-target="#ar-demo">AR-Demo</a></li>
   <li><a href="#x-erweiterung" id="toc-x-erweiterung" class="nav-link" data-scroll-target="#x-erweiterung">“X”-Erweiterung</a></li>
   </ul>
@@ -169,19 +208,111 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- OWNER: Person C -->
-<!-- TODO Person C: Inhalte folgen in späteren Schritten (eigene Aufgabenliste). -->
+<!-- OWNER: Friedrich Commichau -->
+<p>3D Gaussian Splats lassen sich direkt im Browser darstellen — ohne Plugin, ohne App. Wir nutzen dafür <a href="https://www.babylonjs.com/">Babylon.js</a>, eine WebGL-/WebGPU-Engine, die seit Version 7 Gaussian Splatting <strong>nativ</strong> unterstützt.</p>
 <section id="babylon.js" class="level2">
 <h2 class="anchored" data-anchor-id="babylon.js">Babylon.js</h2>
-<!-- TODO: Szene aufsetzen, Splat laden, Code-Beispiele (.spz importieren). -->
+<p>Babylon.js ist eine quelloffene 3D-Engine, die im Browser über WebGL2 (bzw. WebGPU) rendert. Für unseren Anwendungsfall sind drei Eigenschaften entscheidend:</p>
+<ul>
+<li><strong>Nativer Gaussian-Splatting-Support</strong> — <code>.splat</code>, <code>.ply</code> und das komprimierte <code>.spz</code> werden direkt über den Scene-Loader geladen; kein eigener Shader nötig.</li>
+<li><strong>WebXR integriert</strong> — derselbe Code läuft später als immersive AR-Session (siehe unten).</li>
+<li><strong>Läuft überall</strong> — Desktop, Android-Chrome, iOS-Safari teilen sich eine Codebasis.</li>
+</ul>
+<section id="szene-aufsetzen" class="level3">
+<h3 class="anchored" data-anchor-id="szene-aufsetzen">Szene aufsetzen</h3>
+<p>Eine minimale Babylon-Szene braucht eine <code>Engine</code> (gebunden an ein <code>&lt;canvas&gt;</code>), eine <code>Scene</code> und eine Kamera. Für einen Splat-Viewer eignet sich die <code>ArcRotateCamera</code> (Orbit-Steuerung per Maus/Touch):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> canvas <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"renderCanvas"</span>)<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> engine <span class="op">=</span> <span class="kw">new</span> BABYLON<span class="op">.</span><span class="fu">Engine</span>(canvas<span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> scene <span class="op">=</span> <span class="kw">new</span> BABYLON<span class="op">.</span><span class="fu">Scene</span>(engine)<span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> camera <span class="op">=</span> <span class="kw">new</span> BABYLON<span class="op">.</span><span class="fu">ArcRotateCamera</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"camera"</span><span class="op">,</span> <span class="op">-</span><span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">/</span> <span class="fl">2.2</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> BABYLON<span class="op">.</span><span class="at">Vector3</span><span class="op">.</span><span class="fu">Zero</span>()<span class="op">,</span> scene</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>camera<span class="op">.</span><span class="fu">attachControl</span>(canvas<span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span>   <span class="co">// Maus-/Touch-Steuerung aktivieren</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>engine<span class="op">.</span><span class="fu">runRenderLoop</span>(() <span class="kw">=&gt;</span> scene<span class="op">.</span><span class="fu">render</span>())<span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"resize"</span><span class="op">,</span> () <span class="kw">=&gt;</span> engine<span class="op">.</span><span class="fu">resize</span>())<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="splat-laden-.spz-importieren" class="level3">
+<h3 class="anchored" data-anchor-id="splat-laden-.spz-importieren">Splat laden (<code>.spz</code> importieren)</h3>
+<p>Das von Person B exportierte Modell wird über <code>SceneLoader.ImportMeshAsync</code> geladen. Der passende Loader wird automatisch an der Dateiendung erkannt (<code>.splat</code>, <code>.ply</code>, <code>.spz</code>):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Voraussetzung: babylonjs.loaders eingebunden (registriert den Splat-Loader)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> result <span class="op">=</span> <span class="cf">await</span> BABYLON<span class="op">.</span><span class="at">SceneLoader</span><span class="op">.</span><span class="fu">ImportMeshAsync</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">null</span><span class="op">,</span>                 <span class="co">// alle Meshes</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"models/"</span><span class="op">,</span>            <span class="co">// Wurzelpfad</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"szene.spz"</span><span class="op">,</span>          <span class="co">// Datei (von Person B)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  scene</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> splat <span class="op">=</span> result<span class="op">.</span><span class="at">meshes</span>[<span class="dv">0</span>]<span class="op">;</span>       <span class="co">// GaussianSplattingMesh</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>splat<span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">y</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p><code>.spz</code> ist das komprimierte Splat-Format fürs Web (deutlich kleiner als <code>.ply</code>). Es wird ab Babylon.js 7 unterstützt und benötigt das <code>babylonjs.loaders</code>-Paket.</p>
+</blockquote>
+</section>
+</section>
+<section id="interaktiver-splat-viewer" class="level2">
+<h2 class="anchored" data-anchor-id="interaktiver-splat-viewer">Interaktiver Splat-Viewer</h2>
+<p>Der folgende Viewer läuft live auf dieser Seite. Mit der Maus (bzw. per Touch) rotieren, zoomen und verschieben; oben rechts lässt sich das Modell wechseln. Aktuell sind öffentliche Beispiel-Splats eingebunden — sie werden später durch unser eigenes Modell ersetzt.</p>
+<div id="splat-viewer" style="position:relative;width:100%;aspect-ratio:16/9;min-height:320px;border-radius:8px;overflow:hidden;background:#0d0d14;border:1px solid #2a2a35;">
+  <canvas id="renderCanvas" style="width:100%;height:100%;display:block;outline:none;touch-action:none;"></canvas>
+  <select id="splat-select" style="position:absolute;top:10px;right:10px;padding:4px 8px;border-radius:6px;border:1px solid #444;background:rgba(20,20,28,.85);color:#eee;font-size:13px;">
+    <option value="https://assets.babylonjs.com/splats/gs_Sqwakers_trimed.splat">Sqwakers</option>
+    <option value="https://assets.babylonjs.com/splats/gs_Plants.splat">Plants</option>
+    <option value="https://assets.babylonjs.com/splats/gs_Skull.splat">Skull</option>
+    <option value="https://assets.babylonjs.com/splats/Halo_Believe.splat">Halo</option>
+  </select>
+  <div id="splat-status" style="position:absolute;bottom:10px;left:10px;color:#cfcfe0;font-size:13px;background:rgba(20,20,28,.7);padding:3px 8px;border-radius:6px;">Initialisiere …</div>
+</div>
+
+<script src="https://cdn.babylonjs.com/babylon.js"></script>
+<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+<script>
+(function () {
+  if (window.__splatViewerInit) return;
+  window.__splatViewerInit = true;
+
+  const canvas = document.getElementById("renderCanvas");
+  const select = document.getElementById("splat-select");
+  const statusEl = document.getElementById("splat-status");
+  const setStatus = (t) => { statusEl.style.display = t ? "block" : "none"; statusEl.textContent = t; };
+
+  const engine = new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true });
+  const scene = new BABYLON.Scene(engine);
+  scene.clearColor = new BABYLON.Color4(0.05, 0.05, 0.08, 1);
+
+  const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.2, 6, BABYLON.Vector3.Zero(), scene);
+  camera.attachControl(canvas, true);
+  camera.wheelPrecision = 50;
+  camera.lowerRadiusLimit = 1.5;
+  camera.upperRadiusLimit = 25;
+  camera.minZ = 0.1;
+
+  let current = null;
+
+  async function loadSplat(url) {
+    if (current) { current.dispose(); current = null; }
+    setStatus("Lade Modell …");
+    try {
+      const result = await BABYLON.SceneLoader.ImportMeshAsync(null, "", url, scene);
+      current = result.meshes[0];
+      setStatus("");
+    } catch (e) {
+      setStatus("Fehler beim Laden: " + (e && e.message ? e.message : e));
+    }
+  }
+
+  engine.runRenderLoop(() => scene.render());
+  window.addEventListener("resize", () => engine.resize());
+  select.addEventListener("change", () => loadSplat(select.value));
+
+  loadSplat(select.value);
+})();
+</script>
 </section>
 <section id="webxr" class="level2">
 <h2 class="anchored" data-anchor-id="webxr">WebXR</h2>
 <!-- TODO: immersive-ar Session starten, Hit-Test, Objekt platzieren. -->
-</section>
-<section id="splat-viewer" class="level2">
-<h2 class="anchored" data-anchor-id="splat-viewer">Splat-Viewer</h2>
-<!-- TODO: Babylon.js-Canvas mit .spz-Modell von Person B einbetten (nach Übergabe). -->
 </section>
 <section id="ar-demo" class="level2">
 <h2 class="anchored" data-anchor-id="ar-demo">AR-Demo</h2>
