@@ -102,14 +102,14 @@
     "href": "index.html#inhalt-dieser-seite",
     "title": "Augmented Reality & 3D Gaussian Splatting im Web",
     "section": "Inhalt dieser Seite",
-    "text": "Inhalt dieser Seite\n\nTheorie & Methode — Geschichte, Repräsentation, Rendering und Optimierung von 3DGS.\nCapture & Pipeline — Use-Cases, Aufnahme und der Weg vom Foto zum trainierten Modell.\nWeb & AR — Darstellung mit Babylon.js und WebXR/AR im Browser."
+    "text": "Inhalt dieser Seite\n\nTheorie & Methodik — Geschichte, Repräsentation, Rendering und Optimierung von 3DGS.\nCapture & Pipeline — Use-Cases, Aufnahme und der Weg vom Foto zum trainierten Modell.\nWeb & AR — Darstellung mit Babylon.js und WebXR/AR im Browser."
   },
   {
     "objectID": "index.html#team",
     "href": "index.html#team",
     "title": "Augmented Reality & 3D Gaussian Splatting im Web",
     "section": "Team",
-    "text": "Team\n\n\n\nPerson\nBereich\n\n\n\n\nFriedrich Commichau\nWeb & AR Integration\n\n\nSven Fydrich\nCapture & Pipeline / Theorie & Methode\n\n\nDominik Pleimes\nCapture & Pipeline / Theorie & Methode"
+    "text": "Team\n\n\n\nPerson\nBereich\n\n\n\n\nSven Fydrich\nTheorie & Methodik\n\n\nDominik Pleimes\nCapture & Pipeline\n\n\nFriedrich Commichau\nWeb & AR Integration"
   },
   {
     "objectID": "theorie/index.html",
