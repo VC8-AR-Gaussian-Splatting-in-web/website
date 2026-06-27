@@ -268,14 +268,9 @@ WebXR-AR läuft derzeit zuverlässig auf **Android-Chrome**. Auf iOS-Safari und 
 </div>
 ```
 
-## "X": Begehung einer Szene (First-Person-Blick)
+## Upload und Begehung einer Szene (First-Person-Blick)
 
-Als eigene Ergänzung zeigen wir die Szene zusätzlich aus der **Ich-Perspektive**. Die
-Kamera steht an einem festen Punkt *in* der Szene; durch Ziehen mit der Maus (bzw. Wischen
-am Touchscreen) ändert sich der **Blickwinkel** — wie bei einem 360°-Panorama. Anders
-als beim Orbit-Viewer oben dreht man also nicht *um* das Objekt herum, sondern schaut sich
-**von innen um**.
-
+Als eigene Ergänzung zeigen wir den upload einer neuen Szene und ihre Begehung. 
 Per **Klick in die Szene** wechselt die Kamera reihum zwischen mehreren festen
 **Standpunkten** und schwenkt dabei sanft hinüber — eine kleine geführte Tour durch die
 Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.
@@ -284,9 +279,10 @@ Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.
 ```{=html}
 <div id="walk-viewer" style="position:relative;width:100%;aspect-ratio:16/9;min-height:320px;border-radius:8px;overflow:hidden;background:#0d0d14;border:1px solid #2a2a35;cursor:grab;">
   <canvas id="walkCanvas" style="width:100%;height:100%;display:block;outline:none;touch-action:none;"></canvas>
-  <div id="walk-status" style="position:absolute;bottom:10px;left:10px;color:#cfcfe0;font-size:13px;background:rgba(20,20,28,.7);padding:3px 8px;border-radius:6px;">Initialisiere …</div>
-  <div style="position:absolute;top:10px;left:10px;color:#cfcfe0;font-size:12px;background:rgba(20,20,28,.7);padding:3px 8px;border-radius:6px;pointer-events:none;">Klicken: nächster Standpunkt · Ziehen: umsehen</div>
-  <div id="walk-wp" style="position:absolute;bottom:10px;right:10px;color:#cfcfe0;font-size:12px;background:rgba(20,20,28,.7);padding:3px 8px;border-radius:6px;pointer-events:none;">Standpunkt 1 / 4</div>
+  <input id="walk-file" type="file" accept=".spz" style="position:absolute;top:10px;right:10px;max-width:60%;padding:4px 8px;border-radius:6px;border:1px solid #444;background:rgba(20,20,28,.85);color:#eee;font-size:12px;cursor:pointer;">
+  <div id="walk-status" style="position:absolute;bottom:10px;left:10px;color:#cfcfe0;font-size:13px;background:rgba(20,20,28,.7);padding:3px 8px;border-radius:6px;">Bitte eine .spz-Datei hochladen</div>
+  <div id="walk-hint" style="position:absolute;top:10px;left:10px;color:#cfcfe0;font-size:12px;background:rgba(20,20,28,.7);padding:3px 8px;border-radius:6px;pointer-events:none;display:none;">Klicken: nächster Standpunkt · Ziehen: umsehen</div>
+  <div id="walk-wp" style="position:absolute;bottom:10px;right:10px;color:#cfcfe0;font-size:12px;background:rgba(20,20,28,.7);padding:3px 8px;border-radius:6px;pointer-events:none;display:none;">Standpunkt 1 / 4</div>
 </div>
 
 <script>
@@ -301,40 +297,51 @@ Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.
     const wrap = document.getElementById("walk-viewer");
     const statusEl = document.getElementById("walk-status");
     const wpEl = document.getElementById("walk-wp");
+    const hint = document.getElementById("walk-hint");
     const setStatus = (t) => { statusEl.style.display = t ? "block" : "none"; statusEl.textContent = t; };
 
     const engine = new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true });
     const scene = new BABYLON.Scene(engine);
     scene.clearColor = new BABYLON.Color4(0.05, 0.05, 0.08, 1);
 
-    // --- Szenen-eigenes Koordinatensystem (auf diese Szene "normalisiert") ---
-    // Ursprung = FACE_TARGET (das Gesicht). FACE_VIEW ist der gefundene Standpunkt, von dem
-    // aus man frontal ins Gesicht blickt. Wir richten die Achsen daran aus:
-    //   z = Tiefe (Richtung gefundener Standpunkt) — wp(0,0,1) == FACE_VIEW (frontal)
-    //   x = seitlich (links/rechts), y = hoch/runter — jeweils senkrecht zur Blickrichtung.
-    // Alle drei Achsen sind gleich lang (= Abstand Gesicht→Standpunkt), das System ist also
-    // nur gedreht & gleichmäßig skaliert. wp(x,y,z) rechnet Szenen-Koordinaten in Welt um.
-    const FACE_TARGET = new BABYLON.Vector3(0, 0.1, 0);
-    const FACE_VIEW   = new BABYLON.Vector3(-2.0, 0.0, 1.5);
-    const AX_Z = FACE_VIEW.subtract(FACE_TARGET);                                // Tiefe ("1.0")
-    const _n   = AX_Z.clone().normalize();
-    const _len = AX_Z.length();
-    const AX_X = BABYLON.Vector3.Cross(BABYLON.Axis.Y, _n).normalize().scale(_len);   // seitlich
-    const AX_Y = BABYLON.Vector3.Cross(_n, AX_X.clone().normalize()).scale(_len);     // hoch/runter
-    const wp = (x, y, z) => FACE_TARGET.add(AX_X.scale(x)).add(AX_Y.scale(y)).add(AX_Z.scale(z));
+    // --- Szenen-eigenes Koordinatensystem (auf die geladene Szene "normalisiert") ---
+    // CENTER = Mittelpunkt der hochgeladenen Szene (aus der Bounding-Box). Von dort aus
+    // bauen wir ein gedrehtes, gleichmäßig skaliertes System auf:
+    //   z = Tiefe, x = seitlich (links/rechts), y = hoch/runter.
+    // RADIUS skaliert die Standpunkte mit der Szenengröße. wp(x,y,z) → Welt-Koordinate.
+    // CENTER, WAYPOINTS und wp werden pro Upload in rebaseTour() neu berechnet.
+    let CENTER = BABYLON.Vector3.Zero();
+    let wp = (x, y, z) => CENTER;
+    let WAYPOINTS = [{ pos: CENTER.clone(), target: new BABYLON.Vector3(0, 0, 1) }];
 
-    // Vier frei wählbare Standpunkte – jetzt in Szenen-Koordinaten (x=seitlich, y=hoch, z=Tiefe).
-    // wp(0,0,1) gefundener Frontal-Blick; einfach die Zahlen anpassen.
-    // (Werte später für eigenen Raum-.spz anpassen.)
-    const WAYPOINTS = [
-      { pos: wp( 0.0, 0.0, 1.0), target: FACE_TARGET }, // frontal
-      { pos: wp( 1.0, 0.0, 0.0), target: FACE_TARGET }, // von links
-      { pos: wp( 0.0, 0.0, -1.0), target: FACE_TARGET }, // von hinten
-      { pos: wp( -1.0, 0.0, 0.0), target: FACE_TARGET }, // von rechts
-      // { pos: wp( 0.0, 1.5, 1.0), target: FACE_TARGET }, // von oben
-    ];
+    function rebaseTour(mesh) {
+      mesh.refreshBoundingInfo(true);
+      const bb = mesh.getBoundingInfo().boundingBox;
+      CENTER = bb.centerWorld.clone();
+      // Halbe Diagonale der Bounding-Box als Bezugsradius (Abstand der Standpunkte zur Mitte).
+      const RADIUS = Math.max(bb.maximumWorld.subtract(bb.minimumWorld).length() * 0.5, 0.5);
+      const AX_Z = new BABYLON.Vector3(0, 0, RADIUS);   // Tiefe
+      const AX_X = new BABYLON.Vector3(RADIUS, 0, 0);   // seitlich
+      const AX_Y = new BABYLON.Vector3(0, RADIUS, 0);   // hoch/runter
+      wp = (x, y, z) => CENTER.add(AX_X.scale(x)).add(AX_Y.scale(y)).add(AX_Z.scale(z));
 
-    // Feste Position, nur Blickrichtung drehbar (Look-around); Position wechselt per Klick.
+      // Standpunkte rund um die Szenenmitte, jeweils auf die Mitte blickend (x=seitlich, y=hoch, z=Tiefe).
+      WAYPOINTS = [
+        { pos: CENTER.clone(),     target: wp(0, 0, 1) },   // in der Mitte, Blick nach vorn
+        { pos: wp( 0.8, 0.0,  0.8), target: CENTER.clone() }, // vorne rechts
+        { pos: wp(-0.8, 0.0,  0.8), target: CENTER.clone() }, // vorne links
+        { pos: wp(-0.8, 0.0, -0.8), target: CENTER.clone() }, // hinten links
+        { pos: wp( 0.8, 0.0, -0.8), target: CENTER.clone() }, // hinten rechts
+      ];
+
+      // Kamera in die Mitte der Szene setzen und nach vorn ausrichten.
+      currentWp = 0;
+      camera.position.copyFrom(WAYPOINTS[0].pos);
+      camera.setTarget(WAYPOINTS[0].target);
+      updateLabel(0);
+    }
+
+    // Position wechselt per Klick; dazwischen frei umsehen (Look-around).
     const camera = new BABYLON.UniversalCamera("fp", WAYPOINTS[0].pos.clone(), scene);
     camera.setTarget(WAYPOINTS[0].target);
     camera.attachControl(canvas, true);
@@ -390,12 +397,29 @@ Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.
       }
     });
 
-    // Beispiel-Splat; wird später durch das eigene .spz-Modell ersetzt.
-    const url = "https://assets.babylonjs.com/splats/gs_Skull.splat";
-    setStatus("Lade Modell …");
-    BABYLON.SceneLoader.ImportMeshAsync(null, "", url, scene)
-      .then(() => setStatus(""))
-      .catch((e) => setStatus("Fehler beim Laden: " + (e && e.message ? e.message : e)));
+    // ---- Upload: .spz-Datei laden und Tour auf die neue Szene re-basieren ----
+    const fileInput = document.getElementById("walk-file");
+    let current = null;   // aktuell geladenes Splat-Mesh
+
+    async function loadSplatFromFile(file) {
+      if (!file) return;
+      if (current) { current.dispose(); current = null; }
+      hint.style.display = "none"; wpEl.style.display = "none";
+      setStatus("Lade Modell …");
+      try {
+        // File-Objekt direkt als sceneFilename; pluginExtension erzwingt den .spz-Loader.
+        const result = await BABYLON.SceneLoader.ImportMeshAsync(null, "", file, scene, null, ".spz");
+        current = result.meshes[0];
+        if (!current.rotationQuaternion) current.rotationQuaternion = new BABYLON.Quaternion();
+        rebaseTour(current);          // Kamera in die Mitte, Standpunkte rund um die Szene
+        hint.style.display = "block"; wpEl.style.display = "block";
+        setStatus("");
+      } catch (e) {
+        setStatus("Fehler beim Laden: " + (e && e.message ? e.message : e));
+      }
+    }
+
+    fileInput.addEventListener("change", () => loadSplatFromFile(fileInput.files[0]));
 
     engine.runRenderLoop(() => scene.render());
     window.addEventListener("resize", () => engine.resize());
@@ -409,5 +433,3 @@ Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.
 })();
 </script>
 ```
-
-> Wir ersetzen die szene durch unser .spz.

@@ -13,6 +13,7 @@ website:
       - { href: theorie/index.qmd, text: "Theorie & Methodik" }
       - { href: pipeline/index.qmd, text: "Capture & Pipeline" }
       - { href: web-ar/index.qmd, text: "Web & AR" }
+      - { href: demo/index.qmd, text: "Demo" }
     right:
       - {
           icon: github,

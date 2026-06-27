@@ -1,0 +1,281 @@
+---
+title: "Demo"
+---
+
+<!-- OWNER: Friedrich Commichau -->
+
+So einfach baust du einen 3D Gaussian Splat in deine eigene Webseite ein. Bearbeite den
+HTML-Code und die Vorschau rendert ihn live. 
+In wenigen schritten kannst du auf jeder Webseite deine Gaussian Splatts rendern.
+
+```{=html}
+<style>
+  .demo-editor { display:flex; flex-direction:column; gap:12px; margin:1rem 0; }
+  .demo-pane { display:flex; flex-direction:column; }
+  .demo-toolbar { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px; }
+  .demo-btn {
+    padding:6px 12px; border-radius:6px; border:1px solid #2a2a35;
+    background:#1a1a24; color:#eee; font-size:13px; cursor:pointer;
+  }
+  .demo-btn:hover { background:#26263340; border-color:#444; }
+  .demo-btn-primary { background:#2d6cdf; border-color:#2d6cdf; }
+  .demo-btn-primary:hover { background:#3a78ea; }
+  .demo-label { color:#8a8a9a; font-size:12px; margin-bottom:6px; }
+  .demo-stepper {
+    margin:1rem 0; padding:14px 16px; border:1px solid #2a2a35;
+    border-radius:8px; background:#11111a;
+  }
+  .demo-step-head { display:flex; align-items:baseline; gap:10px; margin-bottom:6px; }
+  .demo-step-num {
+    font-size:12px; font-weight:600; color:#2d6cdf; letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+  .demo-step-title { font-size:16px; font-weight:600; color:#f0f0f6; margin:0; }
+  .demo-step-desc { color:#b8b8c6; font-size:14px; margin:0 0 10px; }
+  .demo-step-code {
+    margin:0 0 12px; padding:12px; overflow:auto; max-height:240px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12.5px;
+    line-height:1.5; tab-size:2; color:#e6e6f0; background:#0d0d14;
+    border:1px solid #2a2a35; border-radius:6px; white-space:pre;
+  }
+  .demo-step-nav { display:flex; gap:8px; align-items:center; }
+  .demo-btn:disabled { opacity:.4; cursor:not-allowed; }
+  #demo-code {
+    width:100%; min-height:120px; resize:none; overflow:hidden;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13px;
+    line-height:1.5; tab-size:2; padding:12px; box-sizing:border-box;
+    color:#e6e6f0; background:#0d0d14; border:1px solid #2a2a35; border-radius:8px;
+    outline:none;
+  }
+  #demo-preview {
+    width:100%; flex:1; min-height:360px;
+    background:#0d0d14; border:1px solid #2a2a35; border-radius:8px;
+  }
+</style>
+
+<div class="demo-editor">
+  <div class="demo-pane">
+    <div class="demo-toolbar">
+      <button class="demo-btn demo-btn-primary" id="demo-run">▶ Ausführen</button>
+      <button class="demo-btn" id="demo-reset">↺ Zurücksetzen</button>
+    </div>
+    <div class="demo-label">HTML-Code</div>
+    <textarea id="demo-code" spellcheck="false"></textarea>
+  </div>
+
+
+  <div class="demo-stepper">
+    <div class="demo-step-head">
+      <span class="demo-step-num" id="demo-step-num">Ausgangspunkt</span>
+      <h3 class="demo-step-title" id="demo-step-title">Hello World</h3>
+    </div>
+    <p class="demo-step-desc" id="demo-step-desc">Wir starten mit einer schlichten HTML-Seite.</p>
+    <pre class="demo-step-code" id="demo-step-code"></pre>
+    <div class="demo-step-nav">
+      <button class="demo-btn" id="demo-prev">← Zurück</button>
+      <button class="demo-btn demo-btn-primary" id="demo-next">Nächster Schritt →</button>
+    </div>
+  </div>
+  <div class="demo-pane">
+    <div class="demo-label">Vorschau</div>
+    <iframe id="demo-preview" sandbox="allow-scripts" title="Live-Vorschau"></iframe>
+  </div>
+</div>
+
+
+<script>
+(function () {
+  var HELLO_WORLD = [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<head><meta charset=\"utf-8\"></head>",
+    "<body style=\"font-family:sans-serif;padding:24px;color:#fff;\">",
+    "  <h1>Hello World</h1>",
+    "  <p>Bearbeite den Code und die Vorschau aktualisiert sich automatisch.</p>",
+    "</body>",
+    "</html>"
+  ].join("\n");
+
+  // HTML-Gerüst, in das die kumulierten JS-Zeilen eingesetzt werden.
+  // %JS% wird durch die JS-Zeilen der Schritte 1..N ersetzt.
+  var SCAFFOLD = [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<head>",
+    "  <meta charset=\"utf-8\">",
+    "  <style>",
+    "    html,body{margin:0;height:100%;overflow:hidden;background:#0d0d14;}",
+    "    #c{width:100%;height:100%;display:block;touch-action:none;}",
+    "  </style>",
+    "</head>",
+    "<body>",
+    "  <canvas id=\"c\"></canvas>",
+    "  <script src=\"https://cdn.babylonjs.com/babylon.js\"><\/script>",
+    "  <script src=\"https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js\"><\/script>",
+    "  <script>",
+    "%JS%",
+    "  <\/script>",
+    "</body>",
+    "</html>"
+  ].join("\n");
+
+  // Jeder Schritt: title, desc, delta (angezeigtes Snippet) und js (kumulierte Zeilen).
+  var STEPS = [
+    {
+      title: "Babylon.js importieren",
+      desc: "Ein <canvas> als Zeichenflaeche und die zwei Babylon-Bibliotheken von der CDN. Der Loader registriert die Splat-Formate.",
+      delta: [
+        "<canvas id=\"c\"></canvas>",
+        "<script src=\"https://cdn.babylonjs.com/babylon.js\"><\/script>",
+        "<script src=\"https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js\"><\/script>"
+      ].join("\n"),
+      js: []
+    },
+    {
+      title: "Szene aufsetzen",
+      desc: "Engine an den Canvas binden, eine Scene erstellen, Hintergrundfarbe setzen und die Render-Schleife starten.",
+      delta: [
+        "const canvas = document.getElementById('c');",
+        "const engine = new BABYLON.Engine(canvas, true);",
+        "const scene = new BABYLON.Scene(engine);",
+        "scene.clearColor = new BABYLON.Color4(0.05, 0.05, 0.08, 1);",
+        "",
+        "engine.runRenderLoop(function () { scene.render(); });",
+        "window.addEventListener('resize', function () { engine.resize(); });"
+      ].join("\n"),
+      js: [
+        "    const canvas = document.getElementById('c');",
+        "    const engine = new BABYLON.Engine(canvas, true);",
+        "    const scene = new BABYLON.Scene(engine);",
+        "    scene.clearColor = new BABYLON.Color4(0.05, 0.05, 0.08, 1);",
+        "",
+        "    engine.runRenderLoop(function () { scene.render(); });",
+        "    window.addEventListener('resize', function () { engine.resize(); });"
+      ]
+    },
+    {
+      title: "Kamera platzieren",
+      desc: "Eine ArcRotateCamera umkreist einen Zielpunkt. Erst mit einer Kamera wird die Szene sichtbar gerendert.",
+      delta: [
+        "const camera = new BABYLON.ArcRotateCamera(",
+        "  'cam', -Math.PI / 2, Math.PI / 2.2, 6, BABYLON.Vector3.Zero(), scene",
+        ");"
+      ].join("\n"),
+      js: [
+        "",
+        "    const camera = new BABYLON.ArcRotateCamera(",
+        "      'cam', -Math.PI / 2, Math.PI / 2.2, 6, BABYLON.Vector3.Zero(), scene",
+        "    );"
+      ]
+    },
+    {
+      title: "Steuerung hinzufügen",
+      desc: "attachControl aktiviert Maus- und Touch-Steuerung; wheelPrecision bestimmt die Zoom-Geschwindigkeit.",
+      delta: [
+        "camera.attachControl(canvas, true);",
+        "camera.wheelPrecision = 50;"
+      ].join("\n"),
+      js: [
+        "    camera.attachControl(canvas, true);",
+        "    camera.wheelPrecision = 50;"
+      ]
+    },
+    {
+      title: "Splat laden",
+      desc: "ImportMeshAsync laedt den Gaussian Splat. Der passende Loader wird an der Dateiendung erkannt.",
+      delta: [
+        "BABYLON.SceneLoader.ImportMeshAsync(",
+        "  null, '', 'https://assets.babylonjs.com/splats/gs_Skull.splat', scene",
+        ");"
+      ].join("\n"),
+      js: [
+        "",
+        "    // Splat laden - der Loader wird an der Dateiendung erkannt",
+        "    BABYLON.SceneLoader.ImportMeshAsync(",
+        "      null, '', 'https://assets.babylonjs.com/splats/gs_Skull.splat', scene",
+        "    );"
+      ]
+    }
+  ];
+
+  // Vollstaendiges Dokument bis einschliesslich Schritt N (1-basiert).
+  function buildDoc(upto) {
+    var lines = [];
+    for (var i = 0; i < upto; i++) {
+      lines = lines.concat(STEPS[i].js);
+    }
+    return SCAFFOLD.replace("%JS%", lines.join("\n"));
+  }
+
+  function init() {
+    var code = document.getElementById("demo-code");
+    var preview = document.getElementById("demo-preview");
+    var numEl = document.getElementById("demo-step-num");
+    var titleEl = document.getElementById("demo-step-title");
+    var descEl = document.getElementById("demo-step-desc");
+    var codeEl = document.getElementById("demo-step-code");
+    var prevBtn = document.getElementById("demo-prev");
+    var nextBtn = document.getElementById("demo-next");
+    var timer = null;
+    var idx = 0; // 0 = Hello World, 1..STEPS.length = nach Schritt N
+
+    function render() { preview.srcdoc = code.value; }
+
+    function autoResize() {
+      code.style.height = "auto";
+      code.style.height = code.scrollHeight + "px";
+    }
+
+    function syncPanel() {
+      if (idx === 0) {
+        numEl.textContent = "Ausgangspunkt";
+        titleEl.textContent = "Hello World";
+        descEl.textContent = "Wir starten mit einer schlichten HTML-Seite.";
+        codeEl.textContent = HELLO_WORLD;
+      } else {
+        var step = STEPS[idx - 1];
+        numEl.textContent = "Schritt " + idx + " / " + STEPS.length;
+        titleEl.textContent = step.title;
+        descEl.textContent = step.desc;
+        codeEl.textContent = step.delta;
+      }
+      prevBtn.disabled = (idx === 0);
+      nextBtn.disabled = (idx === STEPS.length);
+    }
+
+    function loadCurrent() {
+      code.value = (idx === 0) ? HELLO_WORLD : buildDoc(idx);
+      render();
+      syncPanel();
+      autoResize();
+    }
+
+    loadCurrent();
+
+    code.addEventListener("input", function () {
+      autoResize();
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(render, 600);
+    });
+
+    document.getElementById("demo-run").addEventListener("click", render);
+    document.getElementById("demo-reset").addEventListener("click", function () {
+      idx = 0;
+      loadCurrent();
+    });
+    prevBtn.addEventListener("click", function () {
+      if (idx > 0) { idx--; loadCurrent(); }
+    });
+    nextBtn.addEventListener("click", function () {
+      if (idx < STEPS.length) { idx++; loadCurrent(); }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
+```
