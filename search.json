@@ -35,11 +35,11 @@
     "text": "AR-Demo\nWebXR-AR läuft derzeit zuverlässig auf Android-Chrome. Auf iOS-Safari und Desktop ist immersive-ar nicht verfügbar — dort den Orbit-Viewer oben nutzen.\n\n\n  \n    In AR ansehen\n    Prüfe Geräteunterstützung …\n  \n  \n    \n    Scannen für die Live-Seite"
   },
   {
-    "objectID": "web-ar/index.html#x-begehung-einer-szene-first-person-blick",
-    "href": "web-ar/index.html#x-begehung-einer-szene-first-person-blick",
+    "objectID": "web-ar/index.html#upload-und-begehung-einer-szene-first-person-blick",
+    "href": "web-ar/index.html#upload-und-begehung-einer-szene-first-person-blick",
     "title": "Web & AR Integration",
-    "section": "“X”: Begehung einer Szene (First-Person-Blick)",
-    "text": "“X”: Begehung einer Szene (First-Person-Blick)\nAls eigene Ergänzung zeigen wir die Szene zusätzlich aus der Ich-Perspektive. Die Kamera steht an einem festen Punkt in der Szene; durch Ziehen mit der Maus (bzw. Wischen am Touchscreen) ändert sich der Blickwinkel — wie bei einem 360°-Panorama. Anders als beim Orbit-Viewer oben dreht man also nicht um das Objekt herum, sondern schaut sich von innen um.\nPer Klick in die Szene wechselt die Kamera reihum zwischen mehreren festen Standpunkten und schwenkt dabei sanft hinüber — eine kleine geführte Tour durch die Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.\n\n  \n  Initialisiere …\n  Klicken: nächster Standpunkt · Ziehen: umsehen\n  Standpunkt 1 / 4\n\n\n\n\nWir ersetzen die szene durch unser .spz."
+    "section": "Upload und Begehung einer Szene (First-Person-Blick)",
+    "text": "Upload und Begehung einer Szene (First-Person-Blick)\nAls eigene Ergänzung zeigen wir den upload einer neuen Szene und ihre Begehung. Per Klick in die Szene wechselt die Kamera reihum zwischen mehreren festen Standpunkten und schwenkt dabei sanft hinüber — eine kleine geführte Tour durch die Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.\n\n  \n  \n  Bitte eine .spz-Datei hochladen\n  Klicken: nächster Standpunkt · Ziehen: umsehen\n  Standpunkt 1 / 4"
   },
   {
     "objectID": "pipeline/index.html#use-cases",
@@ -89,6 +89,13 @@
     "title": "Capture & Pipeline",
     "section": "Modell-Galerie",
     "text": "Modell-Galerie"
+  },
+  {
+    "objectID": "demo/index.html",
+    "href": "demo/index.html",
+    "title": "Demo",
+    "section": "",
+    "text": "So einfach baust du einen 3D Gaussian Splat in deine eigene Webseite ein. Bearbeite den HTML-Code und die Vorschau rendert ihn live. In wenigen schritten kannst du auf jeder Webseite deine Gaussian Splatts rendern.\n\n\n\n  \n    \n      ▶ Ausführen\n      ↺ Zurücksetzen\n    \n    HTML-Code\n    \n  \n\n\n  \n    \n      Ausgangspunkt\n      Hello World\n    \n    Wir starten mit einer schlichten HTML-Seite.\n    \n    \n      ← Zurück\n      Nächster Schritt →\n    \n  \n  \n    Vorschau"
   },
   {
     "objectID": "index.html",

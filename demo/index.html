@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Theorie &amp; Methodik – 3D Gaussian Splatting im Web</title>
+<title>Demo – 3D Gaussian Splatting im Web</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../theorie/index.html" aria-current="page"> 
+    <a class="nav-link" href="../theorie/index.html"> 
 <span class="menu-text">Theorie &amp; Methodik</span></a>
   </li>  
   <li class="nav-item">
@@ -109,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Web &amp; AR</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../demo/index.html"> 
+    <a class="nav-link active" href="../demo/index.html" aria-current="page"> 
 <span class="menu-text">Demo</span></a>
   </li>  
 </ul>
@@ -130,39 +130,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#einleitung" id="toc-einleitung" class="nav-link active" data-scroll-target="#einleitung">1. Einleitung</a>
-  <ul class="collapse">
-  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation">1.1 Motivation</a></li>
-  <li><a href="#zielsetzung" id="toc-zielsetzung" class="nav-link" data-scroll-target="#zielsetzung">1.2 Zielsetzung</a></li>
-  <li><a href="#forschungsfrage" id="toc-forschungsfrage" class="nav-link" data-scroll-target="#forschungsfrage">1.3 Forschungsfrage</a></li>
-  </ul></li>
-  <li><a href="#grundlagen" id="toc-grundlagen" class="nav-link" data-scroll-target="#grundlagen">2. Grundlagen</a>
-  <ul class="collapse">
-  <li><a href="#augmented-reality" id="toc-augmented-reality" class="nav-link" data-scroll-target="#augmented-reality">2.1 Augmented Reality</a></li>
-  <li><a href="#webxr" id="toc-webxr" class="nav-link" data-scroll-target="#webxr">2.2 WebXR</a></li>
-  <li><a href="#d-repräsentationen" id="toc-d-repräsentationen" class="nav-link" data-scroll-target="#d-repräsentationen">2.3 3D-Repräsentationen</a></li>
-  <li><a href="#gaussian-splatting" id="toc-gaussian-splatting" class="nav-link" data-scroll-target="#gaussian-splatting">2.4 Gaussian Splatting</a></li>
-  </ul></li>
-  <li><a href="#webxr-und-3dgs" id="toc-webxr-und-3dgs" class="nav-link" data-scroll-target="#webxr-und-3dgs">3. WebXR und 3DGS</a>
-  <ul class="collapse">
-  <li><a href="#motivation-der-kombination" id="toc-motivation-der-kombination" class="nav-link" data-scroll-target="#motivation-der-kombination">3.1 Motivation der Kombination</a></li>
-  <li><a href="#technische-architektur" id="toc-technische-architektur" class="nav-link" data-scroll-target="#technische-architektur">3.2 Technische Architektur</a></li>
-  <li><a href="#herausforderungen" id="toc-herausforderungen" class="nav-link" data-scroll-target="#herausforderungen">3.3 Herausforderungen</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Theorie &amp; Methodik</h1>
+<h1 class="title">Demo</h1>
 </div>
 
 
@@ -179,315 +155,279 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- OWNER: Person A -->
-<section id="einleitung" class="level2">
-<h2 class="anchored" data-anchor-id="einleitung">1. Einleitung</h2>
-<section id="motivation" class="level3">
-<h3 class="anchored" data-anchor-id="motivation">1.1 Motivation</h3>
-<p>Die Darstellung und Interaktion mit 3D-Inhalten im Web hat sich in den letzten Jahren stark weiterentwickelt. Während früher vor allem polygonbasierte Modelle eingesetzt wurden, entstehen heute zunehmend datengetriebene und lernbasierte Repräsentationen von 3D-Szenen. Gleichzeitig wächst der Bedarf, solche Inhalte direkt im Browser erlebbar zu machen – ohne spezielle Software oder High-End-Workstations.</p>
-<p>Ein besonders interessanter Trend ist die Kombination von Augmented Reality (AR) mit modernen 3D-Rekonstruktionsverfahren wie 3D Gaussian Splatting (3DGS). Dadurch können realistische Szenen effizient dargestellt und in Echtzeit in die reale Umgebung eingebettet werden.</p>
-<p>Webbasierte AR-Lösungen ermöglichen zudem einen niederschwelligen Zugang: Nutzer benötigen lediglich einen Browser und ein Endgerät mit Kamera. Dadurch entstehen neue Anwendungsmöglichkeiten in Bereichen wie Bildung, E-Commerce, Architektur und Kulturvermittlung.</p>
-</section>
-<section id="zielsetzung" class="level3">
-<h3 class="anchored" data-anchor-id="zielsetzung">1.2 Zielsetzung</h3>
-<p>Ziel dieser Präsentation ist es, die theoretischen Grundlagen von Augmented Reality im Web (WebXR) sowie moderne 3D-Repräsentationen zu erläutern und anschließend 3D Gaussian Splatting als neuartige Methode der 3D-Szenendarstellung einzuordnen.</p>
-<p>Darauf aufbauend wird untersucht, wie sich 3DGS mit WebXR kombinieren lässt, um immersive AR-Erlebnisse im Browser zu ermöglichen. Dabei stehen insbesondere die technischen Grundlagen, Vorteile und Einschränkungen im Fokus.</p>
-</section>
-<section id="forschungsfrage" class="level3">
-<h3 class="anchored" data-anchor-id="forschungsfrage">1.3 Forschungsfrage</h3>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Zentrale Fragestellung
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Wie kann <strong>3D Gaussian Splatting</strong> effizient in <strong>WebXR-basierte Augmented-Reality-Anwendungen</strong> integriert werden, und welche technischen Herausforderungen ergeben sich dabei?</p>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="grundlagen" class="level2">
-<h2 class="anchored" data-anchor-id="grundlagen">2. Grundlagen</h2>
-<section id="augmented-reality" class="level3">
-<h3 class="anchored" data-anchor-id="augmented-reality">2.1 Augmented Reality</h3>
-<p>Augmented Reality bezeichnet die Erweiterung der realen Welt durch digitale Inhalte in Echtzeit. Dabei werden virtuelle Objekte in das Kamerabild der realen Umgebung eingeblendet und räumlich korrekt verankert.</p>
-<p><strong>Zentrale Anforderungen an AR-Systeme:</strong></p>
-<ul>
-<li>Tracking der Geräteposition und -orientierung</li>
-<li>Echtzeit-Rendering</li>
-<li>Konsistente Integration virtueller Objekte in die reale Szene</li>
-<li>Interaktion zwischen Nutzer und virtuellen Inhalten</li>
-</ul>
-<p>Typische Einsatzbereiche sind Navigation, Industrie, Medizin und Entertainment.</p>
-</section>
-<section id="webxr" class="level3">
-<h3 class="anchored" data-anchor-id="webxr">2.2 WebXR</h3>
-<p>WebXR ist eine Web-API, die den Zugriff auf AR- und VR-Funktionalitäten direkt im Browser ermöglicht. Sie ist der Nachfolger von WebVR und unterstützt sowohl Virtual Reality als auch Augmented Reality.</p>
-<p><strong>Die wichtigsten Eigenschaften von WebXR:</strong></p>
-<ul>
-<li><strong>Plattformunabhängigkeit</strong> — Browser als Runtime</li>
-<li><strong>Gerätevielfalt</strong> — Smartphones, AR-Brillen, Headsets</li>
-<li><strong>Sensorzugriff</strong> — Kamera, Gyroskop, Beschleunigungssensor</li>
-<li><strong>Rendering</strong> — Integration mit WebGL/WebGPU</li>
-</ul>
-<p>WebXR ermöglicht damit die Entwicklung von immersiven Anwendungen ohne native Installation.</p>
-</section>
-<section id="d-repräsentationen" class="level3">
-<h3 class="anchored" data-anchor-id="d-repräsentationen">2.3 3D-Repräsentationen</h3>
-<p>3D-Daten können auf unterschiedliche Weise dargestellt werden. Die Wahl der Repräsentation beeinflusst Speicherbedarf, Rendering-Performance und Realismus.</p>
-<section id="polygonale-modelle" class="level4">
-<h4 class="anchored" data-anchor-id="polygonale-modelle">Polygonale Modelle</h4>
-<p>Polygonale Modelle sind die klassische Form der 3D-Darstellung. Objekte werden durch Dreiecke (Meshes) approximiert.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Vorteile</strong></p>
-<ul>
-<li>Hardwarebeschleunigt durch GPUs</li>
-<li>Standard in Game Engines und WebGL</li>
-<li>Gut editierbar</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Nachteile</strong></p>
-<ul>
-<li>Begrenzte Detailtiefe</li>
-<li>Aufwändige Modellierung für realistische Szenen</li>
-<li>Schwierigkeiten bei komplexen realen Strukturen</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="punktwolken" class="level4">
-<h4 class="anchored" data-anchor-id="punktwolken">Punktwolken</h4>
-<p>Punktwolken bestehen aus einer Menge einzelner 3D-Punkte, meist aus LiDAR- oder Photogrammetrie-Daten.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Vorteile</strong></p>
-<ul>
-<li>Direkte Repräsentation von Messdaten</li>
-<li>Kein Mesh erforderlich</li>
-<li>Gut für reale Scans geeignet</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Nachteile</strong></p>
-<ul>
-<li>Keine explizite Oberflächenstruktur</li>
-<li>Rendering oft unruhig oder verrauscht</li>
-<li>Hoher Speicherbedarf bei großen Szenen</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="nerf-neural-radiance-fields" class="level4">
-<h4 class="anchored" data-anchor-id="nerf-neural-radiance-fields">NeRF (Neural Radiance Fields)</h4>
-<p>NeRF basiert auf neuronalen Netzen, die eine Szene als kontinuierliche Funktion modellieren. Für jeden 3D-Punkt und Blickrichtung wird Farbe und Dichte vorhergesagt.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Vorteile</strong></p>
-<ul>
-<li>Sehr hoher Realismus</li>
-<li>Physikalisch konsistente Lichtdarstellung</li>
-<li>Keine explizite Geometrie notwendig</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Nachteile</strong></p>
-<ul>
-<li>Sehr rechenintensiv</li>
-<li>Lange Trainingszeiten</li>
-<li>Echtzeitfähigkeit lange eingeschränkt</li>
-</ul>
-</div>
-</div>
-</section>
-</section>
-<section id="gaussian-splatting" class="level3">
-<h3 class="anchored" data-anchor-id="gaussian-splatting">2.4 Gaussian Splatting</h3>
-<p>3D Gaussian Splatting (3DGS) ist eine relativ neue Methode zur Darstellung von 3D-Szenen, die auf einer Menge von anisotropen Gaussians im Raum basiert. Statt Meshes oder NeRF-Funktionen wird die Szene durch viele kleine „Gauss-Kerne” beschrieben:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Parameter</th>
-<th>Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Position</strong></td>
-<td>Koordinaten im 3D-Raum</td>
-</tr>
-<tr class="even">
-<td><strong>Kovarianz</strong></td>
-<td>Form und Ausrichtung des Gaussians</td>
-</tr>
-<tr class="odd">
-<td><strong>Farbe</strong></td>
-<td>Spherical Harmonics (richtungsabhängig)</td>
-</tr>
-<tr class="even">
-<td><strong>Opazität</strong></td>
-<td>Transparenzwert (Alpha)</td>
-</tr>
-</tbody>
-</table>
-<p>Diese Gaussians werden direkt in den Bildraum projiziert und als sogenannte „Splats” gerendert.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Vorteile</strong></p>
-<ul>
-<li>Sehr hohe Rendergeschwindigkeit (nahe Echtzeit)</li>
-<li>Hohe visuelle Qualität, oft vergleichbar mit NeRF</li>
-<li>Gute Darstellung feiner Details (Haare, Vegetation)</li>
-<li>Effizienter als viele NeRF-Varianten</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Nachteile</strong></p>
-<ul>
-<li>Speicherintensiv bei großen Szenen</li>
-<li>Schwierige Editierbarkeit im Vergleich zu Meshes</li>
-<li>Noch wenig standardisierte Pipeline im Webbereich</li>
-<li>Abhängigkeit von guten Trainingsdaten</li>
-</ul>
-</div>
-</div>
-<p>3DGS stellt somit einen Kompromiss zwischen klassischer Geometrie und neuronalen Methoden dar und gewinnt aktuell stark an Bedeutung in Forschung und Praxis.</p>
-<hr>
-</section>
-</section>
-<section id="webxr-und-3dgs" class="level2">
-<h2 class="anchored" data-anchor-id="webxr-und-3dgs">3. WebXR und 3DGS</h2>
-<section id="motivation-der-kombination" class="level3">
-<h3 class="anchored" data-anchor-id="motivation-der-kombination">3.1 Motivation der Kombination</h3>
-<p>Die Kombination von WebXR und 3D Gaussian Splatting ist besonders interessant, weil sie zwei aktuelle Entwicklungen zusammenführt:</p>
-<ul>
-<li><strong>WebXR</strong> ermöglicht plattformunabhängige AR im Browser</li>
-<li><strong>3DGS</strong> ermöglicht hochrealistische 3D-Szenen in Echtzeit</li>
-</ul>
-<p>Gemeinsam eröffnen sie die Möglichkeit, fotorealistische AR-Erlebnisse ohne App-Installation direkt im Web bereitzustellen.</p>
-<p><strong>Mögliche Anwendungen:</strong></p>
-<ul>
-<li>Virtuelle Produktplatzierungen im E-Commerce</li>
-<li>Architekturvisualisierung in realer Umgebung</li>
-<li>Digitale Zwillinge historischer Orte</li>
-<li>Bildungsanwendungen mit realistischen 3D-Szenen</li>
-</ul>
-</section>
-<section id="technische-architektur" class="level3">
-<h3 class="anchored" data-anchor-id="technische-architektur">3.2 Technische Architektur</h3>
-<p>Eine typische Architektur für WebXR + 3DGS besteht aus vier Schichten:</p>
-<ol type="1">
-<li><strong>Datenebene</strong> — 3D Gaussian Model (trainiert offline), Gauss-Parameter (Position, Farbe, Kovarianz, Opazität)</li>
-<li><strong>Rendering-Schicht</strong> — WebGL oder WebGPU, GPU-basierte Splatting-Pipeline, Sortierung und Projektion der Gaussians</li>
-<li><strong>WebXR Layer</strong> — Session Management (AR-Modus aktivieren), Kamera-Feed, Pose Tracking (Smartphone oder Headset)</li>
-<li><strong>Application Layer</strong> — Szene-Management, Interaktion (Touch, Gesten, Raycasting), Einbettung virtueller Objekte</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Die größte technische Herausforderung liegt im effizienten Rendering der vielen Gaussians direkt im Browser, da die GPU-Ressourcen im Vergleich zu nativen Anwendungen begrenzt sind.</p>
-</div>
-</div>
-</section>
-<section id="herausforderungen" class="level3">
-<h3 class="anchored" data-anchor-id="herausforderungen">3.3 Herausforderungen</h3>
-<p>Die Integration von 3DGS in WebXR bringt mehrere Herausforderungen mit sich:</p>
-<div class="columns">
-<div class="column" style="width:100%;">
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Performance
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Sehr viele Gaussians müssen in Echtzeit gerendert werden</li>
-<li>Browser-GPU ist begrenzter als native Engines</li>
-<li>Optimierung durch Culling, Level-of-Detail und GPU-Batching notwendig</li>
-</ul>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Speicherverbrauch
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>3DGS-Modelle können mehrere hundert MB groß sein</li>
-<li>Streaming und Kompression sind notwendig</li>
-</ul>
-</div>
-</div>
-</div><div class="column" style="width:100%;">
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Web-Kompatibilität
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>WebGPU ist noch nicht überall vollständig verfügbar</li>
-<li>WebGL hat Einschränkungen bei komplexen Shadern</li>
-</ul>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Tracking &amp; Stabilität
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>AR-Tracking muss stabil bleiben, sonst wirkt das Splatting „schwebend”</li>
-<li>Probleme bei schnellen Bewegungen oder schlechten Lichtverhältnissen</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Tooling &amp; Standards
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Noch keine etablierten Standards für 3DGS im Web — unterschiedliche Implementierungen in Forschung und Open Source erschweren die Interoperabilität und Wiederverwendbarkeit.</p>
-</div>
+<!-- OWNER: Friedrich Commichau -->
+<p>So einfach baust du einen 3D Gaussian Splat in deine eigene Webseite ein. Bearbeite den HTML-Code und die Vorschau rendert ihn live. In wenigen schritten kannst du auf jeder Webseite deine Gaussian Splatts rendern.</p>
+<style>
+  .demo-editor { display:flex; flex-direction:column; gap:12px; margin:1rem 0; }
+  .demo-pane { display:flex; flex-direction:column; }
+  .demo-toolbar { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px; }
+  .demo-btn {
+    padding:6px 12px; border-radius:6px; border:1px solid #2a2a35;
+    background:#1a1a24; color:#eee; font-size:13px; cursor:pointer;
+  }
+  .demo-btn:hover { background:#26263340; border-color:#444; }
+  .demo-btn-primary { background:#2d6cdf; border-color:#2d6cdf; }
+  .demo-btn-primary:hover { background:#3a78ea; }
+  .demo-label { color:#8a8a9a; font-size:12px; margin-bottom:6px; }
+  .demo-stepper {
+    margin:1rem 0; padding:14px 16px; border:1px solid #2a2a35;
+    border-radius:8px; background:#11111a;
+  }
+  .demo-step-head { display:flex; align-items:baseline; gap:10px; margin-bottom:6px; }
+  .demo-step-num {
+    font-size:12px; font-weight:600; color:#2d6cdf; letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+  .demo-step-title { font-size:16px; font-weight:600; color:#f0f0f6; margin:0; }
+  .demo-step-desc { color:#b8b8c6; font-size:14px; margin:0 0 10px; }
+  .demo-step-code {
+    margin:0 0 12px; padding:12px; overflow:auto; max-height:240px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12.5px;
+    line-height:1.5; tab-size:2; color:#e6e6f0; background:#0d0d14;
+    border:1px solid #2a2a35; border-radius:6px; white-space:pre;
+  }
+  .demo-step-nav { display:flex; gap:8px; align-items:center; }
+  .demo-btn:disabled { opacity:.4; cursor:not-allowed; }
+  #demo-code {
+    width:100%; min-height:120px; resize:none; overflow:hidden;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13px;
+    line-height:1.5; tab-size:2; padding:12px; box-sizing:border-box;
+    color:#e6e6f0; background:#0d0d14; border:1px solid #2a2a35; border-radius:8px;
+    outline:none;
+  }
+  #demo-preview {
+    width:100%; flex:1; min-height:360px;
+    background:#0d0d14; border:1px solid #2a2a35; border-radius:8px;
+  }
+</style>
+
+<div class="demo-editor">
+  <div class="demo-pane">
+    <div class="demo-toolbar">
+      <button class="demo-btn demo-btn-primary" id="demo-run">▶ Ausführen</button>
+      <button class="demo-btn" id="demo-reset">↺ Zurücksetzen</button>
+    </div>
+    <div class="demo-label">HTML-Code</div>
+    <textarea id="demo-code" spellcheck="false"></textarea>
+  </div>
+
+
+  <div class="demo-stepper">
+    <div class="demo-step-head">
+      <span class="demo-step-num" id="demo-step-num">Ausgangspunkt</span>
+      <h3 class="demo-step-title anchored" id="demo-step-title">Hello World</h3>
+    </div>
+    <p class="demo-step-desc" id="demo-step-desc">Wir starten mit einer schlichten HTML-Seite.</p>
+    <pre class="demo-step-code" id="demo-step-code"></pre>
+    <div class="demo-step-nav">
+      <button class="demo-btn" id="demo-prev">← Zurück</button>
+      <button class="demo-btn demo-btn-primary" id="demo-next">Nächster Schritt →</button>
+    </div>
+  </div>
+  <div class="demo-pane">
+    <div class="demo-label">Vorschau</div>
+    <iframe id="demo-preview" sandbox="allow-scripts" title="Live-Vorschau"></iframe>
+  </div>
 </div>
 
 
-</section>
-</section>
+<script>
+(function () {
+  var HELLO_WORLD = [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<head><meta charset=\"utf-8\"></head>",
+    "<body style=\"font-family:sans-serif;padding:24px;color:#fff;\">",
+    "  <h1>Hello World</h1>",
+    "  <p>Bearbeite den Code und die Vorschau aktualisiert sich automatisch.</p>",
+    "</body>",
+    "</html>"
+  ].join("\n");
+
+  // HTML-Gerüst, in das die kumulierten JS-Zeilen eingesetzt werden.
+  // %JS% wird durch die JS-Zeilen der Schritte 1..N ersetzt.
+  var SCAFFOLD = [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<head>",
+    "  <meta charset=\"utf-8\">",
+    "  <style>",
+    "    html,body{margin:0;height:100%;overflow:hidden;background:#0d0d14;}",
+    "    #c{width:100%;height:100%;display:block;touch-action:none;}",
+    "  </style>",
+    "</head>",
+    "<body>",
+    "  <canvas id=\"c\"></canvas>",
+    "  <script src=\"https://cdn.babylonjs.com/babylon.js\"><\/script>",
+    "  <script src=\"https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js\"><\/script>",
+    "  <script>",
+    "%JS%",
+    "  <\/script>",
+    "</body>",
+    "</html>"
+  ].join("\n");
+
+  // Jeder Schritt: title, desc, delta (angezeigtes Snippet) und js (kumulierte Zeilen).
+  var STEPS = [
+    {
+      title: "Babylon.js importieren",
+      desc: "Ein <canvas> als Zeichenflaeche und die zwei Babylon-Bibliotheken von der CDN. Der Loader registriert die Splat-Formate.",
+      delta: [
+        "<canvas id=\"c\"></canvas>",
+        "<script src=\"https://cdn.babylonjs.com/babylon.js\"><\/script>",
+        "<script src=\"https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js\"><\/script>"
+      ].join("\n"),
+      js: []
+    },
+    {
+      title: "Szene aufsetzen",
+      desc: "Engine an den Canvas binden, eine Scene erstellen, Hintergrundfarbe setzen und die Render-Schleife starten.",
+      delta: [
+        "const canvas = document.getElementById('c');",
+        "const engine = new BABYLON.Engine(canvas, true);",
+        "const scene = new BABYLON.Scene(engine);",
+        "scene.clearColor = new BABYLON.Color4(0.05, 0.05, 0.08, 1);",
+        "",
+        "engine.runRenderLoop(function () { scene.render(); });",
+        "window.addEventListener('resize', function () { engine.resize(); });"
+      ].join("\n"),
+      js: [
+        "    const canvas = document.getElementById('c');",
+        "    const engine = new BABYLON.Engine(canvas, true);",
+        "    const scene = new BABYLON.Scene(engine);",
+        "    scene.clearColor = new BABYLON.Color4(0.05, 0.05, 0.08, 1);",
+        "",
+        "    engine.runRenderLoop(function () { scene.render(); });",
+        "    window.addEventListener('resize', function () { engine.resize(); });"
+      ]
+    },
+    {
+      title: "Kamera platzieren",
+      desc: "Eine ArcRotateCamera umkreist einen Zielpunkt. Erst mit einer Kamera wird die Szene sichtbar gerendert.",
+      delta: [
+        "const camera = new BABYLON.ArcRotateCamera(",
+        "  'cam', -Math.PI / 2, Math.PI / 2.2, 6, BABYLON.Vector3.Zero(), scene",
+        ");"
+      ].join("\n"),
+      js: [
+        "",
+        "    const camera = new BABYLON.ArcRotateCamera(",
+        "      'cam', -Math.PI / 2, Math.PI / 2.2, 6, BABYLON.Vector3.Zero(), scene",
+        "    );"
+      ]
+    },
+    {
+      title: "Steuerung hinzufügen",
+      desc: "attachControl aktiviert Maus- und Touch-Steuerung; wheelPrecision bestimmt die Zoom-Geschwindigkeit.",
+      delta: [
+        "camera.attachControl(canvas, true);",
+        "camera.wheelPrecision = 50;"
+      ].join("\n"),
+      js: [
+        "    camera.attachControl(canvas, true);",
+        "    camera.wheelPrecision = 50;"
+      ]
+    },
+    {
+      title: "Splat laden",
+      desc: "ImportMeshAsync laedt den Gaussian Splat. Der passende Loader wird an der Dateiendung erkannt.",
+      delta: [
+        "BABYLON.SceneLoader.ImportMeshAsync(",
+        "  null, '', 'https://assets.babylonjs.com/splats/gs_Skull.splat', scene",
+        ");"
+      ].join("\n"),
+      js: [
+        "",
+        "    // Splat laden - der Loader wird an der Dateiendung erkannt",
+        "    BABYLON.SceneLoader.ImportMeshAsync(",
+        "      null, '', 'https://assets.babylonjs.com/splats/gs_Skull.splat', scene",
+        "    );"
+      ]
+    }
+  ];
+
+  // Vollstaendiges Dokument bis einschliesslich Schritt N (1-basiert).
+  function buildDoc(upto) {
+    var lines = [];
+    for (var i = 0; i < upto; i++) {
+      lines = lines.concat(STEPS[i].js);
+    }
+    return SCAFFOLD.replace("%JS%", lines.join("\n"));
+  }
+
+  function init() {
+    var code = document.getElementById("demo-code");
+    var preview = document.getElementById("demo-preview");
+    var numEl = document.getElementById("demo-step-num");
+    var titleEl = document.getElementById("demo-step-title");
+    var descEl = document.getElementById("demo-step-desc");
+    var codeEl = document.getElementById("demo-step-code");
+    var prevBtn = document.getElementById("demo-prev");
+    var nextBtn = document.getElementById("demo-next");
+    var timer = null;
+    var idx = 0; // 0 = Hello World, 1..STEPS.length = nach Schritt N
+
+    function render() { preview.srcdoc = code.value; }
+
+    function autoResize() {
+      code.style.height = "auto";
+      code.style.height = code.scrollHeight + "px";
+    }
+
+    function syncPanel() {
+      if (idx === 0) {
+        numEl.textContent = "Ausgangspunkt";
+        titleEl.textContent = "Hello World";
+        descEl.textContent = "Wir starten mit einer schlichten HTML-Seite.";
+        codeEl.textContent = HELLO_WORLD;
+      } else {
+        var step = STEPS[idx - 1];
+        numEl.textContent = "Schritt " + idx + " / " + STEPS.length;
+        titleEl.textContent = step.title;
+        descEl.textContent = step.desc;
+        codeEl.textContent = step.delta;
+      }
+      prevBtn.disabled = (idx === 0);
+      nextBtn.disabled = (idx === STEPS.length);
+    }
+
+    function loadCurrent() {
+      code.value = (idx === 0) ? HELLO_WORLD : buildDoc(idx);
+      render();
+      syncPanel();
+      autoResize();
+    }
+
+    loadCurrent();
+
+    code.addEventListener("input", function () {
+      autoResize();
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(render, 600);
+    });
+
+    document.getElementById("demo-run").addEventListener("click", render);
+    document.getElementById("demo-reset").addEventListener("click", function () {
+      idx = 0;
+      loadCurrent();
+    });
+    prevBtn.addEventListener("click", function () {
+      if (idx > 0) { idx--; loadCurrent(); }
+    });
+    nextBtn.addEventListener("click", function () {
+      if (idx < STEPS.length) { idx++; loadCurrent(); }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
