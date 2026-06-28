@@ -18,7 +18,7 @@
     "href": "web-ar/index.html#interaktiver-splat-viewer",
     "title": "Web & AR Integration",
     "section": "Interaktiver Splat-Viewer",
-    "text": "Interaktiver Splat-Viewer\nDer folgende Viewer läuft live auf dieser Seite. Mit der Maus (bzw. per Touch) rotieren und verschieben; zum Zoomen Strg/Cmd + Mausrad verwenden. Aktuell sind vier öffentliche Beispiel-Splats eingebunden.\n\n  \n  \n    Sqwakers\n    Plants\n    Skull\n    Halo\n  \n  Initialisiere …\n  \n    +\n    −"
+    "text": "Interaktiver Splat-Viewer\nDer folgende Viewer läuft live auf dieser Seite. Mit der Maus (bzw. per Touch) rotieren, zoomen und verschieben; oben rechts lässt sich zwischen unseren eigenen Modellen (Vase, WM-Pokal, Gartenhütte, Wasserspray) und einigen Babylon-Beispielen wechseln. Über ⤓ Eigenes .spz / .ply laden lässt sich außerdem jederzeit ein eigenes Modell direkt vom Gerät hochladen und ansehen.\n\n  \n  \n    \n      \n        Vase (eigenes Modell)\n        WM-Pokal (eigenes Modell)\n        Gartenhütte (eigenes Modell)\n        Wasserspray (eigenes Modell)\n      \n      \n        Sqwakers\n        Plants\n        Skull\n        Halo\n      \n    \n    ⤓ Eigenes .spz / .ply laden\n    \n  \n  Initialisiere …\n  \n    +\n    −"
   },
   {
     "objectID": "web-ar/index.html#webxr",
@@ -35,60 +35,53 @@
     "text": "AR-Demo\nWebXR-AR läuft derzeit zuverlässig auf Android-Chrome. Auf iOS-Safari und Desktop ist immersive-ar nicht verfügbar — dort den Orbit-Viewer oben nutzen.\n\n\n  \n    In AR ansehen\n    Prüfe Geräteunterstützung …\n  \n  \n    \n    Scannen für die Live-Seite"
   },
   {
-    "objectID": "web-ar/index.html#upload-und-begehung-einer-szene-first-person-blick",
-    "href": "web-ar/index.html#upload-und-begehung-einer-szene-first-person-blick",
+    "objectID": "web-ar/index.html#first-person-viewer-eine-szene-frei-begehen",
+    "href": "web-ar/index.html#first-person-viewer-eine-szene-frei-begehen",
     "title": "Web & AR Integration",
-    "section": "Upload und Begehung einer Szene (First-Person-Blick)",
-    "text": "Upload und Begehung einer Szene (First-Person-Blick)\nAls Ergänzung zeigen wir den upload einer neuen Szene und ihre Begehung. Per Klick in die Szene wechselt die Kamera reihum zwischen mehreren festen Standpunkten und schwenkt dabei sanft hinüber eine kleine geführte Tour durch die Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.\n\n  \n  \n  Bitte eine .spz-Datei hochladen\n  Klicken: nächster Standpunkt · Ziehen: umsehen\n  Standpunkt 1 / 4"
+    "section": "First-Person-Viewer — eine Szene frei begehen",
+    "text": "First-Person-Viewer — eine Szene frei begehen\nAls eigene Ergänzung gibt es hier einen echten First-Person-Viewer. Wähle eines der eigenen Modelle oder lade eine eigene .spz-Datei hoch und begehe die Szene frei — komplett per Tastatur steuerbar, damit sich jede Szene leicht ausrichten lässt:\n\nPfeiltasten: umsehen / drehen (links–rechts, hoch–runter)\nQ / E: rollen — damit lässt sich der Horizont einer schief liegenden Szene aufrichten\nW A S D: bewegen · R / F: hoch / runter · Shift: schneller\nMaus (Klick fängt sie, Esc gibt sie frei) bzw. Ziehen: zusätzlich umsehen · Mausrad: Tempo\n\nAlle Drehungen erfolgen relativ zur Blickrichtung (6 Freiheitsgrade) und das Tempo passt sich der Szenengröße an. So lässt sich jede – auch beliebig im Raum liegende – Szene mit den Pfeiltasten bequem ausrichten; ⟲ Ansicht zurücksetzen springt zum Startblick zurück.\n\n  \n  \n    \n      — Modell wählen —\n      Gartenhütte (begehbar)\n      Vase\n      WM-Pokal\n      Wasserspray\n    \n    ⤓ Eigenes .spz / .ply laden\n    \n    ⟲ Ansicht zurücksetzen\n  \n  Modell wählen oder .spz hochladen\n  Pfeiltasten drehen · Q/E rollen (aufrichten) · WASD bewegen · R/F hoch/runter · Shift schneller · Maus umsehen\n  Tempo 100%"
   },
   {
-    "objectID": "pipeline/index.html#use-cases",
-    "href": "pipeline/index.html#use-cases",
+    "objectID": "pipeline/index.html",
+    "href": "pipeline/index.html",
     "title": "Capture & Pipeline",
-    "section": "Use-Cases",
-    "text": "Use-Cases"
+    "section": "",
+    "text": "Wie wird aus ein paar Handy-Fotos ein begehbares 3D-Modell? Diese Seite zeigt die komplette Pipeline, die ich für unsere eigenen Szenen durchlaufen habe – von der Aufnahme über das Training bis zum Export ins web-taugliche .spz-Format. Alle Bilder und Modelle auf dieser Seite stammen aus selbst aufgenommenen Szenen (Vase, WM-Pokal, Wasserspray, Gartenhütte)."
   },
   {
-    "objectID": "pipeline/index.html#aufnahme-guidelines",
-    "href": "pipeline/index.html#aufnahme-guidelines",
+    "objectID": "pipeline/index.html#aufnahme",
+    "href": "pipeline/index.html#aufnahme",
     "title": "Capture & Pipeline",
-    "section": "Aufnahme-Guidelines",
-    "text": "Aufnahme-Guidelines"
+    "section": "1. Aufnahme",
+    "text": "1. Aufnahme\nFür das Capturing nehme ich mit der iOS-App Gaussian SplatKing Fotos aus vielen verschiedenen Perspektiven auf. Die App erfasst dabei zusätzlich Metadaten (Position, Bewegung, IMU/LiDAR) und exportiert alles gebündelt als .zip.\n\n\n\n\n\n\nNoteZwei Aufnahme-Modi\n\n\n\n\nLiDAR-Capture (iPhone Pro, empfohlen): liefert direkt ein fertiges COLMAP-Modell mit metrischen, schwerkraft-ausgerichteten Kameraposen und einer dichten Punktwolke. Bestes, stabilstes Ergebnis – das Modell steht im Viewer aufrecht.\nFoto-Capture (photo_dual): nur Bilder, ohne Posen → die Posen müssen erst per Structure-from-Motion (Schritt 2) berechnet werden.\n\n\n\n\n\n\n\n\n\nObjekt – Vase (Keramik, matt)\n\n\n\n\n\n\n\nObjekt – WM-Pokal (LEGO)\n\n\n\n\n\n\n\nSzene – Gartenhütte (außen)\n\n\n\n\n\nAufnahme-Guidelines, die bei mir den größten Unterschied gemacht haben:\n\n\nGoldene Regeln\n\nScharf bleiben – langsam & ruhig, keine Bewegungsunschärfe\n60–80 % Überlappung zwischen aufeinanderfolgenden Bildern\nGleichmäßiges Licht, keine harten Wechsel, nichts Bewegtes im Bild\nTextur hilft – matte, strukturierte Oberflächen rekonstruieren besser als glänzende\n\n\n🏺 Objekt vs. 🏠 Raum\n\nObjekt: mittig halten, 360° umrunden, 2–3 Ringe in verschiedenen Höhen, ~60–150 Bilder\nRaum: langsam abschreiten, alle Wände/Ecken abdecken, Schleifen schließen, 150–400+ Bilder\nHäufigster Fehler: zu wenig Überlappung → „Floater-Suppe” aus neuen Blickwinkeln"
   },
   {
-    "objectID": "pipeline/index.html#colmap-structure-from-motion",
-    "href": "pipeline/index.html#colmap-structure-from-motion",
+    "objectID": "pipeline/index.html#sfm",
+    "href": "pipeline/index.html#sfm",
     "title": "Capture & Pipeline",
-    "section": "COLMAP / Structure from Motion",
-    "text": "COLMAP / Structure from Motion"
-  },
-  {
-    "objectID": "pipeline/index.html#lichtfeld-studio-setup",
-    "href": "pipeline/index.html#lichtfeld-studio-setup",
-    "title": "Capture & Pipeline",
-    "section": "LichtFeld Studio — Setup",
-    "text": "LichtFeld Studio — Setup"
+    "section": "2. Vorverarbeitung – Structure from Motion",
+    "text": "2. Vorverarbeitung – Structure from Motion\nSplatKing exportiert Fotos und Metadaten, das Training braucht aber ein bestimmtes Format: COLMAP. Bei reinen Foto-Aufnahmen rechnet daher zuerst Structure-from-Motion (SfM) aus den überlappenden Bildern die Kameraposen und eine dünne 3D-Punktwolke – also wo jedes Foto aufgenommen wurde und wie die Szene grob im Raum liegt.\n\nBei LiDAR-Aufnahmen bringt SplatKing diese Posen + eine dichte Punktwolke schon mit – dann kann dieser Schritt übersprungen werden. (Details zu SfM/COLMAP: siehe Theorie & Methodik bzw. Gruppe 3.)"
   },
   {
     "objectID": "pipeline/index.html#training",
     "href": "pipeline/index.html#training",
     "title": "Capture & Pipeline",
-    "section": "Training",
-    "text": "Training"
+    "section": "3. Training",
+    "text": "3. Training\nDas eigentliche 3D Gaussian Splatting. Ziel: jeden COLMAP-Punkt zu einem 3D-Gaussian machen. Trainiert habe ich mit gsplat auf einer NVIDIA RTX 4070 Super. Der Ablauf pro Iteration:\n\n\n\n\n\n\nTipDie Optimierungs-Schleife\n\n\n\n\nAus den COLMAP-Punkten werden initiale Gaussians mit Startwerten erzeugt (Position, Größe, Farbe, Opazität).\nDie Szene wird aus mehreren Fotoperspektiven mit einem differenzierbaren Rasterizer gerendert.\nDas Rendering wird auf Pixelebene mit den Originalfotos verglichen → ergibt den Fehler:\n\\[\\text{Gesamt-Loss} = \\underbrace{L_{\\text{Rekonstruktion}}}_{\\text{Bildfehler}} \\; + \\; \\text{gewichtete Regularisierungsterme}\\]\nPer Gradient Descent + Optimizer wird daraus ein neuer Wert pro Gaussian berechnet – und neu iteriert.\nZusätzlich alle x Iterationen: Pruning, Splitting & Cloning der Gaussians (überflüssige entfernen, zu grobe verfeinern).\n\n\n\nNach ~30.000 Iterationen passt das gerenderte Modell die Originalfotos sehr genau an. Der direkte Vergleich zeigt es – links das echte Foto, rechts das gerenderte 3DGS-Modell:\n\n\n\nVase — links Originalfoto, rechts gerendertes Modell (PSNR ≈ 21,5 dB)\n\n\n\n\n\nGartenhütte — die feinen Blätter & Schatten werden als Splats rekonstruiert\n\n\n\n\n\n~30.000\n\n\nTrainings-Iterationen\n\n\n\n\n~880k\n\n\nGaussians (Vase)\n\n\n\n\n21,5 dB\n\n\nPSNR (Vase, Validierung)\n\n\n\n\n~20–30 min\n\n\nTrainingszeit / Szene\n\n\n\n\nRTX 4070S\n\n\nGPU (12 GB VRAM)\n\n\n\n\n\n\n\n\n\nNoteParameter: Objekt vs. Raum (gsplat)\n\n\n\n\n\n\n\n\n\n\n\n\n\nParameter\n🏺 Objekt\n🏠 Raum\n\n\n\n\n--strategy\ndefault (densifiziert frei)\nmcmc (deckelt Gaussian-Zahl)\n\n\n--cap-max\n–\n1.000.000\n\n\n--data-factor\n1 (volle Auflösung)\n2 (halbe – spart VRAM)\n\n\n--sh-degree\n3\n3\n\n\n\nmcmc deckelt die Anzahl der Gaussians → planbarer VRAM und weniger Floater bei großen, ungleichmäßig abgedeckten Szenen."
   },
   {
     "objectID": "pipeline/index.html#export",
     "href": "pipeline/index.html#export",
     "title": "Capture & Pipeline",
-    "section": "Export",
-    "text": "Export"
+    "section": "4. Export",
+    "text": "4. Export\nNach dem Training werden die Gaussians im PLY-Format gespeichert – ein 3D-Dateiformat zur Beschreibung einer Liste von Elementen (hier: alle Gaussians einer Szene). Der Header gibt Anzahl und Eigenschaften vor, danach folgen pro Gaussian die jeweiligen Werte.\nFür webbasierte Anwendungen konvertiere ich die .ply anschließend zu .spz – das ist effizienter und komprimierter (~10×) bei praktisch identischer Qualität und liegt bereits im RUB-Koordinatensystem von three.js / Babylon.js. Optional lassen sich Streu-Gaussians vorher in SuperSplat entfernen oder das Objekt freistellen:\n\n\nply\nformat binary_little_endian 1.0\nelement vertex 877358        ← Anzahl Gaussians\nproperty float x             ← Position\nproperty float y\nproperty float z\nproperty float opacity       ← Opazität (Alpha)\nproperty float scale_0       ← Form / Kovarianz\nproperty float rot_0         ← Rotation (Quaternion)\nproperty float f_dc_0        ← Farbe (Spherical Harmonics)\n...\nend_header\n&lt;binäre Werte pro Gaussian&gt;\n\n\n\n\nIn SuperSplat freigestelltes Objekt\n\n\n.ply → .spz: ~10× kleiner, ready für Babylon.js & WebXR."
   },
   {
-    "objectID": "pipeline/index.html#modell-galerie",
-    "href": "pipeline/index.html#modell-galerie",
+    "objectID": "pipeline/index.html#galerie",
+    "href": "pipeline/index.html#galerie",
     "title": "Capture & Pipeline",
-    "section": "Modell-Galerie",
-    "text": "Modell-Galerie"
+    "section": "5. Modell-Galerie",
+    "text": "5. Modell-Galerie\nVier selbst trainierte Szenen – die Videos zeigen eine automatische Kamerafahrt um das fertige Modell:\n\n  \n    \n    VaseObjektLiDAR · ~880k Gaussians · PSNR 21,5\n  \n  \n    \n    WM-PokalObjektLEGO-Modell · LiDAR-Capture\n  \n  \n    \n    GartenhütteSzeneAußenaufnahme · 525 Fotos\n  \n  \n    \n    WassersprayObjektFoto-Capture · COLMAP-Posen\n  \n\n\nEigenes Modell – live & interaktiv\nHier eingebettet: mein trainiertes Vase-Modell als echtes, drehbares 3DGS direkt im Browser (per Maus/Touch rotieren & zoomen). Alle vier Modelle – inklusive Datei-Upload und einem First-Person-Viewer zum Begehen der Szenen – gibt es auf der Seite Web & AR.\n\n  \n  ▶  Interaktives 3D-Modell laden\n  Initialisiere …\n\n\nAlle Modelle interaktiv erkunden & begehen →"
   },
   {
     "objectID": "demo/index.html",

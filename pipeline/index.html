@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Dominik Pleimes">
 
 <title>Capture &amp; Pipeline – 3D Gaussian Splatting im Web</title>
 <style>
@@ -71,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -135,14 +165,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#einführung" id="toc-einführung" class="nav-link active" data-scroll-target="#einführung">Einführung</a></li>
-  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use-Cases</a></li>
-  <li><a href="#aufnahme-guidelines" id="toc-aufnahme-guidelines" class="nav-link" data-scroll-target="#aufnahme-guidelines">Aufnahme-Guidelines</a></li>
-  <li><a href="#colmap-structure-from-motion" id="toc-colmap-structure-from-motion" class="nav-link" data-scroll-target="#colmap-structure-from-motion">COLMAP / Structure from Motion</a></li>
-  <li><a href="#lichtfeld-studio-setup" id="toc-lichtfeld-studio-setup" class="nav-link" data-scroll-target="#lichtfeld-studio-setup">LichtFeld Studio — Setup</a></li>
-  <li><a href="#training" id="toc-training" class="nav-link" data-scroll-target="#training">Training</a></li>
-  <li><a href="#export" id="toc-export" class="nav-link" data-scroll-target="#export">Export</a></li>
-  <li><a href="#modell-galerie" id="toc-modell-galerie" class="nav-link" data-scroll-target="#modell-galerie">Modell-Galerie</a></li>
+  <li><a href="#aufnahme" id="toc-aufnahme" class="nav-link active" data-scroll-target="#aufnahme">1. Aufnahme</a></li>
+  <li><a href="#sfm" id="toc-sfm" class="nav-link" data-scroll-target="#sfm">2. Vorverarbeitung – Structure from Motion</a></li>
+  <li><a href="#training" id="toc-training" class="nav-link" data-scroll-target="#training">3. Training</a></li>
+  <li><a href="#export" id="toc-export" class="nav-link" data-scroll-target="#export">4. Export</a></li>
+  <li><a href="#galerie" id="toc-galerie" class="nav-link" data-scroll-target="#galerie">5. Modell-Galerie</a>
+  <ul class="collapse">
+  <li><a href="#eigenes-modell-live-interaktiv" id="toc-eigenes-modell-live-interaktiv" class="nav-link" data-scroll-target="#eigenes-modell-live-interaktiv">Eigenes Modell – live &amp; interaktiv</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -152,12 +182,19 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Capture &amp; Pipeline</h1>
+<p class="subtitle lead">Von echten Fotos zum fertigen 3D-Modell</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dominik Pleimes </p>
+          </div>
+  </div>
     
   
     
@@ -168,41 +205,371 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- OWNER: Person B -->
-<!-- TODO Person B: Inhalte in die untenstehenden Abschnitte schreiben. Überschriften gern anpassen. -->
-<section id="einführung" class="level2">
-<h2 class="anchored" data-anchor-id="einführung">Einführung</h2>
-<!-- TODO: Was ist 3DGS, warum jetzt, warum im Browser/AR? -->
+<!-- OWNER: Dominik Pleimes -->
+<p>Wie wird aus ein paar Handy-Fotos ein begehbares 3D-Modell? Diese Seite zeigt die komplette Pipeline, die ich für unsere eigenen Szenen durchlaufen habe – von der <strong>Aufnahme</strong> über das <strong>Training</strong> bis zum <strong>Export</strong> ins web-taugliche <code>.spz</code>-Format. Alle Bilder und Modelle auf dieser Seite stammen aus selbst aufgenommenen Szenen (Vase, WM-Pokal, Wasserspray, Gartenhütte).</p>
+<style>
+  .gs-flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;justify-content:center;margin:1.6rem 0 0.6rem;}
+  .gs-step{flex:1 1 140px;min-width:128px;max-width:200px;background:#f5f8fd;border:1px solid #e1e8f4;
+    border-radius:14px;padding:16px 12px;text-align:center;transition:transform .15s,box-shadow .15s;}
+  .gs-step:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(45,108,223,.13);}
+  .gs-step .ico{font-size:30px;line-height:1;}
+  .gs-step .t{font-weight:700;color:#1d2944;margin-top:9px;font-size:15px;}
+  .gs-step .s{font-size:12px;color:#64708a;margin-top:3px;line-height:1.35;}
+  .gs-step .n{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.06em;color:#2d6cdf;
+    background:#e7eefc;border-radius:99px;padding:1px 8px;margin-bottom:6px;text-transform:uppercase;}
+  .gs-arr{display:flex;align-items:center;color:#9db4e0;font-size:20px;font-weight:700;}
+  @media(max-width:600px){.gs-arr{display:none;}}
+
+  .gs-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:1.2rem 0;}
+  .gs-fact{background:#fafbfe;border:1px solid #e8edf6;border-radius:12px;padding:12px 14px;}
+  .gs-fact .v{font-size:20px;font-weight:800;color:#2d6cdf;line-height:1.1;}
+  .gs-fact .k{font-size:12px;color:#64708a;margin-top:3px;}
+
+  .gs-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:1.2rem 0;}
+  .gs-card{border:1px solid #e6ebf4;border-radius:14px;overflow:hidden;background:#fff;
+    box-shadow:0 2px 8px rgba(20,30,60,.05);transition:transform .15s,box-shadow .15s;}
+  .gs-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(20,30,60,.12);}
+  .gs-card video{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;background:#0d0d14;}
+  .gs-card .cap{padding:10px 13px;}
+  .gs-card .cap b{color:#1d2944;}
+  .gs-card .cap .meta{font-size:12px;color:#6b7790;margin-top:2px;}
+  .gs-card .badge{display:inline-block;font-size:11px;font-weight:600;border-radius:99px;padding:1px 8px;
+    background:#eef3fd;color:#2d6cdf;margin-left:6px;}
+
+  .gs-cta{display:inline-flex;align-items:center;gap:8px;margin-top:.4rem;padding:11px 20px;border-radius:10px;
+    background:#2d6cdf;color:#fff !important;font-weight:600;text-decoration:none;transition:background .15s;}
+  .gs-cta:hover{background:#1f5bc4;}
+
+  #pl-viewer{position:relative;width:100%;aspect-ratio:16/9;min-height:300px;border-radius:14px;overflow:hidden;
+    background:radial-gradient(120% 120% at 50% 0%,#1b2540 0%,#0d0d14 70%);border:1px solid #2a2a35;}
+  #pl-canvas{width:100%;height:100%;display:block;outline:none;touch-action:none;}
+  #pl-load{position:absolute;inset:0;margin:auto;width:max-content;height:max-content;padding:14px 26px;
+    border:none;border-radius:12px;background:#2d6cdf;color:#fff;font-size:15px;font-weight:600;cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.35);}
+  #pl-load:hover{background:#3a78ea;}
+  #pl-status{position:absolute;bottom:10px;left:10px;color:#cfcfe0;font-size:13px;background:rgba(20,20,28,.7);
+    padding:3px 9px;border-radius:6px;display:none;}
+</style>
+
+<div class="gs-flow">
+  <div class="gs-step"><span class="n">Schritt 1</span><div class="ico">📸</div><div class="t">Aufnahme</div><div class="s">Fotos + Metadaten mit der App SplatKing</div></div>
+  <div class="gs-arr">→</div>
+  <div class="gs-step"><span class="n">Schritt 2</span><div class="ico">🧩</div><div class="t">SfM&nbsp;/&nbsp;COLMAP</div><div class="s">Kameraposen + Punktwolke rekonstruieren</div></div>
+  <div class="gs-arr">→</div>
+  <div class="gs-step"><span class="n">Schritt 3</span><div class="ico">🧠</div><div class="t">Training</div><div class="s">Jeden Punkt zu einem 3D-Gaussian optimieren</div></div>
+  <div class="gs-arr">→</div>
+  <div class="gs-step"><span class="n">Schritt 4</span><div class="ico">📦</div><div class="t">Export</div><div class="s">.ply als Master, .spz fürs Web (~10× kleiner)</div></div>
+  <div class="gs-arr">→</div>
+  <div class="gs-step"><span class="n">Ziel</span><div class="ico">🌐</div><div class="t">Web&nbsp;&amp;&nbsp;AR</div><div class="s">Im Browser &amp; in Augmented Reality</div></div>
+</div>
+<hr>
+<section id="aufnahme" class="level2">
+<h2 class="anchored" data-anchor-id="aufnahme">1. Aufnahme</h2>
+<p>Für das Capturing nehme ich mit der iOS-App <strong><a href="https://apps.apple.com/us/app/gaussian-splatking/id6759175085">Gaussian SplatKing</a></strong> Fotos aus vielen verschiedenen Perspektiven auf. Die App erfasst dabei zusätzlich <strong>Metadaten</strong> (Position, Bewegung, IMU/LiDAR) und exportiert alles gebündelt als <code>.zip</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Zwei Aufnahme-Modi
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>LiDAR-Capture</strong> (iPhone Pro, <em>empfohlen</em>): liefert direkt ein fertiges COLMAP-Modell mit <strong>metrischen, schwerkraft-ausgerichteten Kameraposen</strong> und einer dichten Punktwolke. Bestes, stabilstes Ergebnis – das Modell steht im Viewer aufrecht.</li>
+<li><strong>Foto-Capture</strong> (<code>photo_dual</code>): nur Bilder, <strong>ohne Posen</strong> → die Posen müssen erst per Structure-from-Motion (Schritt 2) berechnet werden.</li>
+</ul>
+</div>
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/capture-vase.jpg" class="img-fluid figure-img"></p>
+<figcaption>Objekt – Vase (Keramik, matt)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/capture-wmpokal.jpg" class="img-fluid figure-img"></p>
+<figcaption>Objekt – WM-Pokal (LEGO)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/capture-gartenhuette.jpg" class="img-fluid figure-img"></p>
+<figcaption>Szene – Gartenhütte (außen)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Aufnahme-Guidelines</strong>, die bei mir den größten Unterschied gemacht haben:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Goldene Regeln</strong></p>
+<ul>
+<li><strong>Scharf bleiben</strong> – langsam &amp; ruhig, keine Bewegungsunschärfe</li>
+<li><strong>60–80 % Überlappung</strong> zwischen aufeinanderfolgenden Bildern</li>
+<li><strong>Gleichmäßiges Licht</strong>, keine harten Wechsel, nichts Bewegtes im Bild</li>
+<li><strong>Textur hilft</strong> – matte, strukturierte Oberflächen rekonstruieren besser als glänzende</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>🏺 Objekt vs.&nbsp;🏠 Raum</strong></p>
+<ul>
+<li><em>Objekt:</em> mittig halten, <strong>360° umrunden</strong>, 2–3 Ringe in verschiedenen Höhen, ~60–150 Bilder</li>
+<li><em>Raum:</em> langsam abschreiten, alle Wände/Ecken abdecken, <strong>Schleifen schließen</strong>, 150–400+ Bilder</li>
+<li>Häufigster Fehler: zu wenig Überlappung → „Floater-Suppe” aus neuen Blickwinkeln</li>
+</ul>
+</div>
+</div>
 </section>
-<section id="use-cases" class="level2">
-<h2 class="anchored" data-anchor-id="use-cases">Use-Cases</h2>
-<!-- TODO: Immobilien, Kulturerbe, Retail, Gaming, Robotik, Digitale Zwillinge. -->
-</section>
-<section id="aufnahme-guidelines" class="level2">
-<h2 class="anchored" data-anchor-id="aufnahme-guidelines">Aufnahme-Guidelines</h2>
-<!-- TODO: Beleuchtung, Overlap, Objektwahl, häufige Fehler. -->
-</section>
-<section id="colmap-structure-from-motion" class="level2">
-<h2 class="anchored" data-anchor-id="colmap-structure-from-motion">COLMAP / Structure from Motion</h2>
-<!-- TODO: Was ist SfM, was ist Input/Output. -->
-</section>
-<section id="lichtfeld-studio-setup" class="level2">
-<h2 class="anchored" data-anchor-id="lichtfeld-studio-setup">LichtFeld Studio — Setup</h2>
-<!-- TODO: Installation, GPU-Voraussetzungen, Konfiguration. -->
+<section id="sfm" class="level2">
+<h2 class="anchored" data-anchor-id="sfm">2. Vorverarbeitung – Structure from Motion</h2>
+<p>SplatKing exportiert Fotos und Metadaten, das Training braucht aber ein bestimmtes Format: <strong>COLMAP</strong>. Bei reinen Foto-Aufnahmen rechnet daher zuerst <strong>Structure-from-Motion (SfM)</strong> aus den überlappenden Bildern die <strong>Kameraposen</strong> und eine <strong>dünne 3D-Punktwolke</strong> – also <em>wo</em> jedes Foto aufgenommen wurde und wie die Szene grob im Raum liegt.</p>
+<blockquote class="blockquote">
+<p>Bei LiDAR-Aufnahmen bringt SplatKing diese Posen + eine dichte Punktwolke schon mit – dann kann dieser Schritt übersprungen werden. <em>(Details zu SfM/COLMAP: siehe <a href="../theorie/index.html">Theorie &amp; Methodik</a> bzw. Gruppe 3.)</em></p>
+</blockquote>
 </section>
 <section id="training" class="level2">
-<h2 class="anchored" data-anchor-id="training">Training</h2>
-<!-- TODO: Training in LichtFeld Studio durchführen, Qualität beurteilen (z. B. in SuperSplat). -->
+<h2 class="anchored" data-anchor-id="training">3. Training</h2>
+<p>Das eigentliche 3D Gaussian Splatting. <strong>Ziel: jeden COLMAP-Punkt zu einem 3D-Gaussian machen.</strong> Trainiert habe ich mit <a href="https://github.com/nerfstudio-project/gsplat">gsplat</a> auf einer NVIDIA RTX 4070 Super. Der Ablauf pro Iteration:</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Die Optimierungs-Schleife
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Aus den COLMAP-Punkten werden <strong>initiale Gaussians</strong> mit Startwerten erzeugt (Position, Größe, Farbe, Opazität).</p></li>
+<li><p>Die Szene wird aus mehreren Fotoperspektiven mit einem <strong>differenzierbaren Rasterizer</strong> gerendert.</p></li>
+<li><p>Das Rendering wird <strong>auf Pixelebene mit den Originalfotos verglichen</strong> → ergibt den Fehler:</p>
+<p><span class="math display">\[\text{Gesamt-Loss} = \underbrace{L_{\text{Rekonstruktion}}}_{\text{Bildfehler}} \; + \; \text{gewichtete Regularisierungsterme}\]</span></p></li>
+<li><p>Per <strong>Gradient Descent</strong> + Optimizer wird daraus ein neuer Wert pro Gaussian berechnet – und neu iteriert.</p></li>
+<li><p>Zusätzlich alle <em>x</em> Iterationen: <strong>Pruning, Splitting &amp; Cloning</strong> der Gaussians (überflüssige entfernen, zu grobe verfeinern).</p></li>
+</ol>
+</div>
+</div>
+<p>Nach ~30.000 Iterationen passt das gerenderte Modell die Originalfotos sehr genau an. Der direkte Vergleich zeigt es – <strong>links das echte Foto, rechts das gerenderte 3DGS-Modell:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/compare-vase.jpg" class="img-fluid figure-img"></p>
+<figcaption>Vase — links Originalfoto, rechts gerendertes Modell (PSNR ≈ 21,5 dB)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/compare-gartenhuette.jpg" class="img-fluid figure-img"></p>
+<figcaption>Gartenhütte — die feinen Blätter &amp; Schatten werden als Splats rekonstruiert</figcaption>
+</figure>
+</div>
+<div class="gs-facts">
+<div class="gs-fact">
+<div class="v">
+~30.000
+</div>
+<div class="k">
+Trainings-Iterationen
+</div>
+</div>
+<div class="gs-fact">
+<div class="v">
+~880k
+</div>
+<div class="k">
+Gaussians (Vase)
+</div>
+</div>
+<div class="gs-fact">
+<div class="v">
+21,5 dB
+</div>
+<div class="k">
+PSNR (Vase, Validierung)
+</div>
+</div>
+<div class="gs-fact">
+<div class="v">
+~20–30 min
+</div>
+<div class="k">
+Trainingszeit / Szene
+</div>
+</div>
+<div class="gs-fact">
+<div class="v">
+RTX 4070S
+</div>
+<div class="k">
+GPU (12 GB VRAM)
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Parameter: Objekt vs.&nbsp;Raum (gsplat)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>🏺 Objekt</th>
+<th>🏠 Raum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>--strategy</code></td>
+<td><code>default</code> (densifiziert frei)</td>
+<td><code>mcmc</code> (deckelt Gaussian-Zahl)</td>
+</tr>
+<tr class="even">
+<td><code>--cap-max</code></td>
+<td>–</td>
+<td><code>1.000.000</code></td>
+</tr>
+<tr class="odd">
+<td><code>--data-factor</code></td>
+<td><code>1</code> (volle Auflösung)</td>
+<td><code>2</code> (halbe – spart VRAM)</td>
+</tr>
+<tr class="even">
+<td><code>--sh-degree</code></td>
+<td><code>3</code></td>
+<td><code>3</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>mcmc</code> deckelt die Anzahl der Gaussians → planbarer VRAM und weniger Floater bei großen, ungleichmäßig abgedeckten Szenen.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="export" class="level2">
-<h2 class="anchored" data-anchor-id="export">Export</h2>
-<!-- TODO: .ply als Master sichern + .spz für Web konvertieren (3dgsconverter). .spz an Person C übergeben. -->
+<h2 class="anchored" data-anchor-id="export">4. Export</h2>
+<p>Nach dem Training werden die Gaussians im <strong>PLY-Format</strong> gespeichert – ein 3D-Dateiformat zur Beschreibung einer Liste von Elementen (hier: alle Gaussians einer Szene). Der <strong>Header</strong> gibt Anzahl und Eigenschaften vor, danach folgen pro Gaussian die jeweiligen Werte.</p>
+<p>Für webbasierte Anwendungen konvertiere ich die <code>.ply</code> anschließend zu <strong><code>.spz</code></strong> – das ist <strong>effizienter und komprimierter (~10×)</strong> bei praktisch identischer Qualität und liegt bereits im RUB-Koordinatensystem von three.js / Babylon.js. Optional lassen sich Streu-Gaussians vorher in <a href="https://supersplat.play.canvas.app/">SuperSplat</a> entfernen oder das Objekt freistellen:</p>
+<div class="columns">
+<div class="column" style="width:62%;">
+<pre class="text"><code>ply
+format binary_little_endian 1.0
+element vertex 877358        ← Anzahl Gaussians
+property float x             ← Position
+property float y
+property float z
+property float opacity       ← Opazität (Alpha)
+property float scale_0       ← Form / Kovarianz
+property float rot_0         ← Rotation (Quaternion)
+property float f_dc_0        ← Farbe (Spherical Harmonics)
+...
+end_header
+&lt;binäre Werte pro Gaussian&gt;</code></pre>
+</div><div class="column" style="width:38%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/vase-object.jpg" class="img-fluid figure-img"></p>
+<figcaption>In SuperSplat freigestelltes Objekt</figcaption>
+</figure>
+</div>
+<p><code>.ply</code> → <code>.spz</code>: <strong>~10× kleiner</strong>, ready für Babylon.js &amp; WebXR.</p>
+</div>
+</div>
 </section>
-<section id="modell-galerie" class="level2">
-<h2 class="anchored" data-anchor-id="modell-galerie">Modell-Galerie</h2>
-<!-- TODO: Eigenes trainiertes Modell eingebettet auf der Webseite. -->
+<section id="galerie" class="level2">
+<h2 class="anchored" data-anchor-id="galerie">5. Modell-Galerie</h2>
+<p>Vier selbst trainierte Szenen – die Videos zeigen eine automatische Kamerafahrt um das fertige Modell:</p>
+<div class="gs-gallery">
+  <div class="gs-card">
+    <video src="video/vase.mp4" autoplay="" muted="" loop="" playsinline=""></video>
+    <div class="cap"><b>Vase</b><span class="badge">Objekt</span><div class="meta">LiDAR · ~880k Gaussians · PSNR 21,5</div></div>
+  </div>
+  <div class="gs-card">
+    <video src="video/wm_pokal.mp4" autoplay="" muted="" loop="" playsinline=""></video>
+    <div class="cap"><b>WM-Pokal</b><span class="badge">Objekt</span><div class="meta">LEGO-Modell · LiDAR-Capture</div></div>
+  </div>
+  <div class="gs-card">
+    <video src="video/gartenhuette.mp4" autoplay="" muted="" loop="" playsinline=""></video>
+    <div class="cap"><b>Gartenhütte</b><span class="badge">Szene</span><div class="meta">Außenaufnahme · 525 Fotos</div></div>
+  </div>
+  <div class="gs-card">
+    <video src="video/wasserspray.mp4" autoplay="" muted="" loop="" playsinline=""></video>
+    <div class="cap"><b>Wasserspray</b><span class="badge">Objekt</span><div class="meta">Foto-Capture · COLMAP-Posen</div></div>
+  </div>
+</div>
+<section id="eigenes-modell-live-interaktiv" class="level3">
+<h3 class="anchored" data-anchor-id="eigenes-modell-live-interaktiv">Eigenes Modell – live &amp; interaktiv</h3>
+<p>Hier eingebettet: mein trainiertes <strong>Vase</strong>-Modell als echtes, drehbares 3DGS direkt im Browser (per Maus/Touch rotieren &amp; zoomen). Alle vier Modelle – inklusive <strong>Datei-Upload</strong> und einem <strong>First-Person-Viewer zum Begehen</strong> der Szenen – gibt es auf der Seite <em>Web &amp; AR</em>.</p>
+<div id="pl-viewer">
+  <canvas id="pl-canvas"></canvas>
+  <button id="pl-load">▶&nbsp; Interaktives 3D-Modell laden</button>
+  <div id="pl-status">Initialisiere …</div>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById("pl-load"), statusEl=document.getElementById("pl-status");
+  var canvas=document.getElementById("pl-canvas");
+  function setStatus(t){statusEl.style.display=t?"block":"none";statusEl.textContent=t;}
+  function load(s,cb){var el=document.createElement("script");el.src=s;el.onload=cb;document.head.appendChild(el);}
+  function start(){
+    var engine=new BABYLON.Engine(canvas,true,{preserveDrawingBuffer:true,stencil:true});
+    var scene=new BABYLON.Scene(engine);
+    scene.clearColor=new BABYLON.Color4(0.05,0.05,0.08,1);
+    var cam=new BABYLON.ArcRotateCamera("c",-Math.PI/2,Math.PI/2.2,6,BABYLON.Vector3.Zero(),scene);
+    cam.attachControl(canvas,true);cam.wheelPrecision=50;cam.lowerRadiusLimit=1.5;cam.upperRadiusLimit=25;cam.minZ=0.1;
+    engine.runRenderLoop(function(){scene.render();});
+    window.addEventListener("resize",function(){engine.resize();});
+    setStatus("Lade Vase-Modell …");
+    BABYLON.SceneLoader.ImportMeshAsync(null,"","../web-ar/models/vase.spz",scene)
+      .then(function(res){
+        var m=res.meshes[0];
+        m.rotationQuaternion=BABYLON.Quaternion.RotationAxis(BABYLON.Axis.X,-Math.PI/2); // Vase ist Z-up -> Y-up
+        m.computeWorldMatrix(true); m.refreshBoundingInfo(true);
+        var bb=m.getBoundingInfo().boundingBox;
+        var diag=bb.maximumWorld.subtract(bb.minimumWorld).length()||6;
+        cam.setTarget(bb.centerWorld); cam.radius=diag*1.05;
+        cam.lowerRadiusLimit=diag*0.05; cam.upperRadiusLimit=diag*4;
+        cam.minZ=Math.min(0.05,diag*0.01); cam.wheelPrecision=Math.max(0.5,60/diag);
+        setStatus("");
+      })
+      .catch(function(e){setStatus("Fehler: "+(e&&e.message?e.message:e));});
+  }
+  btn.addEventListener("click",function(){
+    btn.style.display="none";
+    if(window.BABYLON&&BABYLON.SceneLoader){start();return;}
+    setStatus("Lade Babylon.js …");
+    load("https://cdn.babylonjs.com/babylon.js",function(){
+      load("https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js",start);
+    });
+  });
+})();
+</script>
+<p><a class="gs-cta" href="../web-ar/index.html">Alle Modelle interaktiv erkunden &amp; begehen →</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
