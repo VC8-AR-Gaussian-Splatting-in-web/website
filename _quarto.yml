@@ -11,6 +11,8 @@ project:
 
 website:
   title: "3D Gaussian Splatting im Web"
+  search:
+    keyboard-shortcut: ["?"]
   navbar:
     left:
       - { href: index.qmd, text: "Home" }
