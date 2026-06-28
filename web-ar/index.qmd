@@ -327,11 +327,11 @@ Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.
 
       // Standpunkte rund um die Szenenmitte, jeweils auf die Mitte blickend (x=seitlich, y=hoch, z=Tiefe).
       WAYPOINTS = [
-        { pos: CENTER.clone(),     target: wp(0, 0, 1) },   // in der Mitte, Blick nach vorn
+      //  { pos: CENTER.clone(),     target: wp(0, 0, 1) },   // in der Mitte, Blick nach vorn
+        { pos: wp( 0.8, 0.0, -0.8), target: CENTER.clone() }, // hinten rechts
         { pos: wp( 0.8, 0.0,  0.8), target: CENTER.clone() }, // vorne rechts
         { pos: wp(-0.8, 0.0,  0.8), target: CENTER.clone() }, // vorne links
         { pos: wp(-0.8, 0.0, -0.8), target: CENTER.clone() }, // hinten links
-        { pos: wp( 0.8, 0.0, -0.8), target: CENTER.clone() }, // hinten rechts
       ];
 
       // Kamera in die Mitte der Szene setzen und nach vorn ausrichten.
