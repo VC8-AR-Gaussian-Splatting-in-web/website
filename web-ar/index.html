@@ -86,11 +86,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
+    "?"
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -337,9 +334,34 @@ window.gsAlignUp = window.gsAlignUp || function (mesh, axis) {
   return up;
 };
 
+function installViewerShortcuts() {
+  if (window.__viewerShortcutsInstalled) return;
+  window.__viewerShortcutsInstalled = true;
+
+  window.addEventListener("keydown", (e) => {
+    const target = e.target;
+    const isTyping = !!(target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.tagName === "SELECT" || target.isContentEditable));
+    const key = e.key?.toLowerCase();
+
+    if (!e.metaKey && !e.ctrlKey && !e.altKey && !isTyping) {
+      if (key === "s") {
+        return;
+      }
+      if (key === "+" || key === "=" || key === "-" || key === "_") {
+        e.preventDefault();
+        e.stopPropagation();
+        const zoomDirection = key === "-" || key === "_" ? "out" : "in";
+        const viewer = document.getElementById("renderCanvas");
+        if (viewer && viewer.__zoomHandler) viewer.__zoomHandler(zoomDirection);
+      }
+    }
+  }, true);
+}
+
 function initSplatViewer() {
   if (window.__splatViewerInit) return;
   window.__splatViewerInit = true;
+  installViewerShortcuts();
 
   const canvas = document.getElementById("renderCanvas");
   const select = document.getElementById("splat-select");
@@ -356,6 +378,9 @@ function initSplatViewer() {
   camera.lowerRadiusLimit = 1.5;
   camera.upperRadiusLimit = 25;
   camera.minZ = 0.1;
+  camera.lowerBetaLimit = 0.01;
+  camera.upperBetaLimit = Math.PI - 0.01;
+  camera.allowUpsideDown = true;
 
   const upload = document.getElementById("splat-upload");
   let current = null;
@@ -367,12 +392,20 @@ function initSplatViewer() {
     const bb = mesh.getBoundingInfo().boundingBox;
     const diag = bb.maximumWorld.subtract(bb.minimumWorld).length() || 6;
     camera.setTarget(bb.centerWorld);
-    camera.radius = diag * 1.05;
-    camera.lowerRadiusLimit = diag * 0.05;
-    camera.upperRadiusLimit = diag * 4;
+    camera.radius = Math.min(Math.max(diag * 1.05, 3), 18);
+    camera.lowerRadiusLimit = Math.max(diag * 0.05, 0.75);
+    camera.upperRadiusLimit = Math.max(diag * 4, 18);
     camera.minZ = Math.min(0.05, diag * 0.01);
     camera.wheelPrecision = Math.max(0.5, 60 / diag);
   }
+
+  function zoomCamera(direction) {
+    const step = Math.max(0.15, camera.radius * 0.15);
+    const delta = direction === "in" ? -step : step;
+    const nextRadius = camera.radius + delta;
+    camera.radius = Math.min(Math.max(nextRadius, camera.lowerRadiusLimit), camera.upperRadiusLimit);
+  }
+  canvas.__zoomHandler = zoomCamera;
 
   // src kann eine URL (String) oder ein hochgeladenes File-Objekt sein.
   // Bei Files erzwingt ext (".spz"/".ply"/".splat") den passenden Loader.
@@ -382,7 +415,7 @@ function initSplatViewer() {
     try {
       const result = await BABYLON.SceneLoader.ImportMeshAsync(null, "", src, scene, null, ext || undefined);
       current = result.meshes[0];
-      gsAlignUp(current);          // Szene aufrichten (Z-up → Y-up), bevor die Kamera einpasst
+      gsAlignUp(current, [0, 1, 0]);  // Modelle explizit auf Y-up ausrichten, damit sie nicht auf dem Kopf stehen
       frameCamera(current);
       setStatus("");
     } catch (e) {
@@ -393,6 +426,18 @@ function initSplatViewer() {
   engine.runRenderLoop(() => scene.render());
   window.addEventListener("resize", () => engine.resize());
   select.addEventListener("change", () => loadSplat(select.value));
+  document.querySelectorAll("[data-zoom]").forEach((btn) => {
+    btn.addEventListener("pointerdown", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      zoomCamera(btn.getAttribute("data-zoom"));
+    });
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      zoomCamera(btn.getAttribute("data-zoom"));
+    });
+  });
   upload.addEventListener("change", () => {
     const f = upload.files[0];
     if (f) loadSplat(f, "." + f.name.split(".").pop().toLowerCase());
@@ -561,6 +606,7 @@ if (document.readyState === "loading") {
     // BABYLON wird vom Viewer oben per CDN geladen; ggf. kurz warten.
     if (!window.BABYLON || !BABYLON.SceneLoader) { setTimeout(initFP, 200); return; }
     window.__fpViewerInit = true;
+    installViewerShortcuts();
 
     const wrap = document.getElementById("fp-viewer");
     const canvas = document.getElementById("fpCanvas");
