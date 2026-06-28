@@ -249,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="interaktiver-splat-viewer" class="level2">
 <h2 class="anchored" data-anchor-id="interaktiver-splat-viewer">Interaktiver Splat-Viewer</h2>
-<p>Der folgende Viewer läuft live auf dieser Seite. Mit der Maus (bzw. per Touch) rotieren, zoomen und verschieben; oben rechts lässt sich das Modell wechseln. Aktuell sind öffentliche Beispiel-Splats eingebunden — sie werden später durch unser eigenes Modell ersetzt.</p>
+<p>Der folgende Viewer läuft live auf dieser Seite. Mit der Maus (bzw. per Touch) rotieren und verschieben; zum Zoomen Strg/Cmd + Mausrad verwenden. Aktuell sind vier öffentliche Beispiel-Splats eingebunden.</p>
 <div id="splat-viewer" style="position:relative;width:100%;aspect-ratio:16/9;min-height:320px;border-radius:8px;overflow:hidden;background:#0d0d14;border:1px solid #2a2a35;">
   <canvas id="renderCanvas" style="width:100%;height:100%;display:block;outline:none;touch-action:none;"></canvas>
   <select id="splat-select" style="position:absolute;top:10px;right:10px;padding:4px 8px;border-radius:6px;border:1px solid #444;background:rgba(20,20,28,.85);color:#eee;font-size:13px;">
@@ -259,6 +259,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <option value="https://assets.babylonjs.com/splats/Halo_Believe.splat">Halo</option>
   </select>
   <div id="splat-status" style="position:absolute;bottom:10px;left:10px;color:#cfcfe0;font-size:13px;background:rgba(20,20,28,.7);padding:3px 8px;border-radius:6px;">Initialisiere …</div>
+  <div id="splat-zoom" style="position:absolute;bottom:10px;right:10px;display:flex;flex-direction:column;gap:6px;">
+    <button type="button" data-zoom="in" aria-label="Hineinzoomen" style="width:34px;height:34px;font-size:20px;line-height:1;border-radius:6px;border:1px solid #444;background:rgba(20,20,28,.85);color:#eee;cursor:pointer;">+</button>
+    <button type="button" data-zoom="out" aria-label="Herauszoomen" style="width:34px;height:34px;font-size:20px;line-height:1;border-radius:6px;border:1px solid #444;background:rgba(20,20,28,.85);color:#eee;cursor:pointer;">−</button>
+  </div>
 </div>
 
 <script src="https://cdn.babylonjs.com/babylon.js"></script>
@@ -279,10 +283,24 @@ function initSplatViewer() {
 
   const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.2, 6, BABYLON.Vector3.Zero(), scene);
   camera.attachControl(canvas, true);
-  camera.wheelPrecision = 50;
+  camera.inputs.removeByType("ArcRotateCameraMouseWheelInput");   // Rad allein soll die Seite scrollen, nicht zoomen
   camera.lowerRadiusLimit = 1.5;
   camera.upperRadiusLimit = 25;
   camera.minZ = 0.1;
+
+  // Zoom geräteübergreifend: +/−-Buttons sowie Strg/Cmd + Rad (Mac-Pinch sendet ctrlKey).
+  const clampRadius = (r) => Math.min(camera.upperRadiusLimit, Math.max(camera.lowerRadiusLimit, r));
+  const zoomByFactor = (f) => { camera.radius = clampRadius(camera.radius * f); };
+  canvas.addEventListener("wheel", (e) => {
+    if (!(e.ctrlKey || e.metaKey)) return;   // Rad allein → Seite scrollt normal
+    e.preventDefault();
+    zoomByFactor(Math.exp(e.deltaY * 0.001));
+  }, { passive: false });
+  document.getElementById("splat-zoom").addEventListener("click", (e) => {
+    const dir = e.target.getAttribute("data-zoom");
+    if (dir === "in")  zoomByFactor(0.8);
+    if (dir === "out") zoomByFactor(1.25);
+  });
 
   let current = null;
 
@@ -483,11 +501,11 @@ if (document.readyState === "loading") {
 
       // Standpunkte rund um die Szenenmitte, jeweils auf die Mitte blickend (x=seitlich, y=hoch, z=Tiefe).
       WAYPOINTS = [
-        { pos: CENTER.clone(),     target: wp(0, 0, 1) },   // in der Mitte, Blick nach vorn
+      //  { pos: CENTER.clone(),     target: wp(0, 0, 1) },   // in der Mitte, Blick nach vorn
+        { pos: wp( 0.8, 0.0, -0.8), target: CENTER.clone() }, // hinten rechts
         { pos: wp( 0.8, 0.0,  0.8), target: CENTER.clone() }, // vorne rechts
         { pos: wp(-0.8, 0.0,  0.8), target: CENTER.clone() }, // vorne links
         { pos: wp(-0.8, 0.0, -0.8), target: CENTER.clone() }, // hinten links
-        { pos: wp( 0.8, 0.0, -0.8), target: CENTER.clone() }, // hinten rechts
       ];
 
       // Kamera in die Mitte der Szene setzen und nach vorn ausrichten.

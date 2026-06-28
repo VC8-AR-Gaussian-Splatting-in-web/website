@@ -18,7 +18,7 @@
     "href": "web-ar/index.html#interaktiver-splat-viewer",
     "title": "Web & AR Integration",
     "section": "Interaktiver Splat-Viewer",
-    "text": "Interaktiver Splat-Viewer\nDer folgende Viewer läuft live auf dieser Seite. Mit der Maus (bzw. per Touch) rotieren, zoomen und verschieben; oben rechts lässt sich das Modell wechseln. Aktuell sind öffentliche Beispiel-Splats eingebunden — sie werden später durch unser eigenes Modell ersetzt.\n\n  \n  \n    Sqwakers\n    Plants\n    Skull\n    Halo\n  \n  Initialisiere …"
+    "text": "Interaktiver Splat-Viewer\nDer folgende Viewer läuft live auf dieser Seite. Mit der Maus (bzw. per Touch) rotieren und verschieben; zum Zoomen Strg/Cmd + Mausrad verwenden. Aktuell sind vier öffentliche Beispiel-Splats eingebunden.\n\n  \n  \n    Sqwakers\n    Plants\n    Skull\n    Halo\n  \n  Initialisiere …\n  \n    +\n    −"
   },
   {
     "objectID": "web-ar/index.html#webxr",
