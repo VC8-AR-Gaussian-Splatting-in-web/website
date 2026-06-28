@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - "web-ar/models/**"
+    - "pipeline/img/**"
+    - "pipeline/video/**"
   render:
     - "*.qmd"
     - "*/index.qmd"
