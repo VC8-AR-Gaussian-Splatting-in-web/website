@@ -450,7 +450,7 @@ if (document.readyState === "loading") {
 </section>
 <section id="upload-und-begehung-einer-szene-first-person-blick" class="level2">
 <h2 class="anchored" data-anchor-id="upload-und-begehung-einer-szene-first-person-blick">Upload und Begehung einer Szene (First-Person-Blick)</h2>
-<p>Als eigene Ergänzung zeigen wir den upload einer neuen Szene und ihre Begehung. Per <strong>Klick in die Szene</strong> wechselt die Kamera reihum zwischen mehreren festen <strong>Standpunkten</strong> und schwenkt dabei sanft hinüber — eine kleine geführte Tour durch die Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.</p>
+<p>Als Ergänzung zeigen wir den upload einer neuen Szene und ihre Begehung. Per <strong>Klick in die Szene</strong> wechselt die Kamera reihum zwischen mehreren festen <strong>Standpunkten</strong> und schwenkt dabei sanft hinüber eine kleine geführte Tour durch die Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.</p>
 <div id="walk-viewer" style="position:relative;width:100%;aspect-ratio:16/9;min-height:320px;border-radius:8px;overflow:hidden;background:#0d0d14;border:1px solid #2a2a35;cursor:grab;">
   <canvas id="walkCanvas" style="width:100%;height:100%;display:block;outline:none;touch-action:none;"></canvas>
   <input id="walk-file" type="file" accept=".spz" style="position:absolute;top:10px;right:10px;max-width:60%;padding:4px 8px;border-radius:6px;border:1px solid #444;background:rgba(20,20,28,.85);color:#eee;font-size:12px;cursor:pointer;">
@@ -525,6 +525,16 @@ if (document.readyState === "loading") {
     camera.inertia = 0.6;
     camera.angularSensibility = 2500;
     camera.minZ = 0.05;
+
+    // Zoom (Sichtfeld) wie im Orbit-Viewer oben: Strg/Cmd + Rad/Trackpad
+    // (macOS-Pinch sendet ctrlKey). Kamera bleibt am Standpunkt; nur das FOV ändert sich.
+    const FOV_MIN = 0.35, FOV_MAX = 1.10;            // ~20°…63°, Default-FOV ist 0.8
+    const clampFov = (f) => Math.min(FOV_MAX, Math.max(FOV_MIN, f));
+    canvas.addEventListener("wheel", (e) => {
+      if (!(e.ctrlKey || e.metaKey)) return;          // Rad allein → Seite scrollt normal
+      e.preventDefault();
+      camera.fov = clampFov(camera.fov * Math.exp(e.deltaY * 0.001));
+    }, { passive: false });
 
     // Cursor-Feedback beim Ziehen.
     canvas.addEventListener("pointerdown", () => { wrap.style.cursor = "grabbing"; });

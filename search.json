@@ -39,7 +39,7 @@
     "href": "web-ar/index.html#upload-und-begehung-einer-szene-first-person-blick",
     "title": "Web & AR Integration",
     "section": "Upload und Begehung einer Szene (First-Person-Blick)",
-    "text": "Upload und Begehung einer Szene (First-Person-Blick)\nAls eigene Ergänzung zeigen wir den upload einer neuen Szene und ihre Begehung. Per Klick in die Szene wechselt die Kamera reihum zwischen mehreren festen Standpunkten und schwenkt dabei sanft hinüber — eine kleine geführte Tour durch die Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.\n\n  \n  \n  Bitte eine .spz-Datei hochladen\n  Klicken: nächster Standpunkt · Ziehen: umsehen\n  Standpunkt 1 / 4"
+    "text": "Upload und Begehung einer Szene (First-Person-Blick)\nAls Ergänzung zeigen wir den upload einer neuen Szene und ihre Begehung. Per Klick in die Szene wechselt die Kamera reihum zwischen mehreren festen Standpunkten und schwenkt dabei sanft hinüber eine kleine geführte Tour durch die Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.\n\n  \n  \n  Bitte eine .spz-Datei hochladen\n  Klicken: nächster Standpunkt · Ziehen: umsehen\n  Standpunkt 1 / 4"
   },
   {
     "objectID": "pipeline/index.html#use-cases",
