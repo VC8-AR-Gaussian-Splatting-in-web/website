@@ -287,9 +287,9 @@ WebXR-AR läuft derzeit zuverlässig auf **Android-Chrome**. Auf iOS-Safari und 
 
 ## Upload und Begehung einer Szene (First-Person-Blick)
 
-Als eigene Ergänzung zeigen wir den upload einer neuen Szene und ihre Begehung. 
+Als Ergänzung zeigen wir den upload einer neuen Szene und ihre Begehung. 
 Per **Klick in die Szene** wechselt die Kamera reihum zwischen mehreren festen
-**Standpunkten** und schwenkt dabei sanft hinüber — eine kleine geführte Tour durch die
+**Standpunkten** und schwenkt dabei sanft hinüber eine kleine geführte Tour durch die
 Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.
 
 
@@ -368,6 +368,16 @@ Szene. Zwischen den Stationen kann man sich weiterhin frei umsehen.
     camera.inertia = 0.6;
     camera.angularSensibility = 2500;
     camera.minZ = 0.05;
+
+    // Zoom (Sichtfeld) wie im Orbit-Viewer oben: Strg/Cmd + Rad/Trackpad
+    // (macOS-Pinch sendet ctrlKey). Kamera bleibt am Standpunkt; nur das FOV ändert sich.
+    const FOV_MIN = 0.35, FOV_MAX = 1.10;            // ~20°…63°, Default-FOV ist 0.8
+    const clampFov = (f) => Math.min(FOV_MAX, Math.max(FOV_MIN, f));
+    canvas.addEventListener("wheel", (e) => {
+      if (!(e.ctrlKey || e.metaKey)) return;          // Rad allein → Seite scrollt normal
+      e.preventDefault();
+      camera.fov = clampFov(camera.fov * Math.exp(e.deltaY * 0.001));
+    }, { passive: false });
 
     // Cursor-Feedback beim Ziehen.
     canvas.addEventListener("pointerdown", () => { wrap.style.cursor = "grabbing"; });
