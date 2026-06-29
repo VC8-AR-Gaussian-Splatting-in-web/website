@@ -159,6 +159,13 @@ Diese Gaussians werden direkt in den Bildraum projiziert und als sogenannte „S
 
 3DGS stellt somit einen Kompromiss zwischen klassischer Geometrie und neuronalen Methoden dar und gewinnt aktuell stark an Bedeutung in Forschung und Praxis.
 
+::: {.callout-note}
+## Hinweis
+
+Wenn euch die mathematischen Grundlagen hinter Gaussian Splatting interessieren, schaut in die [Quellen](#quellen) am Ende der Seite.
+:::
+
+
 ---
 
 ## 3. WebXR und 3DGS
@@ -235,3 +242,10 @@ Die Integration von 3DGS in WebXR bringt mehrere Herausforderungen mit sich:
 
 Noch keine etablierten Standards für 3DGS im Web — unterschiedliche Implementierungen in Forschung und Open Source erschweren die Interoperabilität und Wiederverwendbarkeit.
 :::
+
+---
+
+### Quellen {#quellen}
+- [3D Gaussian Splatting for Real-Time Radiance Field Rendering (SIGGRAPH 2023)](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/)
+- [A comprehensive overview of gaussian splatting (Kate Yurkova 2023)](https://towardsdatascience.com/a-comprehensive-overview-of-gaussian-splatting-e7d570081362/)
+- [3D Gaussian Splatting Introduction - Paper Explanation & Training on Custom Datasets with NeRF Studio Gsplats (soumyadip 2024)](https://learnopencv.com/3d-gaussian-splatting/)
