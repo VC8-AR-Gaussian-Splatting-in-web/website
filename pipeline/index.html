@@ -169,6 +169,7 @@ window.Quarto = {
   <li><a href="#galerie" id="toc-galerie" class="nav-link" data-scroll-target="#galerie">5. Modell-Galerie</a>
   <ul class="collapse">
   <li><a href="#eigenes-modell-live-interaktiv" id="toc-eigenes-modell-live-interaktiv" class="nav-link" data-scroll-target="#eigenes-modell-live-interaktiv">Eigenes Modell – live &amp; interaktiv</a></li>
+  <li><a href="#quellen" id="toc-quellen" class="nav-link" data-scroll-target="#quellen">Quellen</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -226,7 +227,7 @@ window.Quarto = {
   .gs-card{border:1px solid #e6ebf4;border-radius:14px;overflow:hidden;background:#fff;
     box-shadow:0 2px 8px rgba(20,30,60,.05);transition:transform .15s,box-shadow .15s;}
   .gs-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(20,30,60,.12);}
-  .gs-card video{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;background:#0d0d14;}
+  .gs-card video{width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#0d0d14;}
   .gs-card .cap{padding:10px 13px;}
   .gs-card .cap b{color:#1d2944;}
   .gs-card .cap .meta{font-size:12px;color:#6b7790;margin-top:2px;}
@@ -246,6 +247,10 @@ window.Quarto = {
   #pl-load:hover{background:#3a78ea;}
   #pl-status{position:absolute;bottom:10px;left:10px;color:#cfcfe0;font-size:13px;background:rgba(20,20,28,.7);
     padding:3px 9px;border-radius:6px;display:none;}
+  #pl-zoom{position:absolute;bottom:10px;right:10px;display:flex;flex-direction:column;gap:6px;}
+  #pl-zoom button{width:34px;height:34px;font-size:20px;line-height:1;border-radius:6px;border:1px solid #444;
+    background:rgba(20,20,28,.85);color:#eee;cursor:pointer;}
+  #pl-zoom button:hover{background:rgba(45,108,223,.85);}
 </style>
 
 <div class="gs-flow">
@@ -357,6 +362,14 @@ window.Quarto = {
 </ol>
 </div>
 </div>
+<p>Und so sieht diese Schleife <strong>live</strong> aus – aus einer festen Kameraperspektive, über den kompletten Trainingsverlauf. Links das echte Trainingsfoto (bleibt gleich), rechts der Render, der sich von einem verwaschenen Klecks zum scharfen Modell entwickelt:</p>
+<figure style="margin:1.4rem 0;" class="figure">
+  <video src="video/training_vase.mp4" autoplay="" muted="" loop="" playsinline="" style="width:100%;border-radius:12px;border:1px solid #e6ebf4;background:#0d0d14;display:block;"></video>
+  <figcaption style="font-size:13px;color:#6b7790;margin-top:6px;text-align:center;">
+    Trainings-Zeitraffer der Vase (gsplat, RTX 4070&nbsp;Super): Original-Foto vs. gerendertes 3DGS-Modell,
+    Step&nbsp;100&nbsp;→&nbsp;30.000. Der größte Sprung passiert in den ersten Tausend Schritten.
+  </figcaption>
+</figure>
 <p>Nach ~30.000 Iterationen passt das gerenderte Modell die Originalfotos sehr genau an. Der direkte Vergleich zeigt es – <strong>links das echte Foto, rechts das gerenderte 3DGS-Modell:</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -367,7 +380,7 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/compare-gartenhuette.jpg" class="img-fluid figure-img"></p>
-<figcaption>Gartenhütte — die feinen Blätter &amp; Schatten werden als Splats rekonstruiert</figcaption>
+<figcaption>Gartenhütte — die feinen Blätter &amp; Schatten werden als Splats rekonstruiert. Das Modell wirkt sichtbar unschärfer als bei der Vase: Die Außenszene ist größer, hat bewegte Blätter und wechselndes Licht – das macht SfM und Training deutlich schwieriger als bei einem kontrollierten Objekt-Setup.</figcaption>
 </figure>
 </div>
 <div class="gs-facts">
@@ -425,11 +438,6 @@ GPU (12 GB VRAM)
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Parameter</th>
@@ -441,26 +449,32 @@ GPU (12 GB VRAM)
 <tr class="odd">
 <td><code>--strategy</code></td>
 <td><code>default</code> (densifiziert frei)</td>
-<td><code>mcmc</code> (deckelt Gaussian-Zahl)</td>
+<td><code>default</code></td>
 </tr>
 <tr class="even">
-<td><code>--cap-max</code></td>
-<td>–</td>
-<td><code>1.000.000</code></td>
-</tr>
-<tr class="odd">
 <td><code>--data-factor</code></td>
 <td><code>1</code> (volle Auflösung)</td>
 <td><code>2</code> (halbe – spart VRAM)</td>
+</tr>
+<tr class="odd">
+<td><code>--max-steps</code></td>
+<td><code>30.000</code></td>
+<td><code>50.000</code> (größere, komplexere Szene)</td>
 </tr>
 <tr class="even">
 <td><code>--sh-degree</code></td>
 <td><code>3</code></td>
 <td><code>3</code></td>
 </tr>
+<tr class="odd">
+<td><code>--app_opt</code></td>
+<td>–</td>
+<td>✓</td>
+</tr>
 </tbody>
 </table>
-<p><code>mcmc</code> deckelt die Anzahl der Gaussians → planbarer VRAM und weniger Floater bei großen, ungleichmäßig abgedeckten Szenen.</p>
+<p>Beide Szenentypen trainieren mit gsplats <code>default</code>-Strategie – eine <code>mcmc</code>-Strategie (gedeckelte Gaussian-Zahl) haben wir für Räume ausprobiert, sie führte bei uns aber zu Problemen und wurde wieder verworfen. Stattdessen bekommt der Raum mehr Trainingsschritte und <strong><code>--app_opt</code></strong> (Appearance Optimization): das gleicht Belichtungs-/Farbunterschiede zwischen den Aufnahmen aus, die bei 300+ Fotos eines Raums stärker ins Gewicht fallen als beim kurzen Objekt-Rundgang.</p>
+<p><strong><code>--sh-degree</code></strong> (Spherical-Harmonics-Grad) legt fest, wie viele Kugelflächenfunktions- Koeffizienten pro Gaussian für blickwinkelabhängige Farbe (z. B. Glanzlichter, Reflexionen) genutzt werden: <code>0</code> = nur eine feste Grundfarbe, höhere Grade erlauben zunehmend richtungsabhängige Farbvariation, kosten aber mehr Speicher pro Gaussian. <code>3</code> ist gsplats Maximum und für beide Szenentypen sinnvoll.</p>
 </div>
 </div>
 </div>
@@ -523,6 +537,10 @@ end_header
   <canvas id="pl-canvas"></canvas>
   <button id="pl-load">▶&nbsp; Interaktives 3D-Modell laden</button>
   <div id="pl-status">Initialisiere …</div>
+  <div id="pl-zoom">
+    <button type="button" data-zoom="in" aria-label="Hineinzoomen">+</button>
+    <button type="button" data-zoom="out" aria-label="Herauszoomen">−</button>
+  </div>
 </div>
 <script>
 (function(){
@@ -530,19 +548,35 @@ end_header
   var canvas=document.getElementById("pl-canvas");
   function setStatus(t){statusEl.style.display=t?"block":"none";statusEl.textContent=t;}
   function load(s,cb){var el=document.createElement("script");el.src=s;el.onload=cb;document.head.appendChild(el);}
+  window.addEventListener("keydown",function(e){
+    if(!(e.key==="+"||e.key==="="||e.key==="-"||e.key==="_"))return;
+    e.preventDefault();e.stopPropagation();
+    if(canvas.__zoomHandler)canvas.__zoomHandler(e.key==="-"||e.key==="_"?"out":"in");
+  },true);
   function start(){
     var engine=new BABYLON.Engine(canvas,true,{preserveDrawingBuffer:true,stencil:true});
     var scene=new BABYLON.Scene(engine);
     scene.clearColor=new BABYLON.Color4(0.05,0.05,0.08,1);
     var cam=new BABYLON.ArcRotateCamera("c",-Math.PI/2,Math.PI/2.2,6,BABYLON.Vector3.Zero(),scene);
     cam.attachControl(canvas,true);cam.wheelPrecision=50;cam.lowerRadiusLimit=1.5;cam.upperRadiusLimit=25;cam.minZ=0.1;
+    cam.inputs.removeByType("ArcRotateCameraMouseWheelInput"); // Rad soll die Seite scrollen, nicht zoomen
+    function zoomCamera(direction){
+      var step=Math.max(0.15,cam.radius*0.15);
+      var next=cam.radius+(direction==="in"?-step:step);
+      cam.radius=Math.min(Math.max(next,cam.lowerRadiusLimit),cam.upperRadiusLimit);
+    }
+    canvas.__zoomHandler=zoomCamera;
+    document.querySelectorAll("#pl-zoom [data-zoom]").forEach(function(b){
+      b.addEventListener("pointerdown",function(e){e.preventDefault();e.stopPropagation();zoomCamera(b.getAttribute("data-zoom"));});
+      b.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();zoomCamera(b.getAttribute("data-zoom"));});
+    });
     engine.runRenderLoop(function(){scene.render();});
     window.addEventListener("resize",function(){engine.resize();});
     setStatus("Lade Vase-Modell …");
     BABYLON.SceneLoader.ImportMeshAsync(null,"","../web-ar/models/vase.spz",scene)
       .then(function(res){
         var m=res.meshes[0];
-        m.rotationQuaternion=BABYLON.Quaternion.RotationAxis(BABYLON.Axis.X,-Math.PI/2); // Vase ist Z-up -> Y-up
+        m.rotationQuaternion=BABYLON.Quaternion.RotationAxis(BABYLON.Axis.X,Math.PI/2); // Vase-Splats: -Z ist "oben" -> Y-up (per PCA auf den Splat-Positionen ermittelt)
         m.computeWorldMatrix(true); m.refreshBoundingInfo(true);
         var bb=m.getBoundingInfo().boundingBox;
         var diag=bb.maximumWorld.subtract(bb.minimumWorld).length()||6;
@@ -564,6 +598,18 @@ end_header
 })();
 </script>
 <p><a class="gs-cta" href="../web-ar/index.html">Alle Modelle interaktiv erkunden &amp; begehen →</a></p>
+<hr>
+</section>
+<section id="quellen" class="level3">
+<h3 class="anchored" data-anchor-id="quellen">Quellen</h3>
+<ul>
+<li><a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">3D Gaussian Splatting for Real-Time Radiance Field Rendering (SIGGRAPH 2023)</a> — die zugrundeliegende Methode (siehe auch <a href="../theorie/index.html#quellen">Theorie &amp; Methodik</a>)</li>
+<li><a href="https://github.com/nerfstudio-project/gsplat">gsplat (nerfstudio-project)</a> — die Trainingsbibliothek, mit der alle Modelle auf dieser Seite trainiert wurden</li>
+<li><a href="https://colmap.github.io/">COLMAP</a> — Structure-from-Motion/Multi-View-Stereo, rechnet die Kameraposen für Foto-Aufnahmen ohne LiDAR</li>
+<li><a href="https://apps.apple.com/us/app/gaussian-splatking/id6759175085">Gaussian SplatKing (iOS-App)</a> — Aufnahme-App für Fotos + LiDAR-Metadaten</li>
+<li><a href="https://supersplat.play.canvas.app/">SuperSplat</a> — browserbasiertes Tool zum Freistellen/Bereinigen der trainierten Splats</li>
+<li><a href="https://github.com/nianticlabs/spz">spz-Format (Niantic Labs)</a> — komprimiertes Export-Format für den Web-Viewer</li>
+</ul>
 
 
 </section>
