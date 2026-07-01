@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "intrinsics" : [
+        1360.974365234375,
+        0,
+        0,
+        0,
+        1360.974365234375,
+        0,
+        966.65631103515625,
+        720.4053955078125,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "trackingState" : "normal",
+      "transform" : [
+        0.79295039176940918,
+        -0.58241826295852661,
+        -0.17893753945827484,
+        0,
+        -0.19622847437858582,
+        0.033917602151632309,
+        -0.97997152805328369,
+        0,
+        0.57682240009307861,
+        0.81218129396438599,
+        -0.087392069399356842,
+        0,
+        0.11779779195785522,
+        -0.18291680514812469,
+        0.052007872611284256,
+        1
+      ],
+      "eulerAngles" : [
+        -0.94788134098052979,
+        1.7211588621139526,
+        -1.5126261711120605
+      ]
+    }
+  },
+  "extraMetadata" : {
+    "format" : "jpeg",
+    "autoCapture" : true,
+    "stabilityBypassed" : false,
+    "qualityScore" : 0.88,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "captureSource" : "arkit_lidar",
+    "stream" : "wide",
+    "capturedPointSamplesAdded" : 1200,
+    "depthAvailable" : true,
+    "qualityBand" : "good",
+    "qualitySummary" : "stable ar tracking",
+    "cgImagePropertyOrientation" : 6
+  },
+  "auxiliaryOutputs" : [
+    {
+      "height" : 192,
+      "filename" : "wide_20260627_192453_409_depth.bin",
+      "bytesPerRow" : 1024,
+      "pixelFormat" : 1717855600,
+      "width" : 256,
+      "type" : "depth"
+    },
+    {
+      "pixelFormat" : 1278226488,
+      "bytesPerRow" : 256,
+      "filename" : "wide_20260627_192453_409_confidence.bin",
+      "width" : 256,
+      "height" : 192,
+      "type" : "depthConfidence"
+    },
+    {
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "type" : "pointCloudXYZ",
+      "units" : "meters",
+      "coordinateSystem" : "world"
+    }
+  ]
+}

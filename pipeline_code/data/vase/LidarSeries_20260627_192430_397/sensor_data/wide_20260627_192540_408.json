@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "trackingState" : "normal",
+      "transform" : [
+        -0.26337763667106628,
+        -0.89128875732421875,
+        0.3691023588180542,
+        0,
+        0.77304935455322266,
+        0.033883929252624512,
+        0.63344025611877441,
+        0,
+        -0.57708477973937988,
+        0.45216834545135498,
+        0.68008595705032349,
+        0,
+        -0.64330202341079712,
+        -0.37530219554901123,
+        0.41346237063407898,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "intrinsics" : [
+        1357.62109375,
+        0,
+        0,
+        0,
+        1357.62109375,
+        0,
+        968.40997314453125,
+        720.7620849609375,
+        1
+      ],
+      "eulerAngles" : [
+        -0.4691949188709259,
+        -0.70364981889724731,
+        -1.5327978134155273
+      ]
+    }
+  },
+  "auxiliaryOutputs" : [
+    {
+      "bytesPerRow" : 1024,
+      "pixelFormat" : 1717855600,
+      "width" : 256,
+      "height" : 192,
+      "type" : "depth",
+      "filename" : "wide_20260627_192540_408_depth.bin"
+    },
+    {
+      "pixelFormat" : 1278226488,
+      "bytesPerRow" : 256,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192540_408_confidence.bin",
+      "height" : 192,
+      "width" : 256
+    },
+    {
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world",
+      "units" : "meters",
+      "type" : "pointCloudXYZ"
+    }
+  ],
+  "extraMetadata" : {
+    "depthAvailable" : true,
+    "captureSource" : "arkit_lidar",
+    "qualityScore" : 0.88,
+    "cgImagePropertyOrientation" : 6,
+    "qualityBand" : "good",
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "capturedPointSamplesAdded" : 1200,
+    "stream" : "wide",
+    "format" : "jpeg",
+    "qualitySummary" : "stable ar tracking",
+    "stabilityBypassed" : false,
+    "autoCapture" : true
+  }
+}

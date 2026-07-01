@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "qualityScore" : 0.88,
+    "depthAvailable" : true,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "format" : "jpeg",
+    "autoCapture" : true,
+    "stabilityBypassed" : false,
+    "qualityBand" : "good",
+    "cgImagePropertyOrientation" : 6,
+    "capturedPointSamplesAdded" : 1200,
+    "qualitySummary" : "stable ar tracking",
+    "captureSource" : "arkit_lidar",
+    "stream" : "wide"
+  },
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "intrinsics" : [
+        1367.4483642578125,
+        0,
+        0,
+        0,
+        1367.4483642578125,
+        0,
+        967.02783203125,
+        719.83941650390625,
+        1
+      ],
+      "transform" : [
+        0.63302004337310791,
+        -0.72249561548233032,
+        0.27800318598747253,
+        0,
+        0.34908697009086609,
+        -0.0541183240711689,
+        -0.93552637100219727,
+        0,
+        0.69095873832702637,
+        0.68925422430038452,
+        0.2179558277130127,
+        0,
+        0.051736600697040558,
+        -0.29611766338348389,
+        0.20158039033412933,
+        1
+      ],
+      "trackingState" : "normal",
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "eulerAngles" : [
+        -0.76045918464660645,
+        1.2652355432510376,
+        -1.6455614566802979
+      ]
+    }
+  },
+  "auxiliaryOutputs" : [
+    {
+      "width" : 256,
+      "filename" : "wide_20260627_192502_409_depth.bin",
+      "pixelFormat" : 1717855600,
+      "height" : 192,
+      "type" : "depth",
+      "bytesPerRow" : 1024
+    },
+    {
+      "filename" : "wide_20260627_192502_409_confidence.bin",
+      "width" : 256,
+      "bytesPerRow" : 256,
+      "type" : "depthConfidence",
+      "pixelFormat" : 1278226488,
+      "height" : 192
+    },
+    {
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "units" : "meters",
+      "coordinateSystem" : "world",
+      "type" : "pointCloudXYZ"
+    }
+  ]
+}

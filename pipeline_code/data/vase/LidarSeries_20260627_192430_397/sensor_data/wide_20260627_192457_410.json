@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "format" : "jpeg",
+    "autoCapture" : true,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "depthAvailable" : true,
+    "stream" : "wide",
+    "qualitySummary" : "stable ar tracking",
+    "stabilityBypassed" : false,
+    "qualityScore" : 0.88,
+    "cgImagePropertyOrientation" : 6,
+    "captureSource" : "arkit_lidar",
+    "capturedPointSamplesAdded" : 1200,
+    "qualityBand" : "good"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "bytesPerRow" : 1024,
+      "height" : 192,
+      "pixelFormat" : 1717855600,
+      "filename" : "wide_20260627_192457_410_depth.bin",
+      "width" : 256,
+      "type" : "depth"
+    },
+    {
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192457_410_confidence.bin",
+      "pixelFormat" : 1278226488,
+      "height" : 192,
+      "width" : 256,
+      "bytesPerRow" : 256
+    },
+    {
+      "coordinateSystem" : "world",
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "units" : "meters"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "eulerAngles" : [
+        -1.2453353404998779,
+        -0.092610105872154236,
+        -1.1111942529678345
+      ],
+      "transform" : [
+        0.3631604015827179,
+        -0.28656521439552307,
+        0.88656353950500488,
+        0,
+        0.93125736713409424,
+        0.14183640480041504,
+        -0.3356221616268158,
+        0,
+        -0.029569352045655251,
+        0.94750344753265381,
+        0.31837528944015503,
+        0,
+        -0.32267138361930847,
+        -0.19955377280712128,
+        0.22741425037384033,
+        1.0000001192092896
+      ],
+      "trackingState" : "normal",
+      "intrinsics" : [
+        1375.6435546875,
+        0,
+        0,
+        0,
+        1375.6435546875,
+        0,
+        962.87774658203125,
+        721.6455078125,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      }
+    }
+  }
+}

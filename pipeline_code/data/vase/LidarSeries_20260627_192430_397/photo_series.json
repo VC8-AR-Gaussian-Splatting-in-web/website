@@ -1,0 +1,6252 @@
+{
+  "captures" : [
+    {
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "eulerAngles" : [
+            -0.89039921760559082,
+            1.0522985458374023,
+            -1.5230907201766968
+          ],
+          "transform" : [
+            0.69801992177963257,
+            -0.62838608026504517,
+            0.34336450695991516,
+            0,
+            0.4628155529499054,
+            0.030000325292348862,
+            -0.88594692945480347,
+            0,
+            0.54641556739807129,
+            0.77732294797897339,
+            0.31176769733428955,
+            0,
+            0.043682992458343506,
+            -0.19402946531772614,
+            0.275419682264328,
+            1
+          ],
+          "intrinsics" : [
+            1355.882080078125,
+            0,
+            0,
+            0,
+            1355.882080078125,
+            0,
+            966.049072265625,
+            720.884033203125,
+            1
+          ],
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "trackingState" : "normal"
+        }
+      },
+      "extraMetadata" : {
+        "capturedPointSamplesAdded" : 1200,
+        "qualityBand" : "good",
+        "qualityScore" : 0.88,
+        "format" : "jpeg",
+        "captureSource" : "arkit_lidar",
+        "depthAvailable" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "autoCapture" : true,
+        "stream" : "wide",
+        "stabilityBypassed" : false,
+        "qualitySummary" : "stable ar tracking",
+        "cgImagePropertyOrientation" : 6
+      },
+      "auxiliaryOutputs" : [
+        {
+          "filename" : "wide_20260627_192430_409_depth.bin",
+          "bytesPerRow" : 1024,
+          "width" : 256,
+          "type" : "depth",
+          "pixelFormat" : 1717855600,
+          "height" : 192
+        },
+        {
+          "type" : "depthConfidence",
+          "pixelFormat" : 1278226488,
+          "filename" : "wide_20260627_192430_409_confidence.bin",
+          "height" : 192,
+          "bytesPerRow" : 256,
+          "width" : 256
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "units" : "meters",
+          "type" : "pointCloudXYZ"
+        }
+      ],
+      "isRawPhoto" : false,
+      "timestamp" : 804273870.61654603,
+      "metadataFile" : "wide_20260627_192430_409.json",
+      "filename" : "wide_20260627_192430_409.jpg"
+    },
+    {
+      "auxiliaryOutputs" : [
+        {
+          "type" : "depth",
+          "width" : 256,
+          "filename" : "wide_20260627_192431_410_depth.bin",
+          "height" : 192,
+          "pixelFormat" : 1717855600,
+          "bytesPerRow" : 1024
+        },
+        {
+          "width" : 256,
+          "height" : 192,
+          "pixelFormat" : 1278226488,
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192431_410_confidence.bin"
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ",
+          "units" : "meters"
+        }
+      ],
+      "extraMetadata" : {
+        "depthAvailable" : true,
+        "autoCapture" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "captureSource" : "arkit_lidar",
+        "qualityBand" : "good",
+        "qualityScore" : 0.88,
+        "cgImagePropertyOrientation" : 6,
+        "capturedPointSamplesAdded" : 1200,
+        "stabilityBypassed" : false,
+        "stream" : "wide",
+        "qualitySummary" : "stable ar tracking",
+        "format" : "jpeg"
+      },
+      "isRawPhoto" : false,
+      "metadataFile" : "wide_20260627_192431_410.json",
+      "timestamp" : 804273871.45354104,
+      "filename" : "wide_20260627_192431_410.jpg",
+      "metadata" : {
+        "camera" : {
+          "intrinsics" : [
+            1357.6688232421875,
+            0,
+            0,
+            0,
+            1357.6688232421875,
+            0,
+            966.0836181640625,
+            720.74493408203125,
+            1
+          ],
+          "transform" : [
+            0.72575104236602783,
+            -0.63966161012649536,
+            0.25321626663208008,
+            0,
+            0.33430054783821106,
+            0.0062163248658180237,
+            -0.94244599342346191,
+            0,
+            0.60127246379852295,
+            0.7686314582824707,
+            0.21835075318813324,
+            0,
+            0.0711517333984375,
+            -0.19668786227703094,
+            0.2202732115983963,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "eulerAngles" : [
+            -0.87669903039932251,
+            1.2224569320678711,
+            -1.5610784292221069
+          ],
+          "trackingState" : "normal"
+        },
+        "source" : "arkit"
+      }
+    },
+    {
+      "filename" : "wide_20260627_192432_411.jpg",
+      "timestamp" : 804273872.44455397,
+      "auxiliaryOutputs" : [
+        {
+          "pixelFormat" : 1717855600,
+          "width" : 256,
+          "height" : 192,
+          "bytesPerRow" : 1024,
+          "filename" : "wide_20260627_192432_411_depth.bin",
+          "type" : "depth"
+        },
+        {
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192432_411_confidence.bin",
+          "width" : 256,
+          "bytesPerRow" : 256,
+          "height" : 192,
+          "pixelFormat" : 1278226488
+        },
+        {
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ"
+        }
+      ],
+      "isRawPhoto" : false,
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "eulerAngles" : [
+            -0.84859985113143921,
+            1.4770743846893311,
+            -1.5954055786132812
+          ],
+          "intrinsics" : [
+            1358.255615234375,
+            0,
+            0,
+            0,
+            1358.255615234375,
+            0,
+            966.3212890625,
+            720.3013916015625,
+            1
+          ],
+          "trackingState" : "normal",
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "transform" : [
+            0.7445334792137146,
+            -0.66083425283432007,
+            0.094699457287788391,
+            0,
+            0.11193929612636566,
+            -0.016265939921140671,
+            -0.99358201026916504,
+            0,
+            0.65813338756561279,
+            0.75035560131072998,
+            0.061862781643867493,
+            0,
+            0.098577037453651428,
+            -0.20298327505588531,
+            0.13635247945785522,
+            1
+          ]
+        }
+      },
+      "extraMetadata" : {
+        "captureSource" : "arkit_lidar",
+        "cgImagePropertyOrientation" : 6,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "depthAvailable" : true,
+        "capturedPointSamplesAdded" : 1200,
+        "qualitySummary" : "stable ar tracking",
+        "stream" : "wide",
+        "stabilityBypassed" : false,
+        "qualityScore" : 0.88,
+        "autoCapture" : true,
+        "qualityBand" : "good"
+      },
+      "metadataFile" : "wide_20260627_192432_411.json"
+    },
+    {
+      "metadataFile" : "wide_20260627_192433_410.json",
+      "isRawPhoto" : false,
+      "auxiliaryOutputs" : [
+        {
+          "type" : "depth",
+          "width" : 256,
+          "height" : 192,
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192433_410_depth.bin"
+        },
+        {
+          "filename" : "wide_20260627_192433_410_confidence.bin",
+          "pixelFormat" : 1278226488,
+          "bytesPerRow" : 256,
+          "width" : 256,
+          "height" : 192,
+          "type" : "depthConfidence"
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world"
+        }
+      ],
+      "timestamp" : 804273873.44413495,
+      "metadata" : {
+        "camera" : {
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "intrinsics" : [
+            1360.4859619140625,
+            0,
+            0,
+            0,
+            1360.4859619140625,
+            0,
+            966.38043212890625,
+            720.2032470703125,
+            1
+          ],
+          "transform" : [
+            0.74709784984588623,
+            -0.66348105669021606,
+            -0.040469076484441757,
+            0,
+            -0.071494512259960175,
+            -0.019677620381116867,
+            -0.99724692106246948,
+            0,
+            0.660858154296875,
+            0.74793434143066406,
+            -0.06213635578751564,
+            0,
+            0.088438905775547028,
+            -0.19940239191055298,
+            0.056054912507534027,
+            1.0000001192092896
+          ],
+          "trackingState" : "normal",
+          "eulerAngles" : [
+            -0.84494459629058838,
+            1.6645444631576538,
+            -1.6004457473754883
+          ]
+        },
+        "source" : "arkit"
+      },
+      "extraMetadata" : {
+        "capturedPointSamplesAdded" : 1200,
+        "qualityScore" : 0.88,
+        "depthAvailable" : true,
+        "stream" : "wide",
+        "autoCapture" : true,
+        "format" : "jpeg",
+        "stabilityBypassed" : false,
+        "cgImagePropertyOrientation" : 6,
+        "qualityBand" : "good",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "qualitySummary" : "stable ar tracking",
+        "captureSource" : "arkit_lidar"
+      },
+      "filename" : "wide_20260627_192433_410.jpg"
+    },
+    {
+      "isRawPhoto" : false,
+      "auxiliaryOutputs" : [
+        {
+          "height" : 192,
+          "filename" : "wide_20260627_192434_410_depth.bin",
+          "width" : 256,
+          "type" : "depth",
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600
+        },
+        {
+          "bytesPerRow" : 256,
+          "filename" : "wide_20260627_192434_410_confidence.bin",
+          "pixelFormat" : 1278226488,
+          "width" : 256,
+          "type" : "depthConfidence",
+          "height" : 192
+        },
+        {
+          "units" : "meters",
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world"
+        }
+      ],
+      "extraMetadata" : {
+        "captureSource" : "arkit_lidar",
+        "stream" : "wide",
+        "format" : "jpeg",
+        "qualityBand" : "good",
+        "autoCapture" : true,
+        "qualityScore" : 0.88,
+        "depthAvailable" : true,
+        "cgImagePropertyOrientation" : 6,
+        "stabilityBypassed" : false,
+        "capturedPointSamplesAdded" : 1200,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "qualitySummary" : "stable ar tracking"
+      },
+      "filename" : "wide_20260627_192434_410.jpg",
+      "metadata" : {
+        "camera" : {
+          "eulerAngles" : [
+            -0.83587741851806641,
+            1.972317099571228,
+            -1.634626030921936
+          ],
+          "intrinsics" : [
+            1361.1231689453125,
+            0,
+            0,
+            0,
+            1361.1231689453125,
+            0,
+            966.46624755859375,
+            720.3280029296875,
+            1
+          ],
+          "transform" : [
+            0.70641964673995972,
+            -0.66916149854660034,
+            -0.23063875734806061,
+            0,
+            -0.34646421670913696,
+            -0.042770501226186752,
+            -0.93708765506744385,
+            0,
+            0.6171984076499939,
+            0.74188512563705444,
+            -0.26205441355705261,
+            0,
+            0.067098915576934814,
+            -0.20585055649280548,
+            -0.034601815044879913,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "trackingState" : "normal"
+        },
+        "source" : "arkit"
+      },
+      "metadataFile" : "wide_20260627_192434_410.json",
+      "timestamp" : 804273874.44695997
+    },
+    {
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "trackingState" : "normal",
+          "eulerAngles" : [
+            -0.86748987436294556,
+            2.2504937648773193,
+            -1.6347942352294922
+          ],
+          "intrinsics" : [
+            1364.6134033203125,
+            0,
+            0,
+            0,
+            1364.6134033203125,
+            0,
+            966.5390625,
+            720.14984130859375,
+            1
+          ],
+          "transform" : [
+            0.6321905255317688,
+            -0.64541906118392944,
+            -0.42868331074714661,
+            0,
+            -0.5893329381942749,
+            -0.041361939162015915,
+            -0.80683088302612305,
+            0,
+            0.50301277637481689,
+            0.76270794868469238,
+            -0.40651533007621765,
+            0,
+            -0.010421853512525558,
+            -0.21607896685600281,
+            -0.081218086183071136,
+            1
+          ]
+        }
+      },
+      "auxiliaryOutputs" : [
+        {
+          "bytesPerRow" : 1024,
+          "type" : "depth",
+          "height" : 192,
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192435_410_depth.bin",
+          "width" : 256
+        },
+        {
+          "width" : 256,
+          "pixelFormat" : 1278226488,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192435_410_confidence.bin",
+          "bytesPerRow" : 256,
+          "height" : 192
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world"
+        }
+      ],
+      "metadataFile" : "wide_20260627_192435_410.json",
+      "timestamp" : 804273875.44200695,
+      "isRawPhoto" : false,
+      "filename" : "wide_20260627_192435_410.jpg",
+      "extraMetadata" : {
+        "autoCapture" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "stabilityBypassed" : false,
+        "qualitySummary" : "stable ar tracking",
+        "depthAvailable" : true,
+        "qualityScore" : 0.88,
+        "format" : "jpeg",
+        "capturedPointSamplesAdded" : 1200,
+        "qualityBand" : "good",
+        "stream" : "wide",
+        "captureSource" : "arkit_lidar",
+        "cgImagePropertyOrientation" : 6
+      }
+    },
+    {
+      "metadataFile" : "wide_20260627_192436_410.json",
+      "isRawPhoto" : false,
+      "timestamp" : 804273876.44153595,
+      "filename" : "wide_20260627_192436_410.jpg",
+      "extraMetadata" : {
+        "qualitySummary" : "stable ar tracking",
+        "stream" : "wide",
+        "autoCapture" : true,
+        "captureSource" : "arkit_lidar",
+        "format" : "jpeg",
+        "capturedPointSamplesAdded" : 1200,
+        "qualityBand" : "good",
+        "stabilityBypassed" : false,
+        "depthAvailable" : true,
+        "cgImagePropertyOrientation" : 6,
+        "qualityScore" : 0.88,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin"
+      },
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "trackingState" : "normal",
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "transform" : [
+            0.42146304249763489,
+            -0.67222070693969727,
+            -0.6086774468421936,
+            0,
+            -0.83762800693511963,
+            -0.031379114836454391,
+            -0.54533898830413818,
+            0,
+            0.3474884033203125,
+            0.7396855354309082,
+            -0.57629609107971191,
+            0,
+            -0.079519838094711304,
+            -0.23658713698387146,
+            -0.17797546088695526,
+            1
+          ],
+          "intrinsics" : [
+            1368.0379638671875,
+            0,
+            0,
+            0,
+            1368.0379638671875,
+            0,
+            966.1041259765625,
+            720.21185302734375,
+            1
+          ],
+          "eulerAngles" : [
+            -0.83260291814804077,
+            2.5989933013916016,
+            -1.61744225025177
+          ]
+        }
+      },
+      "auxiliaryOutputs" : [
+        {
+          "pixelFormat" : 1717855600,
+          "type" : "depth",
+          "bytesPerRow" : 1024,
+          "width" : 256,
+          "height" : 192,
+          "filename" : "wide_20260627_192436_410_depth.bin"
+        },
+        {
+          "height" : 192,
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192436_410_confidence.bin",
+          "width" : 256,
+          "pixelFormat" : 1278226488
+        },
+        {
+          "coordinateSystem" : "world",
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ"
+        }
+      ]
+    },
+    {
+      "metadata" : {
+        "camera" : {
+          "transform" : [
+            0.30498394370079041,
+            -0.6900600790977478,
+            -0.65635508298873901,
+            0,
+            -0.92549985647201538,
+            -0.052234508097171783,
+            -0.37512874603271484,
+            0,
+            0.22457699477672577,
+            0.72186475992202759,
+            -0.65458112955093384,
+            0,
+            -0.11015085875988007,
+            -0.24054533243179321,
+            -0.22410400211811066,
+            0.99999994039535522
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1366.349365234375,
+            0,
+            0,
+            0,
+            1366.349365234375,
+            0,
+            966.75103759765625,
+            720.416748046875,
+            1
+          ],
+          "eulerAngles" : [
+            -0.80649316310882568,
+            2.811091423034668,
+            -1.6463478803634644
+          ]
+        },
+        "source" : "arkit"
+      },
+      "isRawPhoto" : false,
+      "filename" : "wide_20260627_192437_410.jpg",
+      "metadataFile" : "wide_20260627_192437_410.json",
+      "timestamp" : 804273877.44942701,
+      "extraMetadata" : {
+        "autoCapture" : true,
+        "format" : "jpeg",
+        "stream" : "wide",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "qualityScore" : 0.88,
+        "stabilityBypassed" : false,
+        "depthAvailable" : true,
+        "qualityBand" : "good",
+        "captureSource" : "arkit_lidar",
+        "cgImagePropertyOrientation" : 6,
+        "capturedPointSamplesAdded" : 1200,
+        "qualitySummary" : "stable ar tracking"
+      },
+      "auxiliaryOutputs" : [
+        {
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192437_410_depth.bin",
+          "type" : "depth",
+          "width" : 256,
+          "height" : 192
+        },
+        {
+          "pixelFormat" : 1278226488,
+          "type" : "depthConfidence",
+          "width" : 256,
+          "filename" : "wide_20260627_192437_410_confidence.bin",
+          "height" : 192,
+          "bytesPerRow" : 256
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters",
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ"
+        }
+      ]
+    },
+    {
+      "isRawPhoto" : false,
+      "timestamp" : 804273878.44027197,
+      "extraMetadata" : {
+        "capturedPointSamplesAdded" : 1200,
+        "autoCapture" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "stabilityBypassed" : false,
+        "qualityBand" : "good",
+        "stream" : "wide",
+        "captureSource" : "arkit_lidar",
+        "cgImagePropertyOrientation" : 6,
+        "depthAvailable" : true,
+        "qualityScore" : 0.88,
+        "qualitySummary" : "stable ar tracking",
+        "format" : "jpeg"
+      },
+      "metadataFile" : "wide_20260627_192438_409.json",
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1366.8795166015625,
+            0,
+            0,
+            0,
+            1366.8795166015625,
+            0,
+            966.73443603515625,
+            720.0474853515625,
+            1
+          ],
+          "transform" : [
+            0.065675325691699982,
+            -0.6873624324798584,
+            -0.72333920001983643,
+            0,
+            -0.99784022569656372,
+            -0.046220246702432632,
+            -0.046677157282829285,
+            0,
+            -0.001348798512481153,
+            0.72484248876571655,
+            -0.68891340494155884,
+            0,
+            -0.23230795562267303,
+            -0.24075785279273987,
+            -0.2422720193862915,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "eulerAngles" : [
+            -0.81080573797225952,
+            -3.1396348476409912,
+            -1.6379381418228149
+          ]
+        }
+      },
+      "auxiliaryOutputs" : [
+        {
+          "filename" : "wide_20260627_192438_409_depth.bin",
+          "height" : 192,
+          "width" : 256,
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "type" : "depth"
+        },
+        {
+          "type" : "depthConfidence",
+          "pixelFormat" : 1278226488,
+          "filename" : "wide_20260627_192438_409_confidence.bin",
+          "height" : 192,
+          "width" : 256,
+          "bytesPerRow" : 256
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters"
+        }
+      ],
+      "filename" : "wide_20260627_192438_409.jpg"
+    },
+    {
+      "metadata" : {
+        "camera" : {
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "eulerAngles" : [
+            -0.82252097129821777,
+            -2.893017053604126,
+            -1.5783405303955078
+          ],
+          "transform" : [
+            -0.17298431694507599,
+            -0.68035644292831421,
+            -0.71217375993728638,
+            0,
+            -0.97059649229049683,
+            -0.0051328232511878014,
+            0.24065770208835602,
+            0,
+            -0.16738849878311157,
+            0.73286336660385132,
+            -0.65946376323699951,
+            0,
+            -0.29598212242126465,
+            -0.23894384503364563,
+            -0.2308332771062851,
+            1
+          ],
+          "intrinsics" : [
+            1367.96044921875,
+            0,
+            0,
+            0,
+            1367.96044921875,
+            0,
+            966.66400146484375,
+            720.22332763671875,
+            1
+          ],
+          "trackingState" : "normal"
+        },
+        "source" : "arkit"
+      },
+      "metadataFile" : "wide_20260627_192439_410.json",
+      "extraMetadata" : {
+        "depthAvailable" : true,
+        "capturedPointSamplesAdded" : 1200,
+        "qualityBand" : "good",
+        "stream" : "wide",
+        "autoCapture" : true,
+        "qualityScore" : 0.88,
+        "cgImagePropertyOrientation" : 6,
+        "qualitySummary" : "stable ar tracking",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "stabilityBypassed" : false,
+        "captureSource" : "arkit_lidar"
+      },
+      "auxiliaryOutputs" : [
+        {
+          "type" : "depth",
+          "filename" : "wide_20260627_192439_410_depth.bin",
+          "height" : 192,
+          "width" : 256,
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600
+        },
+        {
+          "pixelFormat" : 1278226488,
+          "bytesPerRow" : 256,
+          "width" : 256,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192439_410_confidence.bin",
+          "height" : 192
+        },
+        {
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ"
+        }
+      ],
+      "timestamp" : 804273879.44196296,
+      "filename" : "wide_20260627_192439_410.jpg",
+      "isRawPhoto" : false
+    },
+    {
+      "timestamp" : 804273880.439695,
+      "metadata" : {
+        "camera" : {
+          "intrinsics" : [
+            1375.5660400390625,
+            0,
+            0,
+            0,
+            1375.5660400390625,
+            0,
+            966.22076416015625,
+            720.14996337890625,
+            1
+          ],
+          "transform" : [
+            -0.49536144733428955,
+            -0.61764621734619141,
+            -0.61084383726119995,
+            0,
+            -0.77355444431304932,
+            -0.0063171852380037308,
+            0.63369852304458618,
+            0,
+            -0.3952602744102478,
+            0.7864307165145874,
+            -0.47465366125106812,
+            0,
+            -0.37642073631286621,
+            -0.25651863217353821,
+            -0.10933037102222443,
+            1
+          ],
+          "trackingState" : "normal",
+          "eulerAngles" : [
+            -0.90500903129577637,
+            -2.4472081661224365,
+            -1.5810238122940063
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          }
+        },
+        "source" : "arkit"
+      },
+      "metadataFile" : "wide_20260627_192440_410.json",
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192440_410_depth.bin",
+          "bytesPerRow" : 1024,
+          "type" : "depth",
+          "height" : 192
+        },
+        {
+          "width" : 256,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192440_410_confidence.bin",
+          "height" : 192,
+          "pixelFormat" : 1278226488,
+          "bytesPerRow" : 256
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world",
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin"
+        }
+      ],
+      "extraMetadata" : {
+        "stabilityBypassed" : false,
+        "qualitySummary" : "stable ar tracking",
+        "qualityScore" : 0.88,
+        "depthAvailable" : true,
+        "stream" : "wide",
+        "qualityBand" : "good",
+        "cgImagePropertyOrientation" : 6,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "captureSource" : "arkit_lidar",
+        "capturedPointSamplesAdded" : 1200,
+        "autoCapture" : true
+      },
+      "filename" : "wide_20260627_192440_410.jpg",
+      "isRawPhoto" : false
+    },
+    {
+      "timestamp" : 804273881.439978,
+      "extraMetadata" : {
+        "format" : "jpeg",
+        "stabilityBypassed" : false,
+        "qualitySummary" : "stable ar tracking",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "qualityBand" : "good",
+        "qualityScore" : 0.88,
+        "autoCapture" : true,
+        "capturedPointSamplesAdded" : 1200,
+        "captureSource" : "arkit_lidar",
+        "stream" : "wide",
+        "cgImagePropertyOrientation" : 6,
+        "depthAvailable" : true
+      },
+      "isRawPhoto" : false,
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "trackingState" : "normal",
+          "transform" : [
+            -0.66003143787384033,
+            -0.68934351205825806,
+            -0.29860356450080872,
+            0,
+            -0.39324522018432617,
+            -0.021637847647070885,
+            0.91917908191680908,
+            0,
+            -0.6400911808013916,
+            0.72411143779754639,
+            -0.25679939985275269,
+            0,
+            -0.52112996578216553,
+            -0.24677300453186035,
+            -0.080213397741317749,
+            1
+          ],
+          "intrinsics" : [
+            1377.939453125,
+            0,
+            0,
+            0,
+            1377.939453125,
+            0,
+            966.2921142578125,
+            720.32763671875,
+            1
+          ],
+          "eulerAngles" : [
+            -0.80974513292312622,
+            -1.9523297548294067,
+            -1.6021751165390015
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          }
+        }
+      },
+      "metadataFile" : "wide_20260627_192441_410.json",
+      "auxiliaryOutputs" : [
+        {
+          "filename" : "wide_20260627_192441_410_depth.bin",
+          "pixelFormat" : 1717855600,
+          "type" : "depth",
+          "height" : 192,
+          "bytesPerRow" : 1024,
+          "width" : 256
+        },
+        {
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192441_410_confidence.bin",
+          "pixelFormat" : 1278226488,
+          "height" : 192,
+          "width" : 256,
+          "bytesPerRow" : 256
+        },
+        {
+          "coordinateSystem" : "world",
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ"
+        }
+      ],
+      "filename" : "wide_20260627_192441_410.jpg"
+    },
+    {
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "height" : 192,
+          "bytesPerRow" : 1024,
+          "filename" : "wide_20260627_192442_410_depth.bin",
+          "type" : "depth"
+        },
+        {
+          "type" : "depthConfidence",
+          "width" : 256,
+          "filename" : "wide_20260627_192442_410_confidence.bin",
+          "bytesPerRow" : 256,
+          "pixelFormat" : 1278226488,
+          "height" : 192
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "units" : "meters",
+          "coordinateSystem" : "world",
+          "filename" : "lidar_pointcloud_world_xyz.bin"
+        }
+      ],
+      "filename" : "wide_20260627_192442_410.jpg",
+      "extraMetadata" : {
+        "qualityScore" : 0.88,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "depthAvailable" : true,
+        "qualityBand" : "good",
+        "capturedPointSamplesAdded" : 1200,
+        "qualitySummary" : "stable ar tracking",
+        "stabilityBypassed" : false,
+        "stream" : "wide",
+        "captureSource" : "arkit_lidar",
+        "autoCapture" : true,
+        "format" : "jpeg",
+        "cgImagePropertyOrientation" : 6
+      },
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "intrinsics" : [
+            1368.115478515625,
+            0,
+            0,
+            0,
+            1368.115478515625,
+            0,
+            967.1317138671875,
+            720.16375732421875,
+            1
+          ],
+          "eulerAngles" : [
+            -0.74548590183258057,
+            -1.7037132978439331,
+            -1.6617164611816406
+          ],
+          "transform" : [
+            -0.65753602981567383,
+            -0.73172354698181152,
+            -0.17951899766921997,
+            0,
+            -0.19302420318126678,
+            -0.066712334752082825,
+            0.978923499584198,
+            0,
+            -0.72827750444412231,
+            0.67832893133163452,
+            -0.097374588251113892,
+            0,
+            -0.61703944206237793,
+            -0.23717769980430603,
+            -0.021998748183250427,
+            1
+          ],
+          "trackingState" : "normal",
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          }
+        }
+      },
+      "isRawPhoto" : false,
+      "timestamp" : 804273882.44363105,
+      "metadataFile" : "wide_20260627_192442_410.json"
+    },
+    {
+      "metadataFile" : "wide_20260627_192443_410.json",
+      "filename" : "wide_20260627_192443_410.jpg",
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "trackingState" : "normal",
+          "eulerAngles" : [
+            -0.7284354567527771,
+            -1.3482351303100586,
+            -1.5870174169540405
+          ],
+          "intrinsics" : [
+            1363.985107421875,
+            0,
+            0,
+            0,
+            1363.985107421875,
+            0,
+            967.17425537109375,
+            720.00872802734375,
+            1
+          ],
+          "transform" : [
+            -0.65277838706970215,
+            -0.74611872434616089,
+            0.13109984993934631,
+            0,
+            0.21016769111156464,
+            -0.012103942222893238,
+            0.97759038209915161,
+            0,
+            -0.72781169414520264,
+            0.6657029390335083,
+            0.16471123695373535,
+            0,
+            -0.59568655490875244,
+            -0.24725404381752014,
+            0.096679314970970154,
+            1
+          ],
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          }
+        }
+      },
+      "isRawPhoto" : false,
+      "extraMetadata" : {
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "capturedPointSamplesAdded" : 1200,
+        "qualityScore" : 0.88,
+        "qualitySummary" : "stable ar tracking",
+        "captureSource" : "arkit_lidar",
+        "stabilityBypassed" : false,
+        "stream" : "wide",
+        "depthAvailable" : true,
+        "cgImagePropertyOrientation" : 6,
+        "format" : "jpeg",
+        "autoCapture" : true,
+        "qualityBand" : "good"
+      },
+      "timestamp" : 804273883.44018602,
+      "auxiliaryOutputs" : [
+        {
+          "bytesPerRow" : 1024,
+          "width" : 256,
+          "type" : "depth",
+          "height" : 192,
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192443_410_depth.bin"
+        },
+        {
+          "width" : 256,
+          "pixelFormat" : 1278226488,
+          "height" : 192,
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192443_410_confidence.bin"
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters"
+        }
+      ]
+    },
+    {
+      "filename" : "wide_20260627_192444_409.jpg",
+      "isRawPhoto" : false,
+      "metadataFile" : "wide_20260627_192444_409.json",
+      "extraMetadata" : {
+        "stream" : "wide",
+        "format" : "jpeg",
+        "qualitySummary" : "stable ar tracking",
+        "capturedPointSamplesAdded" : 1200,
+        "cgImagePropertyOrientation" : 6,
+        "qualityScore" : 0.88,
+        "autoCapture" : true,
+        "stabilityBypassed" : false,
+        "qualityBand" : "good",
+        "captureSource" : "arkit_lidar",
+        "depthAvailable" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin"
+      },
+      "auxiliaryOutputs" : [
+        {
+          "bytesPerRow" : 1024,
+          "filename" : "wide_20260627_192444_409_depth.bin",
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "type" : "depth",
+          "height" : 192
+        },
+        {
+          "width" : 256,
+          "bytesPerRow" : 256,
+          "height" : 192,
+          "type" : "depthConfidence",
+          "pixelFormat" : 1278226488,
+          "filename" : "wide_20260627_192444_409_confidence.bin"
+        },
+        {
+          "coordinateSystem" : "world",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters",
+          "type" : "pointCloudXYZ"
+        }
+      ],
+      "timestamp" : 804273884.443627,
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "intrinsics" : [
+            1368.031982421875,
+            0,
+            0,
+            0,
+            1368.031982421875,
+            0,
+            967.07818603515625,
+            720.40460205078125,
+            1
+          ],
+          "eulerAngles" : [
+            -0.7835007905960083,
+            -0.97185534238815308,
+            -1.5827189683914185
+          ],
+          "trackingState" : "normal",
+          "transform" : [
+            -0.58959370851516724,
+            -0.70839691162109375,
+            0.38801181316375732,
+            0,
+            0.55677837133407593,
+            -0.0084463655948638916,
+            0.83061814308166504,
+            0,
+            -0.58513003587722778,
+            0.70576387643814087,
+            0.39939996600151062,
+            0,
+            -0.51466000080108643,
+            -0.25932922959327698,
+            0.20824746787548065,
+            1
+          ],
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          }
+        }
+      }
+    },
+    {
+      "auxiliaryOutputs" : [
+        {
+          "height" : 192,
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192445_410_depth.bin",
+          "type" : "depth",
+          "bytesPerRow" : 1024
+        },
+        {
+          "bytesPerRow" : 256,
+          "width" : 256,
+          "pixelFormat" : 1278226488,
+          "height" : 192,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192445_410_confidence.bin"
+        },
+        {
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ",
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin"
+        }
+      ],
+      "metadataFile" : "wide_20260627_192445_410.json",
+      "filename" : "wide_20260627_192445_410.jpg",
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "eulerAngles" : [
+            -0.94504749774932861,
+            -0.54910993576049805,
+            -1.4678057432174683
+          ],
+          "trackingState" : "normal",
+          "transform" : [
+            -0.33309942483901978,
+            -0.58260077238082886,
+            0.74136435985565186,
+            0,
+            0.89196133613586426,
+            0.060215461999177933,
+            0.44808384776115417,
+            0,
+            -0.30569562315940857,
+            0.81052476167678833,
+            0.49959957599639893,
+            0,
+            -0.44247433543205261,
+            -0.23282679915428162,
+            0.29090002179145813,
+            1
+          ],
+          "intrinsics" : [
+            1370.3280029296875,
+            0,
+            0,
+            0,
+            1370.3280029296875,
+            0,
+            966.48382568359375,
+            720.76666259765625,
+            1
+          ]
+        }
+      },
+      "timestamp" : 804273885.43949199,
+      "isRawPhoto" : false,
+      "extraMetadata" : {
+        "format" : "jpeg",
+        "stream" : "wide",
+        "qualitySummary" : "stable ar tracking",
+        "captureSource" : "arkit_lidar",
+        "cgImagePropertyOrientation" : 6,
+        "stabilityBypassed" : false,
+        "capturedPointSamplesAdded" : 1200,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "qualityBand" : "good",
+        "depthAvailable" : true,
+        "qualityScore" : 0.88,
+        "autoCapture" : true
+      }
+    },
+    {
+      "extraMetadata" : {
+        "stream" : "wide",
+        "captureSource" : "arkit_lidar",
+        "qualityBand" : "good",
+        "depthAvailable" : true,
+        "autoCapture" : true,
+        "qualitySummary" : "stable ar tracking",
+        "format" : "jpeg",
+        "qualityScore" : 0.88,
+        "cgImagePropertyOrientation" : 6,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "capturedPointSamplesAdded" : 1200,
+        "stabilityBypassed" : false
+      },
+      "auxiliaryOutputs" : [
+        {
+          "bytesPerRow" : 1024,
+          "width" : 256,
+          "height" : 192,
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192446_410_depth.bin",
+          "type" : "depth"
+        },
+        {
+          "pixelFormat" : 1278226488,
+          "width" : 256,
+          "height" : 192,
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192446_410_confidence.bin"
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world"
+        }
+      ],
+      "timestamp" : 804273886.42974496,
+      "filename" : "wide_20260627_192446_410.jpg",
+      "isRawPhoto" : false,
+      "metadataFile" : "wide_20260627_192446_410.json",
+      "metadata" : {
+        "camera" : {
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "trackingState" : "normal",
+          "transform" : [
+            0.075103245675563812,
+            -0.50268065929412842,
+            0.86120373010635376,
+            0,
+            0.99671202898025513,
+            0.011505079455673695,
+            -0.080205090343952179,
+            0,
+            0.030409332364797592,
+            0.86439573764801025,
+            0.50189191102981567,
+            0,
+            -0.30534595251083374,
+            -0.22590669989585876,
+            0.32704848051071167,
+            1
+          ],
+          "eulerAngles" : [
+            -1.0439473390579224,
+            0.060515426099300385,
+            -1.5479128360748291
+          ],
+          "intrinsics" : [
+            1370.43212890625,
+            0,
+            0,
+            0,
+            1370.43212890625,
+            0,
+            964.93560791015625,
+            720.87103271484375,
+            1
+          ]
+        },
+        "source" : "arkit"
+      }
+    },
+    {
+      "timestamp" : 804273887.44482696,
+      "filename" : "wide_20260627_192447_410.jpg",
+      "isRawPhoto" : false,
+      "auxiliaryOutputs" : [
+        {
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192447_410_depth.bin",
+          "width" : 256,
+          "type" : "depth",
+          "bytesPerRow" : 1024,
+          "height" : 192
+        },
+        {
+          "filename" : "wide_20260627_192447_410_confidence.bin",
+          "type" : "depthConfidence",
+          "bytesPerRow" : 256,
+          "height" : 192,
+          "pixelFormat" : 1278226488,
+          "width" : 256
+        },
+        {
+          "coordinateSystem" : "world",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters",
+          "type" : "pointCloudXYZ"
+        }
+      ],
+      "extraMetadata" : {
+        "captureSource" : "arkit_lidar",
+        "capturedPointSamplesAdded" : 1200,
+        "stream" : "wide",
+        "qualityScore" : 0.88,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "stabilityBypassed" : false,
+        "qualityBand" : "good",
+        "qualitySummary" : "stable ar tracking",
+        "depthAvailable" : true,
+        "cgImagePropertyOrientation" : 6,
+        "format" : "jpeg",
+        "autoCapture" : true
+      },
+      "metadataFile" : "wide_20260627_192447_410.json",
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "transform" : [
+            0.28297728300094604,
+            -0.60648906230926514,
+            0.74303090572357178,
+            0,
+            0.95069199800491333,
+            0.07484881579875946,
+            -0.30096897482872009,
+            0,
+            0.12691941857337952,
+            0.79156094789505005,
+            0.59776479005813599,
+            0,
+            -0.2744365930557251,
+            -0.24918407201766968,
+            0.38079214096069336,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1368.0557861328125,
+            0,
+            0,
+            0,
+            1368.0557861328125,
+            0,
+            965.582275390625,
+            720.95587158203125,
+            1
+          ],
+          "eulerAngles" : [
+            -0.91335916519165039,
+            0.20921635627746582,
+            -1.448003888130188
+          ]
+        }
+      }
+    },
+    {
+      "metadataFile" : "wide_20260627_192448_410.json",
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1369.2469482421875,
+            0,
+            0,
+            0,
+            1369.2469482421875,
+            0,
+            966.68450927734375,
+            721.01531982421875,
+            1
+          ],
+          "eulerAngles" : [
+            -0.72215300798416138,
+            0.43756622076034546,
+            -1.5184477567672729
+          ],
+          "transform" : [
+            0.32710161805152893,
+            -0.74935638904571533,
+            0.57573378086090088,
+            0,
+            0.88988924026489258,
+            0.039263587445020676,
+            -0.45448392629623413,
+            0,
+            0.3179650604724884,
+            0.66100180149078369,
+            0.67968738079071045,
+            0,
+            -0.16804252564907074,
+            -0.30910307168960571,
+            0.44630423188209534,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          }
+        }
+      },
+      "extraMetadata" : {
+        "stabilityBypassed" : false,
+        "qualityScore" : 0.88,
+        "cgImagePropertyOrientation" : 6,
+        "depthAvailable" : true,
+        "qualitySummary" : "stable ar tracking",
+        "qualityBand" : "good",
+        "format" : "jpeg",
+        "autoCapture" : true,
+        "stream" : "wide",
+        "captureSource" : "arkit_lidar",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "capturedPointSamplesAdded" : 1200
+      },
+      "isRawPhoto" : false,
+      "timestamp" : 804273888.44771302,
+      "filename" : "wide_20260627_192448_410.jpg",
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "bytesPerRow" : 1024,
+          "height" : 192,
+          "pixelFormat" : 1717855600,
+          "type" : "depth",
+          "filename" : "wide_20260627_192448_410_depth.bin"
+        },
+        {
+          "pixelFormat" : 1278226488,
+          "type" : "depthConfidence",
+          "bytesPerRow" : 256,
+          "height" : 192,
+          "width" : 256,
+          "filename" : "wide_20260627_192448_410_confidence.bin"
+        },
+        {
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world"
+        }
+      ]
+    },
+    {
+      "timestamp" : 804273889.44156897,
+      "metadata" : {
+        "camera" : {
+          "transform" : [
+            0.36140507459640503,
+            -0.79559546709060669,
+            0.48622459173202515,
+            0,
+            0.79952222108840942,
+            -0.0038798612076789141,
+            -0.60062408447265625,
+            0,
+            0.47974026203155518,
+            0.60581588745117188,
+            0.63469403982162476,
+            0,
+            -0.031189357861876488,
+            -0.32236424088478088,
+            0.43460327386856079,
+            1
+          ],
+          "eulerAngles" : [
+            -0.6507909893989563,
+            0.64724141359329224,
+            -1.57567298412323
+          ],
+          "trackingState" : "normal",
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "intrinsics" : [
+            1365.2000732421875,
+            0,
+            0,
+            0,
+            1365.2000732421875,
+            0,
+            967.640869140625,
+            720.60919189453125,
+            1
+          ]
+        },
+        "source" : "arkit"
+      },
+      "extraMetadata" : {
+        "captureSource" : "arkit_lidar",
+        "autoCapture" : true,
+        "qualityScore" : 0.88,
+        "qualitySummary" : "stable ar tracking",
+        "stabilityBypassed" : false,
+        "stream" : "wide",
+        "depthAvailable" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "cgImagePropertyOrientation" : 6,
+        "qualityBand" : "good",
+        "capturedPointSamplesAdded" : 1200
+      },
+      "filename" : "wide_20260627_192449_410.jpg",
+      "auxiliaryOutputs" : [
+        {
+          "type" : "depth",
+          "height" : 192,
+          "width" : 256,
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192449_410_depth.bin"
+        },
+        {
+          "filename" : "wide_20260627_192449_410_confidence.bin",
+          "type" : "depthConfidence",
+          "bytesPerRow" : 256,
+          "width" : 256,
+          "height" : 192,
+          "pixelFormat" : 1278226488
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters",
+          "coordinateSystem" : "world"
+        }
+      ],
+      "isRawPhoto" : false,
+      "metadataFile" : "wide_20260627_192449_410.json"
+    },
+    {
+      "isRawPhoto" : false,
+      "extraMetadata" : {
+        "cgImagePropertyOrientation" : 6,
+        "stabilityBypassed" : false,
+        "qualityScore" : 0.88,
+        "depthAvailable" : true,
+        "qualitySummary" : "stable ar tracking",
+        "autoCapture" : true,
+        "capturedPointSamplesAdded" : 1200,
+        "format" : "jpeg",
+        "stream" : "wide",
+        "captureSource" : "arkit_lidar",
+        "qualityBand" : "good",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin"
+      },
+      "timestamp" : 804273890.43950403,
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "height" : 192,
+          "type" : "depth",
+          "bytesPerRow" : 1024,
+          "filename" : "wide_20260627_192450_409_depth.bin"
+        },
+        {
+          "pixelFormat" : 1278226488,
+          "height" : 192,
+          "width" : 256,
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192450_409_confidence.bin"
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world",
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin"
+        }
+      ],
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "transform" : [
+            0.5038456916809082,
+            -0.75613844394683838,
+            0.41760504245758057,
+            0,
+            0.63383513689041138,
+            -0.004817659966647625,
+            -0.77345311641693115,
+            0,
+            0.5868496298789978,
+            0.65439379215240479,
+            0.47683978080749512,
+            0,
+            0.024098172783851624,
+            -0.31423145532608032,
+            0.35837441682815552,
+            0.99999988079071045
+          ],
+          "trackingState" : "normal",
+          "eulerAngles" : [
+            -0.71338063478469849,
+            0.88845467567443848,
+            -1.5771676301956177
+          ],
+          "intrinsics" : [
+            1362.8743896484375,
+            0,
+            0,
+            0,
+            1362.8743896484375,
+            0,
+            967.33990478515625,
+            720.389404296875,
+            1
+          ]
+        }
+      },
+      "metadataFile" : "wide_20260627_192450_409.json",
+      "filename" : "wide_20260627_192450_409.jpg"
+    },
+    {
+      "metadata" : {
+        "camera" : {
+          "transform" : [
+            0.63365131616592407,
+            -0.73639905452728271,
+            0.23707060515880585,
+            0,
+            0.33839684724807739,
+            -0.011734571307897568,
+            -0.94093036651611328,
+            0,
+            0.6956821084022522,
+            0.67644572257995605,
+            0.24175947904586792,
+            0,
+            0.054061129689216614,
+            -0.32013970613479614,
+            0.2485615462064743,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "trackingState" : "normal",
+          "eulerAngles" : [
+            -0.74292594194412231,
+            1.2363376617431641,
+            -1.5867300033569336
+          ],
+          "intrinsics" : [
+            1362.880126953125,
+            0,
+            0,
+            0,
+            1362.880126953125,
+            0,
+            967.02130126953125,
+            720.25494384765625,
+            1
+          ]
+        },
+        "source" : "arkit"
+      },
+      "metadataFile" : "wide_20260627_192451_412.json",
+      "auxiliaryOutputs" : [
+        {
+          "type" : "depth",
+          "height" : 192,
+          "bytesPerRow" : 1024,
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192451_412_depth.bin"
+        },
+        {
+          "filename" : "wide_20260627_192451_412_confidence.bin",
+          "height" : 192,
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "width" : 256,
+          "pixelFormat" : 1278226488
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "units" : "meters",
+          "type" : "pointCloudXYZ"
+        }
+      ],
+      "isRawPhoto" : false,
+      "filename" : "wide_20260627_192451_412.jpg",
+      "extraMetadata" : {
+        "capturedPointSamplesAdded" : 1200,
+        "stream" : "wide",
+        "qualitySummary" : "stable ar tracking",
+        "autoCapture" : true,
+        "qualityScore" : 0.88,
+        "stabilityBypassed" : false,
+        "captureSource" : "arkit_lidar",
+        "depthAvailable" : true,
+        "cgImagePropertyOrientation" : 6,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "qualityBand" : "good",
+        "format" : "jpeg"
+      },
+      "timestamp" : 804273891.44160795
+    },
+    {
+      "filename" : "wide_20260627_192452_410.jpg",
+      "extraMetadata" : {
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "stabilityBypassed" : false,
+        "qualityBand" : "good",
+        "captureSource" : "arkit_lidar",
+        "cgImagePropertyOrientation" : 6,
+        "capturedPointSamplesAdded" : 1200,
+        "qualityScore" : 0.88,
+        "stream" : "wide",
+        "autoCapture" : true,
+        "qualitySummary" : "stable ar tracking",
+        "depthAvailable" : true
+      },
+      "metadata" : {
+        "camera" : {
+          "eulerAngles" : [
+            -0.76322442293167114,
+            1.6918501853942871,
+            -1.6131085157394409
+          ],
+          "trackingState" : "normal",
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "intrinsics" : [
+            1364.678955078125,
+            0,
+            0,
+            0,
+            1364.678955078125,
+            0,
+            966.92974853515625,
+            720.06201171875,
+            1
+          ],
+          "transform" : [
+            0.69069033861160278,
+            -0.72196406126022339,
+            -0.041410196572542191,
+            0,
+            -0.09162459522485733,
+            -0.030566111207008362,
+            -0.99532449245452881,
+            0,
+            0.71732276678085327,
+            0.69125503301620483,
+            -0.087261378765106201,
+            0,
+            0.13238050043582916,
+            -0.31229063868522644,
+            0.086516901850700378,
+            1.0000001192092896
+          ]
+        },
+        "source" : "arkit"
+      },
+      "auxiliaryOutputs" : [
+        {
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192452_410_depth.bin",
+          "bytesPerRow" : 1024,
+          "height" : 192,
+          "type" : "depth",
+          "width" : 256
+        },
+        {
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192452_410_confidence.bin",
+          "width" : 256,
+          "pixelFormat" : 1278226488,
+          "height" : 192,
+          "bytesPerRow" : 256
+        },
+        {
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ",
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin"
+        }
+      ],
+      "metadataFile" : "wide_20260627_192452_410.json",
+      "isRawPhoto" : false,
+      "timestamp" : 804273892.44555497
+    },
+    {
+      "metadataFile" : "wide_20260627_192453_409.json",
+      "isRawPhoto" : false,
+      "timestamp" : 804273893.43835104,
+      "auxiliaryOutputs" : [
+        {
+          "height" : 192,
+          "filename" : "wide_20260627_192453_409_depth.bin",
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "width" : 256,
+          "type" : "depth"
+        },
+        {
+          "pixelFormat" : 1278226488,
+          "bytesPerRow" : 256,
+          "filename" : "wide_20260627_192453_409_confidence.bin",
+          "width" : 256,
+          "height" : 192,
+          "type" : "depthConfidence"
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ",
+          "units" : "meters",
+          "coordinateSystem" : "world"
+        }
+      ],
+      "extraMetadata" : {
+        "format" : "jpeg",
+        "autoCapture" : true,
+        "stabilityBypassed" : false,
+        "qualityScore" : 0.88,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "captureSource" : "arkit_lidar",
+        "stream" : "wide",
+        "capturedPointSamplesAdded" : 1200,
+        "depthAvailable" : true,
+        "qualityBand" : "good",
+        "qualitySummary" : "stable ar tracking",
+        "cgImagePropertyOrientation" : 6
+      },
+      "metadata" : {
+        "camera" : {
+          "intrinsics" : [
+            1360.974365234375,
+            0,
+            0,
+            0,
+            1360.974365234375,
+            0,
+            966.65631103515625,
+            720.4053955078125,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "trackingState" : "normal",
+          "transform" : [
+            0.79295039176940918,
+            -0.58241826295852661,
+            -0.17893753945827484,
+            0,
+            -0.19622847437858582,
+            0.033917602151632309,
+            -0.97997152805328369,
+            0,
+            0.57682240009307861,
+            0.81218129396438599,
+            -0.087392069399356842,
+            0,
+            0.11779779195785522,
+            -0.18291680514812469,
+            0.052007872611284256,
+            1
+          ],
+          "eulerAngles" : [
+            -0.94788134098052979,
+            1.7211588621139526,
+            -1.5126261711120605
+          ]
+        },
+        "source" : "arkit"
+      },
+      "filename" : "wide_20260627_192453_409.jpg"
+    },
+    {
+      "isRawPhoto" : false,
+      "filename" : "wide_20260627_192454_410.jpg",
+      "metadataFile" : "wide_20260627_192454_410.json",
+      "timestamp" : 804273894.44135702,
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "intrinsics" : [
+            1361.0904541015625,
+            0,
+            0,
+            0,
+            1361.0904541015625,
+            0,
+            964.92144775390625,
+            720.82440185546875,
+            1
+          ],
+          "transform" : [
+            0.90611225366592407,
+            -0.39925676584243774,
+            -0.13983741402626038,
+            0,
+            -0.1293419748544693,
+            0.053259670734405518,
+            -0.99016875028610229,
+            0,
+            0.40277925133705139,
+            0.91529089212417603,
+            -0.0033814054913818836,
+            0,
+            -0.035878777503967285,
+            -0.1475440114736557,
+            0.084251478314399719,
+            1
+          ],
+          "eulerAngles" : [
+            -1.1562294960021973,
+            1.5791913270950317,
+            -1.4381822347640991
+          ],
+          "trackingState" : "normal"
+        }
+      },
+      "auxiliaryOutputs" : [
+        {
+          "height" : 192,
+          "width" : 256,
+          "type" : "depth",
+          "filename" : "wide_20260627_192454_410_depth.bin",
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600
+        },
+        {
+          "width" : 256,
+          "filename" : "wide_20260627_192454_410_confidence.bin",
+          "pixelFormat" : 1278226488,
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "height" : 192
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters",
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world"
+        }
+      ],
+      "extraMetadata" : {
+        "cgImagePropertyOrientation" : 6,
+        "format" : "jpeg",
+        "autoCapture" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "captureSource" : "arkit_lidar",
+        "capturedPointSamplesAdded" : 1200,
+        "qualityBand" : "good",
+        "qualitySummary" : "stable ar tracking",
+        "qualityScore" : 0.88,
+        "stream" : "wide",
+        "depthAvailable" : true,
+        "stabilityBypassed" : false
+      }
+    },
+    {
+      "extraMetadata" : {
+        "depthAvailable" : true,
+        "stabilityBypassed" : false,
+        "capturedPointSamplesAdded" : 1200,
+        "autoCapture" : true,
+        "cgImagePropertyOrientation" : 6,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "qualityScore" : 0.88,
+        "qualityBand" : "good",
+        "qualitySummary" : "stable ar tracking",
+        "captureSource" : "arkit_lidar",
+        "stream" : "wide"
+      },
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "intrinsics" : [
+            1366.313720703125,
+            0,
+            0,
+            0,
+            1366.313720703125,
+            0,
+            963.56915283203125,
+            720.58331298828125,
+            1
+          ],
+          "transform" : [
+            0.96854782104492188,
+            -0.24699941277503967,
+            0.030109081417322159,
+            0,
+            0.039553165435791016,
+            0.033361941576004028,
+            -0.99866044521331787,
+            0,
+            0.24566400051116943,
+            0.9684411883354187,
+            0.042082246392965317,
+            0,
+            -0.13520267605781555,
+            -0.13618661463260651,
+            0.099307909607887268,
+            1
+          ],
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "eulerAngles" : [
+            -1.3188986778259277,
+            1.401142954826355,
+            -1.436539888381958
+          ],
+          "trackingState" : "normal"
+        }
+      },
+      "metadataFile" : "wide_20260627_192455_410.json",
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "height" : 192,
+          "bytesPerRow" : 1024,
+          "type" : "depth",
+          "filename" : "wide_20260627_192455_410_depth.bin"
+        },
+        {
+          "type" : "depthConfidence",
+          "width" : 256,
+          "filename" : "wide_20260627_192455_410_confidence.bin",
+          "bytesPerRow" : 256,
+          "height" : 192,
+          "pixelFormat" : 1278226488
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world"
+        }
+      ],
+      "isRawPhoto" : false,
+      "timestamp" : 804273895.44332802,
+      "filename" : "wide_20260627_192455_410.jpg"
+    },
+    {
+      "auxiliaryOutputs" : [
+        {
+          "height" : 192,
+          "pixelFormat" : 1717855600,
+          "bytesPerRow" : 1024,
+          "type" : "depth",
+          "width" : 256,
+          "filename" : "wide_20260627_192456_410_depth.bin"
+        },
+        {
+          "width" : 256,
+          "type" : "depthConfidence",
+          "pixelFormat" : 1278226488,
+          "bytesPerRow" : 256,
+          "height" : 192,
+          "filename" : "wide_20260627_192456_410_confidence.bin"
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ",
+          "units" : "meters",
+          "coordinateSystem" : "world"
+        }
+      ],
+      "metadataFile" : "wide_20260627_192456_410.json",
+      "timestamp" : 804273896.44174099,
+      "extraMetadata" : {
+        "format" : "jpeg",
+        "captureSource" : "arkit_lidar",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "stream" : "wide",
+        "stabilityBypassed" : false,
+        "qualitySummary" : "stable ar tracking",
+        "cgImagePropertyOrientation" : 6,
+        "capturedPointSamplesAdded" : 1200,
+        "qualityBand" : "good",
+        "depthAvailable" : true,
+        "autoCapture" : true,
+        "qualityScore" : 0.88
+      },
+      "filename" : "wide_20260627_192456_410.jpg",
+      "isRawPhoto" : false,
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "intrinsics" : [
+            1372.689453125,
+            0,
+            0,
+            0,
+            1372.689453125,
+            0,
+            962.6190185546875,
+            720.85906982421875,
+            1
+          ],
+          "eulerAngles" : [
+            -1.3749253749847412,
+            0.81823110580444336,
+            -1.3507485389709473
+          ],
+          "transform" : [
+            0.84791076183319092,
+            -0.18992802500724792,
+            0.49494922161102295,
+            0,
+            0.510750412940979,
+            0.042481120675802231,
+            -0.85867887735366821,
+            0,
+            0.14206118881702423,
+            0.98087853193283081,
+            0.13302601873874664,
+            0,
+            -0.22589290142059326,
+            -0.16375924646854401,
+            0.14327344298362732,
+            1
+          ],
+          "trackingState" : "normal",
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          }
+        }
+      }
+    },
+    {
+      "extraMetadata" : {
+        "format" : "jpeg",
+        "autoCapture" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "depthAvailable" : true,
+        "stream" : "wide",
+        "qualitySummary" : "stable ar tracking",
+        "stabilityBypassed" : false,
+        "qualityScore" : 0.88,
+        "cgImagePropertyOrientation" : 6,
+        "captureSource" : "arkit_lidar",
+        "capturedPointSamplesAdded" : 1200,
+        "qualityBand" : "good"
+      },
+      "timestamp" : 804273897.50400603,
+      "metadataFile" : "wide_20260627_192457_410.json",
+      "isRawPhoto" : false,
+      "auxiliaryOutputs" : [
+        {
+          "bytesPerRow" : 1024,
+          "height" : 192,
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192457_410_depth.bin",
+          "width" : 256,
+          "type" : "depth"
+        },
+        {
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192457_410_confidence.bin",
+          "pixelFormat" : 1278226488,
+          "height" : 192,
+          "width" : 256,
+          "bytesPerRow" : 256
+        },
+        {
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters"
+        }
+      ],
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "eulerAngles" : [
+            -1.2453353404998779,
+            -0.092610105872154236,
+            -1.1111942529678345
+          ],
+          "transform" : [
+            0.3631604015827179,
+            -0.28656521439552307,
+            0.88656353950500488,
+            0,
+            0.93125736713409424,
+            0.14183640480041504,
+            -0.3356221616268158,
+            0,
+            -0.029569352045655251,
+            0.94750344753265381,
+            0.31837528944015503,
+            0,
+            -0.32267138361930847,
+            -0.19955377280712128,
+            0.22741425037384033,
+            1.0000001192092896
+          ],
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1375.6435546875,
+            0,
+            0,
+            0,
+            1375.6435546875,
+            0,
+            962.87774658203125,
+            721.6455078125,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          }
+        }
+      },
+      "filename" : "wide_20260627_192457_410.jpg"
+    },
+    {
+      "timestamp" : 804273898.441149,
+      "metadataFile" : "wide_20260627_192458_409.json",
+      "isRawPhoto" : false,
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "filename" : "wide_20260627_192458_409_depth.bin",
+          "pixelFormat" : 1717855600,
+          "bytesPerRow" : 1024,
+          "type" : "depth",
+          "height" : 192
+        },
+        {
+          "bytesPerRow" : 256,
+          "pixelFormat" : 1278226488,
+          "filename" : "wide_20260627_192458_409_confidence.bin",
+          "type" : "depthConfidence",
+          "width" : 256,
+          "height" : 192
+        },
+        {
+          "coordinateSystem" : "world",
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ"
+        }
+      ],
+      "extraMetadata" : {
+        "autoCapture" : true,
+        "captureSource" : "arkit_lidar",
+        "stream" : "wide",
+        "qualityBand" : "good",
+        "cgImagePropertyOrientation" : 6,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "qualityScore" : 0.88,
+        "stabilityBypassed" : false,
+        "depthAvailable" : true,
+        "qualitySummary" : "stable ar tracking",
+        "capturedPointSamplesAdded" : 1200
+      },
+      "filename" : "wide_20260627_192458_409.jpg",
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "eulerAngles" : [
+            -0.82601004838943481,
+            -0.098351642489433289,
+            -1.4965516328811646
+          ],
+          "intrinsics" : [
+            1375.0152587890625,
+            0,
+            0,
+            0,
+            1375.0152587890625,
+            0,
+            965.01812744140625,
+            721.60968017578125,
+            1
+          ],
+          "transform" : [
+            0.0018220636993646622,
+            -0.67594730854034424,
+            0.73694765567779541,
+            0,
+            0.99778097867965698,
+            0.050277899950742722,
+            0.043649237602949142,
+            0,
+            -0.066556759178638458,
+            0.73523277044296265,
+            0.67453902959823608,
+            0,
+            -0.32673966884613037,
+            -0.27934259176254272,
+            0.39948266744613647,
+            0.99999994039535522
+          ],
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "trackingState" : "normal"
+        }
+      }
+    },
+    {
+      "metadataFile" : "wide_20260627_192459_409.json",
+      "filename" : "wide_20260627_192459_409.jpg",
+      "isRawPhoto" : false,
+      "extraMetadata" : {
+        "stream" : "wide",
+        "stabilityBypassed" : false,
+        "qualityScore" : 0.88,
+        "autoCapture" : true,
+        "captureSource" : "arkit_lidar",
+        "capturedPointSamplesAdded" : 1200,
+        "qualityBand" : "good",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "cgImagePropertyOrientation" : 6,
+        "format" : "jpeg",
+        "qualitySummary" : "stable ar tracking",
+        "depthAvailable" : true
+      },
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "transform" : [
+            0.023517804220318794,
+            -0.79007279872894287,
+            0.61256170272827148,
+            0,
+            0.99955910444259644,
+            0.0074721323326230049,
+            -0.028738165274262428,
+            0,
+            0.018128102645277977,
+            0.61296743154525757,
+            0.78990018367767334,
+            0,
+            -0.25414472818374634,
+            -0.3023526668548584,
+            0.49778151512145996,
+            1
+          ],
+          "intrinsics" : [
+            1366.4119873046875,
+            0,
+            0,
+            0,
+            1366.4119873046875,
+            0,
+            967.5665283203125,
+            720.88018798828125,
+            1
+          ],
+          "eulerAngles" : [
+            -0.65981090068817139,
+            0.022945838049054146,
+            -1.5613391399383545
+          ],
+          "trackingState" : "normal"
+        }
+      },
+      "timestamp" : 804273899.43079698,
+      "auxiliaryOutputs" : [
+        {
+          "type" : "depth",
+          "height" : 192,
+          "filename" : "wide_20260627_192459_409_depth.bin",
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "bytesPerRow" : 1024
+        },
+        {
+          "bytesPerRow" : 256,
+          "pixelFormat" : 1278226488,
+          "height" : 192,
+          "filename" : "wide_20260627_192459_409_confidence.bin",
+          "type" : "depthConfidence",
+          "width" : 256
+        },
+        {
+          "units" : "meters",
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world"
+        }
+      ]
+    },
+    {
+      "metadataFile" : "wide_20260627_192500_410.json",
+      "timestamp" : 804273900.44149995,
+      "metadata" : {
+        "camera" : {
+          "intrinsics" : [
+            1363.4339599609375,
+            0,
+            0,
+            0,
+            1363.4339599609375,
+            0,
+            967.4222412109375,
+            720.32177734375,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "transform" : [
+            0.24785643815994263,
+            -0.74433219432830811,
+            0.62011039257049561,
+            0,
+            0.9091828465461731,
+            -0.04235486313700676,
+            -0.41423740983009338,
+            0,
+            0.33459493517875671,
+            0.66646510362625122,
+            0.66623616218566895,
+            0,
+            -0.063844285905361176,
+            -0.30723574757575989,
+            0.4165056049823761,
+            1
+          ],
+          "eulerAngles" : [
+            -0.72945725917816162,
+            0.46541941165924072,
+            -1.6276382207870483
+          ],
+          "trackingState" : "normal"
+        },
+        "source" : "arkit"
+      },
+      "filename" : "wide_20260627_192500_410.jpg",
+      "auxiliaryOutputs" : [
+        {
+          "type" : "depth",
+          "width" : 256,
+          "filename" : "wide_20260627_192500_410_depth.bin",
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "height" : 192
+        },
+        {
+          "width" : 256,
+          "height" : 192,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192500_410_confidence.bin",
+          "bytesPerRow" : 256,
+          "pixelFormat" : 1278226488
+        },
+        {
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ",
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin"
+        }
+      ],
+      "isRawPhoto" : false,
+      "extraMetadata" : {
+        "stream" : "wide",
+        "qualityScore" : 0.88,
+        "captureSource" : "arkit_lidar",
+        "depthAvailable" : true,
+        "cgImagePropertyOrientation" : 6,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "stabilityBypassed" : false,
+        "qualitySummary" : "stable ar tracking",
+        "capturedPointSamplesAdded" : 1200,
+        "qualityBand" : "good",
+        "autoCapture" : true
+      }
+    },
+    {
+      "filename" : "wide_20260627_192501_410.jpg",
+      "timestamp" : 804273901.44263899,
+      "metadataFile" : "wide_20260627_192501_410.json",
+      "metadata" : {
+        "camera" : {
+          "trackingState" : "normal",
+          "transform" : [
+            0.49271672964096069,
+            -0.72678965330123901,
+            0.47854679822921753,
+            0,
+            0.65864461660385132,
+            -0.047920919954776764,
+            -0.750926673412323,
+            0,
+            0.56869816780090332,
+            0.68518638610839844,
+            0.45508462190628052,
+            0,
+            -0.0057310797274112701,
+            -0.29104971885681152,
+            0.30614256858825684,
+            1
+          ],
+          "eulerAngles" : [
+            -0.7548595666885376,
+            0.89592021703720093,
+            -1.6366361379623413
+          ],
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "intrinsics" : [
+            1364.622314453125,
+            0,
+            0,
+            0,
+            1364.622314453125,
+            0,
+            967.02166748046875,
+            720.33782958984375,
+            1
+          ]
+        },
+        "source" : "arkit"
+      },
+      "isRawPhoto" : false,
+      "auxiliaryOutputs" : [
+        {
+          "height" : 192,
+          "bytesPerRow" : 1024,
+          "width" : 256,
+          "type" : "depth",
+          "filename" : "wide_20260627_192501_410_depth.bin",
+          "pixelFormat" : 1717855600
+        },
+        {
+          "filename" : "wide_20260627_192501_410_confidence.bin",
+          "width" : 256,
+          "bytesPerRow" : 256,
+          "pixelFormat" : 1278226488,
+          "height" : 192,
+          "type" : "depthConfidence"
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters"
+        }
+      ],
+      "extraMetadata" : {
+        "format" : "jpeg",
+        "autoCapture" : true,
+        "captureSource" : "arkit_lidar",
+        "qualityScore" : 0.88,
+        "depthAvailable" : true,
+        "stream" : "wide",
+        "stabilityBypassed" : false,
+        "cgImagePropertyOrientation" : 6,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "capturedPointSamplesAdded" : 1200,
+        "qualityBand" : "good",
+        "qualitySummary" : "stable ar tracking"
+      }
+    },
+    {
+      "isRawPhoto" : false,
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "filename" : "wide_20260627_192502_409_depth.bin",
+          "pixelFormat" : 1717855600,
+          "height" : 192,
+          "type" : "depth",
+          "bytesPerRow" : 1024
+        },
+        {
+          "filename" : "wide_20260627_192502_409_confidence.bin",
+          "width" : 256,
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "pixelFormat" : 1278226488,
+          "height" : 192
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters",
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ"
+        }
+      ],
+      "extraMetadata" : {
+        "qualityScore" : 0.88,
+        "depthAvailable" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "autoCapture" : true,
+        "stabilityBypassed" : false,
+        "qualityBand" : "good",
+        "cgImagePropertyOrientation" : 6,
+        "capturedPointSamplesAdded" : 1200,
+        "qualitySummary" : "stable ar tracking",
+        "captureSource" : "arkit_lidar",
+        "stream" : "wide"
+      },
+      "timestamp" : 804273902.44033396,
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "intrinsics" : [
+            1367.4483642578125,
+            0,
+            0,
+            0,
+            1367.4483642578125,
+            0,
+            967.02783203125,
+            719.83941650390625,
+            1
+          ],
+          "transform" : [
+            0.63302004337310791,
+            -0.72249561548233032,
+            0.27800318598747253,
+            0,
+            0.34908697009086609,
+            -0.0541183240711689,
+            -0.93552637100219727,
+            0,
+            0.69095873832702637,
+            0.68925422430038452,
+            0.2179558277130127,
+            0,
+            0.051736600697040558,
+            -0.29611766338348389,
+            0.20158039033412933,
+            1
+          ],
+          "trackingState" : "normal",
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "eulerAngles" : [
+            -0.76045918464660645,
+            1.2652355432510376,
+            -1.6455614566802979
+          ]
+        }
+      },
+      "filename" : "wide_20260627_192502_409.jpg",
+      "metadataFile" : "wide_20260627_192502_409.json"
+    },
+    {
+      "metadataFile" : "wide_20260627_192503_409.json",
+      "metadata" : {
+        "camera" : {
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1370.9443359375,
+            0,
+            0,
+            0,
+            1370.9443359375,
+            0,
+            966.88665771484375,
+            720.13214111328125,
+            1
+          ],
+          "eulerAngles" : [
+            -0.79886102676391602,
+            1.6313596963882446,
+            -1.6430231332778931
+          ],
+          "transform" : [
+            0.71775138378143311,
+            -0.69570469856262207,
+            0.028773851692676544,
+            0,
+            -0.0087533984333276749,
+            -0.050336062908172607,
+            -0.99869400262832642,
+            0,
+            0.69624447822570801,
+            0.71656209230422974,
+            -0.04221855103969574,
+            0,
+            0.033135443925857544,
+            -0.30449831485748291,
+            0.069648817181587219,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          }
+        },
+        "source" : "arkit"
+      },
+      "extraMetadata" : {
+        "capturedPointSamplesAdded" : 1200,
+        "qualityScore" : 0.88,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "autoCapture" : true,
+        "stabilityBypassed" : false,
+        "depthAvailable" : true,
+        "cgImagePropertyOrientation" : 6,
+        "qualitySummary" : "stable ar tracking",
+        "stream" : "wide",
+        "qualityBand" : "good",
+        "captureSource" : "arkit_lidar"
+      },
+      "timestamp" : 804273903.43120003,
+      "isRawPhoto" : false,
+      "filename" : "wide_20260627_192503_409.jpg",
+      "auxiliaryOutputs" : [
+        {
+          "type" : "depth",
+          "height" : 192,
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192503_409_depth.bin",
+          "bytesPerRow" : 1024
+        },
+        {
+          "width" : 256,
+          "height" : 192,
+          "bytesPerRow" : 256,
+          "pixelFormat" : 1278226488,
+          "filename" : "wide_20260627_192503_409_confidence.bin",
+          "type" : "depthConfidence"
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world",
+          "units" : "meters"
+        }
+      ]
+    },
+    {
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "eulerAngles" : [
+            -0.73795181512832642,
+            2.0147991180419922,
+            -1.6706302165985107
+          ],
+          "intrinsics" : [
+            1372.070068359375,
+            0,
+            0,
+            0,
+            1372.070068359375,
+            0,
+            967.12835693359375,
+            719.75152587890625,
+            1
+          ],
+          "transform" : [
+            0.64732956886291504,
+            -0.7361641526222229,
+            -0.19755186140537262,
+            0,
+            -0.36686611175537109,
+            -0.073739297688007355,
+            -0.92734658718109131,
+            0,
+            0.66811203956604004,
+            0.67277395725250244,
+            -0.31780731678009033,
+            0,
+            0.064208991825580597,
+            -0.28543946146965027,
+            -0.054266132414340973,
+            0.99999994039535522
+          ],
+          "trackingState" : "normal",
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          }
+        }
+      },
+      "extraMetadata" : {
+        "captureSource" : "arkit_lidar",
+        "stream" : "wide",
+        "qualityBand" : "good",
+        "qualityScore" : 0.88,
+        "qualitySummary" : "stable ar tracking",
+        "depthAvailable" : true,
+        "format" : "jpeg",
+        "stabilityBypassed" : false,
+        "cgImagePropertyOrientation" : 6,
+        "autoCapture" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "capturedPointSamplesAdded" : 1200
+      },
+      "metadataFile" : "wide_20260627_192504_409.json",
+      "timestamp" : 804273904.44489002,
+      "auxiliaryOutputs" : [
+        {
+          "bytesPerRow" : 1024,
+          "height" : 192,
+          "pixelFormat" : 1717855600,
+          "width" : 256,
+          "type" : "depth",
+          "filename" : "wide_20260627_192504_409_depth.bin"
+        },
+        {
+          "type" : "depthConfidence",
+          "width" : 256,
+          "bytesPerRow" : 256,
+          "pixelFormat" : 1278226488,
+          "filename" : "wide_20260627_192504_409_confidence.bin",
+          "height" : 192
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "units" : "meters",
+          "coordinateSystem" : "world",
+          "filename" : "lidar_pointcloud_world_xyz.bin"
+        }
+      ],
+      "filename" : "wide_20260627_192504_409.jpg",
+      "isRawPhoto" : false
+    },
+    {
+      "metadataFile" : "wide_20260627_192505_409.json",
+      "timestamp" : 804273905.44204903,
+      "isRawPhoto" : false,
+      "extraMetadata" : {
+        "cgImagePropertyOrientation" : 6,
+        "capturedPointSamplesAdded" : 1200,
+        "stabilityBypassed" : false,
+        "captureSource" : "arkit_lidar",
+        "stream" : "wide",
+        "format" : "jpeg",
+        "qualitySummary" : "stable ar tracking",
+        "autoCapture" : true,
+        "depthAvailable" : true,
+        "qualityBand" : "good",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "qualityScore" : 0.88
+      },
+      "filename" : "wide_20260627_192505_409.jpg",
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1370.3607177734375,
+            0,
+            0,
+            0,
+            1370.3607177734375,
+            0,
+            967.0595703125,
+            719.95184326171875,
+            1
+          ],
+          "transform" : [
+            0.57402050495147705,
+            -0.7181084156036377,
+            -0.39347255229949951,
+            0,
+            -0.61784064769744873,
+            -0.064484111964702606,
+            -0.78365480899810791,
+            0,
+            0.53737634420394897,
+            0.69293725490570068,
+            -0.48069179058074951,
+            0,
+            -0.004402336198836565,
+            -0.29348725080490112,
+            -0.12894256412982941,
+            0.99999994039535522
+          ],
+          "eulerAngles" : [
+            -0.76555496454238892,
+            2.3005733489990234,
+            -1.6603533029556274
+          ]
+        }
+      },
+      "auxiliaryOutputs" : [
+        {
+          "bytesPerRow" : 1024,
+          "type" : "depth",
+          "width" : 256,
+          "filename" : "wide_20260627_192505_409_depth.bin",
+          "height" : 192,
+          "pixelFormat" : 1717855600
+        },
+        {
+          "height" : 192,
+          "pixelFormat" : 1278226488,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192505_409_confidence.bin",
+          "bytesPerRow" : 256,
+          "width" : 256
+        },
+        {
+          "units" : "meters",
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world"
+        }
+      ]
+    },
+    {
+      "isRawPhoto" : false,
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "intrinsics" : [
+            1371.5609130859375,
+            0,
+            0,
+            0,
+            1371.5609130859375,
+            0,
+            967.77874755859375,
+            719.696044921875,
+            1
+          ],
+          "trackingState" : "normal",
+          "transform" : [
+            0.35114985704421997,
+            -0.89289510250091553,
+            -0.2818371057510376,
+            0,
+            -0.78681337833404541,
+            -0.11822577565908432,
+            -0.6057618260383606,
+            0,
+            0.50756138563156128,
+            0.43446636199951172,
+            -0.74405676126480103,
+            0,
+            -0.014913350343704224,
+            -0.45951876044273376,
+            -0.23024831712245941,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "eulerAngles" : [
+            -0.44944572448730469,
+            2.5429444313049316,
+            -1.7024378776550293
+          ]
+        }
+      },
+      "timestamp" : 804273906.44206905,
+      "auxiliaryOutputs" : [
+        {
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "type" : "depth",
+          "filename" : "wide_20260627_192506_409_depth.bin",
+          "width" : 256,
+          "height" : 192
+        },
+        {
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192506_409_confidence.bin",
+          "height" : 192,
+          "bytesPerRow" : 256,
+          "pixelFormat" : 1278226488,
+          "width" : 256
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world",
+          "units" : "meters"
+        }
+      ],
+      "extraMetadata" : {
+        "format" : "jpeg",
+        "depthAvailable" : true,
+        "cgImagePropertyOrientation" : 6,
+        "autoCapture" : true,
+        "capturedPointSamplesAdded" : 1200,
+        "captureSource" : "arkit_lidar",
+        "qualityScore" : 0.88,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "stabilityBypassed" : false,
+        "qualityBand" : "good",
+        "stream" : "wide",
+        "qualitySummary" : "stable ar tracking"
+      },
+      "metadataFile" : "wide_20260627_192506_409.json",
+      "filename" : "wide_20260627_192506_409.jpg"
+    },
+    {
+      "filename" : "wide_20260627_192507_409.jpg",
+      "metadataFile" : "wide_20260627_192507_409.json",
+      "auxiliaryOutputs" : [
+        {
+          "bytesPerRow" : 1024,
+          "height" : 192,
+          "pixelFormat" : 1717855600,
+          "type" : "depth",
+          "width" : 256,
+          "filename" : "wide_20260627_192507_409_depth.bin"
+        },
+        {
+          "height" : 192,
+          "bytesPerRow" : 256,
+          "pixelFormat" : 1278226488,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192507_409_confidence.bin",
+          "width" : 256
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world",
+          "units" : "meters"
+        }
+      ],
+      "isRawPhoto" : false,
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "eulerAngles" : [
+            -0.2302338182926178,
+            2.6491782665252686,
+            -1.7416669130325317
+          ],
+          "intrinsics" : [
+            1372.12060546875,
+            0,
+            0,
+            0,
+            1372.12060546875,
+            0,
+            969.02728271484375,
+            719.1954345703125,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "transform" : [
+            0.25615242123603821,
+            -0.9594343900680542,
+            -0.11777719110250473,
+            0,
+            -0.85001647472381592,
+            -0.16555346548557281,
+            -0.50006395578384399,
+            0,
+            0.4602801501750946,
+            0.22820517420768738,
+            -0.85794192552566528,
+            0,
+            -0.03050878643989563,
+            -0.52920079231262207,
+            -0.25111508369445801,
+            1
+          ],
+          "trackingState" : "normal"
+        }
+      },
+      "extraMetadata" : {
+        "stream" : "wide",
+        "stabilityBypassed" : false,
+        "depthAvailable" : true,
+        "capturedPointSamplesAdded" : 1200,
+        "qualityScore" : 0.88,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "autoCapture" : true,
+        "format" : "jpeg",
+        "qualityBand" : "good",
+        "captureSource" : "arkit_lidar",
+        "qualitySummary" : "stable ar tracking",
+        "cgImagePropertyOrientation" : 6
+      },
+      "timestamp" : 804273907.44543099
+    },
+    {
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "trackingState" : "normal",
+          "eulerAngles" : [
+            -0.44139605760574341,
+            2.7869222164154053,
+            -1.6526976823806763
+          ],
+          "transform" : [
+            0.22458003461360931,
+            -0.90112537145614624,
+            -0.37085965275764465,
+            0,
+            -0.92248040437698364,
+            -0.073968864977359772,
+            -0.3788912296295166,
+            0,
+            0.31399643421173096,
+            0.42720213532447815,
+            -0.84788233041763306,
+            0,
+            -0.074967280030250549,
+            -0.36473044753074646,
+            -0.29758536815643311,
+            1
+          ],
+          "intrinsics" : [
+            1371.0426025390625,
+            0,
+            0,
+            0,
+            1371.0426025390625,
+            0,
+            969.12030029296875,
+            719.3599853515625,
+            1
+          ],
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          }
+        }
+      },
+      "isRawPhoto" : false,
+      "extraMetadata" : {
+        "cgImagePropertyOrientation" : 6,
+        "qualitySummary" : "stable ar tracking",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "stream" : "wide",
+        "stabilityBypassed" : false,
+        "capturedPointSamplesAdded" : 1200,
+        "qualityBand" : "good",
+        "depthAvailable" : true,
+        "format" : "jpeg",
+        "autoCapture" : true,
+        "captureSource" : "arkit_lidar",
+        "qualityScore" : 0.88
+      },
+      "filename" : "wide_20260627_192508_408.jpg",
+      "timestamp" : 804273908.44056797,
+      "metadataFile" : "wide_20260627_192508_408.json",
+      "auxiliaryOutputs" : [
+        {
+          "type" : "depth",
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "height" : 192,
+          "filename" : "wide_20260627_192508_408_depth.bin",
+          "bytesPerRow" : 1024
+        },
+        {
+          "width" : 256,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192508_408_confidence.bin",
+          "bytesPerRow" : 256,
+          "height" : 192,
+          "pixelFormat" : 1278226488
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "units" : "meters"
+        }
+      ]
+    },
+    {
+      "timestamp" : 804273909.44619703,
+      "extraMetadata" : {
+        "capturedPointSamplesAdded" : 1200,
+        "format" : "jpeg",
+        "qualityBand" : "good",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "autoCapture" : true,
+        "qualityScore" : 0.88,
+        "stream" : "wide",
+        "qualitySummary" : "stable ar tracking",
+        "captureSource" : "arkit_lidar",
+        "stabilityBypassed" : false,
+        "cgImagePropertyOrientation" : 6,
+        "depthAvailable" : true
+      },
+      "isRawPhoto" : false,
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "bytesPerRow" : 1024,
+          "filename" : "wide_20260627_192509_409_depth.bin",
+          "height" : 192,
+          "type" : "depth"
+        },
+        {
+          "height" : 192,
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192509_409_confidence.bin",
+          "width" : 256,
+          "pixelFormat" : 1278226488
+        },
+        {
+          "units" : "meters",
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin"
+        }
+      ],
+      "metadataFile" : "wide_20260627_192509_409.json",
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "trackingState" : "normal",
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "intrinsics" : [
+            1368.1065673828125,
+            0,
+            0,
+            0,
+            1368.1065673828125,
+            0,
+            967.90191650390625,
+            719.76959228515625,
+            1
+          ],
+          "transform" : [
+            0.11275696754455566,
+            -0.76840627193450928,
+            -0.62995064258575439,
+            0,
+            -0.9913938045501709,
+            -0.044562932103872299,
+            -0.1230955570936203,
+            0,
+            0.066514939069747925,
+            0.63840901851654053,
+            -0.76681798696517944,
+            0,
+            -0.2189984917640686,
+            -0.30819758772850037,
+            -0.27679771184921265,
+            0.99999994039535522
+          ],
+          "eulerAngles" : [
+            -0.69242948293685913,
+            3.055067777633667,
+            -1.6287254095077515
+          ]
+        }
+      },
+      "filename" : "wide_20260627_192509_409.jpg"
+    },
+    {
+      "filename" : "wide_20260627_192510_409.jpg",
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "trackingState" : "normal",
+          "transform" : [
+            -0.17259515821933746,
+            -0.70857423543930054,
+            -0.68420284986495972,
+            0,
+            -0.95510876178741455,
+            -0.049412306398153305,
+            0.29210552573204041,
+            0,
+            -0.24078644812107086,
+            0.70390415191650391,
+            -0.66823703050613403,
+            0,
+            -0.32766065001487732,
+            -0.28122991323471069,
+            -0.27337491512298584,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "eulerAngles" : [
+            -0.78087913990020752,
+            -2.7957441806793213,
+            -1.6404184103012085
+          ],
+          "intrinsics" : [
+            1368.6455078125,
+            0,
+            0,
+            0,
+            1368.6455078125,
+            0,
+            966.966796875,
+            719.89642333984375,
+            1
+          ]
+        }
+      },
+      "isRawPhoto" : false,
+      "extraMetadata" : {
+        "qualityScore" : 0.88,
+        "qualitySummary" : "stable ar tracking",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "stabilityBypassed" : false,
+        "qualityBand" : "good",
+        "cgImagePropertyOrientation" : 6,
+        "captureSource" : "arkit_lidar",
+        "autoCapture" : true,
+        "stream" : "wide",
+        "depthAvailable" : true,
+        "capturedPointSamplesAdded" : 1200,
+        "format" : "jpeg"
+      },
+      "metadataFile" : "wide_20260627_192510_409.json",
+      "timestamp" : 804273910.44389606,
+      "auxiliaryOutputs" : [
+        {
+          "pixelFormat" : 1717855600,
+          "width" : 256,
+          "bytesPerRow" : 1024,
+          "type" : "depth",
+          "filename" : "wide_20260627_192510_409_depth.bin",
+          "height" : 192
+        },
+        {
+          "type" : "depthConfidence",
+          "pixelFormat" : 1278226488,
+          "height" : 192,
+          "filename" : "wide_20260627_192510_409_confidence.bin",
+          "width" : 256,
+          "bytesPerRow" : 256
+        },
+        {
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters"
+        }
+      ]
+    },
+    {
+      "metadata" : {
+        "camera" : {
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "intrinsics" : [
+            1370.36669921875,
+            0,
+            0,
+            0,
+            1370.36669921875,
+            0,
+            966.93316650390625,
+            720.12152099609375,
+            1
+          ],
+          "trackingState" : "normal",
+          "transform" : [
+            -0.3718051016330719,
+            -0.69305616617202759,
+            -0.617603600025177,
+            0,
+            -0.82303595542907715,
+            -0.061628833413124084,
+            0.56463593244552612,
+            0,
+            -0.42938661575317383,
+            0.71824437379837036,
+            -0.54749619960784912,
+            0,
+            -0.41297775506973267,
+            -0.28215834498405457,
+            -0.21045126020908356,
+            1.0000001192092896
+          ],
+          "eulerAngles" : [
+            -0.80127578973770142,
+            -2.4765150547027588,
+            -1.6594862937927246
+          ]
+        },
+        "source" : "arkit"
+      },
+      "isRawPhoto" : false,
+      "auxiliaryOutputs" : [
+        {
+          "filename" : "wide_20260627_192511_409_depth.bin",
+          "bytesPerRow" : 1024,
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "height" : 192,
+          "type" : "depth"
+        },
+        {
+          "width" : 256,
+          "pixelFormat" : 1278226488,
+          "type" : "depthConfidence",
+          "bytesPerRow" : 256,
+          "height" : 192,
+          "filename" : "wide_20260627_192511_409_confidence.bin"
+        },
+        {
+          "units" : "meters",
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world"
+        }
+      ],
+      "metadataFile" : "wide_20260627_192511_409.json",
+      "timestamp" : 804273911.45150197,
+      "filename" : "wide_20260627_192511_409.jpg",
+      "extraMetadata" : {
+        "qualitySummary" : "stable ar tracking",
+        "captureSource" : "arkit_lidar",
+        "format" : "jpeg",
+        "cgImagePropertyOrientation" : 6,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "capturedPointSamplesAdded" : 1200,
+        "qualityBand" : "good",
+        "depthAvailable" : true,
+        "autoCapture" : true,
+        "stabilityBypassed" : false,
+        "qualityScore" : 0.88,
+        "stream" : "wide"
+      }
+    },
+    {
+      "metadataFile" : "wide_20260627_192512_409.json",
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "intrinsics" : [
+            1370.9266357421875,
+            0,
+            0,
+            0,
+            1370.9266357421875,
+            0,
+            966.08685302734375,
+            719.98089599609375,
+            1
+          ],
+          "eulerAngles" : [
+            -0.84964364767074585,
+            -1.9089367389678955,
+            -1.6589412689208984
+          ],
+          "transform" : [
+            -0.67656248807907104,
+            -0.65768754482269287,
+            -0.33122545480728149,
+            0,
+            -0.39281678199768066,
+            -0.058122463524341583,
+            0.91777825355529785,
+            0,
+            -0.62286293506622314,
+            0.75104516744613647,
+            -0.21902725100517273,
+            0,
+            -0.52326118946075439,
+            -0.26017594337463379,
+            -0.11738204956054688,
+            1
+          ],
+          "trackingState" : "normal"
+        }
+      },
+      "timestamp" : 804273912.44333196,
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "filename" : "wide_20260627_192512_409_depth.bin",
+          "height" : 192,
+          "bytesPerRow" : 1024,
+          "type" : "depth",
+          "pixelFormat" : 1717855600
+        },
+        {
+          "height" : 192,
+          "bytesPerRow" : 256,
+          "pixelFormat" : 1278226488,
+          "width" : 256,
+          "filename" : "wide_20260627_192512_409_confidence.bin",
+          "type" : "depthConfidence"
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "units" : "meters"
+        }
+      ],
+      "extraMetadata" : {
+        "cgImagePropertyOrientation" : 6,
+        "captureSource" : "arkit_lidar",
+        "format" : "jpeg",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "qualityScore" : 0.88,
+        "depthAvailable" : true,
+        "stabilityBypassed" : false,
+        "qualitySummary" : "stable ar tracking",
+        "qualityBand" : "good",
+        "capturedPointSamplesAdded" : 1200,
+        "autoCapture" : true,
+        "stream" : "wide"
+      },
+      "isRawPhoto" : false,
+      "filename" : "wide_20260627_192512_409.jpg"
+    },
+    {
+      "extraMetadata" : {
+        "capturedPointSamplesAdded" : 1200,
+        "stream" : "wide",
+        "qualityScore" : 0.88,
+        "qualityBand" : "good",
+        "cgImagePropertyOrientation" : 6,
+        "depthAvailable" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "captureSource" : "arkit_lidar",
+        "stabilityBypassed" : false,
+        "format" : "jpeg",
+        "qualitySummary" : "stable ar tracking",
+        "autoCapture" : true
+      },
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "transform" : [
+            -0.75314569473266602,
+            -0.64958721399307251,
+            -0.10396159440279007,
+            0,
+            -0.15206129848957062,
+            0.018148453906178474,
+            0.98820453882217407,
+            0,
+            -0.64003825187683105,
+            0.76007038354873657,
+            -0.11244548857212067,
+            0,
+            -0.55466568470001221,
+            -0.28318876028060913,
+            -0.026371616870164871,
+            1
+          ],
+          "trackingState" : "normal",
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "eulerAngles" : [
+            -0.86342144012451172,
+            -1.7447071075439453,
+            -1.5428651571273804
+          ],
+          "intrinsics" : [
+            1370.3994140625,
+            0,
+            0,
+            0,
+            1370.3994140625,
+            0,
+            966.3519287109375,
+            720.57769775390625,
+            1
+          ]
+        }
+      },
+      "isRawPhoto" : false,
+      "filename" : "wide_20260627_192513_409.jpg",
+      "metadataFile" : "wide_20260627_192513_409.json",
+      "auxiliaryOutputs" : [
+        {
+          "pixelFormat" : 1717855600,
+          "type" : "depth",
+          "height" : 192,
+          "width" : 256,
+          "filename" : "wide_20260627_192513_409_depth.bin",
+          "bytesPerRow" : 1024
+        },
+        {
+          "height" : 192,
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192513_409_confidence.bin",
+          "width" : 256,
+          "pixelFormat" : 1278226488
+        },
+        {
+          "coordinateSystem" : "world",
+          "units" : "meters",
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin"
+        }
+      ],
+      "timestamp" : 804273913.44424796
+    },
+    {
+      "auxiliaryOutputs" : [
+        {
+          "height" : 192,
+          "pixelFormat" : 1717855600,
+          "bytesPerRow" : 1024,
+          "type" : "depth",
+          "width" : 256,
+          "filename" : "wide_20260627_192514_408_depth.bin"
+        },
+        {
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "pixelFormat" : 1278226488,
+          "filename" : "wide_20260627_192514_408_confidence.bin",
+          "width" : 256,
+          "height" : 192
+        },
+        {
+          "units" : "meters",
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world",
+          "filename" : "lidar_pointcloud_world_xyz.bin"
+        }
+      ],
+      "extraMetadata" : {
+        "qualityScore" : 0.88,
+        "qualitySummary" : "stable ar tracking",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "stream" : "wide",
+        "autoCapture" : true,
+        "captureSource" : "arkit_lidar",
+        "capturedPointSamplesAdded" : 1200,
+        "format" : "jpeg",
+        "stabilityBypassed" : false,
+        "qualityBand" : "good",
+        "cgImagePropertyOrientation" : 6,
+        "depthAvailable" : true
+      },
+      "timestamp" : 804273914.43716395,
+      "isRawPhoto" : false,
+      "metadata" : {
+        "camera" : {
+          "eulerAngles" : [
+            -0.65185928344726562,
+            -1.5552470684051514,
+            -1.5717387199401855
+          ],
+          "transform" : [
+            -0.60660660266876221,
+            -0.79495686292648315,
+            0.0084905298426747322,
+            0,
+            0.014977006241679192,
+            -0.00074918853351846337,
+            0.99988764524459839,
+            0,
+            -0.79486113786697388,
+            0.60666549205780029,
+            0.012360529974102974,
+            0,
+            -0.69574373960494995,
+            -0.28061607480049133,
+            0.041535563766956329,
+            1
+          ],
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1368.1689453125,
+            0,
+            0,
+            0,
+            1368.1689453125,
+            0,
+            966.807373046875,
+            720.54559326171875,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          }
+        },
+        "source" : "arkit"
+      },
+      "metadataFile" : "wide_20260627_192514_408.json",
+      "filename" : "wide_20260627_192514_408.jpg"
+    },
+    {
+      "auxiliaryOutputs" : [
+        {
+          "filename" : "wide_20260627_192515_409_depth.bin",
+          "bytesPerRow" : 1024,
+          "type" : "depth",
+          "pixelFormat" : 1717855600,
+          "width" : 256,
+          "height" : 192
+        },
+        {
+          "type" : "depthConfidence",
+          "bytesPerRow" : 256,
+          "pixelFormat" : 1278226488,
+          "width" : 256,
+          "filename" : "wide_20260627_192515_409_confidence.bin",
+          "height" : 192
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "units" : "meters"
+        }
+      ],
+      "isRawPhoto" : false,
+      "metadata" : {
+        "camera" : {
+          "transform" : [
+            -0.50001567602157593,
+            -0.86598026752471924,
+            0.0079034818336367607,
+            0,
+            0.058503482490777969,
+            -0.024671599268913269,
+            0.99798238277435303,
+            0,
+            -0.86403805017471313,
+            0.49946916103363037,
+            0.062999039888381958,
+            0,
+            -0.87212520837783813,
+            -0.31262108683586121,
+            0.078227698802947998,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1358.30615234375,
+            0,
+            0,
+            0,
+            1358.30615234375,
+            0,
+            968.1282958984375,
+            720.4219970703125,
+            1
+          ],
+          "eulerAngles" : [
+            -0.52298593521118164,
+            -1.4980127811431885,
+            -1.599278450012207
+          ]
+        },
+        "source" : "arkit"
+      },
+      "metadataFile" : "wide_20260627_192515_409.json",
+      "timestamp" : 804273915.438676,
+      "extraMetadata" : {
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "qualitySummary" : "stable ar tracking",
+        "format" : "jpeg",
+        "stream" : "wide",
+        "capturedPointSamplesAdded" : 1200,
+        "autoCapture" : true,
+        "cgImagePropertyOrientation" : 6,
+        "stabilityBypassed" : false,
+        "qualityScore" : 0.88,
+        "captureSource" : "arkit_lidar",
+        "qualityBand" : "good",
+        "depthAvailable" : true
+      },
+      "filename" : "wide_20260627_192515_409.jpg"
+    },
+    {
+      "timestamp" : 804273916.44047701,
+      "extraMetadata" : {
+        "depthAvailable" : true,
+        "format" : "jpeg",
+        "stabilityBypassed" : false,
+        "qualitySummary" : "stable ar tracking",
+        "qualityBand" : "good",
+        "cgImagePropertyOrientation" : 6,
+        "capturedPointSamplesAdded" : 1200,
+        "autoCapture" : true,
+        "captureSource" : "arkit_lidar",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "stream" : "wide",
+        "qualityScore" : 0.88
+      },
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "transform" : [
+            -0.48794287443161011,
+            -0.87191516160964966,
+            0.040933813899755478,
+            0,
+            0.14897099137306213,
+            -0.036976747214794159,
+            0.98814994096755981,
+            0,
+            -0.8600693941116333,
+            0.48825868964195251,
+            0.14793260395526886,
+            0,
+            -0.92683953046798706,
+            -0.32178124785423279,
+            0.15993410348892212,
+            0.99999994039535522
+          ],
+          "eulerAngles" : [
+            -0.5100933313369751,
+            -1.40046226978302,
+            -1.6131795644760132
+          ],
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1351.2069091796875,
+            0,
+            0,
+            0,
+            1351.2069091796875,
+            0,
+            968.56231689453125,
+            720.19891357421875,
+            1
+          ]
+        }
+      },
+      "metadataFile" : "wide_20260627_192516_409.json",
+      "isRawPhoto" : false,
+      "filename" : "wide_20260627_192516_409.jpg",
+      "auxiliaryOutputs" : [
+        {
+          "filename" : "wide_20260627_192516_409_depth.bin",
+          "height" : 192,
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "width" : 256,
+          "type" : "depth"
+        },
+        {
+          "type" : "depthConfidence",
+          "bytesPerRow" : 256,
+          "height" : 192,
+          "pixelFormat" : 1278226488,
+          "width" : 256,
+          "filename" : "wide_20260627_192516_409_confidence.bin"
+        },
+        {
+          "coordinateSystem" : "world",
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ"
+        }
+      ]
+    },
+    {
+      "timestamp" : 804273917.43606699,
+      "filename" : "wide_20260627_192517_408.jpg",
+      "auxiliaryOutputs" : [
+        {
+          "type" : "depth",
+          "height" : 192,
+          "width" : 256,
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192517_408_depth.bin"
+        },
+        {
+          "height" : 192,
+          "type" : "depthConfidence",
+          "pixelFormat" : 1278226488,
+          "width" : 256,
+          "filename" : "wide_20260627_192517_408_confidence.bin",
+          "bytesPerRow" : 256
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ",
+          "units" : "meters"
+        }
+      ],
+      "metadataFile" : "wide_20260627_192517_408.json",
+      "extraMetadata" : {
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "autoCapture" : true,
+        "qualityBand" : "good",
+        "qualitySummary" : "stable ar tracking",
+        "stabilityBypassed" : false,
+        "capturedPointSamplesAdded" : 1200,
+        "cgImagePropertyOrientation" : 6,
+        "stream" : "wide",
+        "depthAvailable" : true,
+        "qualityScore" : 0.88,
+        "captureSource" : "arkit_lidar"
+      },
+      "isRawPhoto" : false,
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "transform" : [
+            -0.58023679256439209,
+            -0.79012686014175415,
+            0.19754661619663239,
+            0,
+            0.32208335399627686,
+            0.00017082788690458983,
+            0.94671112298965454,
+            0,
+            -0.74805569648742676,
+            0.61294317245483398,
+            0.25438758730888367,
+            0,
+            -0.74036777019500732,
+            -0.2967388927936554,
+            0.21675077080726624,
+            0.99999988079071045
+          ],
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1352.445556640625,
+            0,
+            0,
+            0,
+            1352.445556640625,
+            0,
+            967.8736572265625,
+            720.31378173828125,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "eulerAngles" : [
+            -0.65978014469146729,
+            -1.2429995536804199,
+            -1.5705801248550415
+          ]
+        }
+      }
+    },
+    {
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "trackingState" : "normal",
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "eulerAngles" : [
+            -0.86284321546554565,
+            -0.92978328466415405,
+            -1.560772180557251
+          ],
+          "intrinsics" : [
+            1354.1162109375,
+            0,
+            0,
+            0,
+            1354.1162109375,
+            0,
+            966.90057373046875,
+            720.31781005859375,
+            1
+          ],
+          "transform" : [
+            -0.60286283493041992,
+            -0.65024745464324951,
+            0.46231445670127869,
+            0,
+            0.60408115386962891,
+            0.0065184114500880241,
+            0.79689621925354004,
+            0,
+            -0.52119326591491699,
+            0.75969451665878296,
+            0.38887253403663635,
+            0,
+            -0.64453339576721191,
+            -0.18010090291500092,
+            0.29539889097213745,
+            1
+          ]
+        }
+      },
+      "filename" : "wide_20260627_192518_409.jpg",
+      "auxiliaryOutputs" : [
+        {
+          "filename" : "wide_20260627_192518_409_depth.bin",
+          "type" : "depth",
+          "bytesPerRow" : 1024,
+          "width" : 256,
+          "height" : 192,
+          "pixelFormat" : 1717855600
+        },
+        {
+          "width" : 256,
+          "type" : "depthConfidence",
+          "height" : 192,
+          "bytesPerRow" : 256,
+          "pixelFormat" : 1278226488,
+          "filename" : "wide_20260627_192518_409_confidence.bin"
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world",
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin"
+        }
+      ],
+      "isRawPhoto" : false,
+      "extraMetadata" : {
+        "qualityBand" : "good",
+        "qualitySummary" : "stable ar tracking",
+        "depthAvailable" : true,
+        "captureSource" : "arkit_lidar",
+        "stream" : "wide",
+        "qualityScore" : 0.88,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "stabilityBypassed" : false,
+        "autoCapture" : true,
+        "cgImagePropertyOrientation" : 6,
+        "capturedPointSamplesAdded" : 1200
+      },
+      "metadataFile" : "wide_20260627_192518_409.json",
+      "timestamp" : 804273918.43780196
+    },
+    {
+      "metadata" : {
+        "camera" : {
+          "transform" : [
+            -0.4857100248336792,
+            -0.49435323476791382,
+            0.72090268135070801,
+            0,
+            0.81375133991241455,
+            0.045449212193489075,
+            0.57943356037139893,
+            0,
+            -0.31920927762985229,
+            0.86807215213775635,
+            0.38020545244216919,
+            0,
+            -0.49320027232170105,
+            -0.15507498383522034,
+            0.28283458948135376,
+            1
+          ],
+          "intrinsics" : [
+            1354.726806640625,
+            0,
+            0,
+            0,
+            1354.726806640625,
+            0,
+            965.8394775390625,
+            720.75048828125,
+            1
+          ],
+          "eulerAngles" : [
+            -1.0513056516647339,
+            -0.69840794801712036,
+            -1.4791172742843628
+          ],
+          "trackingState" : "normal",
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          }
+        },
+        "source" : "arkit"
+      },
+      "filename" : "wide_20260627_192519_409.jpg",
+      "extraMetadata" : {
+        "qualitySummary" : "stable ar tracking",
+        "stream" : "wide",
+        "format" : "jpeg",
+        "captureSource" : "arkit_lidar",
+        "depthAvailable" : true,
+        "qualityBand" : "good",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "qualityScore" : 0.88,
+        "stabilityBypassed" : false,
+        "capturedPointSamplesAdded" : 1200,
+        "autoCapture" : true,
+        "cgImagePropertyOrientation" : 6
+      },
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "type" : "depth",
+          "filename" : "wide_20260627_192519_409_depth.bin",
+          "bytesPerRow" : 1024,
+          "height" : 192,
+          "pixelFormat" : 1717855600
+        },
+        {
+          "pixelFormat" : 1278226488,
+          "filename" : "wide_20260627_192519_409_confidence.bin",
+          "bytesPerRow" : 256,
+          "height" : 192,
+          "width" : 256,
+          "type" : "depthConfidence"
+        },
+        {
+          "coordinateSystem" : "world",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ",
+          "units" : "meters"
+        }
+      ],
+      "metadataFile" : "wide_20260627_192519_409.json",
+      "timestamp" : 804273919.43942404,
+      "isRawPhoto" : false
+    },
+    {
+      "isRawPhoto" : false,
+      "timestamp" : 804273920.43968594,
+      "metadataFile" : "wide_20260627_192520_408.json",
+      "filename" : "wide_20260627_192520_408.jpg",
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "trackingState" : "normal",
+          "eulerAngles" : [
+            -1.0599631071090698,
+            0.13221649825572968,
+            -1.5030663013458252
+          ],
+          "intrinsics" : [
+            1363.4222412109375,
+            0,
+            0,
+            0,
+            1363.4222412109375,
+            0,
+            964.521728515625,
+            720.55865478515625,
+            1
+          ],
+          "transform" : [
+            0.18182550370693207,
+            -0.48778337240219116,
+            0.85381901264190674,
+            0,
+            0.9812161922454834,
+            0.033088177442550659,
+            -0.19005231559276581,
+            0,
+            0.064453050494194031,
+            0.8723374605178833,
+            0.48463726043701172,
+            0,
+            -0.29486697912216187,
+            -0.1934410035610199,
+            0.31670510768890381,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          }
+        }
+      },
+      "auxiliaryOutputs" : [
+        {
+          "filename" : "wide_20260627_192520_408_depth.bin",
+          "height" : 192,
+          "type" : "depth",
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "bytesPerRow" : 1024
+        },
+        {
+          "width" : 256,
+          "pixelFormat" : 1278226488,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192520_408_confidence.bin",
+          "height" : 192,
+          "bytesPerRow" : 256
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters",
+          "coordinateSystem" : "world"
+        }
+      ],
+      "extraMetadata" : {
+        "cgImagePropertyOrientation" : 6,
+        "depthAvailable" : true,
+        "qualitySummary" : "stable ar tracking",
+        "stream" : "wide",
+        "captureSource" : "arkit_lidar",
+        "capturedPointSamplesAdded" : 1200,
+        "autoCapture" : true,
+        "qualityScore" : 0.88,
+        "qualityBand" : "good",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "stabilityBypassed" : false
+      }
+    },
+    {
+      "timestamp" : 804273921.43623698,
+      "auxiliaryOutputs" : [
+        {
+          "type" : "depth",
+          "filename" : "wide_20260627_192521_409_depth.bin",
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "bytesPerRow" : 1024,
+          "height" : 192
+        },
+        {
+          "height" : 192,
+          "width" : 256,
+          "pixelFormat" : 1278226488,
+          "filename" : "wide_20260627_192521_409_confidence.bin",
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence"
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world",
+          "units" : "meters"
+        }
+      ],
+      "extraMetadata" : {
+        "autoCapture" : true,
+        "format" : "jpeg",
+        "qualityBand" : "good",
+        "qualitySummary" : "stable ar tracking",
+        "stream" : "wide",
+        "captureSource" : "arkit_lidar",
+        "qualityScore" : 0.88,
+        "depthAvailable" : true,
+        "stabilityBypassed" : false,
+        "capturedPointSamplesAdded" : 1200,
+        "cgImagePropertyOrientation" : 6,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin"
+      },
+      "filename" : "wide_20260627_192521_409.jpg",
+      "metadataFile" : "wide_20260627_192521_409.json",
+      "isRawPhoto" : false,
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "intrinsics" : [
+            1366.4149169921875,
+            0,
+            0,
+            0,
+            1366.4149169921875,
+            0,
+            966.42315673828125,
+            720.84124755859375,
+            1
+          ],
+          "trackingState" : "normal",
+          "eulerAngles" : [
+            -0.69922739267349243,
+            0.22712419927120209,
+            -1.5416259765625
+          ],
+          "transform" : [
+            0.1732850968837738,
+            -0.76501411199569702,
+            0.62026268243789673,
+            0,
+            0.9696764349937439,
+            0.022322054952383041,
+            -0.24337075650691986,
+            0,
+            0.17233653366565704,
+            0.64362657070159912,
+            0.74568426609039307,
+            0,
+            -0.22913366556167603,
+            -0.26990795135498047,
+            0.46804997324943542,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "filename" : "wide_20260627_192522_409_depth.bin",
+          "bytesPerRow" : 1024,
+          "type" : "depth",
+          "pixelFormat" : 1717855600,
+          "height" : 192
+        },
+        {
+          "width" : 256,
+          "pixelFormat" : 1278226488,
+          "filename" : "wide_20260627_192522_409_confidence.bin",
+          "type" : "depthConfidence",
+          "bytesPerRow" : 256,
+          "height" : 192
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters",
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world"
+        }
+      ],
+      "isRawPhoto" : false,
+      "extraMetadata" : {
+        "capturedPointSamplesAdded" : 1200,
+        "stabilityBypassed" : false,
+        "stream" : "wide",
+        "qualityScore" : 0.88,
+        "qualitySummary" : "stable ar tracking",
+        "cgImagePropertyOrientation" : 6,
+        "autoCapture" : true,
+        "format" : "jpeg",
+        "qualityBand" : "good",
+        "captureSource" : "arkit_lidar",
+        "depthAvailable" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin"
+      },
+      "metadata" : {
+        "camera" : {
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1362.2608642578125,
+            0,
+            0,
+            0,
+            1362.2608642578125,
+            0,
+            967.83843994140625,
+            720.67376708984375,
+            1
+          ],
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "transform" : [
+            0.22385038435459137,
+            -0.81856125593185425,
+            0.52900713682174683,
+            0,
+            0.89678746461868286,
+            -0.039559446275234222,
+            -0.4406898021697998,
+            0,
+            0.38165879249572754,
+            0.5730554461479187,
+            0.72522008419036865,
+            0,
+            -0.082956403493881226,
+            -0.31328198313713074,
+            0.48647087812423706,
+            1
+          ],
+          "eulerAngles" : [
+            -0.61022937297821045,
+            0.48443907499313354,
+            -1.619086742401123
+          ]
+        },
+        "source" : "arkit"
+      },
+      "timestamp" : 804273922.44360399,
+      "metadataFile" : "wide_20260627_192522_409.json",
+      "filename" : "wide_20260627_192522_409.jpg"
+    },
+    {
+      "isRawPhoto" : false,
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "trackingState" : "normal",
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "intrinsics" : [
+            1361.1024169921875,
+            0,
+            0,
+            0,
+            1361.1024169921875,
+            0,
+            967.80352783203125,
+            720.28448486328125,
+            1
+          ],
+          "eulerAngles" : [
+            -0.66333723068237305,
+            0.84558528661727905,
+            -1.597338080406189
+          ],
+          "transform" : [
+            0.44303697347640991,
+            -0.78766411542892456,
+            0.42813935875892639,
+            0,
+            0.67528879642486572,
+            -0.020910870283842087,
+            -0.73725676536560059,
+            0,
+            0.58966356515884399,
+            0.61574983596801758,
+            0.52263647317886353,
+            0,
+            0.015849478542804718,
+            -0.31164646148681641,
+            0.38159513473510742,
+            0.99999988079071045
+          ]
+        }
+      },
+      "filename" : "wide_20260627_192523_408.jpg",
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "type" : "depth",
+          "filename" : "wide_20260627_192523_408_depth.bin",
+          "height" : 192
+        },
+        {
+          "filename" : "wide_20260627_192523_408_confidence.bin",
+          "bytesPerRow" : 256,
+          "width" : 256,
+          "type" : "depthConfidence",
+          "pixelFormat" : 1278226488,
+          "height" : 192
+        },
+        {
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters"
+        }
+      ],
+      "extraMetadata" : {
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "capturedPointSamplesAdded" : 1200,
+        "qualityScore" : 0.88,
+        "stabilityBypassed" : false,
+        "stream" : "wide",
+        "depthAvailable" : true,
+        "autoCapture" : true,
+        "qualityBand" : "good",
+        "qualitySummary" : "stable ar tracking",
+        "captureSource" : "arkit_lidar",
+        "cgImagePropertyOrientation" : 6,
+        "format" : "jpeg"
+      },
+      "timestamp" : 804273923.45032501,
+      "metadataFile" : "wide_20260627_192523_408.json"
+    },
+    {
+      "metadataFile" : "wide_20260627_192524_409.json",
+      "metadata" : {
+        "camera" : {
+          "transform" : [
+            0.60559362173080444,
+            -0.7603832483291626,
+            0.23467765748500824,
+            0,
+            0.32423621416091919,
+            -0.03354162722826004,
+            -0.94538134336471558,
+            0,
+            0.72672367095947266,
+            0.64860790967941284,
+            0.22623118758201599,
+            0,
+            0.1183466762304306,
+            -0.3042357861995697,
+            0.22926348447799683,
+            0.99999994039535522
+          ],
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "eulerAngles" : [
+            -0.70575404167175293,
+            1.2690024375915527,
+            -1.6148792505264282
+          ],
+          "intrinsics" : [
+            1360.447265625,
+            0,
+            0,
+            0,
+            1360.447265625,
+            0,
+            967.54437255859375,
+            719.9166259765625,
+            1
+          ],
+          "trackingState" : "normal"
+        },
+        "source" : "arkit"
+      },
+      "timestamp" : 804273924.44129598,
+      "filename" : "wide_20260627_192524_409.jpg",
+      "isRawPhoto" : false,
+      "extraMetadata" : {
+        "stabilityBypassed" : false,
+        "qualitySummary" : "stable ar tracking",
+        "depthAvailable" : true,
+        "qualityBand" : "good",
+        "captureSource" : "arkit_lidar",
+        "format" : "jpeg",
+        "stream" : "wide",
+        "qualityScore" : 0.88,
+        "autoCapture" : true,
+        "cgImagePropertyOrientation" : 6,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "capturedPointSamplesAdded" : 1200
+      },
+      "auxiliaryOutputs" : [
+        {
+          "bytesPerRow" : 1024,
+          "width" : 256,
+          "height" : 192,
+          "type" : "depth",
+          "filename" : "wide_20260627_192524_409_depth.bin",
+          "pixelFormat" : 1717855600
+        },
+        {
+          "filename" : "wide_20260627_192524_409_confidence.bin",
+          "width" : 256,
+          "bytesPerRow" : 256,
+          "height" : 192,
+          "pixelFormat" : 1278226488,
+          "type" : "depthConfidence"
+        },
+        {
+          "units" : "meters",
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world"
+        }
+      ]
+    },
+    {
+      "filename" : "wide_20260627_192525_409.jpg",
+      "metadataFile" : "wide_20260627_192525_409.json",
+      "extraMetadata" : {
+        "qualityBand" : "good",
+        "depthAvailable" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "cgImagePropertyOrientation" : 6,
+        "capturedPointSamplesAdded" : 1200,
+        "qualitySummary" : "stable ar tracking",
+        "stabilityBypassed" : false,
+        "stream" : "wide",
+        "autoCapture" : true,
+        "captureSource" : "arkit_lidar",
+        "qualityScore" : 0.88
+      },
+      "isRawPhoto" : false,
+      "timestamp" : 804273925.44363701,
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "type" : "depth",
+          "bytesPerRow" : 1024,
+          "height" : 192,
+          "filename" : "wide_20260627_192525_409_depth.bin",
+          "pixelFormat" : 1717855600
+        },
+        {
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192525_409_confidence.bin",
+          "height" : 192,
+          "pixelFormat" : 1278226488,
+          "width" : 256
+        },
+        {
+          "units" : "meters",
+          "coordinateSystem" : "world",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ"
+        }
+      ],
+      "metadata" : {
+        "camera" : {
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "trackingState" : "normal",
+          "eulerAngles" : [
+            -0.68763822317123413,
+            1.6841733455657959,
+            -1.6546146869659424
+          ],
+          "intrinsics" : [
+            1361.6949462890625,
+            0,
+            0,
+            0,
+            1361.6949462890625,
+            0,
+            967.38958740234375,
+            720.23260498046875,
+            1
+          ],
+          "transform" : [
+            0.63789647817611694,
+            -0.7700343132019043,
+            0.01162687037140131,
+            0,
+            -0.059939928352832794,
+            -0.064694561064243317,
+            -0.99610328674316406,
+            0,
+            0.76778596639633179,
+            0.63471388816833496,
+            -0.087424233555793762,
+            0,
+            0.14058643579483032,
+            -0.29176577925682068,
+            0.078120268881320953,
+            0.99999994039535522
+          ]
+        },
+        "source" : "arkit"
+      }
+    },
+    {
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "intrinsics" : [
+            1361.087646484375,
+            0,
+            0,
+            0,
+            1361.087646484375,
+            0,
+            967.61102294921875,
+            719.869873046875,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "eulerAngles" : [
+            -0.6524198055267334,
+            2.0483508110046387,
+            -1.6836819648742676
+          ],
+          "trackingState" : "normal",
+          "transform" : [
+            0.58752965927124023,
+            -0.78955936431884766,
+            -0.17721404135227203,
+            0,
+            -0.39594584703445435,
+            -0.089510470628738403,
+            -0.91390073299407959,
+            0,
+            0.70571655035018921,
+            0.60711097717285156,
+            -0.36521279811859131,
+            0,
+            0.17679588496685028,
+            -0.29316815733909607,
+            -0.077391475439071655,
+            0.99999988079071045
+          ]
+        }
+      },
+      "isRawPhoto" : false,
+      "timestamp" : 804273926.44515002,
+      "filename" : "wide_20260627_192526_408.jpg",
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "type" : "depth",
+          "height" : 192,
+          "filename" : "wide_20260627_192526_408_depth.bin"
+        },
+        {
+          "filename" : "wide_20260627_192526_408_confidence.bin",
+          "pixelFormat" : 1278226488,
+          "bytesPerRow" : 256,
+          "width" : 256,
+          "height" : 192,
+          "type" : "depthConfidence"
+        },
+        {
+          "units" : "meters",
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world"
+        }
+      ],
+      "metadataFile" : "wide_20260627_192526_408.json",
+      "extraMetadata" : {
+        "qualityBand" : "good",
+        "format" : "jpeg",
+        "qualityScore" : 0.88,
+        "qualitySummary" : "stable ar tracking",
+        "cgImagePropertyOrientation" : 6,
+        "captureSource" : "arkit_lidar",
+        "stream" : "wide",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "capturedPointSamplesAdded" : 1200,
+        "depthAvailable" : true,
+        "autoCapture" : true,
+        "stabilityBypassed" : false
+      }
+    },
+    {
+      "extraMetadata" : {
+        "autoCapture" : true,
+        "qualityScore" : 0.88,
+        "qualitySummary" : "stable ar tracking",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "capturedPointSamplesAdded" : 1200,
+        "qualityBand" : "good",
+        "captureSource" : "arkit_lidar",
+        "depthAvailable" : true,
+        "stream" : "wide",
+        "format" : "jpeg",
+        "stabilityBypassed" : false,
+        "cgImagePropertyOrientation" : 6
+      },
+      "auxiliaryOutputs" : [
+        {
+          "filename" : "wide_20260627_192527_409_depth.bin",
+          "width" : 256,
+          "height" : 192,
+          "bytesPerRow" : 1024,
+          "type" : "depth",
+          "pixelFormat" : 1717855600
+        },
+        {
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192527_409_confidence.bin",
+          "height" : 192,
+          "pixelFormat" : 1278226488,
+          "width" : 256
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ",
+          "units" : "meters",
+          "coordinateSystem" : "world"
+        }
+      ],
+      "isRawPhoto" : false,
+      "filename" : "wide_20260627_192527_409.jpg",
+      "timestamp" : 804273927.44080102,
+      "metadata" : {
+        "camera" : {
+          "trackingState" : "normal",
+          "transform" : [
+            0.51392632722854614,
+            -0.78872281312942505,
+            -0.33733668923377991,
+            0,
+            -0.62031984329223633,
+            -0.07007143646478653,
+            -0.78121268749237061,
+            0,
+            0.59252268075942993,
+            0.61074239015579224,
+            -0.5252719521522522,
+            0,
+            0.16235782206058502,
+            -0.28025004267692566,
+            -0.21520142257213593,
+            1
+          ],
+          "eulerAngles" : [
+            -0.65699779987335205,
+            2.2961032390594482,
+            -1.6594053506851196
+          ],
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "intrinsics" : [
+            1358.2703857421875,
+            0,
+            0,
+            0,
+            1358.2703857421875,
+            0,
+            967.659912109375,
+            719.79913330078125,
+            1
+          ]
+        },
+        "source" : "arkit"
+      },
+      "metadataFile" : "wide_20260627_192527_409.json"
+    },
+    {
+      "metadataFile" : "wide_20260627_192528_409.json",
+      "extraMetadata" : {
+        "autoCapture" : true,
+        "stream" : "wide",
+        "depthAvailable" : true,
+        "cgImagePropertyOrientation" : 6,
+        "qualityScore" : 0.88,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "stabilityBypassed" : false,
+        "qualityBand" : "good",
+        "captureSource" : "arkit_lidar",
+        "capturedPointSamplesAdded" : 1200,
+        "qualitySummary" : "stable ar tracking",
+        "format" : "jpeg"
+      },
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "transform" : [
+            0.45618441700935364,
+            -0.69299048185348511,
+            -0.55826526880264282,
+            0,
+            -0.7942841649055481,
+            -0.034208439290523529,
+            -0.6065826416015625,
+            0,
+            0.40125855803489685,
+            0.72013473510742188,
+            -0.56603670120239258,
+            0,
+            0.036710590124130249,
+            -0.14001356065273285,
+            -0.25735026597976685,
+            1.0000001192092896
+          ],
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "eulerAngles" : [
+            -0.8039965033531189,
+            2.5249242782592773,
+            -1.6201198101043701
+          ],
+          "intrinsics" : [
+            1356.5521240234375,
+            0,
+            0,
+            0,
+            1356.5521240234375,
+            0,
+            967.2666015625,
+            720.0220947265625,
+            1
+          ],
+          "trackingState" : "normal"
+        }
+      },
+      "auxiliaryOutputs" : [
+        {
+          "bytesPerRow" : 1024,
+          "filename" : "wide_20260627_192528_409_depth.bin",
+          "pixelFormat" : 1717855600,
+          "type" : "depth",
+          "height" : 192,
+          "width" : 256
+        },
+        {
+          "height" : 192,
+          "width" : 256,
+          "pixelFormat" : 1278226488,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192528_409_confidence.bin",
+          "bytesPerRow" : 256
+        },
+        {
+          "coordinateSystem" : "world",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ",
+          "units" : "meters"
+        }
+      ],
+      "timestamp" : 804273928.445104,
+      "filename" : "wide_20260627_192528_409.jpg",
+      "isRawPhoto" : false
+    },
+    {
+      "filename" : "wide_20260627_192529_409.jpg",
+      "isRawPhoto" : false,
+      "auxiliaryOutputs" : [
+        {
+          "height" : 192,
+          "bytesPerRow" : 1024,
+          "filename" : "wide_20260627_192529_409_depth.bin",
+          "width" : 256,
+          "pixelFormat" : 1717855600,
+          "type" : "depth"
+        },
+        {
+          "pixelFormat" : 1278226488,
+          "height" : 192,
+          "type" : "depthConfidence",
+          "bytesPerRow" : 256,
+          "filename" : "wide_20260627_192529_409_confidence.bin",
+          "width" : 256
+        },
+        {
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters"
+        }
+      ],
+      "metadata" : {
+        "camera" : {
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "intrinsics" : [
+            1354.7059326171875,
+            0,
+            0,
+            0,
+            1354.7059326171875,
+            0,
+            966.4176025390625,
+            720.12322998046875,
+            1
+          ],
+          "eulerAngles" : [
+            -0.94554001092910767,
+            2.7683160305023193,
+            -1.5665488243103027
+          ],
+          "trackingState" : "normal",
+          "transform" : [
+            0.29172027111053467,
+            -0.5852997899055481,
+            -0.75652068853378296,
+            0,
+            -0.93238496780395508,
+            0.0024860708508640528,
+            -0.36145833134651184,
+            0,
+            0.21344223618507385,
+            0.81081312894821167,
+            -0.54499942064285278,
+            0,
+            -0.10152067989110947,
+            -0.066436946392059326,
+            -0.22366063296794891,
+            1
+          ]
+        },
+        "source" : "arkit"
+      },
+      "extraMetadata" : {
+        "qualitySummary" : "stable ar tracking",
+        "cgImagePropertyOrientation" : 6,
+        "qualityBand" : "good",
+        "stream" : "wide",
+        "qualityScore" : 0.88,
+        "stabilityBypassed" : false,
+        "captureSource" : "arkit_lidar",
+        "depthAvailable" : true,
+        "autoCapture" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "capturedPointSamplesAdded" : 1200
+      },
+      "metadataFile" : "wide_20260627_192529_409.json",
+      "timestamp" : 804273929.43788803
+    },
+    {
+      "auxiliaryOutputs" : [
+        {
+          "pixelFormat" : 1717855600,
+          "height" : 192,
+          "bytesPerRow" : 1024,
+          "width" : 256,
+          "type" : "depth",
+          "filename" : "wide_20260627_192530_409_depth.bin"
+        },
+        {
+          "height" : 192,
+          "type" : "depthConfidence",
+          "pixelFormat" : 1278226488,
+          "bytesPerRow" : 256,
+          "filename" : "wide_20260627_192530_409_confidence.bin",
+          "width" : 256
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "units" : "meters",
+          "type" : "pointCloudXYZ"
+        }
+      ],
+      "extraMetadata" : {
+        "qualitySummary" : "stable ar tracking",
+        "qualityScore" : 0.88,
+        "qualityBand" : "good",
+        "cgImagePropertyOrientation" : 6,
+        "stream" : "wide",
+        "stabilityBypassed" : false,
+        "captureSource" : "arkit_lidar",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "autoCapture" : true,
+        "depthAvailable" : true,
+        "capturedPointSamplesAdded" : 1200,
+        "format" : "jpeg"
+      },
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "trackingState" : "normal",
+          "transform" : [
+            0.35481551289558411,
+            -0.33988770842552185,
+            -0.87096637487411499,
+            0,
+            -0.92095893621444702,
+            0.033421032130718231,
+            -0.38822391629219055,
+            0,
+            0.1610611230134964,
+            0.93987196683883667,
+            -0.30116432905197144,
+            0,
+            -0.19162137806415558,
+            -0.15070945024490356,
+            -0.032037846744060516,
+            1
+          ],
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "eulerAngles" : [
+            -1.2222552299499512,
+            2.6504981517791748,
+            -1.472781777381897
+          ],
+          "intrinsics" : [
+            1361.6949462890625,
+            0,
+            0,
+            0,
+            1361.6949462890625,
+            0,
+            964.50372314453125,
+            720.5523681640625,
+            1
+          ]
+        }
+      },
+      "filename" : "wide_20260627_192530_409.jpg",
+      "isRawPhoto" : false,
+      "timestamp" : 804273930.44014502,
+      "metadataFile" : "wide_20260627_192530_409.json"
+    },
+    {
+      "metadata" : {
+        "camera" : {
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "trackingState" : "normal",
+          "transform" : [
+            0.64589554071426392,
+            -0.46322888135910034,
+            -0.60682612657546997,
+            0,
+            -0.66154623031616211,
+            0.057100579142570496,
+            -0.74772727489471436,
+            0,
+            0.38101896643638611,
+            0.88439726829528809,
+            -0.26956629753112793,
+            0,
+            -0.08210434764623642,
+            -0.16754326224327087,
+            -0.054956629872322083,
+            0.99999994039535522
+          ],
+          "eulerAngles" : [
+            -1.0852010250091553,
+            2.1865301132202148,
+            -1.4481486082077026
+          ],
+          "intrinsics" : [
+            1372.6954345703125,
+            0,
+            0,
+            0,
+            1372.6954345703125,
+            0,
+            963.71197509765625,
+            720.489013671875,
+            1
+          ]
+        },
+        "source" : "arkit"
+      },
+      "isRawPhoto" : false,
+      "auxiliaryOutputs" : [
+        {
+          "type" : "depth",
+          "filename" : "wide_20260627_192531_410_depth.bin",
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "width" : 256,
+          "height" : 192
+        },
+        {
+          "width" : 256,
+          "type" : "depthConfidence",
+          "pixelFormat" : 1278226488,
+          "filename" : "wide_20260627_192531_410_confidence.bin",
+          "bytesPerRow" : 256,
+          "height" : 192
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "units" : "meters",
+          "coordinateSystem" : "world",
+          "filename" : "lidar_pointcloud_world_xyz.bin"
+        }
+      ],
+      "extraMetadata" : {
+        "qualityBand" : "good",
+        "capturedPointSamplesAdded" : 1200,
+        "autoCapture" : true,
+        "depthAvailable" : true,
+        "format" : "jpeg",
+        "stabilityBypassed" : false,
+        "qualitySummary" : "stable ar tracking",
+        "stream" : "wide",
+        "captureSource" : "arkit_lidar",
+        "cgImagePropertyOrientation" : 6,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "qualityScore" : 0.88
+      },
+      "timestamp" : 804273931.44569004,
+      "filename" : "wide_20260627_192531_410.jpg",
+      "metadataFile" : "wide_20260627_192531_410.json"
+    },
+    {
+      "timestamp" : 804273932.44030094,
+      "filename" : "wide_20260627_192532_409.jpg",
+      "isRawPhoto" : false,
+      "metadata" : {
+        "camera" : {
+          "trackingState" : "normal",
+          "eulerAngles" : [
+            -0.87045490741729736,
+            1.8304847478866577,
+            -1.5014714002609253
+          ],
+          "transform" : [
+            0.71942245960235596,
+            -0.64293068647384644,
+            -0.26281446218490601,
+            0,
+            -0.30735170841217041,
+            0.044642627239227295,
+            -0.95054829120635986,
+            0,
+            0.62286943197250366,
+            0.76462221145629883,
+            -0.16548892855644226,
+            0,
+            0.082027599215507507,
+            -0.24949854612350464,
+            -0.032927714288234711,
+            1
+          ],
+          "intrinsics" : [
+            1368.0855712890625,
+            0,
+            0,
+            0,
+            1368.0855712890625,
+            0,
+            965.8203125,
+            720.54730224609375,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          }
+        },
+        "source" : "arkit"
+      },
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "height" : 192,
+          "type" : "depth",
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192532_409_depth.bin"
+        },
+        {
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192532_409_confidence.bin",
+          "pixelFormat" : 1278226488,
+          "height" : 192,
+          "width" : 256,
+          "bytesPerRow" : 256
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "units" : "meters"
+        }
+      ],
+      "extraMetadata" : {
+        "autoCapture" : true,
+        "cgImagePropertyOrientation" : 6,
+        "capturedPointSamplesAdded" : 1200,
+        "stabilityBypassed" : false,
+        "format" : "jpeg",
+        "depthAvailable" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "qualityBand" : "good",
+        "stream" : "wide",
+        "qualitySummary" : "stable ar tracking",
+        "qualityScore" : 0.88,
+        "captureSource" : "arkit_lidar"
+      },
+      "metadataFile" : "wide_20260627_192532_409.json"
+    },
+    {
+      "isRawPhoto" : false,
+      "auxiliaryOutputs" : [
+        {
+          "height" : 192,
+          "pixelFormat" : 1717855600,
+          "type" : "depth",
+          "bytesPerRow" : 1024,
+          "filename" : "wide_20260627_192533_409_depth.bin",
+          "width" : 256
+        },
+        {
+          "width" : 256,
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192533_409_confidence.bin",
+          "pixelFormat" : 1278226488,
+          "height" : 192
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "type" : "pointCloudXYZ",
+          "coordinateSystem" : "world",
+          "units" : "meters"
+        }
+      ],
+      "extraMetadata" : {
+        "stabilityBypassed" : false,
+        "qualitySummary" : "stable ar tracking",
+        "format" : "jpeg",
+        "capturedPointSamplesAdded" : 1200,
+        "depthAvailable" : true,
+        "captureSource" : "arkit_lidar",
+        "qualityScore" : 0.88,
+        "qualityBand" : "good",
+        "cgImagePropertyOrientation" : 6,
+        "autoCapture" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "stream" : "wide"
+      },
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "eulerAngles" : [
+            -0.64727580547332764,
+            1.5122017860412598,
+            -1.4853790998458862
+          ],
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1361.0458984375,
+            0,
+            0,
+            0,
+            1361.0458984375,
+            0,
+            967.635498046875,
+            721.02410888671875,
+            1
+          ],
+          "transform" : [
+            0.60478192567825317,
+            -0.79482108354568481,
+            -0.049982562661170959,
+            0,
+            0.0069904564879834652,
+            0.068057022988796234,
+            -0.99765694141387939,
+            0,
+            0.79636049270629883,
+            0.6030154824256897,
+            0.046715822070837021,
+            0,
+            0.25594913959503174,
+            -0.2707667350769043,
+            0.10578078031539917,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          }
+        }
+      },
+      "timestamp" : 804273933.43684995,
+      "filename" : "wide_20260627_192533_409.jpg",
+      "metadataFile" : "wide_20260627_192533_409.json"
+    },
+    {
+      "isRawPhoto" : false,
+      "timestamp" : 804273934.44423199,
+      "auxiliaryOutputs" : [
+        {
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192534_409_depth.bin",
+          "type" : "depth",
+          "height" : 192,
+          "width" : 256,
+          "bytesPerRow" : 1024
+        },
+        {
+          "pixelFormat" : 1278226488,
+          "height" : 192,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192534_409_confidence.bin",
+          "bytesPerRow" : 256,
+          "width" : 256
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "units" : "meters",
+          "type" : "pointCloudXYZ"
+        }
+      ],
+      "metadataFile" : "wide_20260627_192534_409.json",
+      "extraMetadata" : {
+        "stream" : "wide",
+        "qualityBand" : "good",
+        "format" : "jpeg",
+        "qualitySummary" : "stable ar tracking",
+        "captureSource" : "arkit_lidar",
+        "capturedPointSamplesAdded" : 1200,
+        "qualityScore" : 0.88,
+        "stabilityBypassed" : false,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "cgImagePropertyOrientation" : 6,
+        "depthAvailable" : true,
+        "autoCapture" : true
+      },
+      "filename" : "wide_20260627_192534_409.jpg",
+      "metadata" : {
+        "camera" : {
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          },
+          "trackingState" : "normal",
+          "eulerAngles" : [
+            -0.63542485237121582,
+            1.1598430871963501,
+            -1.4726043939590454
+          ],
+          "intrinsics" : [
+            1356.61181640625,
+            0,
+            0,
+            0,
+            1356.61181640625,
+            0,
+            967.85382080078125,
+            721.1956787109375,
+            1
+          ],
+          "transform" : [
+            0.58064544200897217,
+            -0.80094283819198608,
+            0.14608711004257202,
+            0,
+            0.34421831369400024,
+            0.078899867832660675,
+            -0.93556863069534302,
+            0,
+            0.73781073093414307,
+            0.59351950883865356,
+            0.32151204347610474,
+            0,
+            0.19366022944450378,
+            -0.24313750863075256,
+            0.28525885939598083,
+            1
+          ]
+        },
+        "source" : "arkit"
+      }
+    },
+    {
+      "filename" : "wide_20260627_192535_409.jpg",
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "intrinsics" : [
+            1354.6939697265625,
+            0,
+            0,
+            0,
+            1354.6939697265625,
+            0,
+            967.45330810546875,
+            721.5145263671875,
+            1
+          ],
+          "eulerAngles" : [
+            -0.66771841049194336,
+            0.61405432224273682,
+            -1.4029159545898438
+          ],
+          "transform" : [
+            0.48832431435585022,
+            -0.77419698238372803,
+            0.40268898010253906,
+            0,
+            0.74621415138244629,
+            0.1312074214220047,
+            -0.65264773368835449,
+            0,
+            0.45244219899177551,
+            0.61919599771499634,
+            0.6417885422706604,
+            0,
+            0.056856654584407806,
+            -0.26098662614822388,
+            0.44547191262245178,
+            1
+          ],
+          "trackingState" : "normal"
+        }
+      },
+      "auxiliaryOutputs" : [
+        {
+          "filename" : "wide_20260627_192535_409_depth.bin",
+          "type" : "depth",
+          "height" : 192,
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "width" : 256
+        },
+        {
+          "bytesPerRow" : 256,
+          "height" : 192,
+          "pixelFormat" : 1278226488,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192535_409_confidence.bin",
+          "width" : 256
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "units" : "meters",
+          "type" : "pointCloudXYZ"
+        }
+      ],
+      "isRawPhoto" : false,
+      "metadataFile" : "wide_20260627_192535_409.json",
+      "extraMetadata" : {
+        "cgImagePropertyOrientation" : 6,
+        "autoCapture" : true,
+        "qualityBand" : "good",
+        "stream" : "wide",
+        "stabilityBypassed" : false,
+        "qualityScore" : 0.88,
+        "qualitySummary" : "stable ar tracking",
+        "captureSource" : "arkit_lidar",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "capturedPointSamplesAdded" : 1200,
+        "format" : "jpeg",
+        "depthAvailable" : true
+      },
+      "timestamp" : 804273935.44516802
+    },
+    {
+      "auxiliaryOutputs" : [
+        {
+          "height" : 192,
+          "pixelFormat" : 1717855600,
+          "width" : 256,
+          "bytesPerRow" : 1024,
+          "filename" : "wide_20260627_192536_410_depth.bin",
+          "type" : "depth"
+        },
+        {
+          "filename" : "wide_20260627_192536_410_confidence.bin",
+          "width" : 256,
+          "height" : 192,
+          "bytesPerRow" : 256,
+          "pixelFormat" : 1278226488,
+          "type" : "depthConfidence"
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ",
+          "units" : "meters"
+        }
+      ],
+      "extraMetadata" : {
+        "depthAvailable" : true,
+        "cgImagePropertyOrientation" : 6,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "format" : "jpeg",
+        "qualityBand" : "good",
+        "autoCapture" : true,
+        "stream" : "wide",
+        "captureSource" : "arkit_lidar",
+        "capturedPointSamplesAdded" : 1200,
+        "stabilityBypassed" : false,
+        "qualityScore" : 0.88,
+        "qualitySummary" : "stable ar tracking"
+      },
+      "metadataFile" : "wide_20260627_192536_410.json",
+      "isRawPhoto" : false,
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1354.6641845703125,
+            0,
+            0,
+            0,
+            1354.6641845703125,
+            0,
+            967.669921875,
+            721.58184814453125,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "transform" : [
+            0.28895750641822815,
+            -0.78551375865936279,
+            0.54724019765853882,
+            0,
+            0.93464946746826172,
+            0.1077529564499855,
+            -0.33885043859481812,
+            0,
+            0.20720492303371429,
+            0.60939109325408936,
+            0.7653159499168396,
+            0,
+            -0.093934297561645508,
+            -0.29043242335319519,
+            0.53203272819519043,
+            0.99999994039535522
+          ],
+          "eulerAngles" : [
+            -0.65529239177703857,
+            0.26440542936325073,
+            -1.4344719648361206
+          ]
+        }
+      },
+      "filename" : "wide_20260627_192536_410.jpg",
+      "timestamp" : 804273936.44301605
+    },
+    {
+      "metadataFile" : "wide_20260627_192537_408.json",
+      "extraMetadata" : {
+        "stabilityBypassed" : false,
+        "depthAvailable" : true,
+        "qualitySummary" : "stable ar tracking",
+        "format" : "jpeg",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "capturedPointSamplesAdded" : 1200,
+        "stream" : "wide",
+        "qualityScore" : 0.88,
+        "qualityBand" : "good",
+        "autoCapture" : true,
+        "captureSource" : "arkit_lidar",
+        "cgImagePropertyOrientation" : 6
+      },
+      "auxiliaryOutputs" : [
+        {
+          "pixelFormat" : 1717855600,
+          "height" : 192,
+          "bytesPerRow" : 1024,
+          "width" : 256,
+          "type" : "depth",
+          "filename" : "wide_20260627_192537_408_depth.bin"
+        },
+        {
+          "type" : "depthConfidence",
+          "width" : 256,
+          "pixelFormat" : 1278226488,
+          "bytesPerRow" : 256,
+          "height" : 192,
+          "filename" : "wide_20260627_192537_408_confidence.bin"
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "units" : "meters"
+        }
+      ],
+      "timestamp" : 804273937.44563401,
+      "isRawPhoto" : false,
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "transform" : [
+            0.12540102005004883,
+            -0.80944162607192993,
+            0.57365411520004272,
+            0,
+            0.99200713634490967,
+            0.11047404259443283,
+            -0.060971267521381378,
+            0,
+            -0.01402119267731905,
+            0.57671481370925903,
+            0.81682533025741577,
+            0,
+            -0.26910710334777832,
+            -0.31291922926902771,
+            0.58320552110671997,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "eulerAngles" : [
+            -0.61470162868499756,
+            -0.017163787037134171,
+            -1.4351526498794556
+          ],
+          "intrinsics" : [
+            1356.543212890625,
+            0,
+            0,
+            0,
+            1356.543212890625,
+            0,
+            967.57415771484375,
+            721.25714111328125,
+            1
+          ],
+          "trackingState" : "normal"
+        }
+      },
+      "filename" : "wide_20260627_192537_408.jpg"
+    },
+    {
+      "metadata" : {
+        "camera" : {
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1355.8106689453125,
+            0,
+            0,
+            0,
+            1355.8106689453125,
+            0,
+            968.18487548828125,
+            720.9112548828125,
+            1
+          ],
+          "transform" : [
+            -0.066346094012260437,
+            -0.85846537351608276,
+            0.50856220722198486,
+            0,
+            0.96421825885772705,
+            0.075951151549816132,
+            0.25399750471115112,
+            0,
+            -0.25667393207550049,
+            0.5072166919708252,
+            0.82270890474319458,
+            0,
+            -0.45211613178253174,
+            -0.33345559239387512,
+            0.53783309459686279,
+            1
+          ],
+          "eulerAngles" : [
+            -0.5319521427154541,
+            -0.30241683125495911,
+            -1.4825528860092163
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          }
+        },
+        "source" : "arkit"
+      },
+      "isRawPhoto" : false,
+      "metadataFile" : "wide_20260627_192538_410.json",
+      "extraMetadata" : {
+        "qualitySummary" : "stable ar tracking",
+        "captureSource" : "arkit_lidar",
+        "format" : "jpeg",
+        "autoCapture" : true,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "stabilityBypassed" : false,
+        "qualityScore" : 0.88,
+        "qualityBand" : "good",
+        "depthAvailable" : true,
+        "cgImagePropertyOrientation" : 6,
+        "capturedPointSamplesAdded" : 1200,
+        "stream" : "wide"
+      },
+      "filename" : "wide_20260627_192538_410.jpg",
+      "timestamp" : 804273938.44432294,
+      "auxiliaryOutputs" : [
+        {
+          "width" : 256,
+          "height" : 192,
+          "type" : "depth",
+          "pixelFormat" : 1717855600,
+          "bytesPerRow" : 1024,
+          "filename" : "wide_20260627_192538_410_depth.bin"
+        },
+        {
+          "pixelFormat" : 1278226488,
+          "type" : "depthConfidence",
+          "bytesPerRow" : 256,
+          "filename" : "wide_20260627_192538_410_confidence.bin",
+          "width" : 256,
+          "height" : 192
+        },
+        {
+          "units" : "meters",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "type" : "pointCloudXYZ"
+        }
+      ]
+    },
+    {
+      "timestamp" : 804273939.43554199,
+      "metadataFile" : "wide_20260627_192539_408.json",
+      "extraMetadata" : {
+        "format" : "jpeg",
+        "stream" : "wide",
+        "autoCapture" : true,
+        "qualitySummary" : "stable ar tracking",
+        "qualityScore" : 0.88,
+        "cgImagePropertyOrientation" : 6,
+        "qualityBand" : "good",
+        "stabilityBypassed" : false,
+        "depthAvailable" : true,
+        "captureSource" : "arkit_lidar",
+        "capturedPointSamplesAdded" : 1200,
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin"
+      },
+      "filename" : "wide_20260627_192539_408.jpg",
+      "isRawPhoto" : false,
+      "auxiliaryOutputs" : [
+        {
+          "bytesPerRow" : 1024,
+          "type" : "depth",
+          "pixelFormat" : 1717855600,
+          "filename" : "wide_20260627_192539_408_depth.bin",
+          "width" : 256,
+          "height" : 192
+        },
+        {
+          "width" : 256,
+          "bytesPerRow" : 256,
+          "pixelFormat" : 1278226488,
+          "filename" : "wide_20260627_192539_408_confidence.bin",
+          "type" : "depthConfidence",
+          "height" : 192
+        },
+        {
+          "type" : "pointCloudXYZ",
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "units" : "meters"
+        }
+      ],
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "transform" : [
+            -0.26274573802947998,
+            -0.84410250186920166,
+            0.46739232540130615,
+            0,
+            0.79836910963058472,
+            0.081826776266098022,
+            0.59658294916152954,
+            0,
+            -0.54182237386703491,
+            0.52990120649337769,
+            0.65240579843521118,
+            0,
+            -0.57646465301513672,
+            -0.36423951387405396,
+            0.44144079089164734,
+            1
+          ],
+          "trackingState" : "normal",
+          "intrinsics" : [
+            1357.0137939453125,
+            0,
+            0,
+            0,
+            1357.0137939453125,
+            0,
+            968.164306640625,
+            721.37255859375,
+            1
+          ],
+          "eulerAngles" : [
+            -0.55848407745361328,
+            -0.69306319952011108,
+            -1.4741588830947876
+          ],
+          "imageResolution" : {
+            "height" : 1440,
+            "width" : 1920
+          }
+        }
+      }
+    },
+    {
+      "metadata" : {
+        "source" : "arkit",
+        "camera" : {
+          "trackingState" : "normal",
+          "transform" : [
+            -0.26337763667106628,
+            -0.89128875732421875,
+            0.3691023588180542,
+            0,
+            0.77304935455322266,
+            0.033883929252624512,
+            0.63344025611877441,
+            0,
+            -0.57708477973937988,
+            0.45216834545135498,
+            0.68008595705032349,
+            0,
+            -0.64330202341079712,
+            -0.37530219554901123,
+            0.41346237063407898,
+            1
+          ],
+          "imageResolution" : {
+            "width" : 1920,
+            "height" : 1440
+          },
+          "intrinsics" : [
+            1357.62109375,
+            0,
+            0,
+            0,
+            1357.62109375,
+            0,
+            968.40997314453125,
+            720.7620849609375,
+            1
+          ],
+          "eulerAngles" : [
+            -0.4691949188709259,
+            -0.70364981889724731,
+            -1.5327978134155273
+          ]
+        }
+      },
+      "filename" : "wide_20260627_192540_408.jpg",
+      "metadataFile" : "wide_20260627_192540_408.json",
+      "timestamp" : 804273940.45711303,
+      "auxiliaryOutputs" : [
+        {
+          "bytesPerRow" : 1024,
+          "pixelFormat" : 1717855600,
+          "width" : 256,
+          "height" : 192,
+          "type" : "depth",
+          "filename" : "wide_20260627_192540_408_depth.bin"
+        },
+        {
+          "pixelFormat" : 1278226488,
+          "bytesPerRow" : 256,
+          "type" : "depthConfidence",
+          "filename" : "wide_20260627_192540_408_confidence.bin",
+          "height" : 192,
+          "width" : 256
+        },
+        {
+          "filename" : "lidar_pointcloud_world_xyz.bin",
+          "coordinateSystem" : "world",
+          "units" : "meters",
+          "type" : "pointCloudXYZ"
+        }
+      ],
+      "isRawPhoto" : false,
+      "extraMetadata" : {
+        "depthAvailable" : true,
+        "captureSource" : "arkit_lidar",
+        "qualityScore" : 0.88,
+        "cgImagePropertyOrientation" : 6,
+        "qualityBand" : "good",
+        "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+        "capturedPointSamplesAdded" : 1200,
+        "stream" : "wide",
+        "format" : "jpeg",
+        "qualitySummary" : "stable ar tracking",
+        "stabilityBypassed" : false,
+        "autoCapture" : true
+      }
+    }
+  ]
+}

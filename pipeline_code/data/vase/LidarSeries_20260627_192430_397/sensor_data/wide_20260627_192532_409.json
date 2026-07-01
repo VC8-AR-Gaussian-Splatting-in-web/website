@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "trackingState" : "normal",
+      "eulerAngles" : [
+        -0.87045490741729736,
+        1.8304847478866577,
+        -1.5014714002609253
+      ],
+      "transform" : [
+        0.71942245960235596,
+        -0.64293068647384644,
+        -0.26281446218490601,
+        0,
+        -0.30735170841217041,
+        0.044642627239227295,
+        -0.95054829120635986,
+        0,
+        0.62286943197250366,
+        0.76462221145629883,
+        -0.16548892855644226,
+        0,
+        0.082027599215507507,
+        -0.24949854612350464,
+        -0.032927714288234711,
+        1
+      ],
+      "intrinsics" : [
+        1368.0855712890625,
+        0,
+        0,
+        0,
+        1368.0855712890625,
+        0,
+        965.8203125,
+        720.54730224609375,
+        1
+      ],
+      "imageResolution" : {
+        "height" : 1440,
+        "width" : 1920
+      }
+    }
+  },
+  "extraMetadata" : {
+    "autoCapture" : true,
+    "cgImagePropertyOrientation" : 6,
+    "capturedPointSamplesAdded" : 1200,
+    "stabilityBypassed" : false,
+    "format" : "jpeg",
+    "depthAvailable" : true,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "qualityBand" : "good",
+    "stream" : "wide",
+    "qualitySummary" : "stable ar tracking",
+    "qualityScore" : 0.88,
+    "captureSource" : "arkit_lidar"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "width" : 256,
+      "height" : 192,
+      "type" : "depth",
+      "bytesPerRow" : 1024,
+      "pixelFormat" : 1717855600,
+      "filename" : "wide_20260627_192532_409_depth.bin"
+    },
+    {
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192532_409_confidence.bin",
+      "pixelFormat" : 1278226488,
+      "height" : 192,
+      "width" : 256,
+      "bytesPerRow" : 256
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "coordinateSystem" : "world",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "units" : "meters"
+    }
+  ]
+}

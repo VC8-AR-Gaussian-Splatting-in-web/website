@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "cgImagePropertyOrientation" : 6,
+    "capturedPointSamplesAdded" : 1200,
+    "stabilityBypassed" : false,
+    "captureSource" : "arkit_lidar",
+    "stream" : "wide",
+    "format" : "jpeg",
+    "qualitySummary" : "stable ar tracking",
+    "autoCapture" : true,
+    "depthAvailable" : true,
+    "qualityBand" : "good",
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "qualityScore" : 0.88
+  },
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "imageResolution" : {
+        "height" : 1440,
+        "width" : 1920
+      },
+      "trackingState" : "normal",
+      "intrinsics" : [
+        1370.3607177734375,
+        0,
+        0,
+        0,
+        1370.3607177734375,
+        0,
+        967.0595703125,
+        719.95184326171875,
+        1
+      ],
+      "transform" : [
+        0.57402050495147705,
+        -0.7181084156036377,
+        -0.39347255229949951,
+        0,
+        -0.61784064769744873,
+        -0.064484111964702606,
+        -0.78365480899810791,
+        0,
+        0.53737634420394897,
+        0.69293725490570068,
+        -0.48069179058074951,
+        0,
+        -0.004402336198836565,
+        -0.29348725080490112,
+        -0.12894256412982941,
+        0.99999994039535522
+      ],
+      "eulerAngles" : [
+        -0.76555496454238892,
+        2.3005733489990234,
+        -1.6603533029556274
+      ]
+    }
+  },
+  "auxiliaryOutputs" : [
+    {
+      "bytesPerRow" : 1024,
+      "type" : "depth",
+      "width" : 256,
+      "filename" : "wide_20260627_192505_409_depth.bin",
+      "height" : 192,
+      "pixelFormat" : 1717855600
+    },
+    {
+      "height" : 192,
+      "pixelFormat" : 1278226488,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192505_409_confidence.bin",
+      "bytesPerRow" : 256,
+      "width" : 256
+    },
+    {
+      "units" : "meters",
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world"
+    }
+  ]
+}

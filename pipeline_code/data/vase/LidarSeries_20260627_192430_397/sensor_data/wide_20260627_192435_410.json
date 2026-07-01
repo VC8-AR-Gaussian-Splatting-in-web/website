@@ -1,0 +1,84 @@
+{
+  "auxiliaryOutputs" : [
+    {
+      "bytesPerRow" : 1024,
+      "type" : "depth",
+      "height" : 192,
+      "pixelFormat" : 1717855600,
+      "filename" : "wide_20260627_192435_410_depth.bin",
+      "width" : 256
+    },
+    {
+      "width" : 256,
+      "pixelFormat" : 1278226488,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192435_410_confidence.bin",
+      "bytesPerRow" : 256,
+      "height" : 192
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "units" : "meters",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "trackingState" : "normal",
+      "eulerAngles" : [
+        -0.86748987436294556,
+        2.2504937648773193,
+        -1.6347942352294922
+      ],
+      "intrinsics" : [
+        1364.6134033203125,
+        0,
+        0,
+        0,
+        1364.6134033203125,
+        0,
+        966.5390625,
+        720.14984130859375,
+        1
+      ],
+      "transform" : [
+        0.6321905255317688,
+        -0.64541906118392944,
+        -0.42868331074714661,
+        0,
+        -0.5893329381942749,
+        -0.041361939162015915,
+        -0.80683088302612305,
+        0,
+        0.50301277637481689,
+        0.76270794868469238,
+        -0.40651533007621765,
+        0,
+        -0.010421853512525558,
+        -0.21607896685600281,
+        -0.081218086183071136,
+        1
+      ]
+    }
+  },
+  "extraMetadata" : {
+    "autoCapture" : true,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "stabilityBypassed" : false,
+    "qualitySummary" : "stable ar tracking",
+    "depthAvailable" : true,
+    "qualityScore" : 0.88,
+    "format" : "jpeg",
+    "capturedPointSamplesAdded" : 1200,
+    "qualityBand" : "good",
+    "stream" : "wide",
+    "captureSource" : "arkit_lidar",
+    "cgImagePropertyOrientation" : 6
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "eulerAngles" : [
+        -0.83587741851806641,
+        1.972317099571228,
+        -1.634626030921936
+      ],
+      "intrinsics" : [
+        1361.1231689453125,
+        0,
+        0,
+        0,
+        1361.1231689453125,
+        0,
+        966.46624755859375,
+        720.3280029296875,
+        1
+      ],
+      "transform" : [
+        0.70641964673995972,
+        -0.66916149854660034,
+        -0.23063875734806061,
+        0,
+        -0.34646421670913696,
+        -0.042770501226186752,
+        -0.93708765506744385,
+        0,
+        0.6171984076499939,
+        0.74188512563705444,
+        -0.26205441355705261,
+        0,
+        0.067098915576934814,
+        -0.20585055649280548,
+        -0.034601815044879913,
+        1
+      ],
+      "imageResolution" : {
+        "height" : 1440,
+        "width" : 1920
+      },
+      "trackingState" : "normal"
+    }
+  },
+  "extraMetadata" : {
+    "captureSource" : "arkit_lidar",
+    "stream" : "wide",
+    "format" : "jpeg",
+    "qualityBand" : "good",
+    "autoCapture" : true,
+    "qualityScore" : 0.88,
+    "depthAvailable" : true,
+    "cgImagePropertyOrientation" : 6,
+    "stabilityBypassed" : false,
+    "capturedPointSamplesAdded" : 1200,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "qualitySummary" : "stable ar tracking"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "height" : 192,
+      "filename" : "wide_20260627_192434_410_depth.bin",
+      "width" : 256,
+      "type" : "depth",
+      "bytesPerRow" : 1024,
+      "pixelFormat" : 1717855600
+    },
+    {
+      "bytesPerRow" : 256,
+      "filename" : "wide_20260627_192434_410_confidence.bin",
+      "pixelFormat" : 1278226488,
+      "width" : 256,
+      "type" : "depthConfidence",
+      "height" : 192
+    },
+    {
+      "units" : "meters",
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world"
+    }
+  ]
+}

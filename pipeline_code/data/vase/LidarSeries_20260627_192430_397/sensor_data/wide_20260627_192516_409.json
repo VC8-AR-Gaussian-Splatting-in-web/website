@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "depthAvailable" : true,
+    "format" : "jpeg",
+    "stabilityBypassed" : false,
+    "qualitySummary" : "stable ar tracking",
+    "qualityBand" : "good",
+    "cgImagePropertyOrientation" : 6,
+    "capturedPointSamplesAdded" : 1200,
+    "autoCapture" : true,
+    "captureSource" : "arkit_lidar",
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "stream" : "wide",
+    "qualityScore" : 0.88
+  },
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "transform" : [
+        -0.48794287443161011,
+        -0.87191516160964966,
+        0.040933813899755478,
+        0,
+        0.14897099137306213,
+        -0.036976747214794159,
+        0.98814994096755981,
+        0,
+        -0.8600693941116333,
+        0.48825868964195251,
+        0.14793260395526886,
+        0,
+        -0.92683953046798706,
+        -0.32178124785423279,
+        0.15993410348892212,
+        0.99999994039535522
+      ],
+      "eulerAngles" : [
+        -0.5100933313369751,
+        -1.40046226978302,
+        -1.6131795644760132
+      ],
+      "trackingState" : "normal",
+      "intrinsics" : [
+        1351.2069091796875,
+        0,
+        0,
+        0,
+        1351.2069091796875,
+        0,
+        968.56231689453125,
+        720.19891357421875,
+        1
+      ]
+    }
+  },
+  "auxiliaryOutputs" : [
+    {
+      "filename" : "wide_20260627_192516_409_depth.bin",
+      "height" : 192,
+      "bytesPerRow" : 1024,
+      "pixelFormat" : 1717855600,
+      "width" : 256,
+      "type" : "depth"
+    },
+    {
+      "type" : "depthConfidence",
+      "bytesPerRow" : 256,
+      "height" : 192,
+      "pixelFormat" : 1278226488,
+      "width" : 256,
+      "filename" : "wide_20260627_192516_409_confidence.bin"
+    },
+    {
+      "coordinateSystem" : "world",
+      "units" : "meters",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "type" : "pointCloudXYZ"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "eulerAngles" : [
+        -0.82601004838943481,
+        -0.098351642489433289,
+        -1.4965516328811646
+      ],
+      "intrinsics" : [
+        1375.0152587890625,
+        0,
+        0,
+        0,
+        1375.0152587890625,
+        0,
+        965.01812744140625,
+        721.60968017578125,
+        1
+      ],
+      "transform" : [
+        0.0018220636993646622,
+        -0.67594730854034424,
+        0.73694765567779541,
+        0,
+        0.99778097867965698,
+        0.050277899950742722,
+        0.043649237602949142,
+        0,
+        -0.066556759178638458,
+        0.73523277044296265,
+        0.67453902959823608,
+        0,
+        -0.32673966884613037,
+        -0.27934259176254272,
+        0.39948266744613647,
+        0.99999994039535522
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "trackingState" : "normal"
+    }
+  },
+  "auxiliaryOutputs" : [
+    {
+      "width" : 256,
+      "filename" : "wide_20260627_192458_409_depth.bin",
+      "pixelFormat" : 1717855600,
+      "bytesPerRow" : 1024,
+      "type" : "depth",
+      "height" : 192
+    },
+    {
+      "bytesPerRow" : 256,
+      "pixelFormat" : 1278226488,
+      "filename" : "wide_20260627_192458_409_confidence.bin",
+      "type" : "depthConfidence",
+      "width" : 256,
+      "height" : 192
+    },
+    {
+      "coordinateSystem" : "world",
+      "units" : "meters",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "type" : "pointCloudXYZ"
+    }
+  ],
+  "extraMetadata" : {
+    "autoCapture" : true,
+    "captureSource" : "arkit_lidar",
+    "stream" : "wide",
+    "qualityBand" : "good",
+    "cgImagePropertyOrientation" : 6,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "format" : "jpeg",
+    "qualityScore" : 0.88,
+    "stabilityBypassed" : false,
+    "depthAvailable" : true,
+    "qualitySummary" : "stable ar tracking",
+    "capturedPointSamplesAdded" : 1200
+  }
+}

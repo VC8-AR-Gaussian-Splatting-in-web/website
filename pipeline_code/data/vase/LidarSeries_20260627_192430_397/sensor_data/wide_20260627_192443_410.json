@@ -1,0 +1,84 @@
+{
+  "auxiliaryOutputs" : [
+    {
+      "bytesPerRow" : 1024,
+      "width" : 256,
+      "type" : "depth",
+      "height" : 192,
+      "pixelFormat" : 1717855600,
+      "filename" : "wide_20260627_192443_410_depth.bin"
+    },
+    {
+      "width" : 256,
+      "pixelFormat" : 1278226488,
+      "height" : 192,
+      "bytesPerRow" : 256,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192443_410_confidence.bin"
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "coordinateSystem" : "world",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "units" : "meters"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "trackingState" : "normal",
+      "eulerAngles" : [
+        -0.7284354567527771,
+        -1.3482351303100586,
+        -1.5870174169540405
+      ],
+      "intrinsics" : [
+        1363.985107421875,
+        0,
+        0,
+        0,
+        1363.985107421875,
+        0,
+        967.17425537109375,
+        720.00872802734375,
+        1
+      ],
+      "transform" : [
+        -0.65277838706970215,
+        -0.74611872434616089,
+        0.13109984993934631,
+        0,
+        0.21016769111156464,
+        -0.012103942222893238,
+        0.97759038209915161,
+        0,
+        -0.72781169414520264,
+        0.6657029390335083,
+        0.16471123695373535,
+        0,
+        -0.59568655490875244,
+        -0.24725404381752014,
+        0.096679314970970154,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      }
+    }
+  },
+  "extraMetadata" : {
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "capturedPointSamplesAdded" : 1200,
+    "qualityScore" : 0.88,
+    "qualitySummary" : "stable ar tracking",
+    "captureSource" : "arkit_lidar",
+    "stabilityBypassed" : false,
+    "stream" : "wide",
+    "depthAvailable" : true,
+    "cgImagePropertyOrientation" : 6,
+    "format" : "jpeg",
+    "autoCapture" : true,
+    "qualityBand" : "good"
+  }
+}

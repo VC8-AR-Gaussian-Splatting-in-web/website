@@ -1,0 +1,84 @@
+{
+  "auxiliaryOutputs" : [
+    {
+      "type" : "depth",
+      "height" : 192,
+      "filename" : "wide_20260627_192459_409_depth.bin",
+      "width" : 256,
+      "pixelFormat" : 1717855600,
+      "bytesPerRow" : 1024
+    },
+    {
+      "bytesPerRow" : 256,
+      "pixelFormat" : 1278226488,
+      "height" : 192,
+      "filename" : "wide_20260627_192459_409_confidence.bin",
+      "type" : "depthConfidence",
+      "width" : 256
+    },
+    {
+      "units" : "meters",
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world"
+    }
+  ],
+  "metadata" : {
+    "camera" : {
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "transform" : [
+        0.023517804220318794,
+        -0.79007279872894287,
+        0.61256170272827148,
+        0,
+        0.99955910444259644,
+        0.0074721323326230049,
+        -0.028738165274262428,
+        0,
+        0.018128102645277977,
+        0.61296743154525757,
+        0.78990018367767334,
+        0,
+        -0.25414472818374634,
+        -0.3023526668548584,
+        0.49778151512145996,
+        1
+      ],
+      "intrinsics" : [
+        1366.4119873046875,
+        0,
+        0,
+        0,
+        1366.4119873046875,
+        0,
+        967.5665283203125,
+        720.88018798828125,
+        1
+      ],
+      "eulerAngles" : [
+        -0.65981090068817139,
+        0.022945838049054146,
+        -1.5613391399383545
+      ],
+      "trackingState" : "normal"
+    },
+    "source" : "arkit"
+  },
+  "extraMetadata" : {
+    "stream" : "wide",
+    "stabilityBypassed" : false,
+    "qualityScore" : 0.88,
+    "autoCapture" : true,
+    "captureSource" : "arkit_lidar",
+    "capturedPointSamplesAdded" : 1200,
+    "qualityBand" : "good",
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "cgImagePropertyOrientation" : 6,
+    "format" : "jpeg",
+    "qualitySummary" : "stable ar tracking",
+    "depthAvailable" : true
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "camera" : {
+      "trackingState" : "normal",
+      "eulerAngles" : [
+        -1.0599631071090698,
+        0.13221649825572968,
+        -1.5030663013458252
+      ],
+      "intrinsics" : [
+        1363.4222412109375,
+        0,
+        0,
+        0,
+        1363.4222412109375,
+        0,
+        964.521728515625,
+        720.55865478515625,
+        1
+      ],
+      "transform" : [
+        0.18182550370693207,
+        -0.48778337240219116,
+        0.85381901264190674,
+        0,
+        0.9812161922454834,
+        0.033088177442550659,
+        -0.19005231559276581,
+        0,
+        0.064453050494194031,
+        0.8723374605178833,
+        0.48463726043701172,
+        0,
+        -0.29486697912216187,
+        -0.1934410035610199,
+        0.31670510768890381,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      }
+    },
+    "source" : "arkit"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "filename" : "wide_20260627_192520_408_depth.bin",
+      "height" : 192,
+      "type" : "depth",
+      "width" : 256,
+      "pixelFormat" : 1717855600,
+      "bytesPerRow" : 1024
+    },
+    {
+      "width" : 256,
+      "pixelFormat" : 1278226488,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192520_408_confidence.bin",
+      "height" : 192,
+      "bytesPerRow" : 256
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "units" : "meters",
+      "coordinateSystem" : "world"
+    }
+  ],
+  "extraMetadata" : {
+    "cgImagePropertyOrientation" : 6,
+    "depthAvailable" : true,
+    "qualitySummary" : "stable ar tracking",
+    "stream" : "wide",
+    "captureSource" : "arkit_lidar",
+    "capturedPointSamplesAdded" : 1200,
+    "autoCapture" : true,
+    "qualityScore" : 0.88,
+    "qualityBand" : "good",
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "format" : "jpeg",
+    "stabilityBypassed" : false
+  }
+}

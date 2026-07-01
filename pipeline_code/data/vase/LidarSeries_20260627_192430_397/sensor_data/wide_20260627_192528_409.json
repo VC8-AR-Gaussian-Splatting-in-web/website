@@ -1,0 +1,84 @@
+{
+  "auxiliaryOutputs" : [
+    {
+      "bytesPerRow" : 1024,
+      "filename" : "wide_20260627_192528_409_depth.bin",
+      "pixelFormat" : 1717855600,
+      "type" : "depth",
+      "height" : 192,
+      "width" : 256
+    },
+    {
+      "height" : 192,
+      "width" : 256,
+      "pixelFormat" : 1278226488,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192528_409_confidence.bin",
+      "bytesPerRow" : 256
+    },
+    {
+      "coordinateSystem" : "world",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "type" : "pointCloudXYZ",
+      "units" : "meters"
+    }
+  ],
+  "extraMetadata" : {
+    "autoCapture" : true,
+    "stream" : "wide",
+    "depthAvailable" : true,
+    "cgImagePropertyOrientation" : 6,
+    "qualityScore" : 0.88,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "stabilityBypassed" : false,
+    "qualityBand" : "good",
+    "captureSource" : "arkit_lidar",
+    "capturedPointSamplesAdded" : 1200,
+    "qualitySummary" : "stable ar tracking",
+    "format" : "jpeg"
+  },
+  "metadata" : {
+    "camera" : {
+      "transform" : [
+        0.45618441700935364,
+        -0.69299048185348511,
+        -0.55826526880264282,
+        0,
+        -0.7942841649055481,
+        -0.034208439290523529,
+        -0.6065826416015625,
+        0,
+        0.40125855803489685,
+        0.72013473510742188,
+        -0.56603670120239258,
+        0,
+        0.036710590124130249,
+        -0.14001356065273285,
+        -0.25735026597976685,
+        1.0000001192092896
+      ],
+      "imageResolution" : {
+        "height" : 1440,
+        "width" : 1920
+      },
+      "eulerAngles" : [
+        -0.8039965033531189,
+        2.5249242782592773,
+        -1.6201198101043701
+      ],
+      "intrinsics" : [
+        1356.5521240234375,
+        0,
+        0,
+        0,
+        1356.5521240234375,
+        0,
+        967.2666015625,
+        720.0220947265625,
+        1
+      ],
+      "trackingState" : "normal"
+    },
+    "source" : "arkit"
+  }
+}

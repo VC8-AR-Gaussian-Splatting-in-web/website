@@ -1,0 +1,84 @@
+{
+  "auxiliaryOutputs" : [
+    {
+      "bytesPerRow" : 1024,
+      "type" : "depth",
+      "pixelFormat" : 1717855600,
+      "filename" : "wide_20260627_192539_408_depth.bin",
+      "width" : 256,
+      "height" : 192
+    },
+    {
+      "width" : 256,
+      "bytesPerRow" : 256,
+      "pixelFormat" : 1278226488,
+      "filename" : "wide_20260627_192539_408_confidence.bin",
+      "type" : "depthConfidence",
+      "height" : 192
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world",
+      "units" : "meters"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "transform" : [
+        -0.26274573802947998,
+        -0.84410250186920166,
+        0.46739232540130615,
+        0,
+        0.79836910963058472,
+        0.081826776266098022,
+        0.59658294916152954,
+        0,
+        -0.54182237386703491,
+        0.52990120649337769,
+        0.65240579843521118,
+        0,
+        -0.57646465301513672,
+        -0.36423951387405396,
+        0.44144079089164734,
+        1
+      ],
+      "trackingState" : "normal",
+      "intrinsics" : [
+        1357.0137939453125,
+        0,
+        0,
+        0,
+        1357.0137939453125,
+        0,
+        968.164306640625,
+        721.37255859375,
+        1
+      ],
+      "eulerAngles" : [
+        -0.55848407745361328,
+        -0.69306319952011108,
+        -1.4741588830947876
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      }
+    }
+  },
+  "extraMetadata" : {
+    "format" : "jpeg",
+    "stream" : "wide",
+    "autoCapture" : true,
+    "qualitySummary" : "stable ar tracking",
+    "qualityScore" : 0.88,
+    "cgImagePropertyOrientation" : 6,
+    "qualityBand" : "good",
+    "stabilityBypassed" : false,
+    "depthAvailable" : true,
+    "captureSource" : "arkit_lidar",
+    "capturedPointSamplesAdded" : 1200,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "cgImagePropertyOrientation" : 6,
+    "captureSource" : "arkit_lidar",
+    "format" : "jpeg",
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "qualityScore" : 0.88,
+    "depthAvailable" : true,
+    "stabilityBypassed" : false,
+    "qualitySummary" : "stable ar tracking",
+    "qualityBand" : "good",
+    "capturedPointSamplesAdded" : 1200,
+    "autoCapture" : true,
+    "stream" : "wide"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "width" : 256,
+      "filename" : "wide_20260627_192512_409_depth.bin",
+      "height" : 192,
+      "bytesPerRow" : 1024,
+      "type" : "depth",
+      "pixelFormat" : 1717855600
+    },
+    {
+      "height" : 192,
+      "bytesPerRow" : 256,
+      "pixelFormat" : 1278226488,
+      "width" : 256,
+      "filename" : "wide_20260627_192512_409_confidence.bin",
+      "type" : "depthConfidence"
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world",
+      "units" : "meters"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "imageResolution" : {
+        "height" : 1440,
+        "width" : 1920
+      },
+      "intrinsics" : [
+        1370.9266357421875,
+        0,
+        0,
+        0,
+        1370.9266357421875,
+        0,
+        966.08685302734375,
+        719.98089599609375,
+        1
+      ],
+      "eulerAngles" : [
+        -0.84964364767074585,
+        -1.9089367389678955,
+        -1.6589412689208984
+      ],
+      "transform" : [
+        -0.67656248807907104,
+        -0.65768754482269287,
+        -0.33122545480728149,
+        0,
+        -0.39281678199768066,
+        -0.058122463524341583,
+        0.91777825355529785,
+        0,
+        -0.62286293506622314,
+        0.75104516744613647,
+        -0.21902725100517273,
+        0,
+        -0.52326118946075439,
+        -0.26017594337463379,
+        -0.11738204956054688,
+        1
+      ],
+      "trackingState" : "normal"
+    }
+  }
+}

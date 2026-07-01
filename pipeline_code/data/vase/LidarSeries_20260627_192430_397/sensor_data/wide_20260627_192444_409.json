@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "intrinsics" : [
+        1368.031982421875,
+        0,
+        0,
+        0,
+        1368.031982421875,
+        0,
+        967.07818603515625,
+        720.40460205078125,
+        1
+      ],
+      "eulerAngles" : [
+        -0.7835007905960083,
+        -0.97185534238815308,
+        -1.5827189683914185
+      ],
+      "trackingState" : "normal",
+      "transform" : [
+        -0.58959370851516724,
+        -0.70839691162109375,
+        0.38801181316375732,
+        0,
+        0.55677837133407593,
+        -0.0084463655948638916,
+        0.83061814308166504,
+        0,
+        -0.58513003587722778,
+        0.70576387643814087,
+        0.39939996600151062,
+        0,
+        -0.51466000080108643,
+        -0.25932922959327698,
+        0.20824746787548065,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      }
+    }
+  },
+  "extraMetadata" : {
+    "stream" : "wide",
+    "format" : "jpeg",
+    "qualitySummary" : "stable ar tracking",
+    "capturedPointSamplesAdded" : 1200,
+    "cgImagePropertyOrientation" : 6,
+    "qualityScore" : 0.88,
+    "autoCapture" : true,
+    "stabilityBypassed" : false,
+    "qualityBand" : "good",
+    "captureSource" : "arkit_lidar",
+    "depthAvailable" : true,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "bytesPerRow" : 1024,
+      "filename" : "wide_20260627_192444_409_depth.bin",
+      "width" : 256,
+      "pixelFormat" : 1717855600,
+      "type" : "depth",
+      "height" : 192
+    },
+    {
+      "width" : 256,
+      "bytesPerRow" : 256,
+      "height" : 192,
+      "type" : "depthConfidence",
+      "pixelFormat" : 1278226488,
+      "filename" : "wide_20260627_192444_409_confidence.bin"
+    },
+    {
+      "coordinateSystem" : "world",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "units" : "meters",
+      "type" : "pointCloudXYZ"
+    }
+  ]
+}

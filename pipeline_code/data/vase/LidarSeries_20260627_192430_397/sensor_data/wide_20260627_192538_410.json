@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "trackingState" : "normal",
+      "intrinsics" : [
+        1355.8106689453125,
+        0,
+        0,
+        0,
+        1355.8106689453125,
+        0,
+        968.18487548828125,
+        720.9112548828125,
+        1
+      ],
+      "transform" : [
+        -0.066346094012260437,
+        -0.85846537351608276,
+        0.50856220722198486,
+        0,
+        0.96421825885772705,
+        0.075951151549816132,
+        0.25399750471115112,
+        0,
+        -0.25667393207550049,
+        0.5072166919708252,
+        0.82270890474319458,
+        0,
+        -0.45211613178253174,
+        -0.33345559239387512,
+        0.53783309459686279,
+        1
+      ],
+      "eulerAngles" : [
+        -0.5319521427154541,
+        -0.30241683125495911,
+        -1.4825528860092163
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      }
+    }
+  },
+  "auxiliaryOutputs" : [
+    {
+      "width" : 256,
+      "height" : 192,
+      "type" : "depth",
+      "pixelFormat" : 1717855600,
+      "bytesPerRow" : 1024,
+      "filename" : "wide_20260627_192538_410_depth.bin"
+    },
+    {
+      "pixelFormat" : 1278226488,
+      "type" : "depthConfidence",
+      "bytesPerRow" : 256,
+      "filename" : "wide_20260627_192538_410_confidence.bin",
+      "width" : 256,
+      "height" : 192
+    },
+    {
+      "units" : "meters",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world",
+      "type" : "pointCloudXYZ"
+    }
+  ],
+  "extraMetadata" : {
+    "qualitySummary" : "stable ar tracking",
+    "captureSource" : "arkit_lidar",
+    "format" : "jpeg",
+    "autoCapture" : true,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "stabilityBypassed" : false,
+    "qualityScore" : 0.88,
+    "qualityBand" : "good",
+    "depthAvailable" : true,
+    "cgImagePropertyOrientation" : 6,
+    "capturedPointSamplesAdded" : 1200,
+    "stream" : "wide"
+  }
+}

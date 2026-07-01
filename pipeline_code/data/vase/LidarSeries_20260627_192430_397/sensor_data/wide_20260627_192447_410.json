@@ -1,0 +1,84 @@
+{
+  "auxiliaryOutputs" : [
+    {
+      "pixelFormat" : 1717855600,
+      "filename" : "wide_20260627_192447_410_depth.bin",
+      "width" : 256,
+      "type" : "depth",
+      "bytesPerRow" : 1024,
+      "height" : 192
+    },
+    {
+      "filename" : "wide_20260627_192447_410_confidence.bin",
+      "type" : "depthConfidence",
+      "bytesPerRow" : 256,
+      "height" : 192,
+      "pixelFormat" : 1278226488,
+      "width" : 256
+    },
+    {
+      "coordinateSystem" : "world",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "units" : "meters",
+      "type" : "pointCloudXYZ"
+    }
+  ],
+  "metadata" : {
+    "camera" : {
+      "transform" : [
+        0.28297728300094604,
+        -0.60648906230926514,
+        0.74303090572357178,
+        0,
+        0.95069199800491333,
+        0.07484881579875946,
+        -0.30096897482872009,
+        0,
+        0.12691941857337952,
+        0.79156094789505005,
+        0.59776479005813599,
+        0,
+        -0.2744365930557251,
+        -0.24918407201766968,
+        0.38079214096069336,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "trackingState" : "normal",
+      "intrinsics" : [
+        1368.0557861328125,
+        0,
+        0,
+        0,
+        1368.0557861328125,
+        0,
+        965.582275390625,
+        720.95587158203125,
+        1
+      ],
+      "eulerAngles" : [
+        -0.91335916519165039,
+        0.20921635627746582,
+        -1.448003888130188
+      ]
+    },
+    "source" : "arkit"
+  },
+  "extraMetadata" : {
+    "captureSource" : "arkit_lidar",
+    "capturedPointSamplesAdded" : 1200,
+    "stream" : "wide",
+    "qualityScore" : 0.88,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "stabilityBypassed" : false,
+    "qualityBand" : "good",
+    "qualitySummary" : "stable ar tracking",
+    "depthAvailable" : true,
+    "cgImagePropertyOrientation" : 6,
+    "format" : "jpeg",
+    "autoCapture" : true
+  }
+}

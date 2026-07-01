@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "eulerAngles" : [
+        -0.64727580547332764,
+        1.5122017860412598,
+        -1.4853790998458862
+      ],
+      "trackingState" : "normal",
+      "intrinsics" : [
+        1361.0458984375,
+        0,
+        0,
+        0,
+        1361.0458984375,
+        0,
+        967.635498046875,
+        721.02410888671875,
+        1
+      ],
+      "transform" : [
+        0.60478192567825317,
+        -0.79482108354568481,
+        -0.049982562661170959,
+        0,
+        0.0069904564879834652,
+        0.068057022988796234,
+        -0.99765694141387939,
+        0,
+        0.79636049270629883,
+        0.6030154824256897,
+        0.046715822070837021,
+        0,
+        0.25594913959503174,
+        -0.2707667350769043,
+        0.10578078031539917,
+        1
+      ],
+      "imageResolution" : {
+        "height" : 1440,
+        "width" : 1920
+      }
+    }
+  },
+  "extraMetadata" : {
+    "stabilityBypassed" : false,
+    "qualitySummary" : "stable ar tracking",
+    "format" : "jpeg",
+    "capturedPointSamplesAdded" : 1200,
+    "depthAvailable" : true,
+    "captureSource" : "arkit_lidar",
+    "qualityScore" : 0.88,
+    "qualityBand" : "good",
+    "cgImagePropertyOrientation" : 6,
+    "autoCapture" : true,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "stream" : "wide"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "height" : 192,
+      "pixelFormat" : 1717855600,
+      "type" : "depth",
+      "bytesPerRow" : 1024,
+      "filename" : "wide_20260627_192533_409_depth.bin",
+      "width" : 256
+    },
+    {
+      "width" : 256,
+      "bytesPerRow" : 256,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192533_409_confidence.bin",
+      "pixelFormat" : 1278226488,
+      "height" : 192
+    },
+    {
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "type" : "pointCloudXYZ",
+      "coordinateSystem" : "world",
+      "units" : "meters"
+    }
+  ]
+}

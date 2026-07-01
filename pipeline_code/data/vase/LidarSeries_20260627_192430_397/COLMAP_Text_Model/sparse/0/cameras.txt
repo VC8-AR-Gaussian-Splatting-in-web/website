@@ -1,0 +1,13 @@
+# Generator: SplatKing 1.0.7 (build 26)
+# Generated: 2026-06-27T17:25:43Z
+# World frame: right-handed, gravity-aligned, +Y up
+# Pose convention: COLMAP world-to-camera (X_cam = R * X_world + t)
+# Camera-local axes: +X right, +Y down, +Z forward
+# Applied basis change: M = diag(1, -1, -1) (ARKit camera → COLMAP camera; 180° about +X)
+# Units: meters (translations, points3D); pixels (intrinsics)
+# points3D.txt sentinels: ERROR = -1, TRACK[] empty by design (no bundle adjustment, no 2D-3D correspondences)
+#
+# Camera list with one line of data per camera:
+#   CAMERA_ID, MODEL, WIDTH, HEIGHT, PARAMS[]
+# Number of cameras: 1
+1 PINHOLE 1920 1440 1364.622314453 1364.622314453 966.933166504 720.337829590

@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "qualitySummary" : "stable ar tracking",
+    "qualityScore" : 0.88,
+    "qualityBand" : "good",
+    "cgImagePropertyOrientation" : 6,
+    "stream" : "wide",
+    "stabilityBypassed" : false,
+    "captureSource" : "arkit_lidar",
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "autoCapture" : true,
+    "depthAvailable" : true,
+    "capturedPointSamplesAdded" : 1200,
+    "format" : "jpeg"
+  },
+  "metadata" : {
+    "camera" : {
+      "trackingState" : "normal",
+      "transform" : [
+        0.35481551289558411,
+        -0.33988770842552185,
+        -0.87096637487411499,
+        0,
+        -0.92095893621444702,
+        0.033421032130718231,
+        -0.38822391629219055,
+        0,
+        0.1610611230134964,
+        0.93987196683883667,
+        -0.30116432905197144,
+        0,
+        -0.19162137806415558,
+        -0.15070945024490356,
+        -0.032037846744060516,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "eulerAngles" : [
+        -1.2222552299499512,
+        2.6504981517791748,
+        -1.472781777381897
+      ],
+      "intrinsics" : [
+        1361.6949462890625,
+        0,
+        0,
+        0,
+        1361.6949462890625,
+        0,
+        964.50372314453125,
+        720.5523681640625,
+        1
+      ]
+    },
+    "source" : "arkit"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "pixelFormat" : 1717855600,
+      "height" : 192,
+      "bytesPerRow" : 1024,
+      "width" : 256,
+      "type" : "depth",
+      "filename" : "wide_20260627_192530_409_depth.bin"
+    },
+    {
+      "height" : 192,
+      "type" : "depthConfidence",
+      "pixelFormat" : 1278226488,
+      "bytesPerRow" : 256,
+      "filename" : "wide_20260627_192530_409_confidence.bin",
+      "width" : 256
+    },
+    {
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world",
+      "units" : "meters",
+      "type" : "pointCloudXYZ"
+    }
+  ]
+}

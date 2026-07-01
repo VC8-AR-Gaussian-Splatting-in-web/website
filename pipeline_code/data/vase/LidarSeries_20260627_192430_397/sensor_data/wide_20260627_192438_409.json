@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "capturedPointSamplesAdded" : 1200,
+    "autoCapture" : true,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "stabilityBypassed" : false,
+    "qualityBand" : "good",
+    "stream" : "wide",
+    "captureSource" : "arkit_lidar",
+    "cgImagePropertyOrientation" : 6,
+    "depthAvailable" : true,
+    "qualityScore" : 0.88,
+    "qualitySummary" : "stable ar tracking",
+    "format" : "jpeg"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "filename" : "wide_20260627_192438_409_depth.bin",
+      "height" : 192,
+      "width" : 256,
+      "bytesPerRow" : 1024,
+      "pixelFormat" : 1717855600,
+      "type" : "depth"
+    },
+    {
+      "type" : "depthConfidence",
+      "pixelFormat" : 1278226488,
+      "filename" : "wide_20260627_192438_409_confidence.bin",
+      "height" : 192,
+      "width" : 256,
+      "bytesPerRow" : 256
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "coordinateSystem" : "world",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "units" : "meters"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "trackingState" : "normal",
+      "intrinsics" : [
+        1366.8795166015625,
+        0,
+        0,
+        0,
+        1366.8795166015625,
+        0,
+        966.73443603515625,
+        720.0474853515625,
+        1
+      ],
+      "transform" : [
+        0.065675325691699982,
+        -0.6873624324798584,
+        -0.72333920001983643,
+        0,
+        -0.99784022569656372,
+        -0.046220246702432632,
+        -0.046677157282829285,
+        0,
+        -0.001348798512481153,
+        0.72484248876571655,
+        -0.68891340494155884,
+        0,
+        -0.23230795562267303,
+        -0.24075785279273987,
+        -0.2422720193862915,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "eulerAngles" : [
+        -0.81080573797225952,
+        -3.1396348476409912,
+        -1.6379381418228149
+      ]
+    }
+  }
+}

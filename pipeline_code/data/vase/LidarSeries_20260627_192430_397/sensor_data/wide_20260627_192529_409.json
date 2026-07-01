@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "qualitySummary" : "stable ar tracking",
+    "cgImagePropertyOrientation" : 6,
+    "qualityBand" : "good",
+    "stream" : "wide",
+    "qualityScore" : 0.88,
+    "stabilityBypassed" : false,
+    "captureSource" : "arkit_lidar",
+    "depthAvailable" : true,
+    "autoCapture" : true,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "format" : "jpeg",
+    "capturedPointSamplesAdded" : 1200
+  },
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "intrinsics" : [
+        1354.7059326171875,
+        0,
+        0,
+        0,
+        1354.7059326171875,
+        0,
+        966.4176025390625,
+        720.12322998046875,
+        1
+      ],
+      "eulerAngles" : [
+        -0.94554001092910767,
+        2.7683160305023193,
+        -1.5665488243103027
+      ],
+      "trackingState" : "normal",
+      "transform" : [
+        0.29172027111053467,
+        -0.5852997899055481,
+        -0.75652068853378296,
+        0,
+        -0.93238496780395508,
+        0.0024860708508640528,
+        -0.36145833134651184,
+        0,
+        0.21344223618507385,
+        0.81081312894821167,
+        -0.54499942064285278,
+        0,
+        -0.10152067989110947,
+        -0.066436946392059326,
+        -0.22366063296794891,
+        1
+      ]
+    }
+  },
+  "auxiliaryOutputs" : [
+    {
+      "height" : 192,
+      "bytesPerRow" : 1024,
+      "filename" : "wide_20260627_192529_409_depth.bin",
+      "width" : 256,
+      "pixelFormat" : 1717855600,
+      "type" : "depth"
+    },
+    {
+      "pixelFormat" : 1278226488,
+      "height" : 192,
+      "type" : "depthConfidence",
+      "bytesPerRow" : 256,
+      "filename" : "wide_20260627_192529_409_confidence.bin",
+      "width" : 256
+    },
+    {
+      "coordinateSystem" : "world",
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "units" : "meters"
+    }
+  ]
+}

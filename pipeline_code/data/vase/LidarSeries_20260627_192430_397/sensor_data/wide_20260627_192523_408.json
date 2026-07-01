@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "camera" : {
+      "trackingState" : "normal",
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "intrinsics" : [
+        1361.1024169921875,
+        0,
+        0,
+        0,
+        1361.1024169921875,
+        0,
+        967.80352783203125,
+        720.28448486328125,
+        1
+      ],
+      "eulerAngles" : [
+        -0.66333723068237305,
+        0.84558528661727905,
+        -1.597338080406189
+      ],
+      "transform" : [
+        0.44303697347640991,
+        -0.78766411542892456,
+        0.42813935875892639,
+        0,
+        0.67528879642486572,
+        -0.020910870283842087,
+        -0.73725676536560059,
+        0,
+        0.58966356515884399,
+        0.61574983596801758,
+        0.52263647317886353,
+        0,
+        0.015849478542804718,
+        -0.31164646148681641,
+        0.38159513473510742,
+        0.99999988079071045
+      ]
+    },
+    "source" : "arkit"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "width" : 256,
+      "bytesPerRow" : 1024,
+      "pixelFormat" : 1717855600,
+      "type" : "depth",
+      "filename" : "wide_20260627_192523_408_depth.bin",
+      "height" : 192
+    },
+    {
+      "filename" : "wide_20260627_192523_408_confidence.bin",
+      "bytesPerRow" : 256,
+      "width" : 256,
+      "type" : "depthConfidence",
+      "pixelFormat" : 1278226488,
+      "height" : 192
+    },
+    {
+      "coordinateSystem" : "world",
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "units" : "meters"
+    }
+  ],
+  "extraMetadata" : {
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "capturedPointSamplesAdded" : 1200,
+    "qualityScore" : 0.88,
+    "stabilityBypassed" : false,
+    "stream" : "wide",
+    "depthAvailable" : true,
+    "autoCapture" : true,
+    "qualityBand" : "good",
+    "qualitySummary" : "stable ar tracking",
+    "captureSource" : "arkit_lidar",
+    "cgImagePropertyOrientation" : 6,
+    "format" : "jpeg"
+  }
+}

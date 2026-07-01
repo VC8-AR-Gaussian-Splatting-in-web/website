@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "stream" : "wide",
+    "captureSource" : "arkit_lidar",
+    "qualityBand" : "good",
+    "depthAvailable" : true,
+    "autoCapture" : true,
+    "qualitySummary" : "stable ar tracking",
+    "format" : "jpeg",
+    "qualityScore" : 0.88,
+    "cgImagePropertyOrientation" : 6,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "capturedPointSamplesAdded" : 1200,
+    "stabilityBypassed" : false
+  },
+  "auxiliaryOutputs" : [
+    {
+      "bytesPerRow" : 1024,
+      "width" : 256,
+      "height" : 192,
+      "pixelFormat" : 1717855600,
+      "filename" : "wide_20260627_192446_410_depth.bin",
+      "type" : "depth"
+    },
+    {
+      "pixelFormat" : 1278226488,
+      "width" : 256,
+      "height" : 192,
+      "bytesPerRow" : 256,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192446_410_confidence.bin"
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "units" : "meters",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "trackingState" : "normal",
+      "transform" : [
+        0.075103245675563812,
+        -0.50268065929412842,
+        0.86120373010635376,
+        0,
+        0.99671202898025513,
+        0.011505079455673695,
+        -0.080205090343952179,
+        0,
+        0.030409332364797592,
+        0.86439573764801025,
+        0.50189191102981567,
+        0,
+        -0.30534595251083374,
+        -0.22590669989585876,
+        0.32704848051071167,
+        1
+      ],
+      "eulerAngles" : [
+        -1.0439473390579224,
+        0.060515426099300385,
+        -1.5479128360748291
+      ],
+      "intrinsics" : [
+        1370.43212890625,
+        0,
+        0,
+        0,
+        1370.43212890625,
+        0,
+        964.93560791015625,
+        720.87103271484375,
+        1
+      ]
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "stabilityBypassed" : false,
+    "qualitySummary" : "stable ar tracking",
+    "qualityScore" : 0.88,
+    "depthAvailable" : true,
+    "stream" : "wide",
+    "qualityBand" : "good",
+    "cgImagePropertyOrientation" : 6,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "format" : "jpeg",
+    "captureSource" : "arkit_lidar",
+    "capturedPointSamplesAdded" : 1200,
+    "autoCapture" : true
+  },
+  "auxiliaryOutputs" : [
+    {
+      "width" : 256,
+      "pixelFormat" : 1717855600,
+      "filename" : "wide_20260627_192440_410_depth.bin",
+      "bytesPerRow" : 1024,
+      "type" : "depth",
+      "height" : 192
+    },
+    {
+      "width" : 256,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192440_410_confidence.bin",
+      "height" : 192,
+      "pixelFormat" : 1278226488,
+      "bytesPerRow" : 256
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "coordinateSystem" : "world",
+      "units" : "meters",
+      "filename" : "lidar_pointcloud_world_xyz.bin"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "intrinsics" : [
+        1375.5660400390625,
+        0,
+        0,
+        0,
+        1375.5660400390625,
+        0,
+        966.22076416015625,
+        720.14996337890625,
+        1
+      ],
+      "transform" : [
+        -0.49536144733428955,
+        -0.61764621734619141,
+        -0.61084383726119995,
+        0,
+        -0.77355444431304932,
+        -0.0063171852380037308,
+        0.63369852304458618,
+        0,
+        -0.3952602744102478,
+        0.7864307165145874,
+        -0.47465366125106812,
+        0,
+        -0.37642073631286621,
+        -0.25651863217353821,
+        -0.10933037102222443,
+        1
+      ],
+      "trackingState" : "normal",
+      "eulerAngles" : [
+        -0.90500903129577637,
+        -2.4472081661224365,
+        -1.5810238122940063
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      }
+    }
+  }
+}

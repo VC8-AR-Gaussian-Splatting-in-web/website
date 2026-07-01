@@ -34,7 +34,7 @@ dieser Seite stammen aus selbst aufgenommenen Szenen (Vase, WM-Pokal, Wasserspra
   .gs-card{border:1px solid #e6ebf4;border-radius:14px;overflow:hidden;background:#fff;
     box-shadow:0 2px 8px rgba(20,30,60,.05);transition:transform .15s,box-shadow .15s;}
   .gs-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(20,30,60,.12);}
-  .gs-card video{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;background:#0d0d14;}
+  .gs-card video{width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#0d0d14;}
   .gs-card .cap{padding:10px 13px;}
   .gs-card .cap b{color:#1d2944;}
   .gs-card .cap .meta{font-size:12px;color:#6b7790;margin-top:2px;}
@@ -54,6 +54,10 @@ dieser Seite stammen aus selbst aufgenommenen Szenen (Vase, WM-Pokal, Wasserspra
   #pl-load:hover{background:#3a78ea;}
   #pl-status{position:absolute;bottom:10px;left:10px;color:#cfcfe0;font-size:13px;background:rgba(20,20,28,.7);
     padding:3px 9px;border-radius:6px;display:none;}
+  #pl-zoom{position:absolute;bottom:10px;right:10px;display:flex;flex-direction:column;gap:6px;}
+  #pl-zoom button{width:34px;height:34px;font-size:20px;line-height:1;border-radius:6px;border:1px solid #444;
+    background:rgba(20,20,28,.85);color:#eee;cursor:pointer;}
+  #pl-zoom button:hover{background:rgba(45,108,223,.85);}
 </style>
 
 <div class="gs-flow">
@@ -144,12 +148,27 @@ NVIDIA RTX 4070 Super. Der Ablauf pro Iteration:
    (überflüssige entfernen, zu grobe verfeinern).
 :::
 
+Und so sieht diese Schleife **live** aus – aus einer festen Kameraperspektive, über den kompletten
+Trainingsverlauf. Links das echte Trainingsfoto (bleibt gleich), rechts der Render, der sich von einem
+verwaschenen Klecks zum scharfen Modell entwickelt:
+
+```{=html}
+<figure style="margin:1.4rem 0;">
+  <video src="video/training_vase.mp4" autoplay muted loop playsinline
+    style="width:100%;border-radius:12px;border:1px solid #e6ebf4;background:#0d0d14;display:block;"></video>
+  <figcaption style="font-size:13px;color:#6b7790;margin-top:6px;text-align:center;">
+    Trainings-Zeitraffer der Vase (gsplat, RTX 4070&nbsp;Super): Original-Foto vs. gerendertes 3DGS-Modell,
+    Step&nbsp;100&nbsp;→&nbsp;30.000. Der größte Sprung passiert in den ersten Tausend Schritten.
+  </figcaption>
+</figure>
+```
+
 Nach ~30.000 Iterationen passt das gerenderte Modell die Originalfotos sehr genau an. Der direkte
 Vergleich zeigt es – **links das echte Foto, rechts das gerenderte 3DGS-Modell:**
 
 ![Vase — links Originalfoto, rechts gerendertes Modell (PSNR ≈ 21,5 dB)](img/compare-vase.jpg)
 
-![Gartenhütte — die feinen Blätter & Schatten werden als Splats rekonstruiert](img/compare-gartenhuette.jpg)
+![Gartenhütte — die feinen Blätter & Schatten werden als Splats rekonstruiert. Das Modell wirkt sichtbar unschärfer als bei der Vase: Die Außenszene ist größer, hat bewegte Blätter und wechselndes Licht – das macht SfM und Training deutlich schwieriger als bei einem kontrollierten Objekt-Setup.](img/compare-gartenhuette.jpg)
 
 <div class="gs-facts">
   <div class="gs-fact"><div class="v">~30.000</div><div class="k">Trainings-Iterationen</div></div>
@@ -163,13 +182,24 @@ Vergleich zeigt es – **links das echte Foto, rechts das gerenderte 3DGS-Modell
 ## Parameter: Objekt vs. Raum (gsplat)
 | Parameter | 🏺 Objekt | 🏠 Raum |
 | --- | --- | --- |
-| `--strategy` | `default` (densifiziert frei) | `mcmc` (deckelt Gaussian-Zahl) |
-| `--cap-max` | – | `1.000.000` |
+| `--strategy` | `default` (densifiziert frei) | `default` |
 | `--data-factor` | `1` (volle Auflösung) | `2` (halbe – spart VRAM) |
+| `--max-steps` | `30.000` | `50.000` (größere, komplexere Szene) |
 | `--sh-degree` | `3` | `3` |
+| `--app_opt` | – | ✓ |
 
-`mcmc` deckelt die Anzahl der Gaussians → planbarer VRAM und weniger Floater bei großen,
-ungleichmäßig abgedeckten Szenen.
+Beide Szenentypen trainieren mit gsplats `default`-Strategie – eine `mcmc`-Strategie
+(gedeckelte Gaussian-Zahl) haben wir für Räume ausprobiert, sie führte bei uns aber zu
+Problemen und wurde wieder verworfen. Stattdessen bekommt der Raum mehr Trainingsschritte
+und **`--app_opt`** (Appearance Optimization): das gleicht Belichtungs-/Farbunterschiede
+zwischen den Aufnahmen aus, die bei 300+ Fotos eines Raums stärker ins Gewicht fallen als
+beim kurzen Objekt-Rundgang.
+
+**`--sh-degree`** (Spherical-Harmonics-Grad) legt fest, wie viele Kugelflächenfunktions-
+Koeffizienten pro Gaussian für blickwinkelabhängige Farbe (z. B. Glanzlichter, Reflexionen)
+genutzt werden: `0` = nur eine feste Grundfarbe, höhere Grade erlauben zunehmend
+richtungsabhängige Farbvariation, kosten aber mehr Speicher pro Gaussian. `3` ist gsplats
+Maximum und für beide Szenentypen sinnvoll.
 :::
 
 ## 4. Export {#export}
@@ -244,6 +274,10 @@ Hier eingebettet: mein trainiertes **Vase**-Modell als echtes, drehbares 3DGS di
   <canvas id="pl-canvas"></canvas>
   <button id="pl-load">▶&nbsp; Interaktives 3D-Modell laden</button>
   <div id="pl-status">Initialisiere …</div>
+  <div id="pl-zoom">
+    <button type="button" data-zoom="in"  aria-label="Hineinzoomen">+</button>
+    <button type="button" data-zoom="out" aria-label="Herauszoomen">−</button>
+  </div>
 </div>
 <script>
 (function(){
@@ -251,19 +285,35 @@ Hier eingebettet: mein trainiertes **Vase**-Modell als echtes, drehbares 3DGS di
   var canvas=document.getElementById("pl-canvas");
   function setStatus(t){statusEl.style.display=t?"block":"none";statusEl.textContent=t;}
   function load(s,cb){var el=document.createElement("script");el.src=s;el.onload=cb;document.head.appendChild(el);}
+  window.addEventListener("keydown",function(e){
+    if(!(e.key==="+"||e.key==="="||e.key==="-"||e.key==="_"))return;
+    e.preventDefault();e.stopPropagation();
+    if(canvas.__zoomHandler)canvas.__zoomHandler(e.key==="-"||e.key==="_"?"out":"in");
+  },true);
   function start(){
     var engine=new BABYLON.Engine(canvas,true,{preserveDrawingBuffer:true,stencil:true});
     var scene=new BABYLON.Scene(engine);
     scene.clearColor=new BABYLON.Color4(0.05,0.05,0.08,1);
     var cam=new BABYLON.ArcRotateCamera("c",-Math.PI/2,Math.PI/2.2,6,BABYLON.Vector3.Zero(),scene);
     cam.attachControl(canvas,true);cam.wheelPrecision=50;cam.lowerRadiusLimit=1.5;cam.upperRadiusLimit=25;cam.minZ=0.1;
+    cam.inputs.removeByType("ArcRotateCameraMouseWheelInput"); // Rad soll die Seite scrollen, nicht zoomen
+    function zoomCamera(direction){
+      var step=Math.max(0.15,cam.radius*0.15);
+      var next=cam.radius+(direction==="in"?-step:step);
+      cam.radius=Math.min(Math.max(next,cam.lowerRadiusLimit),cam.upperRadiusLimit);
+    }
+    canvas.__zoomHandler=zoomCamera;
+    document.querySelectorAll("#pl-zoom [data-zoom]").forEach(function(b){
+      b.addEventListener("pointerdown",function(e){e.preventDefault();e.stopPropagation();zoomCamera(b.getAttribute("data-zoom"));});
+      b.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();zoomCamera(b.getAttribute("data-zoom"));});
+    });
     engine.runRenderLoop(function(){scene.render();});
     window.addEventListener("resize",function(){engine.resize();});
     setStatus("Lade Vase-Modell …");
     BABYLON.SceneLoader.ImportMeshAsync(null,"","../web-ar/models/vase.spz",scene)
       .then(function(res){
         var m=res.meshes[0];
-        m.rotationQuaternion=BABYLON.Quaternion.RotationAxis(BABYLON.Axis.X,-Math.PI/2); // Vase ist Z-up -> Y-up
+        m.rotationQuaternion=BABYLON.Quaternion.RotationAxis(BABYLON.Axis.X,Math.PI/2); // Vase-Splats: -Z ist "oben" -> Y-up (per PCA auf den Splat-Positionen ermittelt)
         m.computeWorldMatrix(true); m.refreshBoundingInfo(true);
         var bb=m.getBoundingInfo().boundingBox;
         var diag=bb.maximumWorld.subtract(bb.minimumWorld).length()||6;
@@ -287,3 +337,13 @@ Hier eingebettet: mein trainiertes **Vase**-Modell als echtes, drehbares 3DGS di
 ```
 
 <a class="gs-cta" href="../web-ar/index.qmd">Alle Modelle interaktiv erkunden & begehen →</a>
+
+---
+
+### Quellen {#quellen}
+- [3D Gaussian Splatting for Real-Time Radiance Field Rendering (SIGGRAPH 2023)](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/) — die zugrundeliegende Methode (siehe auch [Theorie & Methodik](../theorie/index.qmd#quellen))
+- [gsplat (nerfstudio-project)](https://github.com/nerfstudio-project/gsplat) — die Trainingsbibliothek, mit der alle Modelle auf dieser Seite trainiert wurden
+- [COLMAP](https://colmap.github.io/) — Structure-from-Motion/Multi-View-Stereo, rechnet die Kameraposen für Foto-Aufnahmen ohne LiDAR
+- [Gaussian SplatKing (iOS-App)](https://apps.apple.com/us/app/gaussian-splatking/id6759175085) — Aufnahme-App für Fotos + LiDAR-Metadaten
+- [SuperSplat](https://supersplat.play.canvas.app/) — browserbasiertes Tool zum Freistellen/Bereinigen der trainierten Splats
+- [spz-Format (Niantic Labs)](https://github.com/nianticlabs/spz) — komprimiertes Export-Format für den Web-Viewer

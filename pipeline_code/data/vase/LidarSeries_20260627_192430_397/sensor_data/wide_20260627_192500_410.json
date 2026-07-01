@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "camera" : {
+      "intrinsics" : [
+        1363.4339599609375,
+        0,
+        0,
+        0,
+        1363.4339599609375,
+        0,
+        967.4222412109375,
+        720.32177734375,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "transform" : [
+        0.24785643815994263,
+        -0.74433219432830811,
+        0.62011039257049561,
+        0,
+        0.9091828465461731,
+        -0.04235486313700676,
+        -0.41423740983009338,
+        0,
+        0.33459493517875671,
+        0.66646510362625122,
+        0.66623616218566895,
+        0,
+        -0.063844285905361176,
+        -0.30723574757575989,
+        0.4165056049823761,
+        1
+      ],
+      "eulerAngles" : [
+        -0.72945725917816162,
+        0.46541941165924072,
+        -1.6276382207870483
+      ],
+      "trackingState" : "normal"
+    },
+    "source" : "arkit"
+  },
+  "extraMetadata" : {
+    "stream" : "wide",
+    "qualityScore" : 0.88,
+    "captureSource" : "arkit_lidar",
+    "depthAvailable" : true,
+    "cgImagePropertyOrientation" : 6,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "format" : "jpeg",
+    "stabilityBypassed" : false,
+    "qualitySummary" : "stable ar tracking",
+    "capturedPointSamplesAdded" : 1200,
+    "qualityBand" : "good",
+    "autoCapture" : true
+  },
+  "auxiliaryOutputs" : [
+    {
+      "type" : "depth",
+      "width" : 256,
+      "filename" : "wide_20260627_192500_410_depth.bin",
+      "bytesPerRow" : 1024,
+      "pixelFormat" : 1717855600,
+      "height" : 192
+    },
+    {
+      "width" : 256,
+      "height" : 192,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192500_410_confidence.bin",
+      "bytesPerRow" : 256,
+      "pixelFormat" : 1278226488
+    },
+    {
+      "coordinateSystem" : "world",
+      "type" : "pointCloudXYZ",
+      "units" : "meters",
+      "filename" : "lidar_pointcloud_world_xyz.bin"
+    }
+  ]
+}

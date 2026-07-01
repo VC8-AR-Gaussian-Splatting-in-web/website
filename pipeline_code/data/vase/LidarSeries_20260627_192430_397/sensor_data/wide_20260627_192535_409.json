@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "camera" : {
+      "imageResolution" : {
+        "height" : 1440,
+        "width" : 1920
+      },
+      "intrinsics" : [
+        1354.6939697265625,
+        0,
+        0,
+        0,
+        1354.6939697265625,
+        0,
+        967.45330810546875,
+        721.5145263671875,
+        1
+      ],
+      "eulerAngles" : [
+        -0.66771841049194336,
+        0.61405432224273682,
+        -1.4029159545898438
+      ],
+      "transform" : [
+        0.48832431435585022,
+        -0.77419698238372803,
+        0.40268898010253906,
+        0,
+        0.74621415138244629,
+        0.1312074214220047,
+        -0.65264773368835449,
+        0,
+        0.45244219899177551,
+        0.61919599771499634,
+        0.6417885422706604,
+        0,
+        0.056856654584407806,
+        -0.26098662614822388,
+        0.44547191262245178,
+        1
+      ],
+      "trackingState" : "normal"
+    },
+    "source" : "arkit"
+  },
+  "extraMetadata" : {
+    "cgImagePropertyOrientation" : 6,
+    "autoCapture" : true,
+    "qualityBand" : "good",
+    "stream" : "wide",
+    "stabilityBypassed" : false,
+    "qualityScore" : 0.88,
+    "qualitySummary" : "stable ar tracking",
+    "captureSource" : "arkit_lidar",
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "capturedPointSamplesAdded" : 1200,
+    "format" : "jpeg",
+    "depthAvailable" : true
+  },
+  "auxiliaryOutputs" : [
+    {
+      "filename" : "wide_20260627_192535_409_depth.bin",
+      "type" : "depth",
+      "height" : 192,
+      "bytesPerRow" : 1024,
+      "pixelFormat" : 1717855600,
+      "width" : 256
+    },
+    {
+      "bytesPerRow" : 256,
+      "height" : 192,
+      "pixelFormat" : 1278226488,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192535_409_confidence.bin",
+      "width" : 256
+    },
+    {
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world",
+      "units" : "meters",
+      "type" : "pointCloudXYZ"
+    }
+  ]
+}

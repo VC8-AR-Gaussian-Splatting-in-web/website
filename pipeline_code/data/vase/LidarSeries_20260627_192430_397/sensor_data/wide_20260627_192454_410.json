@@ -1,0 +1,84 @@
+{
+  "auxiliaryOutputs" : [
+    {
+      "height" : 192,
+      "width" : 256,
+      "type" : "depth",
+      "filename" : "wide_20260627_192454_410_depth.bin",
+      "bytesPerRow" : 1024,
+      "pixelFormat" : 1717855600
+    },
+    {
+      "width" : 256,
+      "filename" : "wide_20260627_192454_410_confidence.bin",
+      "pixelFormat" : 1278226488,
+      "bytesPerRow" : 256,
+      "type" : "depthConfidence",
+      "height" : 192
+    },
+    {
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "units" : "meters",
+      "type" : "pointCloudXYZ",
+      "coordinateSystem" : "world"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "intrinsics" : [
+        1361.0904541015625,
+        0,
+        0,
+        0,
+        1361.0904541015625,
+        0,
+        964.92144775390625,
+        720.82440185546875,
+        1
+      ],
+      "transform" : [
+        0.90611225366592407,
+        -0.39925676584243774,
+        -0.13983741402626038,
+        0,
+        -0.1293419748544693,
+        0.053259670734405518,
+        -0.99016875028610229,
+        0,
+        0.40277925133705139,
+        0.91529089212417603,
+        -0.0033814054913818836,
+        0,
+        -0.035878777503967285,
+        -0.1475440114736557,
+        0.084251478314399719,
+        1
+      ],
+      "eulerAngles" : [
+        -1.1562294960021973,
+        1.5791913270950317,
+        -1.4381822347640991
+      ],
+      "trackingState" : "normal"
+    }
+  },
+  "extraMetadata" : {
+    "cgImagePropertyOrientation" : 6,
+    "format" : "jpeg",
+    "autoCapture" : true,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "captureSource" : "arkit_lidar",
+    "capturedPointSamplesAdded" : 1200,
+    "qualityBand" : "good",
+    "qualitySummary" : "stable ar tracking",
+    "qualityScore" : 0.88,
+    "stream" : "wide",
+    "depthAvailable" : true,
+    "stabilityBypassed" : false
+  }
+}

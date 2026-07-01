@@ -1,0 +1,84 @@
+{
+  "auxiliaryOutputs" : [
+    {
+      "bytesPerRow" : 1024,
+      "width" : 256,
+      "height" : 192,
+      "type" : "depth",
+      "filename" : "wide_20260627_192524_409_depth.bin",
+      "pixelFormat" : 1717855600
+    },
+    {
+      "filename" : "wide_20260627_192524_409_confidence.bin",
+      "width" : 256,
+      "bytesPerRow" : 256,
+      "height" : 192,
+      "pixelFormat" : 1278226488,
+      "type" : "depthConfidence"
+    },
+    {
+      "units" : "meters",
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "transform" : [
+        0.60559362173080444,
+        -0.7603832483291626,
+        0.23467765748500824,
+        0,
+        0.32423621416091919,
+        -0.03354162722826004,
+        -0.94538134336471558,
+        0,
+        0.72672367095947266,
+        0.64860790967941284,
+        0.22623118758201599,
+        0,
+        0.1183466762304306,
+        -0.3042357861995697,
+        0.22926348447799683,
+        0.99999994039535522
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "eulerAngles" : [
+        -0.70575404167175293,
+        1.2690024375915527,
+        -1.6148792505264282
+      ],
+      "intrinsics" : [
+        1360.447265625,
+        0,
+        0,
+        0,
+        1360.447265625,
+        0,
+        967.54437255859375,
+        719.9166259765625,
+        1
+      ],
+      "trackingState" : "normal"
+    }
+  },
+  "extraMetadata" : {
+    "stabilityBypassed" : false,
+    "qualitySummary" : "stable ar tracking",
+    "depthAvailable" : true,
+    "qualityBand" : "good",
+    "captureSource" : "arkit_lidar",
+    "format" : "jpeg",
+    "stream" : "wide",
+    "qualityScore" : 0.88,
+    "autoCapture" : true,
+    "cgImagePropertyOrientation" : 6,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "capturedPointSamplesAdded" : 1200
+  }
+}

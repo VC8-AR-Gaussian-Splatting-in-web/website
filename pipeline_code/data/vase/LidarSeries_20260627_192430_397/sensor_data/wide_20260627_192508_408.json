@@ -1,0 +1,84 @@
+{
+  "auxiliaryOutputs" : [
+    {
+      "type" : "depth",
+      "width" : 256,
+      "pixelFormat" : 1717855600,
+      "height" : 192,
+      "filename" : "wide_20260627_192508_408_depth.bin",
+      "bytesPerRow" : 1024
+    },
+    {
+      "width" : 256,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192508_408_confidence.bin",
+      "bytesPerRow" : 256,
+      "height" : 192,
+      "pixelFormat" : 1278226488
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world",
+      "units" : "meters"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "trackingState" : "normal",
+      "eulerAngles" : [
+        -0.44139605760574341,
+        2.7869222164154053,
+        -1.6526976823806763
+      ],
+      "transform" : [
+        0.22458003461360931,
+        -0.90112537145614624,
+        -0.37085965275764465,
+        0,
+        -0.92248040437698364,
+        -0.073968864977359772,
+        -0.3788912296295166,
+        0,
+        0.31399643421173096,
+        0.42720213532447815,
+        -0.84788233041763306,
+        0,
+        -0.074967280030250549,
+        -0.36473044753074646,
+        -0.29758536815643311,
+        1
+      ],
+      "intrinsics" : [
+        1371.0426025390625,
+        0,
+        0,
+        0,
+        1371.0426025390625,
+        0,
+        969.12030029296875,
+        719.3599853515625,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      }
+    }
+  },
+  "extraMetadata" : {
+    "cgImagePropertyOrientation" : 6,
+    "qualitySummary" : "stable ar tracking",
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "stream" : "wide",
+    "stabilityBypassed" : false,
+    "capturedPointSamplesAdded" : 1200,
+    "qualityBand" : "good",
+    "depthAvailable" : true,
+    "format" : "jpeg",
+    "autoCapture" : true,
+    "captureSource" : "arkit_lidar",
+    "qualityScore" : 0.88
+  }
+}

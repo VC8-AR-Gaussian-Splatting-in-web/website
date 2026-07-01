@@ -20,9 +20,7 @@ ein Orbit-Viewer, eine begehbare Szene und eine WebXR-AR-Demo.
 | `theorie/index.qmd` | A | Geschichte (NeRF→3DGS), Repräsentation, Rendering, Vergleich |
 | `pipeline/index.qmd` | B | Use-Cases, Aufnahme, COLMAP, LichtFeld-Training, Export |
 | `web-ar/index.qmd` | C | Babylon.js, WebXR, Orbit-Viewer, AR-Demo, Begehung („X") |
-| `quiz/index.qmd` | C | Lernzielabfrage |
-| `credits/index.qmd` | alle | Wer hat was gemacht |
-
+| `demo/index.qmd` | C | Interaktives Tutorial: eigenen Splat-Viewer selbst einbinden |
 Zentrale Dateien:
 
 - **`_quarto.yml`** — Projektkonfiguration: Navbar, Theme (`cosmo`), `freeze: auto`,
@@ -31,8 +29,23 @@ Zentrale Dateien:
 - **`styles.css`** — projektweite CSS-Ergänzungen.
 - **`.github/workflows/publish.yml`** — CI: rendert & deployt nach gh-pages.
 
-> Wer macht was: **A** = Theorie & Methodik, **B** = Capture & Pipeline (eigenes 3DGS-Modell),
-> **C** = Web & AR Integration.
+> Wer macht was: **A** = Sven Fydrich = Theorie & Methodik, **B** = Dominik Pleimes = Capture & Pipeline (eigenes 3DGS-Modell),
+> **C** = Friedrich Commichau = Web & AR Integration.
+
+### `pipeline_code/` — die Trainings-Pipeline hinter der Capture-Seite
+
+Python-Projekt: **`pipeline_code/`** (eigenes `uv`-Environment, eigene `pyproject.toml`).
+Es ist **nicht** Teil des Quarto-Builds und wird von der CI **nicht** ausgeführt — die
+Website zeigt nur die fertigen Ergebnisse (Bilder/Videos in `pipeline/img|video/`, die
+`.spz`-Modelle in `web-ar/models/`). `pipeline_code/` verwandelt eigene Handy-/LiDAR-
+Aufnahmen in genau diese `.ply`/`.spz`-Modelle, braucht dafür aber **Windows + eine
+NVIDIA-GPU** (CUDA) und ist entsprechend eigenständig dokumentiert:
+[`pipeline_code/README.md`](pipeline_code/README.md) (volle Einrichtung, alle
+Pipeline-Stufen, Fehlersuche) und [`pipeline_code/TUTORIAL.md`](pipeline_code/TUTORIAL.md)
+(kürzerer, praktischer Leitfaden). Ein kleiner Beispiel-Datensatz (`pipeline_code/data/vase/`)
+liegt mit im Repo, damit sich zumindest das Training (Stufe 2) ohne eigene Aufnahme
+nachvollziehen lässt — Details dazu in `pipeline_code/README.md` → "Was ist im Repo, was
+nicht".
 
 ---
 
@@ -82,143 +95,6 @@ im ersten `=html`-Block); beide Viewer teilen sich diese eine Babylon-Instanz.
    Standpunkten: **Ziehen** = umsehen, **Klick** = zum nächsten Standpunkt (sanft animiert).
    Funktioniert ohne AR-Hardware und ist die Demo für die Präsentation am Laptop.
 
----
-
-## ★ Eigenes Modell einbinden — Anleitung für Person B
-
-Aktuell laufen öffentliche Beispiel-Splats. So ersetzt du sie durch dein eigenes Modell.
-
-### 1. Exportieren
-
-Aus LichtFeld Studio / SuperSplat als **`.spz`** exportieren (komprimiertes Web-Format,
-deutlich kleiner als `.ply`/`.splat`). Details siehe Pipeline-Seite (`pipeline/index.qmd`).
-`.ply` als Master behalten, `.spz` ist die Web-Auslieferung.
-
-### 2. Datei ablegen
-
-Lege die Datei **neben** `web-ar/index.qmd`, z. B. `web-ar/scene.spz`. Dateien in diesem
-Ordner kopiert Quarto automatisch mit in den Build (genau wie `web-ar/qr-ar-demo.svg`); sie
-ist dann **relativ** über ihren Dateinamen erreichbar.
-
-> **Dateigröße beachten:** `.spz`-Modelle sind oft 10–50 MB. Git ignoriert sie **nicht**
-> automatisch. Bis ~50 MB ist ein direkter Commit ok; bei größeren Dateien
-> [Git LFS](https://git-lfs.com/) nutzen oder das Modell extern hosten und die volle URL
-> verwenden. Lade-Geschwindigkeit = Dateigröße → so klein wie möglich exportieren.
-
-### 3. URL in den Viewern setzen
-
-**Begehung** (`web-ar/index.qmd`, im `initWalkViewer`-Script): die Zeile mit dem Beispiel-Splat
-ändern —
-
-```js
-// vorher:
-const url = "https://assets.babylonjs.com/splats/gs_Skull.splat";
-// nachher (Datei liegt in web-ar/):
-const url = "scene.spz";
-```
-
-**Orbit-Viewer** (`initSplatViewer`-Script): im `<select id="splat-select">` eine eigene Option
-ergänzen oder die Beispiele ersetzen —
-
-```html
-<option value="scene.spz">Unser Modell</option>
-```
-
-### 4. Prüfen
-
-`quarto preview` starten, Seite „Web & AR" öffnen: Das Modell muss in beiden Viewern erscheinen.
-Lädt nichts, steht der Fehler unten links im jeweiligen Canvas (Statuszeile).
-
----
-
-## ★ Standpunkte der Begehung setzen — Anleitung für Person B
-
-Die Begehung zeigt das Modell aus vier festen **Standpunkten**, durch die ein Klick reihum
-schaltet. Die Standpunkte stehen in einem **auf die Szene ausgerichteten Koordinatensystem**,
-damit man sie intuitiv setzen kann.
-
-### Das mentale Modell
-
-- **`FACE_TARGET`** — der Punkt, den die Kamera **immer anschaut** (das Zentrum deines Motivs,
-  z. B. ein Gesicht oder die Raummitte).
-- **`FACE_VIEW`** — **ein** guter Standpunkt, von dem aus man frontal auf das Motiv blickt.
-- **`wp(x, y, z)`** — rechnet Szenen-Koordinaten in Weltkoordinaten um:
-  - **`z`** = Tiefe (Richtung Motiv): `wp(0, 0, 1)` ist **genau** `FACE_VIEW`; `z<1` näher dran,
-    `z>1` weiter weg.
-  - **`x`** = seitlich (links/rechts), **`y`** = hoch/runter — jeweils senkrecht zur
-    Blickrichtung.
-
-Das System ist nur **gedreht und gleichmäßig skaliert** auf deine Szene — deshalb „normalisiert".
-Du musst also nur `FACE_TARGET` und `FACE_VIEW` einmal richtig setzen; danach sind alle vier
-Standpunkte bequem über `wp(...)` ausdrückbar.
-
-### Schritt 1 — Zentrum (`FACE_TARGET`) finden
-
-Modell laden (Schritt oben), Seite öffnen, Browser-Konsole (F12) öffnen und einfügen:
-
-```js
-// Mittelpunkt des geladenen Splat-Modells (Welt-Koordinaten)
-const scene = BABYLON.EngineStore.Instances
-  .flatMap(e => e.scenes)
-  .find(s => s.meshes.some(m => m.getClassName?.().includes("GaussianSplatting")));
-const m = scene.meshes.find(m => m.getClassName?.().includes("GaussianSplatting"));
-m.computeWorldMatrix(true);
-console.log("FACE_TARGET ≈", m.getBoundingInfo().boundingBox.centerWorld);
-```
-
-Den ausgegebenen Punkt als `FACE_TARGET` eintragen (oft nahe `(0, …, 0)`).
-
-### Schritt 2 — guten Blickwinkel (`FACE_VIEW`) finden
-
-Der **Orbit-Viewer** lässt sich frei mit der Maus drehen/zoomen — ideal, um einen schönen
-Frontal-Winkel zu suchen. Stell den gewünschten Blick ein und lies dann in der Konsole die
-Kamera-Position aus:
-
-```js
-// Aktuelle Position/Ziel der Orbit-Kamera = guter Standpunkt
-const orbit = BABYLON.EngineStore.Instances
-  .flatMap(e => e.scenes)
-  .map(s => s.activeCamera)
-  .find(c => c && c.getClassName() === "ArcRotateCamera");
-console.log("FACE_VIEW   =", orbit.position);   // -> als FACE_VIEW eintragen
-console.log("FACE_TARGET =", orbit.target);     // -> bestätigt das Zentrum
-```
-
-Die ausgegebene `position` als `FACE_VIEW` setzen, `target` als `FACE_TARGET`. Beide stehen
-oben im `initWalkViewer`-Script:
-
-```js
-const FACE_TARGET = new BABYLON.Vector3(0, 0.1, 0);    // <- Zentrum aus Schritt 1
-const FACE_VIEW   = new BABYLON.Vector3(-2.0, 0.0, 1.5); // <- Blickwinkel aus Schritt 2
-```
-
-### Schritt 3 — die vier Standpunkte
-
-Jetzt nur noch das `WAYPOINTS`-Array mit `wp(x, y, z)` füllen. Beispiel:
-
-```js
-const WAYPOINTS = [
-  { pos: wp( 0.0, 0.0, 1.0), target: FACE_TARGET }, // frontal (= FACE_VIEW)
-  { pos: wp( 0.8, 0.0, 1.0), target: FACE_TARGET }, // seitlich versetzt
-  { pos: wp( 0.0, 0.5, 1.0), target: FACE_TARGET }, // etwas von oben
-  { pos: wp( 0.0, 0.0, 1.6), target: FACE_TARGET }, // weiter weg
-];
-```
-
-Faustregeln:
-
-- **Abstand** über `z`: `z` zwischen ~1 und ~2 sind meist gute Werte; `target` bleibt immer
-  `FACE_TARGET`, die Kamera dreht sich automatisch zum Motiv.
-- **Augenhöhe** über `y`: ein kleines positives `y` hebt den Blick leicht an (natürlicher als
-  exakt waagerecht).
-- **Seite** über `x`: das Vorzeichen kippt nach links/rechts — bei „falscher" Seite einfach
-  das Vorzeichen tauschen.
-- Mehr oder weniger als vier Standpunkte? Einfach Einträge hinzufügen/entfernen — der Zähler
-  („Standpunkt i / N") passt sich automatisch an.
-
-Nach jeder Änderung `quarto preview` neu laden und durchklicken.
-
----
 
 ## Bekannte Grenzen & Wartungs-Hinweise
 
@@ -237,5 +113,6 @@ Nach jeder Änderung `quarto preview` neu laden und durchklicken.
 
 ## Team & Credits
 
-Aufgabenverteilung siehe `credits/index.qmd`. Repo:
+Aufgabenverteilung siehe Team-Tabelle auf `index.qmd` bzw. die Owner-Spalte in der
+Projektstruktur-Tabelle oben. Repo:
 [VC8-AR-Gaussian-Splatting-in-web/website](https://github.com/VC8-AR-Gaussian-Splatting-in-web/website).

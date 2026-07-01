@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "depthAvailable" : true,
+    "stabilityBypassed" : false,
+    "capturedPointSamplesAdded" : 1200,
+    "autoCapture" : true,
+    "cgImagePropertyOrientation" : 6,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "format" : "jpeg",
+    "qualityScore" : 0.88,
+    "qualityBand" : "good",
+    "qualitySummary" : "stable ar tracking",
+    "captureSource" : "arkit_lidar",
+    "stream" : "wide"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "width" : 256,
+      "pixelFormat" : 1717855600,
+      "height" : 192,
+      "bytesPerRow" : 1024,
+      "type" : "depth",
+      "filename" : "wide_20260627_192455_410_depth.bin"
+    },
+    {
+      "type" : "depthConfidence",
+      "width" : 256,
+      "filename" : "wide_20260627_192455_410_confidence.bin",
+      "bytesPerRow" : 256,
+      "height" : 192,
+      "pixelFormat" : 1278226488
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "units" : "meters",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "intrinsics" : [
+        1366.313720703125,
+        0,
+        0,
+        0,
+        1366.313720703125,
+        0,
+        963.56915283203125,
+        720.58331298828125,
+        1
+      ],
+      "transform" : [
+        0.96854782104492188,
+        -0.24699941277503967,
+        0.030109081417322159,
+        0,
+        0.039553165435791016,
+        0.033361941576004028,
+        -0.99866044521331787,
+        0,
+        0.24566400051116943,
+        0.9684411883354187,
+        0.042082246392965317,
+        0,
+        -0.13520267605781555,
+        -0.13618661463260651,
+        0.099307909607887268,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "eulerAngles" : [
+        -1.3188986778259277,
+        1.401142954826355,
+        -1.436539888381958
+      ],
+      "trackingState" : "normal"
+    }
+  }
+}

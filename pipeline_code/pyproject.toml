@@ -1,0 +1,47 @@
+[project]
+name = "splat-pipeline"
+version = "0.1.0"
+description = "Captured images -> 3D Gaussian Splats -> .ply/.spz model files (gsplat training pipeline)"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+
+# Core tools that run anywhere (macOS for prep/convert, Windows for the full run).
+# The heavy CUDA training stack (torch, gsplat) lives in the optional `train`
+# group below so a plain `uv sync` on macOS stays light and never compiles CUDA.
+dependencies = [
+    "gsplat>=1.5.3",
+    "numpy>=1.26",
+    "pillow>=10.0",
+    "tqdm>=4.66",
+]
+
+[dependency-groups]
+# Installed only on the Windows/CUDA training machine: `uv sync --group train`.
+# torch/torchvision come from the PyTorch CUDA index (see [tool.uv.sources]).
+train = [
+    "torch>=2.4",
+    "torchvision>=0.19",
+]
+
+[tool.uv]
+# This repo is a set of scripts, not an installable package: don't build the root.
+package = false
+
+# --- PyTorch CUDA wheels -----------------------------------------------------
+# Pinned to CUDA 12.4 wheels, which the RTX 4070 Super supports. To switch CUDA
+# versions, change cu124 here and in the URL (e.g. cu121, cu126) and update the
+# matching gsplat wheel URL in the README.
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[tool.uv.sources]
+# Only pull the CUDA build on Windows/Linux. On macOS torch resolves from PyPI
+# (CPU/MPS) so the light tooling still installs, even though training needs CUDA.
+torch = [
+    { index = "pytorch-cu124", marker = "sys_platform == 'win32' or sys_platform == 'linux'" },
+]
+torchvision = [
+    { index = "pytorch-cu124", marker = "sys_platform == 'win32' or sys_platform == 'linux'" },
+]

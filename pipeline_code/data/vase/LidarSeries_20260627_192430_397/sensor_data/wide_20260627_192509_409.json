@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "capturedPointSamplesAdded" : 1200,
+    "format" : "jpeg",
+    "qualityBand" : "good",
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "autoCapture" : true,
+    "qualityScore" : 0.88,
+    "stream" : "wide",
+    "qualitySummary" : "stable ar tracking",
+    "captureSource" : "arkit_lidar",
+    "stabilityBypassed" : false,
+    "cgImagePropertyOrientation" : 6,
+    "depthAvailable" : true
+  },
+  "metadata" : {
+    "camera" : {
+      "trackingState" : "normal",
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "intrinsics" : [
+        1368.1065673828125,
+        0,
+        0,
+        0,
+        1368.1065673828125,
+        0,
+        967.90191650390625,
+        719.76959228515625,
+        1
+      ],
+      "transform" : [
+        0.11275696754455566,
+        -0.76840627193450928,
+        -0.62995064258575439,
+        0,
+        -0.9913938045501709,
+        -0.044562932103872299,
+        -0.1230955570936203,
+        0,
+        0.066514939069747925,
+        0.63840901851654053,
+        -0.76681798696517944,
+        0,
+        -0.2189984917640686,
+        -0.30819758772850037,
+        -0.27679771184921265,
+        0.99999994039535522
+      ],
+      "eulerAngles" : [
+        -0.69242948293685913,
+        3.055067777633667,
+        -1.6287254095077515
+      ]
+    },
+    "source" : "arkit"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "width" : 256,
+      "pixelFormat" : 1717855600,
+      "bytesPerRow" : 1024,
+      "filename" : "wide_20260627_192509_409_depth.bin",
+      "height" : 192,
+      "type" : "depth"
+    },
+    {
+      "height" : 192,
+      "bytesPerRow" : 256,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192509_409_confidence.bin",
+      "width" : 256,
+      "pixelFormat" : 1278226488
+    },
+    {
+      "units" : "meters",
+      "coordinateSystem" : "world",
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "auxiliaryOutputs" : [
+    {
+      "filename" : "wide_20260627_192515_409_depth.bin",
+      "bytesPerRow" : 1024,
+      "type" : "depth",
+      "pixelFormat" : 1717855600,
+      "width" : 256,
+      "height" : 192
+    },
+    {
+      "type" : "depthConfidence",
+      "bytesPerRow" : 256,
+      "pixelFormat" : 1278226488,
+      "width" : 256,
+      "filename" : "wide_20260627_192515_409_confidence.bin",
+      "height" : 192
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world",
+      "units" : "meters"
+    }
+  ],
+  "extraMetadata" : {
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "qualitySummary" : "stable ar tracking",
+    "format" : "jpeg",
+    "stream" : "wide",
+    "capturedPointSamplesAdded" : 1200,
+    "autoCapture" : true,
+    "cgImagePropertyOrientation" : 6,
+    "stabilityBypassed" : false,
+    "qualityScore" : 0.88,
+    "captureSource" : "arkit_lidar",
+    "qualityBand" : "good",
+    "depthAvailable" : true
+  },
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "transform" : [
+        -0.50001567602157593,
+        -0.86598026752471924,
+        0.0079034818336367607,
+        0,
+        0.058503482490777969,
+        -0.024671599268913269,
+        0.99798238277435303,
+        0,
+        -0.86403805017471313,
+        0.49946916103363037,
+        0.062999039888381958,
+        0,
+        -0.87212520837783813,
+        -0.31262108683586121,
+        0.078227698802947998,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "trackingState" : "normal",
+      "intrinsics" : [
+        1358.30615234375,
+        0,
+        0,
+        0,
+        1358.30615234375,
+        0,
+        968.1282958984375,
+        720.4219970703125,
+        1
+      ],
+      "eulerAngles" : [
+        -0.52298593521118164,
+        -1.4980127811431885,
+        -1.599278450012207
+      ]
+    }
+  }
+}

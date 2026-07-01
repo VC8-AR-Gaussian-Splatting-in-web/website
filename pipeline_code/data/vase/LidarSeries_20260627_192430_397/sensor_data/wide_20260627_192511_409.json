@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "camera" : {
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "intrinsics" : [
+        1370.36669921875,
+        0,
+        0,
+        0,
+        1370.36669921875,
+        0,
+        966.93316650390625,
+        720.12152099609375,
+        1
+      ],
+      "trackingState" : "normal",
+      "transform" : [
+        -0.3718051016330719,
+        -0.69305616617202759,
+        -0.617603600025177,
+        0,
+        -0.82303595542907715,
+        -0.061628833413124084,
+        0.56463593244552612,
+        0,
+        -0.42938661575317383,
+        0.71824437379837036,
+        -0.54749619960784912,
+        0,
+        -0.41297775506973267,
+        -0.28215834498405457,
+        -0.21045126020908356,
+        1.0000001192092896
+      ],
+      "eulerAngles" : [
+        -0.80127578973770142,
+        -2.4765150547027588,
+        -1.6594862937927246
+      ]
+    },
+    "source" : "arkit"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "filename" : "wide_20260627_192511_409_depth.bin",
+      "bytesPerRow" : 1024,
+      "width" : 256,
+      "pixelFormat" : 1717855600,
+      "height" : 192,
+      "type" : "depth"
+    },
+    {
+      "width" : 256,
+      "pixelFormat" : 1278226488,
+      "type" : "depthConfidence",
+      "bytesPerRow" : 256,
+      "height" : 192,
+      "filename" : "wide_20260627_192511_409_confidence.bin"
+    },
+    {
+      "units" : "meters",
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world"
+    }
+  ],
+  "extraMetadata" : {
+    "qualitySummary" : "stable ar tracking",
+    "captureSource" : "arkit_lidar",
+    "format" : "jpeg",
+    "cgImagePropertyOrientation" : 6,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "capturedPointSamplesAdded" : 1200,
+    "qualityBand" : "good",
+    "depthAvailable" : true,
+    "autoCapture" : true,
+    "stabilityBypassed" : false,
+    "qualityScore" : 0.88,
+    "stream" : "wide"
+  }
+}

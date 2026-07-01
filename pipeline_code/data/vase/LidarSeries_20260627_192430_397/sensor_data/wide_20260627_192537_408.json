@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "stabilityBypassed" : false,
+    "depthAvailable" : true,
+    "qualitySummary" : "stable ar tracking",
+    "format" : "jpeg",
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "capturedPointSamplesAdded" : 1200,
+    "stream" : "wide",
+    "qualityScore" : 0.88,
+    "qualityBand" : "good",
+    "autoCapture" : true,
+    "captureSource" : "arkit_lidar",
+    "cgImagePropertyOrientation" : 6
+  },
+  "metadata" : {
+    "camera" : {
+      "transform" : [
+        0.12540102005004883,
+        -0.80944162607192993,
+        0.57365411520004272,
+        0,
+        0.99200713634490967,
+        0.11047404259443283,
+        -0.060971267521381378,
+        0,
+        -0.01402119267731905,
+        0.57671481370925903,
+        0.81682533025741577,
+        0,
+        -0.26910710334777832,
+        -0.31291922926902771,
+        0.58320552110671997,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "eulerAngles" : [
+        -0.61470162868499756,
+        -0.017163787037134171,
+        -1.4351526498794556
+      ],
+      "intrinsics" : [
+        1356.543212890625,
+        0,
+        0,
+        0,
+        1356.543212890625,
+        0,
+        967.57415771484375,
+        721.25714111328125,
+        1
+      ],
+      "trackingState" : "normal"
+    },
+    "source" : "arkit"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "pixelFormat" : 1717855600,
+      "height" : 192,
+      "bytesPerRow" : 1024,
+      "width" : 256,
+      "type" : "depth",
+      "filename" : "wide_20260627_192537_408_depth.bin"
+    },
+    {
+      "type" : "depthConfidence",
+      "width" : 256,
+      "pixelFormat" : 1278226488,
+      "bytesPerRow" : 256,
+      "height" : 192,
+      "filename" : "wide_20260627_192537_408_confidence.bin"
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world",
+      "units" : "meters"
+    }
+  ]
+}

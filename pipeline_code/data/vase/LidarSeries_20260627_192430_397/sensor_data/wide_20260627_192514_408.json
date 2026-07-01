@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "camera" : {
+      "eulerAngles" : [
+        -0.65185928344726562,
+        -1.5552470684051514,
+        -1.5717387199401855
+      ],
+      "transform" : [
+        -0.60660660266876221,
+        -0.79495686292648315,
+        0.0084905298426747322,
+        0,
+        0.014977006241679192,
+        -0.00074918853351846337,
+        0.99988764524459839,
+        0,
+        -0.79486113786697388,
+        0.60666549205780029,
+        0.012360529974102974,
+        0,
+        -0.69574373960494995,
+        -0.28061607480049133,
+        0.041535563766956329,
+        1
+      ],
+      "trackingState" : "normal",
+      "intrinsics" : [
+        1368.1689453125,
+        0,
+        0,
+        0,
+        1368.1689453125,
+        0,
+        966.807373046875,
+        720.54559326171875,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      }
+    },
+    "source" : "arkit"
+  },
+  "extraMetadata" : {
+    "qualityScore" : 0.88,
+    "qualitySummary" : "stable ar tracking",
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "stream" : "wide",
+    "autoCapture" : true,
+    "captureSource" : "arkit_lidar",
+    "capturedPointSamplesAdded" : 1200,
+    "format" : "jpeg",
+    "stabilityBypassed" : false,
+    "qualityBand" : "good",
+    "cgImagePropertyOrientation" : 6,
+    "depthAvailable" : true
+  },
+  "auxiliaryOutputs" : [
+    {
+      "height" : 192,
+      "pixelFormat" : 1717855600,
+      "bytesPerRow" : 1024,
+      "type" : "depth",
+      "width" : 256,
+      "filename" : "wide_20260627_192514_408_depth.bin"
+    },
+    {
+      "bytesPerRow" : 256,
+      "type" : "depthConfidence",
+      "pixelFormat" : 1278226488,
+      "filename" : "wide_20260627_192514_408_confidence.bin",
+      "width" : 256,
+      "height" : 192
+    },
+    {
+      "units" : "meters",
+      "type" : "pointCloudXYZ",
+      "coordinateSystem" : "world",
+      "filename" : "lidar_pointcloud_world_xyz.bin"
+    }
+  ]
+}

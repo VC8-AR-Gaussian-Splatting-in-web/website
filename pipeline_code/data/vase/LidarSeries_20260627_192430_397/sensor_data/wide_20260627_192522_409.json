@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "capturedPointSamplesAdded" : 1200,
+    "stabilityBypassed" : false,
+    "stream" : "wide",
+    "qualityScore" : 0.88,
+    "qualitySummary" : "stable ar tracking",
+    "cgImagePropertyOrientation" : 6,
+    "autoCapture" : true,
+    "format" : "jpeg",
+    "qualityBand" : "good",
+    "captureSource" : "arkit_lidar",
+    "depthAvailable" : true,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "width" : 256,
+      "filename" : "wide_20260627_192522_409_depth.bin",
+      "bytesPerRow" : 1024,
+      "type" : "depth",
+      "pixelFormat" : 1717855600,
+      "height" : 192
+    },
+    {
+      "width" : 256,
+      "pixelFormat" : 1278226488,
+      "filename" : "wide_20260627_192522_409_confidence.bin",
+      "type" : "depthConfidence",
+      "bytesPerRow" : 256,
+      "height" : 192
+    },
+    {
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "units" : "meters",
+      "type" : "pointCloudXYZ",
+      "coordinateSystem" : "world"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "trackingState" : "normal",
+      "intrinsics" : [
+        1362.2608642578125,
+        0,
+        0,
+        0,
+        1362.2608642578125,
+        0,
+        967.83843994140625,
+        720.67376708984375,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "transform" : [
+        0.22385038435459137,
+        -0.81856125593185425,
+        0.52900713682174683,
+        0,
+        0.89678746461868286,
+        -0.039559446275234222,
+        -0.4406898021697998,
+        0,
+        0.38165879249572754,
+        0.5730554461479187,
+        0.72522008419036865,
+        0,
+        -0.082956403493881226,
+        -0.31328198313713074,
+        0.48647087812423706,
+        1
+      ],
+      "eulerAngles" : [
+        -0.61022937297821045,
+        0.48443907499313354,
+        -1.619086742401123
+      ]
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "qualitySummary" : "stable ar tracking",
+    "stream" : "wide",
+    "autoCapture" : true,
+    "captureSource" : "arkit_lidar",
+    "format" : "jpeg",
+    "capturedPointSamplesAdded" : 1200,
+    "qualityBand" : "good",
+    "stabilityBypassed" : false,
+    "depthAvailable" : true,
+    "cgImagePropertyOrientation" : 6,
+    "qualityScore" : 0.88,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin"
+  },
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "trackingState" : "normal",
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "transform" : [
+        0.42146304249763489,
+        -0.67222070693969727,
+        -0.6086774468421936,
+        0,
+        -0.83762800693511963,
+        -0.031379114836454391,
+        -0.54533898830413818,
+        0,
+        0.3474884033203125,
+        0.7396855354309082,
+        -0.57629609107971191,
+        0,
+        -0.079519838094711304,
+        -0.23658713698387146,
+        -0.17797546088695526,
+        1
+      ],
+      "intrinsics" : [
+        1368.0379638671875,
+        0,
+        0,
+        0,
+        1368.0379638671875,
+        0,
+        966.1041259765625,
+        720.21185302734375,
+        1
+      ],
+      "eulerAngles" : [
+        -0.83260291814804077,
+        2.5989933013916016,
+        -1.61744225025177
+      ]
+    }
+  },
+  "auxiliaryOutputs" : [
+    {
+      "pixelFormat" : 1717855600,
+      "type" : "depth",
+      "bytesPerRow" : 1024,
+      "width" : 256,
+      "height" : 192,
+      "filename" : "wide_20260627_192436_410_depth.bin"
+    },
+    {
+      "height" : 192,
+      "bytesPerRow" : 256,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192436_410_confidence.bin",
+      "width" : 256,
+      "pixelFormat" : 1278226488
+    },
+    {
+      "coordinateSystem" : "world",
+      "units" : "meters",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "type" : "pointCloudXYZ"
+    }
+  ]
+}

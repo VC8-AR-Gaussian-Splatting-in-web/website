@@ -1,0 +1,84 @@
+{
+  "auxiliaryOutputs" : [
+    {
+      "type" : "depth",
+      "height" : 192,
+      "width" : 256,
+      "bytesPerRow" : 1024,
+      "pixelFormat" : 1717855600,
+      "filename" : "wide_20260627_192517_408_depth.bin"
+    },
+    {
+      "height" : 192,
+      "type" : "depthConfidence",
+      "pixelFormat" : 1278226488,
+      "width" : 256,
+      "filename" : "wide_20260627_192517_408_confidence.bin",
+      "bytesPerRow" : 256
+    },
+    {
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world",
+      "type" : "pointCloudXYZ",
+      "units" : "meters"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "transform" : [
+        -0.58023679256439209,
+        -0.79012686014175415,
+        0.19754661619663239,
+        0,
+        0.32208335399627686,
+        0.00017082788690458983,
+        0.94671112298965454,
+        0,
+        -0.74805569648742676,
+        0.61294317245483398,
+        0.25438758730888367,
+        0,
+        -0.74036777019500732,
+        -0.2967388927936554,
+        0.21675077080726624,
+        0.99999988079071045
+      ],
+      "trackingState" : "normal",
+      "intrinsics" : [
+        1352.445556640625,
+        0,
+        0,
+        0,
+        1352.445556640625,
+        0,
+        967.8736572265625,
+        720.31378173828125,
+        1
+      ],
+      "imageResolution" : {
+        "height" : 1440,
+        "width" : 1920
+      },
+      "eulerAngles" : [
+        -0.65978014469146729,
+        -1.2429995536804199,
+        -1.5705801248550415
+      ]
+    }
+  },
+  "extraMetadata" : {
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "format" : "jpeg",
+    "autoCapture" : true,
+    "qualityBand" : "good",
+    "qualitySummary" : "stable ar tracking",
+    "stabilityBypassed" : false,
+    "capturedPointSamplesAdded" : 1200,
+    "cgImagePropertyOrientation" : 6,
+    "stream" : "wide",
+    "depthAvailable" : true,
+    "qualityScore" : 0.88,
+    "captureSource" : "arkit_lidar"
+  }
+}

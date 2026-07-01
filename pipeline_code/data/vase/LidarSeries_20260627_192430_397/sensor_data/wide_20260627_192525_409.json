@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "imageResolution" : {
+        "height" : 1440,
+        "width" : 1920
+      },
+      "trackingState" : "normal",
+      "eulerAngles" : [
+        -0.68763822317123413,
+        1.6841733455657959,
+        -1.6546146869659424
+      ],
+      "intrinsics" : [
+        1361.6949462890625,
+        0,
+        0,
+        0,
+        1361.6949462890625,
+        0,
+        967.38958740234375,
+        720.23260498046875,
+        1
+      ],
+      "transform" : [
+        0.63789647817611694,
+        -0.7700343132019043,
+        0.01162687037140131,
+        0,
+        -0.059939928352832794,
+        -0.064694561064243317,
+        -0.99610328674316406,
+        0,
+        0.76778596639633179,
+        0.63471388816833496,
+        -0.087424233555793762,
+        0,
+        0.14058643579483032,
+        -0.29176577925682068,
+        0.078120268881320953,
+        0.99999994039535522
+      ]
+    }
+  },
+  "auxiliaryOutputs" : [
+    {
+      "width" : 256,
+      "type" : "depth",
+      "bytesPerRow" : 1024,
+      "height" : 192,
+      "filename" : "wide_20260627_192525_409_depth.bin",
+      "pixelFormat" : 1717855600
+    },
+    {
+      "bytesPerRow" : 256,
+      "type" : "depthConfidence",
+      "filename" : "wide_20260627_192525_409_confidence.bin",
+      "height" : 192,
+      "pixelFormat" : 1278226488,
+      "width" : 256
+    },
+    {
+      "units" : "meters",
+      "coordinateSystem" : "world",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "type" : "pointCloudXYZ"
+    }
+  ],
+  "extraMetadata" : {
+    "qualityBand" : "good",
+    "depthAvailable" : true,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "format" : "jpeg",
+    "cgImagePropertyOrientation" : 6,
+    "capturedPointSamplesAdded" : 1200,
+    "qualitySummary" : "stable ar tracking",
+    "stabilityBypassed" : false,
+    "stream" : "wide",
+    "autoCapture" : true,
+    "captureSource" : "arkit_lidar",
+    "qualityScore" : 0.88
+  }
+}

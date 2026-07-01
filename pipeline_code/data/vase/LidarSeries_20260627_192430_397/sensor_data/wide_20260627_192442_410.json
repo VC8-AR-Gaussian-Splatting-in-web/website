@@ -1,0 +1,84 @@
+{
+  "auxiliaryOutputs" : [
+    {
+      "width" : 256,
+      "pixelFormat" : 1717855600,
+      "height" : 192,
+      "bytesPerRow" : 1024,
+      "filename" : "wide_20260627_192442_410_depth.bin",
+      "type" : "depth"
+    },
+    {
+      "type" : "depthConfidence",
+      "width" : 256,
+      "filename" : "wide_20260627_192442_410_confidence.bin",
+      "bytesPerRow" : 256,
+      "pixelFormat" : 1278226488,
+      "height" : 192
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "units" : "meters",
+      "coordinateSystem" : "world",
+      "filename" : "lidar_pointcloud_world_xyz.bin"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "intrinsics" : [
+        1368.115478515625,
+        0,
+        0,
+        0,
+        1368.115478515625,
+        0,
+        967.1317138671875,
+        720.16375732421875,
+        1
+      ],
+      "eulerAngles" : [
+        -0.74548590183258057,
+        -1.7037132978439331,
+        -1.6617164611816406
+      ],
+      "transform" : [
+        -0.65753602981567383,
+        -0.73172354698181152,
+        -0.17951899766921997,
+        0,
+        -0.19302420318126678,
+        -0.066712334752082825,
+        0.978923499584198,
+        0,
+        -0.72827750444412231,
+        0.67832893133163452,
+        -0.097374588251113892,
+        0,
+        -0.61703944206237793,
+        -0.23717769980430603,
+        -0.021998748183250427,
+        1
+      ],
+      "trackingState" : "normal",
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      }
+    }
+  },
+  "extraMetadata" : {
+    "qualityScore" : 0.88,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "depthAvailable" : true,
+    "qualityBand" : "good",
+    "capturedPointSamplesAdded" : 1200,
+    "qualitySummary" : "stable ar tracking",
+    "stabilityBypassed" : false,
+    "stream" : "wide",
+    "captureSource" : "arkit_lidar",
+    "autoCapture" : true,
+    "format" : "jpeg",
+    "cgImagePropertyOrientation" : 6
+  }
+}

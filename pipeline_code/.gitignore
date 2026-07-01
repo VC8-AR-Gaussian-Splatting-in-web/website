@@ -1,0 +1,27 @@
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+.python-version-local
+
+# Cloned training engine (installed per-machine, see README)
+third_party/
+
+# Pre-built COLMAP binary (installed per-machine, see README "Einrichtung -> 4.")
+tools/
+
+# Raw captures (large, not needed to review the code -- see README)
+captures/
+
+# Prepared datasets + training outputs (large / reproducible).
+# Exception: data/vase/ is a small (~59 MB) sample dataset kept in the repo so
+# Stage 2 (training) can be reproduced without your own capture -- see README.
+data/*
+!data/vase/
+results/
+*.ply
+*.spz
+
+# OS noise
+.DS_Store
+Thumbs.db

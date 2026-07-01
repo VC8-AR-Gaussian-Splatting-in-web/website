@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "qualityBand" : "good",
+    "capturedPointSamplesAdded" : 1200,
+    "autoCapture" : true,
+    "depthAvailable" : true,
+    "format" : "jpeg",
+    "stabilityBypassed" : false,
+    "qualitySummary" : "stable ar tracking",
+    "stream" : "wide",
+    "captureSource" : "arkit_lidar",
+    "cgImagePropertyOrientation" : 6,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "qualityScore" : 0.88
+  },
+  "auxiliaryOutputs" : [
+    {
+      "type" : "depth",
+      "filename" : "wide_20260627_192531_410_depth.bin",
+      "bytesPerRow" : 1024,
+      "pixelFormat" : 1717855600,
+      "width" : 256,
+      "height" : 192
+    },
+    {
+      "width" : 256,
+      "type" : "depthConfidence",
+      "pixelFormat" : 1278226488,
+      "filename" : "wide_20260627_192531_410_confidence.bin",
+      "bytesPerRow" : 256,
+      "height" : 192
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "units" : "meters",
+      "coordinateSystem" : "world",
+      "filename" : "lidar_pointcloud_world_xyz.bin"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "trackingState" : "normal",
+      "transform" : [
+        0.64589554071426392,
+        -0.46322888135910034,
+        -0.60682612657546997,
+        0,
+        -0.66154623031616211,
+        0.057100579142570496,
+        -0.74772727489471436,
+        0,
+        0.38101896643638611,
+        0.88439726829528809,
+        -0.26956629753112793,
+        0,
+        -0.08210434764623642,
+        -0.16754326224327087,
+        -0.054956629872322083,
+        0.99999994039535522
+      ],
+      "eulerAngles" : [
+        -1.0852010250091553,
+        2.1865301132202148,
+        -1.4481486082077026
+      ],
+      "intrinsics" : [
+        1372.6954345703125,
+        0,
+        0,
+        0,
+        1372.6954345703125,
+        0,
+        963.71197509765625,
+        720.489013671875,
+        1
+      ]
+    }
+  }
+}

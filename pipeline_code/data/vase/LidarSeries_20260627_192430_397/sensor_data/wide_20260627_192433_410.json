@@ -1,0 +1,84 @@
+{
+  "extraMetadata" : {
+    "capturedPointSamplesAdded" : 1200,
+    "qualityScore" : 0.88,
+    "depthAvailable" : true,
+    "stream" : "wide",
+    "autoCapture" : true,
+    "format" : "jpeg",
+    "stabilityBypassed" : false,
+    "cgImagePropertyOrientation" : 6,
+    "qualityBand" : "good",
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "qualitySummary" : "stable ar tracking",
+    "captureSource" : "arkit_lidar"
+  },
+  "auxiliaryOutputs" : [
+    {
+      "type" : "depth",
+      "width" : 256,
+      "height" : 192,
+      "bytesPerRow" : 1024,
+      "pixelFormat" : 1717855600,
+      "filename" : "wide_20260627_192433_410_depth.bin"
+    },
+    {
+      "filename" : "wide_20260627_192433_410_confidence.bin",
+      "pixelFormat" : 1278226488,
+      "bytesPerRow" : 256,
+      "width" : 256,
+      "height" : 192,
+      "type" : "depthConfidence"
+    },
+    {
+      "type" : "pointCloudXYZ",
+      "units" : "meters",
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world"
+    }
+  ],
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "imageResolution" : {
+        "height" : 1440,
+        "width" : 1920
+      },
+      "intrinsics" : [
+        1360.4859619140625,
+        0,
+        0,
+        0,
+        1360.4859619140625,
+        0,
+        966.38043212890625,
+        720.2032470703125,
+        1
+      ],
+      "transform" : [
+        0.74709784984588623,
+        -0.66348105669021606,
+        -0.040469076484441757,
+        0,
+        -0.071494512259960175,
+        -0.019677620381116867,
+        -0.99724692106246948,
+        0,
+        0.660858154296875,
+        0.74793434143066406,
+        -0.06213635578751564,
+        0,
+        0.088438905775547028,
+        -0.19940239191055298,
+        0.056054912507534027,
+        1.0000001192092896
+      ],
+      "trackingState" : "normal",
+      "eulerAngles" : [
+        -0.84494459629058838,
+        1.6645444631576538,
+        -1.6004457473754883
+      ]
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "auxiliaryOutputs" : [
+    {
+      "filename" : "wide_20260627_192430_409_depth.bin",
+      "bytesPerRow" : 1024,
+      "width" : 256,
+      "type" : "depth",
+      "pixelFormat" : 1717855600,
+      "height" : 192
+    },
+    {
+      "type" : "depthConfidence",
+      "pixelFormat" : 1278226488,
+      "filename" : "wide_20260627_192430_409_confidence.bin",
+      "height" : 192,
+      "bytesPerRow" : 256,
+      "width" : 256
+    },
+    {
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "coordinateSystem" : "world",
+      "units" : "meters",
+      "type" : "pointCloudXYZ"
+    }
+  ],
+  "extraMetadata" : {
+    "capturedPointSamplesAdded" : 1200,
+    "qualityBand" : "good",
+    "qualityScore" : 0.88,
+    "format" : "jpeg",
+    "captureSource" : "arkit_lidar",
+    "depthAvailable" : true,
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "autoCapture" : true,
+    "stream" : "wide",
+    "stabilityBypassed" : false,
+    "qualitySummary" : "stable ar tracking",
+    "cgImagePropertyOrientation" : 6
+  },
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "eulerAngles" : [
+        -0.89039921760559082,
+        1.0522985458374023,
+        -1.5230907201766968
+      ],
+      "transform" : [
+        0.69801992177963257,
+        -0.62838608026504517,
+        0.34336450695991516,
+        0,
+        0.4628155529499054,
+        0.030000325292348862,
+        -0.88594692945480347,
+        0,
+        0.54641556739807129,
+        0.77732294797897339,
+        0.31176769733428955,
+        0,
+        0.043682992458343506,
+        -0.19402946531772614,
+        0.275419682264328,
+        1
+      ],
+      "intrinsics" : [
+        1355.882080078125,
+        0,
+        0,
+        0,
+        1355.882080078125,
+        0,
+        966.049072265625,
+        720.884033203125,
+        1
+      ],
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      },
+      "trackingState" : "normal"
+    }
+  }
+}

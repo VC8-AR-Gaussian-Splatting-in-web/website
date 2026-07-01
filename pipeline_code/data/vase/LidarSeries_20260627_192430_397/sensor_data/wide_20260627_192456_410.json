@@ -1,0 +1,84 @@
+{
+  "metadata" : {
+    "source" : "arkit",
+    "camera" : {
+      "intrinsics" : [
+        1372.689453125,
+        0,
+        0,
+        0,
+        1372.689453125,
+        0,
+        962.6190185546875,
+        720.85906982421875,
+        1
+      ],
+      "eulerAngles" : [
+        -1.3749253749847412,
+        0.81823110580444336,
+        -1.3507485389709473
+      ],
+      "transform" : [
+        0.84791076183319092,
+        -0.18992802500724792,
+        0.49494922161102295,
+        0,
+        0.510750412940979,
+        0.042481120675802231,
+        -0.85867887735366821,
+        0,
+        0.14206118881702423,
+        0.98087853193283081,
+        0.13302601873874664,
+        0,
+        -0.22589290142059326,
+        -0.16375924646854401,
+        0.14327344298362732,
+        1
+      ],
+      "trackingState" : "normal",
+      "imageResolution" : {
+        "width" : 1920,
+        "height" : 1440
+      }
+    }
+  },
+  "auxiliaryOutputs" : [
+    {
+      "height" : 192,
+      "pixelFormat" : 1717855600,
+      "bytesPerRow" : 1024,
+      "type" : "depth",
+      "width" : 256,
+      "filename" : "wide_20260627_192456_410_depth.bin"
+    },
+    {
+      "width" : 256,
+      "type" : "depthConfidence",
+      "pixelFormat" : 1278226488,
+      "bytesPerRow" : 256,
+      "height" : 192,
+      "filename" : "wide_20260627_192456_410_confidence.bin"
+    },
+    {
+      "filename" : "lidar_pointcloud_world_xyz.bin",
+      "type" : "pointCloudXYZ",
+      "units" : "meters",
+      "coordinateSystem" : "world"
+    }
+  ],
+  "extraMetadata" : {
+    "format" : "jpeg",
+    "captureSource" : "arkit_lidar",
+    "sessionPointCloudFilename" : "lidar_pointcloud_world_xyz.bin",
+    "stream" : "wide",
+    "stabilityBypassed" : false,
+    "qualitySummary" : "stable ar tracking",
+    "cgImagePropertyOrientation" : 6,
+    "capturedPointSamplesAdded" : 1200,
+    "qualityBand" : "good",
+    "depthAvailable" : true,
+    "autoCapture" : true,
+    "qualityScore" : 0.88
+  }
+}
